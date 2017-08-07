@@ -167,6 +167,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#createdMetadata">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasMetadataCreator"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">created metadata</rdfs:label>
         <skos:altLabel xml:lang="en">Created metadata</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Metadaten erstellt</skos:altLabel>
@@ -179,6 +180,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#deposited">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasDepositor"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">deposited</rdfs:label>
         <skos:altLabel xml:lang="en">Deposited</skos:altLabel>
         <skos:altLabel xml:lang="de">Eingereicht</skos:altLabel>
@@ -191,6 +193,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#edited">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasEditor"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">edited</rdfs:label>
         <skos:altLabel xml:lang="en">Edited</skos:altLabel>
         <skos:altLabel xml:lang="de">Herausgegeben</skos:altLabel>
@@ -239,6 +242,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasActor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isActor"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">has actor</rdfs:label>
         <skos:altLabel xml:lang="en">Has actor</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Akteur</skos:altLabel>
@@ -250,6 +254,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasAuthor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Person"/>
         <rdfs:label xml:lang="en">has author</rdfs:label>
         <skos:altLabel xml:lang="en">Has author</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Autor</skos:altLabel>
@@ -261,6 +266,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasCategory">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:label xml:lang="en">has category</rdfs:label>
         <skos:altLabel xml:lang="en">Has category</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Kategorie</skos:altLabel>
@@ -273,6 +279,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasContact">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isContact"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">has contact</rdfs:label>
         <skos:altLabel xml:lang="en">Has contact</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Kontakt</skos:altLabel>
@@ -284,6 +291,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasContributor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">has contributor</rdfs:label>
         <skos:altLabel xml:lang="en">Has contributor</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Mitarbeiter oder Beitragenden</skos:altLabel>
@@ -317,6 +325,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasDepositor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">has depositor</rdfs:label>
         <skos:altLabel xml:lang="en">Has depositor</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Datengeber</skos:altLabel>
@@ -329,6 +338,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasDerivedPublication">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isDerivedPublication"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
         <rdfs:label xml:lang="en">has derived publication</rdfs:label>
         <skos:altLabel xml:lang="en">Has derived publication</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat abgeleitete Publikation</skos:altLabel>
@@ -340,6 +350,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasEditor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">has editor</rdfs:label>
         <skos:altLabel xml:lang="en">Has editor</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Herausgeber</skos:altLabel>
@@ -363,6 +374,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasFunder">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
         <rdfs:label xml:lang="en">has funder</rdfs:label>
         <skos:altLabel xml:lang="en">Has funder</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Geldgeber</skos:altLabel>
@@ -434,6 +446,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasOwner">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#owned"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
         <rdfs:label xml:lang="en">has owner</rdfs:label>
         <skos:altLabel xml:lang="en">Has owner</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Besitzer</skos:altLabel>
@@ -472,6 +485,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasPrincipalInvestigator">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isPrincipalInvestigator"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
         <rdfs:label xml:lang="en">has principal investigator</rdfs:label>
         <skos:altLabel xml:lang="en">Has principal investigator</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Primärforscher</skos:altLabel>
@@ -541,6 +555,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasRightsHolder">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isRightsHolder"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">has rights holder</rdfs:label>
         <skos:altLabel xml:lang="en">Has rights holder</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Rechteinhaber</skos:altLabel>
@@ -634,6 +649,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isActor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">is actor</rdfs:label>
         <skos:altLabel xml:lang="en">Is actor</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Akteur</skos:altLabel>
@@ -724,6 +740,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isPrincipalInvestigator">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">is principal investigator</rdfs:label>
         <skos:altLabel xml:lang="en">Is principal investigator</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Primärforscher</skos:altLabel>

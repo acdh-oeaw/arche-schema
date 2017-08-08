@@ -156,6 +156,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#covered">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasCoverage"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:label xml:lang="en">covered</rdfs:label>
         <skos:altLabel xml:lang="de">Ausgedehnt</skos:altLabel>
         <skos:altLabel xml:lang="en">Covered</skos:altLabel>
@@ -218,6 +219,8 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#followed">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#preceded"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
         <rdfs:label xml:lang="en">followed</rdfs:label>
         <skos:altLabel xml:lang="de">Folgt</skos:altLabel>
         <skos:altLabel xml:lang="en">Followed</skos:altLabel>
@@ -243,6 +246,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasAccessRestriction">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#restrictedAccess"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
         <rdfs:label xml:lang="en">has access restriction</rdfs:label>
         <skos:altLabel xml:lang="en">Has access restriction</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Zugriffsbeschränkung</skos:altLabel>
@@ -316,6 +320,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasCoverage">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:label xml:lang="en">has coverage</rdfs:label>
         <skos:altLabel xml:lang="en">Has coverage</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Ausdehnung</skos:altLabel>
@@ -435,6 +440,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasLogo">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isLogo"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
         <rdfs:label xml:lang="en">has logo</rdfs:label>
         <skos:altLabel xml:lang="en">Has logo</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Logo</skos:altLabel>
@@ -485,6 +491,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasPreserver">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#preserved"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">has preserver</rdfs:label>
         <skos:altLabel xml:lang="en">Has preserver</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Erhalter</skos:altLabel>
@@ -510,6 +517,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasRelatedDiscipline">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isRelatedDisciplineOf"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:label xml:lang="en">has related discipline</rdfs:label>
         <skos:altLabel xml:lang="en">Has related discipline</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat zugehörige Disziplin</skos:altLabel>
@@ -534,6 +542,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasRelatedMethod">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isRelatedMethod"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:label xml:lang="en">has related method</rdfs:label>
         <skos:altLabel xml:lang="en">Has related method</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat zugehörige Methode</skos:altLabel>
@@ -618,6 +627,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasSubject">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isSubjectOf"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:label xml:lang="en">has subject</rdfs:label>
         <skos:altLabel xml:lang="en">Has subject</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Gegenstand</skos:altLabel>
@@ -642,6 +652,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasTitleImage">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isTitleImageOf"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
         <rdfs:label xml:lang="en">has title image</rdfs:label>
     </owl:ObjectProperty>
     
@@ -652,6 +663,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasTransferMethod">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isTransferMethod"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:label xml:lang="en">has transfer method</rdfs:label>
         <skos:altLabel xml:lang="en">Has transfer method</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Transfermethode</skos:altLabel>
@@ -730,6 +742,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isLogo">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
         <rdfs:label xml:lang="en">is logo</rdfs:label>
         <skos:altLabel xml:lang="en">Is logo</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Logo</skos:altLabel>
@@ -766,6 +779,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isRelatedDisciplineOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:label xml:lang="en">is related discipline of</rdfs:label>
         <skos:altLabel xml:lang="en">Is related discipline of</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist zugehörige Disziplin von</skos:altLabel>
@@ -788,6 +802,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isRelatedMethod">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:label xml:lang="en">is related method</rdfs:label>
         <skos:altLabel xml:lang="en">Is related method</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist zugehörige Methode</skos:altLabel>
@@ -810,6 +825,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isRightsHolder">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">is rights holder</rdfs:label>
         <skos:altLabel xml:lang="en">Is rights holder</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Rechteinhaber</skos:altLabel>
@@ -844,6 +860,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isSubjectOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:label xml:lang="en">is subject of</rdfs:label>
         <skos:altLabel xml:lang="en">Is subject of</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Gegenstand von</skos:altLabel>
@@ -855,6 +872,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isTitleImageOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
         <rdfs:label xml:lang="en">is title image of</rdfs:label>
         <skos:altLabel xml:lang="en">Is title image of</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Titelbild von</skos:altLabel>
@@ -866,6 +884,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isTransferMethod">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:label xml:lang="en">is transfer method</rdfs:label>
         <skos:altLabel xml:lang="en">Is transfer method</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Transfermethode</skos:altLabel>
@@ -900,6 +919,8 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#preceded">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
         <rdfs:label xml:lang="en">preceded</rdfs:label>
         <skos:altLabel xml:lang="en">Preceded</skos:altLabel>
         <skos:altLabel xml:lang="de">Vorhergehende Version von</skos:altLabel>
@@ -911,6 +932,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#preserved">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">preserved</rdfs:label>
         <skos:altLabel xml:lang="de">Erhalten durch</skos:altLabel>
         <skos:altLabel xml:lang="en">Preserved by</skos:altLabel>
@@ -933,6 +955,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#restrictedAccess">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
         <rdfs:label xml:lang="en">restricted access</rdfs:label>
         <skos:altLabel xml:lang="en">Restricted access</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugriffsbeschränkung</skos:altLabel>

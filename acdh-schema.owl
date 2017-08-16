@@ -119,7 +119,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <!-- https://vocabs.acdh.oeaw.ac.at/#categorised -->
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#categorised">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#covered"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasCategory"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
@@ -680,7 +680,7 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#relation"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isTitleImageOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/acdh#Image"/>
         <rdfs:label xml:lang="en">has title image</rdfs:label>
     </owl:ObjectProperty>
     
@@ -891,7 +891,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <!-- https://vocabs.acdh.oeaw.ac.at/#isSubjectOf -->
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isSubjectOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#categorised"/>
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#covered"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:label xml:lang="en">is subject of</rdfs:label>
         <skos:altLabel xml:lang="en">Is subject of</skos:altLabel>
@@ -903,8 +903,8 @@ rearranged the class hierarchy</owl:versionInfo>
     <!-- https://vocabs.acdh.oeaw.ac.at/#isTitleImageOf -->
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isTitleImageOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#relation"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/acdh#Image"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
         <rdfs:label xml:lang="en">is title image of</rdfs:label>
         <skos:altLabel xml:lang="en">Is title image of</skos:altLabel>
@@ -1004,7 +1004,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <!-- https://vocabs.acdh.oeaw.ac.at/#spatiallyCovered -->
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#spatiallyCovered">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#categorised"/>
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#covered"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Place"/>
         <rdfs:label xml:lang="en">spatially covered</rdfs:label>
         <skos:altLabel xml:lang="de">Geografisch ausgedehnt</skos:altLabel>
@@ -1016,7 +1016,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <!-- https://vocabs.acdh.oeaw.ac.at/#temporallyCovered -->
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#temporallyCovered">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#categorised"/>
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#covered"/>
         <rdfs:label xml:lang="en">temporally covered</rdfs:label>
         <skos:altLabel xml:lang="en">Temporally covered</skos:altLabel>
         <skos:altLabel xml:lang="de">Zeitlich ausgedehnt</skos:altLabel>
@@ -1438,6 +1438,14 @@ rearranged the class hierarchy</owl:versionInfo>
     
 
 
+    <!-- https://vocabs.acdh.oeaw.ac.at/acdh#language -->
+
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/acdh#language">
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1505,7 +1513,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/#Collection">
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
-        <rdfs:comment xml:lang="en">A Collection can contain other Collections or Resources. It can be compared to folders in digital file systems. A Collection has to be related to a Project.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A Collection is a set of RepoObjects, Thus it can contain other Collections or Resources, much like folders in a file system. A Collection can be optionally related to a Project, in which it was created or curated.</rdfs:comment>
         <rdfs:label xml:lang="en">Collection</rdfs:label>
         <skos:altLabel xml:lang="en">Collection</skos:altLabel>
         <skos:altLabel xml:lang="de">Sammlung</skos:altLabel>
@@ -1599,6 +1607,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/acdh#Image">
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
+        <rdfs:label xml:lang="en">Image</rdfs:label>
     </owl:Class>
     
 
@@ -1607,6 +1616,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/acdh#Publication">
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
+        <rdfs:label xml:lang="en">Publication</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

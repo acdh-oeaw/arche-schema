@@ -86,6 +86,8 @@ rearranged the class hierarchy</owl:versionInfo>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#cooperated"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:label xml:lang="en">has cooperator</rdfs:label>
+        <skos:altLabel xml:lang="en">Cooperation partner</skos:altLabel>
+        <skos:altLabel xml:lang="de">Kooperationspartner</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -98,6 +100,8 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Project"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Collection"/>
         <rdfs:label xml:lang="en">has related collection</rdfs:label>
+        <skos:altLabel xml:lang="en">Related collection</skos:altLabel>
+        <skos:altLabel xml:lang="de">Zugehörige Sammlung</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -124,8 +128,8 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
         <rdfs:label xml:lang="en">categorises</rdfs:label>
-        <skos:altLabel xml:lang="en">categorises</skos:altLabel>
-        <skos:altLabel xml:lang="de">kategorisiert</skos:altLabel>
+        <skos:altLabel xml:lang="en">Categorises</skos:altLabel>
+        <skos:altLabel xml:lang="de">Kategorisiert</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -136,10 +140,10 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasContributor"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
-        <rdfs:comment xml:lang="en">Agent (person, group, organisation) who was actively involved in creating/curating/editing a resource, or in a project</rdfs:comment>
+        <rdfs:comment xml:lang="en">Agent (person, group, organisation) who was actively involved in creating/curating/editing a resource, or in a project. DataCite: (DataCollector) Person/institution responsible for finding, gathering/collecting data under the guidelines of the author(s) or Principal Investigator (PI).</rdfs:comment>
         <rdfs:label xml:lang="en">contributed to</rdfs:label>
         <skos:altLabel xml:lang="de">Beigetragen</skos:altLabel>
-        <skos:altLabel xml:lang="en">contributed to</skos:altLabel>
+        <skos:altLabel xml:lang="en">Contributed to</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -163,8 +167,8 @@ rearranged the class hierarchy</owl:versionInfo>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasCoverage"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Concept"/>
         <rdfs:label xml:lang="en">is covered in</rdfs:label>      
-        <skos:altLabel xml:lang="en">is covered in</skos:altLabel>
-        <skos:altLabel xml:lang="de">ist abgedeckt in</skos:altLabel>
+        <skos:altLabel xml:lang="en">Is covered in</skos:altLabel>
+        <skos:altLabel xml:lang="de">Ist abgedeckt in</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -203,8 +207,8 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
         <rdfs:label xml:lang="en">is depositor of</rdfs:label>
-        <skos:altLabel xml:lang="en">is depositor of</skos:altLabel>
-        <skos:altLabel xml:lang="de">ist Datengeber (hat eingereicht)</skos:altLabel>
+        <skos:altLabel xml:lang="en">Is depositor of</skos:altLabel>
+        <skos:altLabel xml:lang="de">Ist Datengeber (hat eingereicht)</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -215,9 +219,10 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#contributed"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasEditor"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
+        <rdfs:comment xml:lang="en">A person who oversees the details related to the publication format of the resource. (DataCite Editor)</rdfs:comment>
         <rdfs:label xml:lang="en">is editor of</rdfs:label>
-        <skos:altLabel xml:lang="en">is editor of</skos:altLabel>
-        <skos:altLabel xml:lang="de">ist Herausgeber von</skos:altLabel>
+        <skos:altLabel xml:lang="en">Is editor of</skos:altLabel>
+        <skos:altLabel xml:lang="de">Ist Herausgeber von</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -243,6 +248,7 @@ rearranged the class hierarchy</owl:versionInfo>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasFunder"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Project"/>
+        <rdfs:comment xml:lang="en">Person or Organisation which provided funding for the project. DataCite: (Sponsor) Person or organisation that issued a contract or under the auspices of which a work has been written, printed, published, developed, etc.</rdfs:comment>
         <rdfs:label xml:lang="en">funded</rdfs:label>
         <skos:altLabel xml:lang="en">Funded</skos:altLabel>
         <skos:altLabel xml:lang="de">Gefördert</skos:altLabel>
@@ -269,6 +275,7 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isActor"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
+        <rdfs:comment xml:lang="en">Any person or institution making a significant contribution to the development and/or maintenance of the resource, but whose contribution does not “fit” to another already defined role. (DataCite Other) </rdfs:comment>
         <rdfs:label xml:lang="en">has actor</rdfs:label>
         <skos:altLabel xml:lang="en">Has actor</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Akteur</skos:altLabel>
@@ -306,7 +313,7 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasContributor"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isContact"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
-        <rdfs:comment xml:lang="en">Person or Organisation that can be contacted regarding information about a Resource or a Project.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Person or Organisation that can be contacted regarding information about a Resource or a Project. Corresponds to DataCite: Person with knowledge of how to access, troubleshoot, or otherwise field issues related to the resource. (DataCite: ContactPerson)</rdfs:comment>
         <rdfs:label xml:lang="en">has contact</rdfs:label>
         <skos:altLabel xml:lang="en">Has contact</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Kontakt</skos:altLabel>
@@ -319,6 +326,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasContributor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
+        <rdfs:comment xml:lang="en">Agent (person, group, organisation) who was actively involved in creating/curating/editing a resource, or in a project. DataCite: (DataCollector) Person/institution responsible for finding, gathering/collecting data under the guidelines of the author(s) or Principal Investigator (PI).</rdfs:comment>
         <rdfs:label xml:lang="en">has contributor</rdfs:label>
         <skos:altLabel xml:lang="en">Has contributor</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Mitarbeiter oder Beitragenden</skos:altLabel>
@@ -382,6 +390,7 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasContributor"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
+        <rdfs:comment xml:lang="en">A person who oversees the details related to the publication format of the resource. (DataCite Editor)</rdfs:comment>
         <rdfs:label xml:lang="en">has editor</rdfs:label>
         <skos:altLabel xml:lang="en">Has editor</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Herausgeber</skos:altLabel>
@@ -408,6 +417,7 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasContributor"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Project"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
+        <rdfs:comment xml:lang="en">Person or Organisation which provided funding for the project. DataCite: (Sponsor) Person or organisation that issued a contract or under the auspices of which a work has been written, printed, published, developed, etc.</rdfs:comment>
         <rdfs:label xml:lang="en">has funder</rdfs:label>
         <skos:altLabel xml:lang="en">Has funder</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Geldgeber</skos:altLabel>
@@ -447,6 +457,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasLifeCycleStatus">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isLifeCycleStatusOf"/>
+        <rdfs:comment xml:lang="en">Is the Project, Collection or Resource still in the making or completed? Should be a controlled list. A verbose status description can be added with hasCompleteness.</rdfs:comment>
         <rdfs:label xml:lang="en">has life cycle status</rdfs:label>
         <skos:altLabel xml:lang="en">Has life cycle status</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Lebenszyklusstatus</skos:altLabel>
@@ -512,6 +523,7 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasContributor"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#preserved"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
+        <rdfs:comment xml:lang="en">Institution responsible for preservation. DataCite: (HostingInstitution) Typically, the organisation allowing the resource to be available on the internet through the provision of its hardware/software/operating support.</rdfs:comment>
         <rdfs:label xml:lang="en">has host</rdfs:label>
         <skos:altLabel xml:lang="en">Has host</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Erhalter</skos:altLabel>
@@ -526,6 +538,7 @@ rearranged the class hierarchy</owl:versionInfo>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isPrincipalInvestigator"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Project"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
+        <rdfs:comment xml:lang="en">Person officially designated as head of project team or subproject team instrumental in the work necessary to development of the resource. (DataCite ProjectLeader)</rdfs:comment>
         <rdfs:label xml:lang="en">has principal investigator</rdfs:label>
         <skos:altLabel xml:lang="en">Has principal investigator</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Primärforscher</skos:altLabel>
@@ -602,6 +615,7 @@ rearranged the class hierarchy</owl:versionInfo>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isRightsHolder"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
+        <rdfs:comment xml:lang="en">Person or institution owning or managing property rights, including intellectual property rights over the resource. (DataCite RightsHolder)</rdfs:comment>
         <rdfs:label xml:lang="en">has rights holder</rdfs:label>
         <skos:altLabel xml:lang="en">Has rights holder</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Rechteinhaber</skos:altLabel>
@@ -705,6 +719,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isActor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
+        <rdfs:comment xml:lang="en">Any person or institution making a significant contribution to the development and/or maintenance of the resource, but whose contribution does not “fit” to another already defined role. (DataCite Other) </rdfs:comment>
         <rdfs:label xml:lang="en">is actor</rdfs:label>
         <skos:altLabel xml:lang="en">Is actor</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Akteur</skos:altLabel>
@@ -716,12 +731,39 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isContact">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#contributed"/>
+        <rdfs:comment xml:lang="en">Person or Organisation that can be contacted regarding information about a Resource or a Project. Corresponds to DataCite: Person with knowledge of how to access, troubleshoot, or otherwise field issues related to the resource. (DataCite: ContactPerson)</rdfs:comment>
         <rdfs:label xml:lang="en">is contact</rdfs:label>
         <skos:altLabel xml:lang="en">Is contact</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Kontakt</skos:altLabel>
     </owl:ObjectProperty>
     
+    
+    
+    <!-- https://vocabs.acdh.oeaw.ac.at/#isCurator -->
 
+    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isCurator">
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#contributed"/>
+        <rdfs:comment xml:lang="en">Person tasked with reviewing, enhancing, cleaning, or standardizing metadata and the associated data submitted for storage, use, and maintenance within a data centre or repository. (DataCite: DataCurator)</rdfs:comment>
+        <rdfs:label xml:lang="en">is curator</rdfs:label>
+        <skos:altLabel xml:lang="en">Is data curator</skos:altLabel>
+        <skos:altLabel xml:lang="de">Ist Datenkurator</skos:altLabel>
+    </owl:ObjectProperty>
+    
+    
+    
+        <!-- https://vocabs.acdh.oeaw.ac.at/#hasCurator -->
+
+    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasCurator">
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasContributor"/>
+        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#isCurator"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
+        <rdfs:comment xml:lang="en">Person tasked with reviewing, enhancing, cleaning, or standardizing metadata and the associated data submitted for storage, use, and maintenance within a data centre or repository. (DataCite: DataCurator)</rdfs:comment>
+        <rdfs:label xml:lang="en">is curator</rdfs:label>
+        <skos:altLabel xml:lang="en">Is data curator</skos:altLabel>
+        <skos:altLabel xml:lang="de">Ist Datenkurator</skos:altLabel>
+    </owl:ObjectProperty>
+    
+    
 
     <!-- https://vocabs.acdh.oeaw.ac.at/#isDerivedPublication -->
 
@@ -760,6 +802,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#isLifeCycleStatusOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:comment xml:lang="en">Is the Project, Collection or Resource still in the making or completed? Should be a controlled list.  A verbose description can be added with hasCompleteness.</rdfs:comment>
         <rdfs:label xml:lang="en">is life cycle status of</rdfs:label>
         <skos:altLabel xml:lang="en">Is life cycle status of</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Lebenszyklusstatus von</skos:altLabel>
@@ -799,6 +842,7 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Project"/>
+        <rdfs:comment xml:lang="en">Person officially designated as head of project team or subproject team instrumental in the work necessary to development of the resource. (DataCite ProjectLeader)</rdfs:comment>
         <rdfs:label xml:lang="en">is principal investigator</rdfs:label>
         <skos:altLabel xml:lang="en">Is principal investigator</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Primärforscher</skos:altLabel>
@@ -858,6 +902,7 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#contributed"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
+        <rdfs:comment xml:lang="en">Person or institution owning or managing property rights, including intellectual property rights over the resource. (DataCite RightsHolder)</rdfs:comment>
         <rdfs:label xml:lang="en">is rights holder</rdfs:label>
         <skos:altLabel xml:lang="en">Is rights holder</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Rechteinhaber</skos:altLabel>
@@ -968,6 +1013,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#preserved">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#contributed"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Agent"/>
+        <rdfs:comment xml:lang="en">Institution responsible for preservation. DataCite: (HostingInstitution) Typically, the organisation allowing the resource to be available on the internet through the provision of its hardware/software/operating support.</rdfs:comment>
         <rdfs:label xml:lang="en">hosts</rdfs:label>
         <skos:altLabel xml:lang="de">erhält</skos:altLabel>
         <skos:altLabel xml:lang="en">hosts</skos:altLabel>
@@ -981,7 +1027,7 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
-        <rdfs:comment xml:lang="en">a generic indication of any relation between two resources. Preferably use any of the more specific subproperties.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A generic indication of any relation between two resources. Preferably use any of the more specific subproperties.</rdfs:comment>
         <rdfs:label xml:lang="en">relation</rdfs:label>
         <skos:altLabel xml:lang="de">Relation</skos:altLabel>
         <skos:altLabel xml:lang="en">Relation</skos:altLabel>
@@ -1029,7 +1075,7 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#version">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#relation"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:comment xml:lang="en">version</rdfs:comment>
+        <rdfs:comment xml:lang="en">Version of Collection or Resource.</rdfs:comment>
         <rdfs:label xml:lang="en">version</rdfs:label>
         <skos:altLabel xml:lang="de">Version</skos:altLabel>
         <skos:altLabel xml:lang="en">Version</skos:altLabel>
@@ -1052,7 +1098,11 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:DatatypeProperty rdf:about="http://vocabs.acdh.oeaw.ac.at#hasFirstName">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">First Name of Person.</rdfs:comment>
         <rdfs:label xml:lang="en">has first name</rdfs:label>
+        <skos:altLabel xml:lang="de">First name</skos:altLabel>
+        <skos:altLabel xml:lang="en">Vorname</skos:altLabel>
+
     </owl:DatatypeProperty>
     
 
@@ -1061,7 +1111,10 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:DatatypeProperty rdf:about="http://vocabs.acdh.oeaw.ac.at#hasLastName">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">Last Name of Person.</rdfs:comment>
         <rdfs:label xml:lang="en">has last name</rdfs:label>
+        <skos:altLabel xml:lang="de">Last name</skos:altLabel>
+        <skos:altLabel xml:lang="en">Nachname</skos:altLabel>
     </owl:DatatypeProperty>
     
 
@@ -1203,13 +1256,69 @@ rearranged the class hierarchy</owl:versionInfo>
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasDescription">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">A verbose description of a Project that lead to a Collection, of topics, content, and extent of a Project, Collection or Resource. Can also be a description of any other entity.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A verbose description of a Project that lead to a Collection, of topics, content, and extent of a Project, Collection or Resource. Can also be a description of any other entity. (DataCite descriptionType abstract)</rdfs:comment>
         <rdfs:label xml:lang="en">has description</rdfs:label>
         <skos:altLabel xml:lang="de">Beschreibung</skos:altLabel>
         <skos:altLabel xml:lang="en">Description</skos:altLabel>
     </owl:DatatypeProperty>
+
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/#hasTechnicalInfo -->
+
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasTechnicalInfo">
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasDescription"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process or system. (DataCite descriptionType technicalInfo)</rdfs:comment>
+        <rdfs:label xml:lang="en">has technical info</rdfs:label>
+        <skos:altLabel xml:lang="de">Technische Informationen</skos:altLabel>
+        <skos:altLabel xml:lang="en">Technical information</skos:altLabel>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/#hasTableOfContents -->
+
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasTableOfContents">
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasDescription"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">A listing of the Table of Contents. (DataCite descriptionType tableOfContents)</rdfs:comment>
+        <rdfs:label xml:lang="en">has table of contens</rdfs:label>
+        <skos:altLabel xml:lang="de">Inhaltsverzeichnis</skos:altLabel>
+        <skos:altLabel xml:lang="en">Table of contents</skos:altLabel>
+    </owl:DatatypeProperty>
     
 
+    
+    <!-- https://vocabs.acdh.oeaw.ac.at/#hasSeriesInformation -->
+
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasSeriesInformation">
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasDescription"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Information about a repeating series, such as volume, issue, number. For use with grey Literature. (DataCite descriptionType seriesInformation)</rdfs:comment>
+        <rdfs:label xml:lang="en">has series information</rdfs:label>
+        <skos:altLabel xml:lang="de">Informationen zur Reihe</skos:altLabel>
+        <skos:altLabel xml:lang="en">Series information</skos:altLabel>
+    </owl:DatatypeProperty>
+
+   
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/#hasMethod -->
+
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasMethod">
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasDescription"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">The methodology employed for the study or research. (DataCite descriptionType methods)</rdfs:comment>
+        <rdfs:label xml:lang="en">has method</rdfs:label>
+        <skos:altLabel xml:lang="de">Angewandte Methoden</skos:altLabel>
+        <skos:altLabel xml:lang="en">Applied Method</skos:altLabel>
+    </owl:DatatypeProperty>  
+
+    
 
     <!-- https://vocabs.acdh.oeaw.ac.at/#hasEditorialPractice -->
 
@@ -1321,7 +1430,7 @@ rearranged the class hierarchy</owl:versionInfo>
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasDescription"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Any other notes for the Project, Collection or Resource not stated elswhere in the metadata.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Any other notes for the Project, Collection or Resource not fitting into an existing category. (DataCite descriptionType Other)</rdfs:comment>
         <rdfs:label xml:lang="en">has note</rdfs:label>
         <skos:altLabel xml:lang="en">Note</skos:altLabel>
         <skos:altLabel xml:lang="de">Notiz</skos:altLabel>
@@ -1442,6 +1551,10 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/acdh#language">
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/#RepoObject"/>
+        <rdfs:comment xml:lang="en">Language of Collection or Resource.</rdfs:comment>
+        <rdfs:label xml:lang="en">has language</rdfs:label>
+        <skos:altLabel xml:lang="de">Language</skos:altLabel>
+        <skos:altLabel xml:lang="en">Sprache</skos:altLabel>
     </owl:DatatypeProperty>
     
 
@@ -1525,7 +1638,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/#Concept">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment xml:lang="en">This class is intended to be used for controlled vocabularies. Is equivalent to skos:concept. A SKOS concept can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive. The notion of a SKOS concept is useful when describing the conceptual or intellectual structure of a knowledge organization system, and when referring to specific ideas or meanings established within a KOS.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This class is intended to be used for controlled vocabularies. It is equivalent to skos:concept. A SKOS concept can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive. The notion of a SKOS concept is useful when describing the conceptual or intellectual structure of a knowledge organization system, and when referring to specific ideas or meanings established within a KOS.</rdfs:comment>
         <rdfs:label xml:lang="en">Concept</rdfs:label>
         <skos:altLabel xml:lang="en">Concept</skos:altLabel>
         <skos:altLabel xml:lang="de">Konzept</skos:altLabel>
@@ -1585,7 +1698,7 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/#RepoObject">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment xml:lang="en">A construct to structure the content of the repo</rdfs:comment>
+        <rdfs:comment xml:lang="en">A construct to structure the content of the repo.</rdfs:comment>
         <rdfs:label>Repo Object</rdfs:label>
     </owl:Class>
     
@@ -1607,7 +1720,10 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/acdh#Image">
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
+        <rdfs:comment xml:lang="en">An image related to a Repo Object.</rdfs:comment>
         <rdfs:label xml:lang="en">Image</rdfs:label>
+        <skos:altLabel xml:lang="en">Image</skos:altLabel>
+        <skos:altLabel xml:lang="de">Bild</skos:altLabel>
     </owl:Class>
     
 
@@ -1616,7 +1732,10 @@ rearranged the class hierarchy</owl:versionInfo>
 
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/acdh#Publication">
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
+        <rdfs:comment xml:lang="en">A publication related to a Repo Object.</rdfs:comment>
         <rdfs:label xml:lang="en">Publication</rdfs:label>
+        <skos:altLabel xml:lang="en">Publication</skos:altLabel>
+        <skos:altLabel xml:lang="de">Publikation</skos:altLabel>
     </owl:Class>
 </rdf:RDF>
 

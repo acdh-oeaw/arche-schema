@@ -1438,6 +1438,16 @@ rearranged the class hierarchy</owl:versionInfo>
     
 
 
+    <!-- https://vocabs.acdh.oeaw.ac.at/acdh#hasExtent -->
+
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/acdh#hasExtent">
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasDescription"/>
+        <rdfs:comment xml:lang="en">indicates the extent/size/dimensions of a resource in any suitable measuring units</rdfs:comment>
+        <rdfs:label xml:lang="en">has extent</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://vocabs.acdh.oeaw.ac.at/acdh#language -->
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/acdh#language">

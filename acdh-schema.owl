@@ -1958,6 +1958,17 @@ Externally globally assigned persistent identifiers (like DOIs and Handles) belo
     
 
 
+    <!-- https://vocabs.acdh.oeaw.ac.at/#hasLatitude -->
+
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasLatitude">
+        <rdfs:comment xml:lang="en">Geographic coordinate that specifies the north-south position of a point on the Earth&apos;s surface. Use signed degrees format (DD.dddd), e. g. -31.9600. Latitudes range from -90 to 90.</rdfs:comment>
+        <rdfs:label xml:lang="en">has latitude</rdfs:label>
+        <skos:altLabel xml:lang="de">Breitengrad</skos:altLabel>
+        <skos:altLabel xml:lang="en">Latitude</skos:altLabel>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://vocabs.acdh.oeaw.ac.at/#hasLocationPath -->
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasLocationPath">
@@ -1968,6 +1979,17 @@ Externally globally assigned persistent identifiers (like DOIs and Handles) belo
         <rdfs:label xml:lang="en">has location path</rdfs:label>
         <skos:altLabel xml:lang="de">Dateipfad</skos:altLabel>
         <skos:altLabel xml:lang="en">File path</skos:altLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/#hasLongitude -->
+
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasLongitude">
+        <rdfs:comment xml:lang="en">Geographic coordinate that specifies the east-west position of a point on the Earth&apos;s surface. Use signed degrees format (DDD.dddd), e. g. 115.8400. Longitudes range from -180 to 180.</rdfs:comment>
+        <rdfs:label xml:lang="en">has longitude</rdfs:label>
+        <skos:altLabel xml:lang="en">Longitude</skos:altLabel>
+        <skos:altLabel xml:lang="de">Längengrad</skos:altLabel>
     </owl:DatatypeProperty>
     
 
@@ -2203,6 +2225,17 @@ Other identifiers, like local assigned ones, project numbers or inventory number
     
 
 
+    <!-- https://vocabs.acdh.oeaw.ac.at/#hasWKT -->
+
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#hasWKT">
+        <rdfs:comment xml:lang="en">Well-known text (WKT) of a Place for representation on a map. WKT is defined by ISO 19162. Wicket might be used to create valid WKT: http://arthur-e.github.io/Wicket/sandbox-gmaps3.html</rdfs:comment>
+        <rdfs:label xml:lang="en">has wkt</rdfs:label>
+        <skos:altLabel xml:lang="de">WKT</skos:altLabel>
+        <skos:altLabel xml:lang="en">WKT</skos:altLabel>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://vocabs.acdh.oeaw.ac.at/#language -->
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/#language">
@@ -2367,7 +2400,7 @@ The different roles an Agent can assume with respect to a Project, Collection, R
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/#Concept">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:comment xml:lang="en">This class is equivalent to skos:Concept: A SKOS concept can be viewed as an idea or notion; a unit of thought. The notion of a SKOS concept is useful when describing the conceptual or intellectual structure of a knowledge organization system, and when referring to specific ideas or meanings established within a KOS. (source: https://www.w3.org/TR/skos-reference/#concepts)
-This class is used to link controlled lists stored in SKOS format to object or data properties. E. g. a list of possible resource types to acdh:hasCategory.</rdfs:comment>
+This class is used to link controlled lists stored in SKOS format to object or data properties. E. g. a list of possible resource types for acdh:hasCategory.</rdfs:comment>
         <rdfs:label xml:lang="en">Concept</rdfs:label>
         <skos:altLabel xml:lang="en">Concept</skos:altLabel>
         <skos:altLabel xml:lang="de">Konzept</skos:altLabel>
@@ -2495,6 +2528,48 @@ A Person can be linked to an Organisation by using isMember.</rdfs:comment>
 
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/#Place">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasAlternativeTitle"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasIdentifier"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasTitle"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasLatitude"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasLongitude"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasWKT"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A Place represents a geographical location. It can be used to indicate the spatial coverage of a Project, Collection or Resource, as well as to describe the publishing place of a work. It should contain information about the name, geocoordinates and identifiers to refer to existing gazetteers.</rdfs:comment>
         <rdfs:comment>[Martina: needs name; alternativeName(s); country code; long and lat or wkt; identifier(s)
 what to do if continents should be used as place?
@@ -2512,6 +2587,28 @@ relations (properties): more than only spatialCoverage
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/#Project">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasLogo"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Image"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasLogo"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/#Resource"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasPrincipalInvestigator"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasSubject"/>
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
@@ -2519,14 +2616,9 @@ relations (properties): more than only spatialCoverage
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasLogo"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasPrincipalInvestigator"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasAlternativeTitle"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2538,8 +2630,8 @@ relations (properties): more than only spatialCoverage
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasTitle"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasIdentifier"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2547,6 +2639,13 @@ relations (properties): more than only spatialCoverage
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#language"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/#hasTitle"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
             </owl:Restriction>
         </rdfs:subClassOf>

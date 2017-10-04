@@ -6,7 +6,7 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 	<!ENTITY foaf "http://xmlns.com/foaf/spec/#" >
-	<!ENTITY acdh "https://vocabs.acdh.oeaw.ac.at/#" >
+	<!ENTITY acdh "&acdh;" >
 ]>
 
 
@@ -182,22 +182,6 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/type">
         <owl:equivalentProperty rdf:resource="&acdh;hasCategory"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://vocabs.acdh.oeaw.ac.at#hasRelatedCollection -->
-
-    <owl:ObjectProperty rdf:about="&acdh;hasRelatedCollection">
-        <rdfs:subPropertyOf rdf:resource="&acdh;relation"/>
-        <owl:inverseOf rdf:resource="&acdh;hasRelatedProject"/>
-        <rdfs:domain rdf:resource="&acdh;Project"/>
-        <rdfs:range rdf:resource="&acdh;Collection"/>
-        <rdfs:comment xml:lang="en">Indication of collection associated to this project.</rdfs:comment>
-        <rdfs:comment>[http used instead of https]</rdfs:comment>
-        <rdfs:label xml:lang="en">has related collection</rdfs:label>
-        <skos:altLabel xml:lang="en">Related collection</skos:altLabel>
-        <skos:altLabel xml:lang="de">Zugehörige Sammlung</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -547,20 +531,6 @@ This is a generic property. Use one of the more specific sub-properties where po
     
 
 
-    <!-- &acdh;hasLogo -->
-
-    <owl:ObjectProperty rdf:about="&acdh;hasLogo">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="&acdh;isLogo"/>
-        <rdfs:range rdf:resource="&acdh;Image"/>
-        <rdfs:comment xml:lang="en">A logo of an Organisation or a Project for presentation.</rdfs:comment>
-        <rdfs:label xml:lang="en">has logo</rdfs:label>
-        <skos:altLabel xml:lang="en">Has logo</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Logo</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
     <!-- &acdh;hasMember -->
 
     <owl:ObjectProperty rdf:about="&acdh;hasMember">
@@ -650,6 +620,22 @@ This is a generic property. Use one of the more specific sub-properties where po
     
 
 
+    <!-- &acdh;hasRelatedCollection -->
+
+    <owl:ObjectProperty rdf:about="&acdh;hasRelatedCollection">
+        <rdfs:subPropertyOf rdf:resource="&acdh;relation"/>
+        <owl:inverseOf rdf:resource="&acdh;hasRelatedProject"/>
+        <rdfs:domain rdf:resource="&acdh;Project"/>
+        <rdfs:range rdf:resource="&acdh;Collection"/>
+        <rdfs:comment xml:lang="en">Indication of collection associated to this project.</rdfs:comment>
+        <rdfs:comment>[http used instead of https]</rdfs:comment>
+        <rdfs:label xml:lang="en">has related collection</rdfs:label>
+        <skos:altLabel xml:lang="en">Related collection</skos:altLabel>
+        <skos:altLabel xml:lang="de">Zugehörige Sammlung</skos:altLabel>
+    </owl:ObjectProperty>
+    
+
+
     <!-- &acdh;hasRelatedDiscipline -->
 
     <owl:ObjectProperty rdf:about="&acdh;hasRelatedDiscipline">
@@ -670,6 +656,7 @@ This is a generic property. Use one of the more specific sub-properties where po
     <!-- &acdh;hasRelatedProject -->
 
     <owl:ObjectProperty rdf:about="&acdh;hasRelatedProject">
+        <rdfs:subPropertyOf rdf:resource="&acdh;relation"/>
         <rdfs:domain rdf:resource="&acdh;RepoObject"/>
         <rdfs:range rdf:resource="&acdh;Project"/>
         <rdfs:comment xml:lang="en">Indication of a project (B) associated with this resource or collection (A).</rdfs:comment>
@@ -758,12 +745,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="&acdh;hasTemporalCoverage">
         <rdfs:subPropertyOf rdf:resource="&acdh;hasCoverage"/>
-        <owl:inverseOf rdf:resource="&acdh;isTemporalCoverage"/>
-        <rdfs:comment xml:lang="en">Temporal coverage of content of Object, e.g. &apos;Roman&apos; for some archaeological data or &apos;1956-1965&apos; for a collection of digitised newspapers.</rdfs:comment>
-        <rdfs:comment xml:lang="en">[Matej: The domain is questionable. Will we have a concept defined for every period mentioned? Needs review! ??]</rdfs:comment>
-        <rdfs:label xml:lang="en">has temporal coverage</rdfs:label>
-        <skos:altLabel xml:lang="en">Has temporal coverage</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat zeitliche Abdeckung</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -1147,19 +1128,6 @@ This is a generic property. Use one of the more specific sub-properties where po
     
 
 
-    <!-- &acdh;isLogo -->
-
-    <owl:ObjectProperty rdf:about="&acdh;isLogo">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="&acdh;Image"/>
-        <rdfs:comment xml:lang="en">A logo of an organisation or a project for presentation.</rdfs:comment>
-        <rdfs:label xml:lang="en">is logo</rdfs:label>
-        <skos:altLabel xml:lang="en">Is logo</skos:altLabel>
-        <skos:altLabel xml:lang="de">Ist Logo</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
     <!-- &acdh;isMember -->
 
     <owl:ObjectProperty rdf:about="&acdh;isMember">
@@ -1428,19 +1396,6 @@ This is a generic property. Use one of the more specific sub-properties where po
     
 
 
-    <!-- &acdh;isTemporalCoverage -->
-
-    <owl:ObjectProperty rdf:about="&acdh;isTemporalCoverage">
-        <rdfs:subPropertyOf rdf:resource="&acdh;isCoverage"/>
-        <rdfs:comment xml:lang="en">Temporal coverage of content of Object, e.g. &apos;Roman&apos; for some archaeological data or &apos;1956-1965&apos; for a collection of digitised newspapers.</rdfs:comment>
-        <rdfs:comment xml:lang="en">[Matej: The domain is questionable. Will we have a concept defined for every period mentioned? Needs review! ??]</rdfs:comment>
-        <rdfs:label xml:lang="en">is temporal coverage</rdfs:label>
-        <skos:altLabel xml:lang="en">Temporally covered</skos:altLabel>
-        <skos:altLabel xml:lang="de">Zeitlich ausgedehnt</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
     <!-- &acdh;isTitleImageOf -->
 
     <owl:ObjectProperty rdf:about="&acdh;isTitleImageOf">
@@ -1521,19 +1476,6 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">reviews</rdfs:label>
         <skos:altLabel xml:lang="de">Ist ein Review von</skos:altLabel>
         <skos:altLabel xml:lang="en">Reviews</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- &acdh;version -->
-
-    <owl:ObjectProperty rdf:about="&acdh;version">
-        <rdfs:subPropertyOf rdf:resource="&acdh;relation"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:comment xml:lang="en">Version of Collection or Resource.</rdfs:comment>
-        <rdfs:label xml:lang="en">version</rdfs:label>
-        <skos:altLabel xml:lang="de">Version</skos:altLabel>
-        <skos:altLabel xml:lang="en">Version</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -2192,6 +2134,12 @@ Other identifiers, like local assigned ones, project numbers or inventory number
     
 
 
+    <!-- &acdh;hasTemporalCoverage -->
+
+    <owl:DatatypeProperty rdf:about="&acdh;hasTemporalCoverage"/>
+    
+
+
     <!-- &acdh;hasTitle -->
 
     <owl:DatatypeProperty rdf:about="&acdh;hasTitle">
@@ -2491,7 +2439,7 @@ This class is used to link controlled lists stored in SKOS format to object or d
     <!-- &acdh;Image -->
 
     <owl:Class rdf:about="&acdh;Image">
-        <rdfs:subClassOf rdf:resource="&acdh;Resource"/>
+        <rdfs:subClassOf rdf:resource="&acdh;RepoObject"/>
         <rdfs:comment xml:lang="en">An image used for presentation of a related Repo Object. It should only be used for logos and title images. Images in data sets are use the class Resource.</rdfs:comment>
         <rdfs:label xml:lang="en">Image</rdfs:label>
         <skos:altLabel xml:lang="de">Bild</skos:altLabel>
@@ -2518,13 +2466,6 @@ The default example is a CMDI file that describes other resources.</rdfs:comment
 
     <owl:Class rdf:about="&acdh;Organisation">
         <rdfs:subClassOf rdf:resource="&acdh;Agent"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&acdh;hasLogo"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="&acdh;Image"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&acdh;hasAlternativeTitle"/>
@@ -2655,22 +2596,6 @@ relations (properties): more than only spatialCoverage
 
     <owl:Class rdf:about="&acdh;Project">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&acdh;hasLogo"/>
-                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                        <owl:onClass rdf:resource="&acdh;Image"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&acdh;hasLogo"/>
-                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                        <owl:onClass rdf:resource="&acdh;Resource"/>
-                    </owl:Restriction>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&acdh;hasPrincipalInvestigator"/>
@@ -2816,9 +2741,27 @@ relations (properties): more than only spatialCoverage
         <skos:altLabel xml:lang="en">Resource</skos:altLabel>
         <skos:altLabel xml:lang="de">Ressource</skos:altLabel>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&acdh;hasTemporalCoverage">
+        <skos:altLabel xml:lang="de">Hat zeitliche Abdeckung</skos:altLabel>
+        <rdfs:comment xml:lang="en">Temporal coverage of content of Object, e.g. &apos;Roman&apos; for some archaeological data or &apos;1956-1965&apos; for a collection of digitised newspapers.</rdfs:comment>
+        <rdfs:label xml:lang="en">has temporal coverage</rdfs:label>
+        <rdfs:comment xml:lang="en">[Matej: The domain is questionable. Will we have a concept defined for every period mentioned? Needs review! ??]</rdfs:comment>
+        <skos:altLabel xml:lang="en">Has temporal coverage</skos:altLabel>
+    </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
 

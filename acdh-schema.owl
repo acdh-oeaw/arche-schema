@@ -254,8 +254,8 @@
         <rdfs:comment xml:lang="en">Denotes if restricted access applies to the Resource (A).</rdfs:comment>
         <rdfs:comment xml:lang="en">[Matej: what is the range of the property? Why is it object property? ??]</rdfs:comment>
         <rdfs:label xml:lang="en">has access restriction</rdfs:label>
-        <skos:altLabel xml:lang="en">Has access restriction</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Zugriffsbeschränkung</skos:altLabel>
+        <skos:altLabel xml:lang="en">Access restriction</skos:altLabel>
+        <skos:altLabel xml:lang="de">Zugriffsbeschränkung</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -281,9 +281,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="&acdh;isAppliedMethod"/>
         <rdfs:range rdf:resource="&acdh;Concept"/>
-        <rdfs:comment xml:lang="en">The methodology (B) applied in creation or curation of the resource or in the project (A) (cf. DataCite: descriptionType methods) </rdfs:comment>
+        <rdfs:comment xml:lang="en">The methodology (B) applied in creation or curation of the resource or in the project (A) (cf. DataCite: descriptionType methods). Can further be described with data property hasappliedMethodDescription.</rdfs:comment>
         <rdfs:label xml:lang="en">has applied method</rdfs:label>
-        <rdfs:seeAlso>acdh:appliedMethodDescription a owl:DatatypeProperty</rdfs:seeAlso>
         <skos:altLabel xml:lang="de">Angewandte Methode</skos:altLabel>
         <skos:altLabel xml:lang="en">Applied method</skos:altLabel>
     </owl:ObjectProperty>
@@ -297,11 +296,10 @@
         <owl:inverseOf rdf:resource="&acdh;isAuthor"/>
         <rdfs:domain rdf:resource="&acdh;RepoObject"/>
         <rdfs:range rdf:resource="&acdh;Agent"/>
-        <rdfs:comment xml:lang="en">Author of resource, who will appear in the citation of it.</rdfs:comment>
-        <rdfs:comment xml:lang="en">[(??) Has to be distinguished more clearly from creator.]</rdfs:comment>
+        <rdfs:comment xml:lang="en">Author of resource, who will appear in the citation of it. Especially meant for written resources, all other kinds of creators should be included with hasCreator.</rdfs:comment>
         <rdfs:label xml:lang="en">has author</rdfs:label>
-        <skos:altLabel xml:lang="en">Has author</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Autor</skos:altLabel>
+        <skos:altLabel xml:lang="en">Author</skos:altLabel>
+        <skos:altLabel xml:lang="de">Autor</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -314,10 +312,9 @@
         <rdfs:domain rdf:resource="&acdh;RepoObject"/>
         <rdfs:range rdf:resource="&acdh;Concept"/>
         <rdfs:comment xml:lang="en">Type of resource, e. g. corpus. Choose from list. Can be refined with description, format, extent, etc.</rdfs:comment>
-        <rdfs:comment>[just for resource type, with controlled vocabulary]</rdfs:comment>
         <rdfs:label xml:lang="en">has category</rdfs:label>
-        <skos:altLabel xml:lang="en">Has category</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Kategorie</skos:altLabel>
+        <skos:altLabel xml:lang="en">Category</skos:altLabel>
+        <skos:altLabel xml:lang="de">Kategorie</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -331,8 +328,8 @@
         <rdfs:comment xml:lang="en">Person or Organisation (B) that can be contacted regarding information about a Resource or a Project (A).</rdfs:comment>
         <rdfs:comment xml:lang="en">Person with knowledge of how to access, troubleshoot, or otherwise field issues related to the resource. (DataCite: ContactPerson)</rdfs:comment>
         <rdfs:label xml:lang="en">has contact</rdfs:label>
-        <skos:altLabel xml:lang="en">Has contact</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Kontakt</skos:altLabel>
+        <skos:altLabel xml:lang="en">Contact</skos:altLabel>
+        <skos:altLabel xml:lang="de">Kontakt</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -346,8 +343,8 @@
         <rdfs:comment xml:lang="en">Agent (person, group, organisation) (B) who was actively involved in creating/curating/editing a Resource, a Collection or in a Project (A). Any person or institution making a significant contribution to the development and/or maintenance of the resource, but whose contribution does not “fit” to another already defined role. (cf. DataCite: Other)
 This is a generic property. Use one of the more specific sub-properties where possible.</rdfs:comment>
         <rdfs:label xml:lang="en">has contributor</rdfs:label>
-        <skos:altLabel xml:lang="en">Has contributor</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Mitarbeiter oder Beitragenden</skos:altLabel>
+        <skos:altLabel xml:lang="en">Contributor</skos:altLabel>
+        <skos:altLabel xml:lang="de">Mitarbeiter oder Beitragender</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -361,8 +358,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:comment xml:lang="en">Generic indication of what is covered/mentioned in the resource  (its content) along various dimensions (subject, space, time). Use the more specific sub-properties where possible.</rdfs:comment>
         <rdfs:label xml:lang="en">has coverage</rdfs:label>
         <owl:inverseOf></owl:inverseOf>
+        <skos:altLabel xml:lang="en">Coverage</skos:altLabel>
         <skos:altLabel xml:lang="de">Deckt ab</skos:altLabel>
-        <skos:altLabel xml:lang="en">Has coverage</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -374,10 +371,10 @@ This is a generic property. Use one of the more specific sub-properties where po
         <owl:inverseOf rdf:resource="&acdh;isCreator"/>
         <rdfs:domain rdf:resource="&acdh;RepoObject"/>
         <rdfs:range rdf:resource="&acdh;Agent"/>
-        <rdfs:comment xml:lang="en">Person (B) responsible for creation of resource (A).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Person (B) responsible for creation of resource (A). Will be included in the citation.</rdfs:comment>
         <rdfs:label xml:lang="en">has creator</rdfs:label>
-        <skos:altLabel xml:lang="en">Has creator</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Urheber</skos:altLabel>
+        <skos:altLabel xml:lang="en">Creator</skos:altLabel>
+        <skos:altLabel xml:lang="de">Urheber</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -391,8 +388,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:range rdf:resource="&acdh;Agent"/>
         <rdfs:comment xml:lang="en">Person (B) tasked with reviewing, enhancing, cleaning, or standardizing data and the associated metadata submitted for storage, use, and maintenance within a data centre or repository. (cf. DataCite: DataCurator)</rdfs:comment>
         <rdfs:label xml:lang="en">has curator</rdfs:label>
-        <skos:altLabel xml:lang="en">Has data curator</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Datenkurator</skos:altLabel>
+        <skos:altLabel xml:lang="en">Data curator</skos:altLabel>
+        <skos:altLabel xml:lang="de">Datenkurator</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -406,8 +403,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:range rdf:resource="&acdh;Agent"/>
         <rdfs:comment xml:lang="en">Person or organisation (B) responsible for submitting a resource (A) for hosting to the repository.</rdfs:comment>
         <rdfs:label xml:lang="en">has depositor</rdfs:label>
-        <skos:altLabel xml:lang="en">Has depositor</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Datengeber</skos:altLabel>
+        <skos:altLabel xml:lang="de">Datengeber</skos:altLabel>
+        <skos:altLabel xml:lang="en">Depositor</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -435,8 +432,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:range rdf:resource="&acdh;Agent"/>
         <rdfs:comment xml:lang="en">A person who oversees the details related to the publication format of the resource. (DataCite Editor)</rdfs:comment>
         <rdfs:label xml:lang="en">has editor</rdfs:label>
-        <skos:altLabel xml:lang="en">Has editor</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Herausgeber</skos:altLabel>
+        <skos:altLabel xml:lang="en">Editor</skos:altLabel>
+        <skos:altLabel xml:lang="de">Herausgeber</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -447,11 +444,10 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="&acdh;isFormat"/>
         <rdfs:domain rdf:resource="&acdh;Resource"/>
-        <rdfs:comment xml:lang="en">Format of a resource (A). Indicated as MIME type.</rdfs:comment>
-        <rdfs:comment xml:lang="en">[Matej: What is the range of the property? The MIME types, but how do you refer to these. Shouldn&apos;t this be a DatatypeProperty with a controlled vocabulary ??]</rdfs:comment>
+        <rdfs:comment xml:lang="en">Format of a resource (A). Indicated as MIME type. Choose from list.</rdfs:comment>
         <rdfs:label xml:lang="en">has format</rdfs:label>
-        <skos:altLabel xml:lang="en">Has format</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Format</skos:altLabel>
+        <skos:altLabel xml:lang="de">Format</skos:altLabel>
+        <skos:altLabel xml:lang="en">Format</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -463,11 +459,10 @@ This is a generic property. Use one of the more specific sub-properties where po
         <owl:inverseOf rdf:resource="&acdh;isFunder"/>
         <rdfs:domain rdf:resource="&acdh;Project"/>
         <rdfs:range rdf:resource="&acdh;Agent"/>
-        <rdfs:comment xml:lang="en">Person or Organisation (B) which provided funding for the project (A). </rdfs:comment>
-        <rdfs:comment xml:lang="en">Person or organisation that issued a contract or under the auspices of which a work has been written, printed, published, developed, etc. (DataCite: Sponsor)</rdfs:comment>
+        <rdfs:comment xml:lang="en">Person or Organisation (B) which provided funding for the project (A). Person or organisation that issued a contract or under the auspices of which a work has been written, printed, published, developed, etc. (DataCite: Sponsor)</rdfs:comment>
         <rdfs:label xml:lang="en">has funder</rdfs:label>
-        <skos:altLabel xml:lang="en">Has funder</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Geldgeber</skos:altLabel>
+        <skos:altLabel xml:lang="en">Funder</skos:altLabel>
+        <skos:altLabel xml:lang="de">Geldgeber</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -481,7 +476,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:range rdf:resource="&acdh;Agent"/>
         <rdfs:comment xml:lang="en">Institution responsible for preservation/hosting of a resource. (DataCite: HostingInstitution) Typically, the organisation allowing the resource to be available on the internet through the provision of its hardware/software/operating support.</rdfs:comment>
         <rdfs:label xml:lang="en">has hosting</rdfs:label>
-        <skos:altLabel xml:lang="en">Has host</skos:altLabel>
+        <skos:altLabel xml:lang="en">Hosted by</skos:altLabel>
         <skos:altLabel xml:lang="de">Wird erhalten/bereitgestellt von</skos:altLabel>
     </owl:ObjectProperty>
     
@@ -493,10 +488,10 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="&acdh;isLicense"/>
         <rdfs:domain rdf:resource="&acdh;RepoObject"/>
-        <rdfs:comment xml:lang="en">Denotes the license attached to an object.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes the licence attached to an object.</rdfs:comment>
         <rdfs:label xml:lang="en">has license</rdfs:label>
-        <skos:altLabel xml:lang="en">Has license</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Lizenz</skos:altLabel>
+        <skos:altLabel xml:lang="en">Licence</skos:altLabel>
+        <skos:altLabel xml:lang="de">Lizenz</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -510,8 +505,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:range rdf:resource="&acdh;Agent"/>
         <rdfs:comment xml:lang="en">Person or Organisation responsible for choosing a license for the Object.</rdfs:comment>
         <rdfs:label xml:lang="en">has licensor</rdfs:label>
-        <skos:altLabel xml:lang="en">Has licensor</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Lizenzgeber</skos:altLabel>
+        <skos:altLabel xml:lang="en">Licensor</skos:altLabel>
+        <skos:altLabel xml:lang="de">Lizenzgeber</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -522,10 +517,9 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="&acdh;isLifeCycleStatus"/>
         <rdfs:comment xml:lang="en">Indication if the Project, Collection or Resource (A) still in the making or completed? A verbose status description can be added with acdh:hasCompleteness.</rdfs:comment>
-        <rdfs:comment xml:lang="en">[Matej: define allowed values as controlled vocabulary. !!]</rdfs:comment>
         <rdfs:label xml:lang="en">has life cycle status</rdfs:label>
-        <skos:altLabel xml:lang="en">Has life cycle status</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Lebenszyklusstatus</skos:altLabel>
+        <skos:altLabel xml:lang="de">Lebenszyklusstatus</skos:altLabel>
+        <skos:altLabel xml:lang="en">Life cycle status</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -568,8 +562,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:comment xml:lang="en">Person or Organisation responsible for creating metadata for a Resource or Collection.</rdfs:comment>
         <rdfs:comment>[Martina: do we need both inverse properties?]</rdfs:comment>
         <rdfs:label xml:lang="en">has metadata creator</rdfs:label>
-        <skos:altLabel xml:lang="en">Has metadata creator</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Metadatenersteller</skos:altLabel>
+        <skos:altLabel xml:lang="en">Metadata creator</skos:altLabel>
+        <skos:altLabel xml:lang="de">Metadatenersteller</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -583,8 +577,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:range rdf:resource="&acdh;Agent"/>
         <rdfs:comment xml:lang="en">Person or Organisation who owns given Collection or Resource.</rdfs:comment>
         <rdfs:label xml:lang="en">has owner</rdfs:label>
-        <skos:altLabel xml:lang="en">Has owner</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Besitzer</skos:altLabel>
+        <skos:altLabel xml:lang="de">Besitzer</skos:altLabel>
+        <skos:altLabel xml:lang="en">Owner</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -613,8 +607,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:range rdf:resource="&acdh;Agent"/>
         <rdfs:comment xml:lang="en">Person officially designated as head of project team or subproject team instrumental in the work necessary to development of the resource. (DataCite: ProjectLeader)</rdfs:comment>
         <rdfs:label xml:lang="en">has principal investigator</rdfs:label>
-        <skos:altLabel xml:lang="en">Has principal investigator</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Primärforscher</skos:altLabel>
+        <skos:altLabel xml:lang="de">Primärforscher</skos:altLabel>
+        <skos:altLabel xml:lang="en">Principal investigator</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -639,7 +633,6 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:domain rdf:resource="&acdh;Project"/>
         <rdfs:range rdf:resource="&acdh;Collection"/>
         <rdfs:comment xml:lang="en">Indication of collection associated to this project.</rdfs:comment>
-        <rdfs:comment>[http used instead of https]</rdfs:comment>
         <rdfs:label xml:lang="en">has related collection</rdfs:label>
         <skos:altLabel xml:lang="en">Related collection</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugehörige Sammlung</skos:altLabel>
@@ -654,12 +647,10 @@ This is a generic property. Use one of the more specific sub-properties where po
         <owl:inverseOf rdf:resource="&acdh;isRelatedDiscipline"/>
         <rdfs:domain rdf:resource="&acdh;RepoObject"/>
         <rdfs:range rdf:resource="&acdh;Concept"/>
-        <rdfs:comment xml:lang="en">Discipline of Project, Collection or Resource. Can be used for search. </rdfs:comment>
-        <rdfs:comment>[Martina: should this be a sub of relation?]</rdfs:comment>
-        <rdfs:comment>[Matej: review definition! ??]</rdfs:comment>
+        <rdfs:comment xml:lang="en">Research discipline of Project, Collection or Resource. Can be used for search.</rdfs:comment>
         <rdfs:label xml:lang="en">has related discipline</rdfs:label>
-        <skos:altLabel xml:lang="en">Has related discipline</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat zugehörige Disziplin</skos:altLabel>
+        <skos:altLabel xml:lang="en">Related research discipline</skos:altLabel>
+        <skos:altLabel xml:lang="de">Zugehörige Fachdisziplin</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -671,10 +662,9 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:domain rdf:resource="&acdh;RepoObject"/>
         <rdfs:range rdf:resource="&acdh;Project"/>
         <rdfs:comment xml:lang="en">Indication of a project (B) associated with this resource or collection (A).</rdfs:comment>
-        <rdfs:comment>[Martina: should this be a sub of relation?]</rdfs:comment>
         <rdfs:label xml:lang="en">has related project</rdfs:label>
-        <skos:altLabel xml:lang="en">Has related project</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat zugehöriges Projekt</skos:altLabel>
+        <skos:altLabel xml:lang="en">Related project</skos:altLabel>
+        <skos:altLabel xml:lang="de">Zugehöriges Projekt</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -688,8 +678,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:range rdf:resource="&acdh;Agent"/>
         <rdfs:comment xml:lang="en">Person or institution (B) owning or managing property rights, including intellectual property rights over the resource (A). (DataCite RightsHolder)</rdfs:comment>
         <rdfs:label xml:lang="en">has rights holder</rdfs:label>
-        <skos:altLabel xml:lang="en">Has rights holder</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Rechteinhaber</skos:altLabel>
+        <skos:altLabel xml:lang="de">Rechteinhaber</skos:altLabel>
+        <skos:altLabel xml:lang="en">Rights holder</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -732,8 +722,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:range rdf:resource="&acdh;Place"/>
         <rdfs:comment xml:lang="en">Geographical location, area, region (B) a Project, Collection or Resource (A) is dealing with, is about; e.g. archaeological data from excavations in &apos;Pannonia&apos; or a collection of digitised newspapers from &apos;Austria&apos;.</rdfs:comment>
         <rdfs:label xml:lang="en">has spatial coverage</rdfs:label>
-        <skos:altLabel xml:lang="en">Has spatial coverage</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat geografische Abdeckung</skos:altLabel>
+        <skos:altLabel xml:lang="de">Geografische Abdeckung</skos:altLabel>
+        <skos:altLabel xml:lang="en">Spatial coverage</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -746,8 +736,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:range rdf:resource="&acdh;Concept"/>
         <rdfs:comment xml:lang="en">Subject of Project, Collection or Resource. Can be used as keywords for search.</rdfs:comment>
         <rdfs:label xml:lang="en">has subject</rdfs:label>
-        <skos:altLabel xml:lang="en">Has subject</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Gegenstand</skos:altLabel>
+        <skos:altLabel xml:lang="de">Gegenstand</skos:altLabel>
+        <skos:altLabel xml:lang="en">Subject</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -775,10 +765,9 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:domain rdf:resource="&acdh;RepoObject"/>
         <rdfs:range rdf:resource="&acdh;Concept"/>
         <rdfs:comment xml:lang="en">Method used to transfer resources from depositor to repository.</rdfs:comment>
-        <rdfs:comment xml:lang="en">[Matej: needs controlled vocabulary!!]</rdfs:comment>
         <rdfs:label xml:lang="en">has transfer method</rdfs:label>
-        <skos:altLabel xml:lang="en">Has transfer method</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Transfermethode</skos:altLabel>
+        <skos:altLabel xml:lang="en">Transfer method</skos:altLabel>
+        <skos:altLabel xml:lang="de">Transfermethode</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -789,7 +778,6 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:range rdf:resource="&acdh;RepoObject"/>
         <rdfs:comment xml:lang="en">Denotes if restricted access applies to the Resource.</rdfs:comment>
-        <rdfs:comment>[Martina: rename to isAccessRestriction]</rdfs:comment>
         <rdfs:label xml:lang="en">is access restriction</rdfs:label>
         <skos:altLabel xml:lang="en">Restricted access</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugriffsbeschränkung</skos:altLabel>
@@ -1545,23 +1533,9 @@ This is a generic property. Use one of the more specific sub-properties where po
     
 
 
-    <!-- http://vocabs.acdh.oeaw.ac.at#hasFirstName -->
+    <!-- &acdh;hasLastName -->
 
-    <owl:DatatypeProperty rdf:about="http://vocabs.acdh.oeaw.ac.at#hasFirstName">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="&acdh;Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">First name of a Person.</rdfs:comment>
-        <rdfs:label xml:lang="en">has first name</rdfs:label>
-        <skos:altLabel xml:lang="de">First name</skos:altLabel>
-        <skos:altLabel xml:lang="en">Vorname</skos:altLabel>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://vocabs.acdh.oeaw.ac.at#hasLastName -->
-
-    <owl:DatatypeProperty rdf:about="http://vocabs.acdh.oeaw.ac.at#hasLastName">
+    <owl:DatatypeProperty rdf:about="&acdh;hasLastName">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="&acdh;Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
@@ -1569,6 +1543,20 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has last name</rdfs:label>
         <skos:altLabel xml:lang="de">Last name</skos:altLabel>
         <skos:altLabel xml:lang="en">Nachname</skos:altLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- &acdh;acdh:hasFirstName -->
+
+    <owl:DatatypeProperty rdf:about="&acdh;hasFirstName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="&acdh;Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">First name of a Person.</rdfs:comment>
+        <rdfs:label xml:lang="en">has first name</rdfs:label>
+        <skos:altLabel xml:lang="de">First name</skos:altLabel>
+        <skos:altLabel xml:lang="en">Vorname</skos:altLabel>
     </owl:DatatypeProperty>
     
 
@@ -1583,7 +1571,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:comment xml:lang="en">The date that the publisher accepted the resource into their system.</rdfs:comment>
         <rdfs:label xml:lang="en">has accepted date</rdfs:label>
         <skos:altLabel xml:lang="de">Annahmedatum</skos:altLabel>
-        <skos:altLabel xml:lang="en">Date of Acceptance</skos:altLabel>
+        <skos:altLabel xml:lang="en">Date of acceptance</skos:altLabel>
     </owl:DatatypeProperty>
     
 
@@ -1647,8 +1635,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:comment xml:lang="en">Verbose description of the methodology employed in the creation/curation of a resource. (cf. DataCite descriptionType methods). </rdfs:comment>
         <rdfs:label xml:lang="en">has applied method description</rdfs:label>
         <rdfs:seeAlso>acdh:appliedMethod a owl:ObjectProperty</rdfs:seeAlso>
-        <skos:altLabel xml:lang="de">Angewandte Methoden</skos:altLabel>
-        <skos:altLabel xml:lang="en">Applied Method</skos:altLabel>
+        <skos:altLabel xml:lang="de">Beschreibung der angewandten Methoden</skos:altLabel>
+        <skos:altLabel xml:lang="en">Description of applied method</skos:altLabel>
     </owl:DatatypeProperty>
     
 
@@ -1778,7 +1766,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:comment xml:lang="de">Datum seit dem die Ressource urheberrechtlich geschützt ist, wenn anwendbar.</rdfs:comment>
         <rdfs:comment xml:lang="en">The specific, documented date at which the resource receives a copyrighted status, if applicable.</rdfs:comment>
         <rdfs:label xml:lang="en">has copyrighted date</rdfs:label>
-        <skos:altLabel xml:lang="en">Date of Copyright Protection</skos:altLabel>
+        <skos:altLabel xml:lang="en">Date of copyright protection</skos:altLabel>
         <skos:altLabel xml:lang="de">Urheberrechtlich geschützt seit</skos:altLabel>
     </owl:DatatypeProperty>
     
@@ -1983,9 +1971,9 @@ Handles belong into acdh:hasPID.</rdfs:comment>
         <rdfs:domain rdf:resource="&acdh;RepoObject"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <rdfs:comment xml:lang="de">Datum an dem die Ressource veröffentlicht oder verteilt wurde.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The date that the resource is published or distributed e.g. to a data centre.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The date that the resource is published or distributed e.g. to a data centre. [martina: I think we can remove this]</rdfs:comment>
         <rdfs:label xml:lang="en">has issued date</rdfs:label>
-        <skos:altLabel xml:lang="en">Date of Issue</skos:altLabel>
+        <skos:altLabel xml:lang="en">Date of issue</skos:altLabel>
         <skos:altLabel xml:lang="de">Veröffentlichungsdatum</skos:altLabel>
     </owl:DatatypeProperty>
     
@@ -2036,7 +2024,7 @@ Handles belong into acdh:hasPID.</rdfs:comment>
         <rdfs:comment xml:lang="en">Conventions used for naming and structuring of files and folders of the SIP.</rdfs:comment>
         <rdfs:label xml:lang="en">has naming scheme</rdfs:label>
         <skos:altLabel xml:lang="de">Beschreibung der verwendeten Namenskonventionen</skos:altLabel>
-        <skos:altLabel xml:lang="en">Description of Naming Scheme used</skos:altLabel>
+        <skos:altLabel xml:lang="en">Description of naming scheme used</skos:altLabel>
     </owl:DatatypeProperty>
     
 
@@ -2193,8 +2181,8 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
     <owl:DatatypeProperty rdf:about="&acdh;hasTemporalCoverage">
         <rdfs:comment xml:lang="en">Temporal coverage of content of Object, e.g. &apos;Roman&apos; for some archaeological data or &apos;1956-1965&apos; for a collection of digitised newspapers.</rdfs:comment>
         <rdfs:label xml:lang="en">has temporal coverage</rdfs:label>
-        <skos:altLabel xml:lang="en">Has temporal coverage</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat zeitliche Abdeckung</skos:altLabel>
+        <skos:altLabel xml:lang="en">Temporal coverage</skos:altLabel>
+        <skos:altLabel xml:lang="de">Zeitliche Abdeckung</skos:altLabel>
     </owl:DatatypeProperty>
     
 
@@ -2564,14 +2552,14 @@ The default example is a CMDI file that describes other resources.</rdfs:comment
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://vocabs.acdh.oeaw.ac.at#hasFirstName"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+                <owl:onProperty rdf:resource="&acdh;hasLastName"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://vocabs.acdh.oeaw.ac.at#hasLastName"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                <owl:onProperty rdf:resource="&acdh;hasFirstName"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>

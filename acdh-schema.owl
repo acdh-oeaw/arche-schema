@@ -6,7 +6,7 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 	<!ENTITY foaf "http://xmlns.com/foaf/spec/#" >
-	<!ENTITY acdh "https://vocabs.acdh.oeaw.ac.at/#" >
+	<!ENTITY acdh "https://vocabs.acdh.oeaw.ac.at/schema#" >
 ]>
 
 <rdf:RDF xmlns="https://vocabs.acdh.oeaw.ac.at/acdh#"
@@ -21,7 +21,7 @@
      xmlns:acdh="&acdh;"
      xmlns:foaf="http://xmlns.com/foaf/spec/#"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="https://vocabs.acdh.oeaw.ac.at/acdh">
+    <owl:Ontology rdf:about="https://vocabs.acdh.oeaw.ac.at/schema">
         <owl:versionInfo xml:lang="en">2016-07-26 (Matej) - removed imports </owl:versionInfo>
         <owl:versionInfo xml:lang="en">2017-09-02 (Matej) - reworked definitions for properties, renamed number of properties for consistency, added domains and ranges and inverse properties ; added class Metadata; 
             removed @acdh:hasRelatedMethod@ and @acdh:hasMethod@ in favour of ObjectProperties: @acdh:appliedMethod@/@acdh:methodAppliedIn@ and DataProperty: @acdh:appliedMethodDescription@

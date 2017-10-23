@@ -2,6 +2,8 @@
 
 <?php
 
+include '/var/www/html/vendor/autoload.php';
+
 use acdhOeaw\util\RepoConfig as RC;
 use acdhOeaw\fedora\acl\WebAclRule as WAR;
 use acdhOeaw\fedora\Fedora;
@@ -16,8 +18,8 @@ if ($argc < 2 || !file_exists($argv[1])) {
     return;
 }
 
-include '/var/www/html/vendor/autoload.php';
 RC::init('/var/www/html/config.ini');
+
 $fedora = new Fedora();
 
 # some of the prefixes are not available in the easyrdf namespace...

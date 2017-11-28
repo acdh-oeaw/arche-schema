@@ -648,6 +648,7 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="&acdh;hasRelatedProject">
         <rdfs:subPropertyOf rdf:resource="&acdh;relation"/>
+        <owl:inverseOf rdf:resource="&acdh;hasRelatedCollection"/>
         <rdfs:domain rdf:resource="&acdh;RepoObject"/>
         <rdfs:range rdf:resource="&acdh;Project"/>
         <rdfs:comment xml:lang="en">Indication of a project (B) associated with this resource or collection (A).</rdfs:comment>

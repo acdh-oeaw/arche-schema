@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
@@ -9,7 +8,6 @@
 	<!ENTITY foaf "http://xmlns.com/foaf/spec/#" >
 	<!ENTITY acdh "https://vocabs.acdh.oeaw.ac.at/schema#" >
 ]>
-
 <rdf:RDF xmlns="https://vocabs.acdh.oeaw.ac.at/acdh#"
      xml:base="https://vocabs.acdh.oeaw.ac.at/acdh"
      xmlns:dct="http://purl.org/dc/terms/"
@@ -23,24 +21,14 @@
      xmlns:foaf="http://xmlns.com/foaf/spec/#"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="https://vocabs.acdh.oeaw.ac.at/schema">
-        <owl:versionInfo xml:lang="en">2016-07-26 (Matej) - removed imports </owl:versionInfo>
-        <owl:versionInfo xml:lang="en">2017-09-02 (Matej) - reworked definitions for properties, renamed number of properties for consistency, added domains and ranges and inverse properties ; added class Metadata; 
-            removed @acdh:hasRelatedMethod@ and @acdh:hasMethod@ in favour of ObjectProperties: @acdh:appliedMethod@/@acdh:methodAppliedIn@ and DataProperty: @acdh:appliedMethodDescription@
-        </owl:versionInfo>
-        <owl:versionInfo xml:lang="en">2017-10-04 (Martina) Introduced hasCreatedDate for single creation dates. Introduced hasStartDate and hasEndDate for starting and end dates of Projects. Refined some comments for better understanding.</owl:versionInfo>
-        <rdfs:comment xml:lang="en">In definitions of properties, &quot;resource A&quot; refers to the subject resource of the property and &quot;resource B&quot; to the object resource</rdfs:comment>
-        <owl:versionInfo xml:lang="en">2017-07-18 (Martina, Peter)- all classes and properties assigned with rdfs:label, put under acdh-namespace, flattened Hierarchy</owl:versionInfo>
-        <owl:versionInfo xml:lang="en">2016-07-19 (Go) - initial version </owl:versionInfo>
-        <rdfs:comment xml:lang="en">When reusing definitions from other vocabularies (esp. DataCite), the reference is given in brackets: (DataCite: ContactPerson). When the source definition was changed slightly the reference is marked with &quot;cf.&quot;</rdfs:comment>
-        <owl:versionInfo xml:lang="en">2017-04-06 (Martina) - added cardinality and some test description</owl:versionInfo>
-        <owl:versionInfo xml:lang="en">2017-08-24 (Martina)- added comments to all classes and properties with rdfs:comment. Questionable parts marked with &apos;(??)&apos;. </owl:versionInfo>
-        <rdfs:comment xml:lang="en">This is the ontology for ACDH repository.</rdfs:comment>
-        <owl:versionInfo>2017-06-14 removed and renamed some Digital/Non-Digital classes. 
- DigitalResource -&gt; Resource
- DigitalCollection -&gt; Collection
- DigitalProject -&gt; removed
- rearranged the class hierarchy</owl:versionInfo>
-        <owl:versionInfo xml:lang="en">2017-08-27 (Matej) - reworked definitions for classes</owl:versionInfo>
+        <rdfs:comment xml:lang="en">Dies ist die Ontologie für ARCHE.
+In den Definitionen der Eigenschaften, meint &quot;Ressource A&quot; das Subject und &quot;Ressource B&quot; das Objekt.
+When Definitionen aus anderen Schemata (z. B. DataCite) wiederverwendet werden, wird die Referenz in Klammern angegeben: (DataCite: ContactPerson). When die ursprüngliche Definition leicht angepasst wurde, ist die Referenz mit &quot;cf.&quot; markiert.</rdfs:comment>
+        <owl:versionInfo xml:lang="en">Version 1.0 released on 2017-11-03.</owl:versionInfo>
+        <owl:versionInfo xml:lang="de">Version 1.0. veröffentlicht am 2017-11-03.</owl:versionInfo>
+        <rdfs:comment xml:lang="en">This is the ontology for ARCHE.
+In definitions of properties, &quot;resource A&quot; refers to the subject resource of the property and &quot;resource B&quot; to the object resource.
+When reusing definitions from other vocabularies (esp. DataCite), the reference is given in brackets: (DataCite: ContactPerson). When the source definition was changed slightly the reference is marked with &quot;cf.&quot;</rdfs:comment>
         <rdfs:label>ACDH Schema</rdfs:label>
     </owl:Ontology>
     
@@ -74,6 +62,17 @@
     <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#vocabs -->
+
+    <owl:AnnotationProperty rdf:about="&acdh;vocabs">
+        <rdfs:comment xml:lang="en">Indicates the location of the controlled vocabulary with allowed values for the property. Insert URL to machine readable endpoint.</rdfs:comment>
+        <rdfs:label>vocabs</rdfs:label>
+        <skos:altLabel xml:lang="en">List with allowed values</skos:altLabel>
+        <skos:altLabel xml:lang="de">Liste mit erlaubten Werten</skos:altLabel>
+    </owl:AnnotationProperty>
     
 
 
@@ -180,9 +179,7 @@
 
     <!-- http://purl.org/dc/elements/1.1/type -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/type">
-        <owl:equivalentProperty rdf:resource="&acdh;hasCategory"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/type"/>
     
 
 
@@ -246,21 +243,6 @@
     
 
 
-    <!-- &acdh;hasAccessRestriction -->
-
-    <owl:ObjectProperty rdf:about="&acdh;hasAccessRestriction">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="&acdh;isAccessRestriction"/>
-        <rdfs:domain rdf:resource="&acdh;RepoObject"/>
-        <rdfs:comment xml:lang="en">Denotes if restricted access applies to the Resource (A).</rdfs:comment>
-        <rdfs:comment xml:lang="en">[Matej: what is the range of the property? Why is it object property? ??]</rdfs:comment>
-        <rdfs:label xml:lang="en">has access restriction</rdfs:label>
-        <skos:altLabel xml:lang="en">Access restriction</skos:altLabel>
-        <skos:altLabel xml:lang="de">Zugriffsbeschränkung</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
     <!-- &acdh;hasActor -->
 
     <owl:ObjectProperty rdf:about="&acdh;hasActor">
@@ -301,21 +283,6 @@
         <rdfs:label xml:lang="en">has author</rdfs:label>
         <skos:altLabel xml:lang="en">Author</skos:altLabel>
         <skos:altLabel xml:lang="de">Autor</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- &acdh;hasCategory -->
-
-    <owl:ObjectProperty rdf:about="&acdh;hasCategory">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="&acdh;isCategory"/>
-        <rdfs:domain rdf:resource="&acdh;RepoObject"/>
-        <rdfs:range rdf:resource="&acdh;Concept"/>
-        <rdfs:comment xml:lang="en">Type of resource, e. g. corpus. Choose from list. Can be refined with description, format, extent, etc.</rdfs:comment>
-        <rdfs:label xml:lang="en">has category</rdfs:label>
-        <skos:altLabel xml:lang="en">Category</skos:altLabel>
-        <skos:altLabel xml:lang="de">Kategorie</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -489,7 +456,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="&acdh;isLicense"/>
         <rdfs:domain rdf:resource="&acdh;RepoObject"/>
-        <rdfs:comment xml:lang="en">Denotes the licence attached to an object.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes the license attached to an object.</rdfs:comment>
         <rdfs:label xml:lang="en">has license</rdfs:label>
         <skos:altLabel xml:lang="en">Licence</skos:altLabel>
         <skos:altLabel xml:lang="de">Lizenz</skos:altLabel>
@@ -508,19 +475,6 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has licensor</rdfs:label>
         <skos:altLabel xml:lang="en">Licensor</skos:altLabel>
         <skos:altLabel xml:lang="de">Lizenzgeber</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- &acdh;hasLifeCycleStatus -->
-
-    <owl:ObjectProperty rdf:about="&acdh;hasLifeCycleStatus">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="&acdh;isLifeCycleStatus"/>
-        <rdfs:comment xml:lang="en">Indication if the Project, Collection or Resource (A) still in the making or completed? A verbose status description can be added with acdh:hasCompleteness.</rdfs:comment>
-        <rdfs:label xml:lang="en">has life cycle status</rdfs:label>
-        <skos:altLabel xml:lang="de">Lebenszyklusstatus</skos:altLabel>
-        <skos:altLabel xml:lang="en">Life cycle status</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -648,7 +602,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="&acdh;hasRelatedProject">
         <rdfs:subPropertyOf rdf:resource="&acdh;relation"/>
-        <owl:inverseOf rdf:resource="&acdh;hasRelatedCollection"/>
         <rdfs:domain rdf:resource="&acdh;RepoObject"/>
         <rdfs:range rdf:resource="&acdh;Project"/>
         <rdfs:comment xml:lang="en">Indication of a project (B) associated with this resource or collection (A).</rdfs:comment>
@@ -762,19 +715,6 @@ This is a generic property. Use one of the more specific sub-properties where po
     
 
 
-    <!-- &acdh;isAccessRestriction -->
-
-    <owl:ObjectProperty rdf:about="&acdh;isAccessRestriction">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:range rdf:resource="&acdh;RepoObject"/>
-        <rdfs:comment xml:lang="en">Denotes if restricted access applies to the Resource.</rdfs:comment>
-        <rdfs:label xml:lang="en">is access restriction</rdfs:label>
-        <skos:altLabel xml:lang="en">Restricted access</skos:altLabel>
-        <skos:altLabel xml:lang="de">Zugriffsbeschränkung</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
     <!-- &acdh;isActor -->
 
     <owl:ObjectProperty rdf:about="&acdh;isActor">
@@ -811,21 +751,6 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">is author</rdfs:label>
         <skos:altLabel xml:lang="en">Author</skos:altLabel>
         <skos:altLabel xml:lang="de">Verfasser</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- &acdh;isCategory -->
-
-    <owl:ObjectProperty rdf:about="&acdh;isCategory">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="&acdh;Concept"/>
-        <rdfs:range rdf:resource="&acdh;RepoObject"/>
-        <rdfs:comment xml:lang="en">Type of resource, e. g. corpus. Choose from list. Can be refined with description, format, extent, etc.</rdfs:comment>
-        <rdfs:comment xml:lang="en">[just for resource type, with controlled vocabulary]</rdfs:comment>
-        <rdfs:label xml:lang="en">is category</rdfs:label>
-        <skos:altLabel xml:lang="en">Categorises</skos:altLabel>
-        <skos:altLabel xml:lang="de">Kategorisiert</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -1092,18 +1017,6 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">is licensor</rdfs:label>
         <skos:altLabel xml:lang="en">Is licensor</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Lizenzgeber</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- &acdh;isLifeCycleStatus -->
-
-    <owl:ObjectProperty rdf:about="&acdh;isLifeCycleStatus">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:comment xml:lang="en">Is the Project, Collection or Resource still in the making or completed? Should be a controlled list.  A verbose description can be added with acdh:hasCompleteness.</rdfs:comment>
-        <rdfs:label xml:lang="en">is life cycle status</rdfs:label>
-        <skos:altLabel xml:lang="en">Is life cycle status of</skos:altLabel>
-        <skos:altLabel xml:lang="de">Ist Lebenszyklusstatus von</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -1499,7 +1412,7 @@ This is a generic property. Use one of the more specific sub-properties where po
     <!-- http://purl.org/dc/elements/1.1/language -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/language">
-        <owl:equivalentProperty rdf:resource="&acdh;language"/>
+        <owl:equivalentProperty rdf:resource="&acdh;hasLanguage"/>
     </owl:DatatypeProperty>
     
 
@@ -1508,6 +1421,14 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/title">
         <owl:equivalentProperty rdf:resource="&acdh;hasTitle"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/type -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/type">
+        <owl:equivalentProperty rdf:resource="&acdh;hasCategory"/>
     </owl:DatatypeProperty>
     
 
@@ -1523,6 +1444,20 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has accepted date</rdfs:label>
         <skos:altLabel xml:lang="de">Annahmedatum</skos:altLabel>
         <skos:altLabel xml:lang="en">Date of acceptance</skos:altLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- &acdh;hasAccessRestriction -->
+
+    <owl:DatatypeProperty rdf:about="&acdh;hasAccessRestriction">
+        <rdfs:domain rdf:resource="&acdh;RepoObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Denotes if restricted access applies to the Resource (A).</rdfs:comment>
+        <rdfs:label xml:lang="en">has access restriction</rdfs:label>
+        <skos:altLabel xml:lang="en">Access restriction</skos:altLabel>
+        <skos:altLabel xml:lang="de">Zugriffsbeschränkung</skos:altLabel>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/en/</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -1631,6 +1566,20 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has binary size</rdfs:label>
         <skos:altLabel xml:lang="en">Größe</skos:altLabel>
         <skos:altLabel xml:lang="de">Size</skos:altLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- &acdh;hasCategory -->
+
+    <owl:DatatypeProperty rdf:about="&acdh;hasCategory">
+        <rdfs:domain rdf:resource="&acdh;RepoObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Type of resource, e. g. corpus. Choose from list. Can be refined with description, format, extent, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">has category</rdfs:label>
+        <skos:altLabel xml:lang="en">Category</skos:altLabel>
+        <skos:altLabel xml:lang="de">Kategorie</skos:altLabel>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/archecategory/en/</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -1929,17 +1878,15 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
     
 
 
-    <!-- &acdh;hasIssuedDate -->
+    <!-- &acdh;hasLanguage -->
 
-    <owl:DatatypeProperty rdf:about="&acdh;hasIssuedDate">
-        <rdfs:subPropertyOf rdf:resource="&acdh;hasDate"/>
+    <owl:DatatypeProperty rdf:about="&acdh;hasLanguage">
         <rdfs:domain rdf:resource="&acdh;RepoObject"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <rdfs:comment xml:lang="de">Datum an dem die Ressource veröffentlicht oder verteilt wurde.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The date that the resource is published or distributed e.g. to a data centre. [martina: I think we can remove this]</rdfs:comment>
-        <rdfs:label xml:lang="en">has issued date</rdfs:label>
-        <skos:altLabel xml:lang="en">Date of issue</skos:altLabel>
-        <skos:altLabel xml:lang="de">Veröffentlichungsdatum</skos:altLabel>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#language"/>
+        <rdfs:comment xml:lang="en">Language of Collection or Resource. Ideally encoded with 3-letter code according to ISO-639-3 (e.g. deu, eng, arz)</rdfs:comment>
+        <rdfs:label xml:lang="en">has language</rdfs:label>
+        <skos:altLabel xml:lang="de">Language</skos:altLabel>
+        <skos:altLabel xml:lang="en">Sprache</skos:altLabel>
     </owl:DatatypeProperty>
     
 
@@ -1965,6 +1912,19 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <rdfs:label xml:lang="en">has latitude</rdfs:label>
         <skos:altLabel xml:lang="de">Breitengrad</skos:altLabel>
         <skos:altLabel xml:lang="en">Latitude</skos:altLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- &acdh;hasLifeCycleStatus -->
+
+    <owl:DatatypeProperty rdf:about="&acdh;hasLifeCycleStatus">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Indication if the Project, Collection or Resource (A) still in the making or completed? A verbose status description can be added with acdh:hasCompleteness.</rdfs:comment>
+        <rdfs:label xml:lang="en">has life cycle status</rdfs:label>
+        <skos:altLabel xml:lang="de">Lebenszyklusstatus</skos:altLabel>
+        <skos:altLabel xml:lang="en">Life cycle status</skos:altLabel>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/archelifecyclestatus/en/</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -2122,6 +2082,19 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has region</rdfs:label>
         <skos:altLabel xml:lang="de">Staat/Region/Provinz</skos:altLabel>
         <skos:altLabel xml:lang="en">State/region/province</skos:altLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- &acdh;hasRestrictionRole -->
+
+    <owl:DatatypeProperty rdf:about="&acdh;hasRestrictionRole">
+        <rdfs:domain rdf:resource="&acdh;RepoObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">Name of the role allowed to access the Resource.</rdfs:comment>
+        <rdfs:label xml:lang="en">has restriction role</rdfs:label>
+        <skos:altLabel xml:lang="en">Role with access rights</skos:altLabel>
+        <skos:altLabel xml:lang="de">Rolle mit Zugriffserlaubnis</skos:altLabel>
     </owl:DatatypeProperty>
     
 
@@ -2337,19 +2310,6 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
     
 
 
-    <!-- &acdh;language -->
-
-    <owl:DatatypeProperty rdf:about="&acdh;language">
-        <rdfs:domain rdf:resource="&acdh;RepoObject"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#language"/>
-        <rdfs:comment xml:lang="en">Language of Collection or Resource. Ideally encoded with 3-letter code according to ISO-639-3 (e.g. deu, eng, arz)</rdfs:comment>
-        <rdfs:label xml:lang="en">has language</rdfs:label>
-        <skos:altLabel xml:lang="de">Language</skos:altLabel>
-        <skos:altLabel xml:lang="en">Sprache</skos:altLabel>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -2493,6 +2453,18 @@ The different roles an Agent can assume with respect to a Project, Collection, R
 
     <owl:Class rdf:about="&acdh;Concept">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&acdh;hasAlternativeTitle"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&acdh;hasTitle"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">This class is equivalent to skos:Concept: A SKOS concept can be viewed as an idea or notion; a unit of thought. The notion of a SKOS concept is useful when describing the conceptual or intellectual structure of a knowledge organization system, and when referring to specific ideas or meanings established within a KOS. (source: https://www.w3.org/TR/skos-reference/#concepts)
 This class is used to link controlled lists stored in SKOS format to object or data properties. E. g. a list of possible resource types for acdh:hasCategory.</rdfs:comment>
         <rdfs:label xml:lang="en">Concept</rdfs:label>
@@ -2518,6 +2490,24 @@ This class is used to link controlled lists stored in SKOS format to object or d
 
     <owl:Class rdf:about="&acdh;Metadata">
         <rdfs:subClassOf rdf:resource="&acdh;RepoObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&acdh;hasSchema"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&acdh;isMetadataFor"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&acdh;hasTitle"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Structured information in form of a separate binary file ABOUT another Repo Object. 
 The Metadata object is linked to the RepoObject it describes with the relation acdh:hasMetadata.
 The default example is a CMDI file that describes other resources.</rdfs:comment>
@@ -2851,13 +2841,6 @@ A Person can be linked to an Organisation by using isMember.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&acdh;hasLifeCycleStatus"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="&acdh;Concept"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&acdh;hasAlternativeTitle"/>
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
             </owl:Restriction>
@@ -2923,6 +2906,13 @@ A Person can be linked to an Organisation by using isMember.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&acdh;hasLanguage"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#language"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&acdh;hasNonLinkedIdentifier"/>
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
             </owl:Restriction>
@@ -2968,13 +2958,6 @@ A Person can be linked to an Organisation by using isMember.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&acdh;language"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#language"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&acdh;hasAvailableDate"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
@@ -2991,6 +2974,12 @@ A Person can be linked to an Organisation by using isMember.</rdfs:comment>
                 <owl:onProperty rdf:resource="&acdh;hasEndDate"/>
                 <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&acdh;hasLifeCycleStatus"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3049,6 +3038,13 @@ Note that though a Project might (and usually will) use or produce data, it is N
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&acdh;hasAvailableDate"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&acdh;hasCity"/>
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
             </owl:Restriction>
@@ -3068,9 +3064,8 @@ Note that though a Project might (and usually will) use or produce data, it is N
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&acdh;hasIssuedDate"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+                <owl:onProperty rdf:resource="&acdh;hasLanguage"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3114,12 +3109,6 @@ Note that though a Project might (and usually will) use or produce data, it is N
                 <owl:onProperty rdf:resource="&acdh;hasUrl"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&acdh;language"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>

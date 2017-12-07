@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
@@ -174,12 +174,6 @@ When reusing definitions from other vocabularies (esp. DataCite), the reference 
     <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/subject">
         <owl:equivalentProperty rdf:resource="&acdh;hasSubject"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/type -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/type"/>
     
 
 

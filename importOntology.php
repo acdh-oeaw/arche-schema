@@ -192,7 +192,7 @@ try {
         $newMeta->addResource(RC::idProp(), $curId);
         $new->setMetadata($newMeta);
         $new->updateMetadata();
-        $new->getAcl()->grant(WAR::USER, WAR::PUBLIC_USER, WAR::READ);
+        $new->getAcl()->createAcl()->grant(WAR::USER, WAR::PUBLIC_USER, WAR::READ);
         $fedora->commit();
     }
 } catch (Exception $e) {

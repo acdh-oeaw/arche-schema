@@ -34,6 +34,10 @@ function saveOrUpdate($res, $fedora, $path, $ontology) {
     static $ids = array();
 
     $id = RdfNamespace::expand($res->getUri());
+    if (preg_match('/^_:genid[0-9]+$/', $id)) {
+        echo "Skipping an anonymous resource \n" . $res->dump('text');
+        return;
+    }
 
     if (in_array($id, $ids)) {
         throw new Exception('Duplicated entity URI: ' . $id);
@@ -45,7 +49,9 @@ function saveOrUpdate($res, $fedora, $path, $ontology) {
 
     foreach ($res->properties() as $p) {
         foreach ($res->allLiterals($p) as $v) {
-            $meta->addLiteral($p, $v->getValue());
+            if ($v->getValue() !== '') {
+                $meta->addLiteral($p, $v->getValue(), $v->getLang());
+            }
         }
 
         foreach ($res->allResources($p) as $v) {
@@ -56,17 +62,26 @@ function saveOrUpdate($res, $fedora, $path, $ontology) {
         }
     }
 
-    $restrictions = $ontology->resourcesMatching('http://www.w3.org/2002/07/owl#onProperty', $res);
-    foreach ($restrictions as $r) {
-        $restrictionProps = array(
-            'http://www.w3.org/2002/07/owl#minCardinality',
-            'http://www.w3.org/2002/07/owl#maxCardinality',
-            'http://www.w3.org/2002/07/owl#cardinality'
-        );
-        foreach($restrictionProps as $p) {
-            $v = $r->getLiteral($p);
-            if ($v) {
-                $meta->addLiteral($p, $v);
+    // see https://redmine.acdh.oeaw.ac.at/issues/10661 and https://redmine.acdh.oeaw.ac.at/issues/9202
+    $range = $meta->allResources('http://www.w3.org/2000/01/rdf-schema#range');
+    if (count($range) === 1) {
+        $range = $range[0]->getUri();
+        $restrictions = $ontology->resourcesMatching('http://www.w3.org/2002/07/owl#onProperty', $res);
+        foreach ($restrictions as $r) {
+            $restrSubClasses = $ontology->resourcesMatching('http://www.w3.org/2000/01/rdf-schema#subClassOf', $r);
+            // global restrictions must 
+            if (count($restrSubClasses) === 1 && $range === $restrSubClasses[0]->getUri()) {
+                $restrictionProps = array(
+                    'http://www.w3.org/2002/07/owl#minCardinality',
+                    'http://www.w3.org/2002/07/owl#maxCardinality',
+                    'http://www.w3.org/2002/07/owl#cardinality'
+                );
+                foreach($restrictionProps as $p) {
+                    $v = $r->getLiteral($p);
+                    if ($v) {
+                        $meta->addLiteral($p, $v);
+                    }
+                }
             }
         }
     }

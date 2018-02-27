@@ -62,15 +62,15 @@ function saveOrUpdate($res, $fedora, $path, $ontology) {
         }
     }
 
-    // see https://redmine.acdh.oeaw.ac.at/issues/10661 and https://redmine.acdh.oeaw.ac.at/issues/9202
-    $range = $meta->allResources('http://www.w3.org/2000/01/rdf-schema#range');
-    if (count($range) === 1) {
-        $range = $range[0]->getUri();
+    // see https://redmine.acdh.oeaw.ac.at/issues/10661 and https://redmine.acdh.oeaw.ac.at/issues/8227
+    $domain = $meta->allResources('http://www.w3.org/2000/01/rdf-schema#domain');
+    if (count($domain) === 1) {
+        $domain = $domain[0]->getUri();
         $restrictions = $ontology->resourcesMatching('http://www.w3.org/2002/07/owl#onProperty', $res);
         foreach ($restrictions as $r) {
             $restrSubClasses = $ontology->resourcesMatching('http://www.w3.org/2000/01/rdf-schema#subClassOf', $r);
             // global restrictions must 
-            if (count($restrSubClasses) === 1 && $range === $restrSubClasses[0]->getUri()) {
+            if (count($restrSubClasses) === 1 && $domain === $restrSubClasses[0]->getUri()) {
                 $restrictionProps = array(
                     'http://www.w3.org/2002/07/owl#minCardinality',
                     'http://www.w3.org/2002/07/owl#maxCardinality',
@@ -78,7 +78,7 @@ function saveOrUpdate($res, $fedora, $path, $ontology) {
                 );
                 foreach($restrictionProps as $p) {
                     $v = $r->getLiteral($p);
-                    if ($v) {
+		    if ($v) {
                         $meta->addLiteral($p, $v);
                     }
                 }

@@ -30,17 +30,35 @@ RdfNamespace::set('acdh', RC::vocabsNmsp());
 # helper functions
 ###################
 
-function saveOrUpdate($res, $fedora, $path, $ontology) {
+function saveOrUpdate($res, $fedora, $path, $ontology, &$imported) {
     static $ids = array();
 
-    $id = RdfNamespace::expand($res->getUri());
-    if (preg_match('/^_:genid[0-9]+$/', $id)) {
-        echo "Skipping an anonymous resource \n" . $res->dump('text');
-        return;
+    if ($res->isA('http://www.w3.org/2002/07/owl#Restriction')) {
+        // restrictions in owl are anonymous, we need to create ids for them automatically
+        $idProps = [];
+        foreach ($res->allResources('http://www.w3.org/2002/07/owl#onProperty') as $i) {
+            $idProps[] = $i->getUri();
+        }
+        foreach ($res->allResources('http://www.w3.org/2002/07/owl#onDataRange') as $i) {
+            $idProps[] = $i->getUri();
+        }
+        foreach ($res->allResources('http://www.w3.org/2002/07/owl#onClass') as $i) {
+            $idProps[] = $i->getUri();
+        }
+        $idProps = array_unique($idProps);
+        sort($idProps);
+        $id = RC::vocabsNmsp() . 'restriction-' . md5(implode(',', $idProps));
+    } else {
+        $id = RdfNamespace::expand($res->getUri());
+        if (preg_match('/^_:genid[0-9]+$/', $id)) {
+            echo "Skipping an anonymous resource \n" . $res->dump('text');
+            return;
+        }
     }
 
     if (in_array($id, $ids)) {
-        throw new Exception('Duplicated entity URI: ' . $id);
+        echo "Skipping a duplicated resource \n" . $res->dump('text');
+        return;
     }
     $ids[] = $id;
 
@@ -62,30 +80,6 @@ function saveOrUpdate($res, $fedora, $path, $ontology) {
         }
     }
 
-    // see https://redmine.acdh.oeaw.ac.at/issues/10661 and https://redmine.acdh.oeaw.ac.at/issues/8227
-    $domain = $meta->allResources('http://www.w3.org/2000/01/rdf-schema#domain');
-    if (count($domain) === 1) {
-        $domain = $domain[0]->getUri();
-        $restrictions = $ontology->resourcesMatching('http://www.w3.org/2002/07/owl#onProperty', $res);
-        foreach ($restrictions as $r) {
-            $restrSubClasses = $ontology->resourcesMatching('http://www.w3.org/2000/01/rdf-schema#subClassOf', $r);
-            // global restrictions must 
-            if (count($restrSubClasses) === 1 && $domain === $restrSubClasses[0]->getUri()) {
-                $restrictionProps = array(
-                    'http://www.w3.org/2002/07/owl#minCardinality',
-                    'http://www.w3.org/2002/07/owl#maxCardinality',
-                    'http://www.w3.org/2002/07/owl#cardinality'
-                );
-                foreach($restrictionProps as $p) {
-                    $v = $r->getLiteral($p);
-		    if ($v) {
-                        $meta->addLiteral($p, $v);
-                    }
-                }
-            }
-        }
-    }
-
     $meta->addResource(RC::idProp(), $id);
 
     if (!$meta->hasProperty(RC::get('doorkeeperOntologyLabelProp'))) {
@@ -102,7 +96,13 @@ function saveOrUpdate($res, $fedora, $path, $ontology) {
         $fedoraRes = $fedora->createResource($meta, '', $path, 'POST');
     }
 
-    echo ' as ' . preg_replace('|tx:[^/]+|', '', $fedoraRes->getUri()) . "\n";
+    echo ' as ' . $fedoraRes->getUri(true) . "\n";
+    $imported[] = $fedoraRes->getUri(true);
+}
+
+function checkRestriction(Resource $r): bool {
+    // TODO
+    return true;
 }
 
 ###################
@@ -120,7 +120,8 @@ try {
         'ontology' => RC::vocabsNmsp() . 'ontology',
         'ontology/class' => 'http://www.w3.org/2002/07/owl#class',
         'ontology/objectProperty' => 'http://www.w3.org/2002/07/owl#objectProperty',
-        'ontology/datatypeProperty' => 'http://www.w3.org/2002/07/owl#datatypeProperty'
+        'ontology/datatypeProperty' => 'http://www.w3.org/2002/07/owl#datatypeProperty',
+        'ontology/restriction' => 'http://www.w3.org/2002/07/owl#Restriction',
     );
 
     foreach ($collections as $i => $id) {
@@ -136,19 +137,28 @@ try {
     }
 
     # Create resources
+    $imported = [];
+    
     $t = 'http://www.w3.org/2002/07/owl#Class';
     foreach ($ontology->allOfType($t) as $i) {
-        saveOrUpdate($i, $fedora, 'ontology/class/', $ontology);
+        $tmp = saveOrUpdate($i, $fedora, 'ontology/class/', $ontology, $imported);
     }
 
     $t = 'http://www.w3.org/2002/07/owl#ObjectProperty';
     foreach ($ontology->allOfType($t) as $i) {
-        saveOrUpdate($i, $fedora, 'ontology/objectProperty/', $ontology);
+        saveOrUpdate($i, $fedora, 'ontology/objectProperty/', $ontology, $imported);
     }
 
     $t = 'http://www.w3.org/2002/07/owl#DatatypeProperty';
     foreach ($ontology->allOfType($t) as $i) {
-        saveOrUpdate($i, $fedora, 'ontology/datatypeProperty/', $ontology);
+        saveOrUpdate($i, $fedora, 'ontology/datatypeProperty/', $ontology, $imported);
+    }
+
+    $t = 'http://www.w3.org/2002/07/owl#Restriction';
+    foreach ($ontology->allOfType($t) as $i) {
+        if (checkRestriction($i)) {
+            $tmp = saveOrUpdate($i, $fedora, 'ontology/restriction/', $ontology, $imported);
+        }
     }
 
     # Import ontology as a binary
@@ -203,13 +213,32 @@ try {
         // passing same id between resources is possible only by removing it from one, 
         // commiting transaction and then setting it on other resource in a new transaction
         $fedora->begin();
+        $new->getAcl()->createAcl()->grant(WAR::USER, WAR::PUBLIC_USER, WAR::READ);
         $newMeta = $new->getMetadata();
         $newMeta->addResource(RC::idProp(), $curId);
         $new->setMetadata($newMeta);
         $new->updateMetadata();
-        $new->getAcl()->createAcl()->grant(WAR::USER, WAR::PUBLIC_USER, WAR::READ);
         $fedora->commit();
     }
+
+    // remove obsolete resources
+    echo "removing obsolete resources...\n";
+    array_shift($collections);
+    foreach ($collections as $uri => $id) {
+        $col = $fedora->getResourceByUri($uri);
+        foreach ($col->getChildren() as $res) {
+            if (!in_array($res->getUri(true), $imported)) {
+                echo "    " . $res->getUri(true) . "\n";
+                $res->delete(true);
+            }
+        }
+    }
+
+    // grant read rights for public
+    echo "granting read rights...\n";
+    $fedora->begin();
+    $fedora->getResourceByUri('/ontology')->getAcl()->createAcl()->grant(WAR::USER, WAR::PUBLIC_USER, WAR::READ);
+    $fedora->commit();
 } catch (Exception $e) {
     $fedora->rollback();
     throw $e;

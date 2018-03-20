@@ -59,6 +59,14 @@ try {
 
     # Create resources
     $imported = [];
+
+    // restrictions go first as checkRestriction() can affect the whole graph
+    foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#Restriction') as $i) {
+        if (checkRestriction($i)) {
+            $tmp = saveOrUpdate($i, $fedora, 'ontology/restriction/', $imported);
+        }
+    }
+
     foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#Class') as $i) {
         $tmp = saveOrUpdate($i, $fedora, 'ontology/class/', $imported);
     }
@@ -69,12 +77,6 @@ try {
 
     foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#DatatypeProperty') as $i) {
         saveOrUpdate($i, $fedora, 'ontology/datatypeProperty/', $imported);
-    }
-
-    foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#Restriction') as $i) {
-        if (checkRestriction($i)) {
-            $tmp = saveOrUpdate($i, $fedora, 'ontology/restriction/', $imported);
-        }
     }
 
     # Import ontology as a binary

@@ -164,6 +164,13 @@ function checkRestriction(Resource $r): bool {
         }
     }
     
+    // fix class inheritance
+    $id = generateRestrictionId($r);
+    foreach ($children as $i) {
+        $i->deleteResource('http://www.w3.org/2000/01/rdf-schema#subClassOf', $r);
+        $i->addResource('http://www.w3.org/2000/01/rdf-schema#subClassOf', $id);
+    }
+
     return true;
 }
 

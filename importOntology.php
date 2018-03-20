@@ -59,7 +59,6 @@ try {
 
     # Create resources
     $imported = [];
-    
     foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#Class') as $i) {
         $tmp = saveOrUpdate($i, $fedora, 'ontology/class/', $imported);
     }
@@ -140,6 +139,7 @@ try {
 
     // remove obsolete resources
     echo "removing obsolete resources...\n";
+    $fedora->begin();
     array_shift($collections);
     foreach ($collections as $uri => $id) {
         $col = $fedora->getResourceByUri($uri);
@@ -150,6 +150,7 @@ try {
             }
         }
     }
+    $fedora->commit();
 
     // grant read rights for public
     echo "granting read rights...\n";

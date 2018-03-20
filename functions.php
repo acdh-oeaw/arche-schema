@@ -98,6 +98,10 @@ function doesInherit(Resource $what, Resource $from): bool {
  * Checks if a given restriction is consistent with the rest of the ontology
  */
 function checkRestriction(Resource $r): bool {
+    static $values = [];
+
+    $id = generateRestrictionId($r);
+
     // there must be at least one class connected with the restriction 
     // (which in owl terms means there must be at least one class inheriting from the restriction)
     $children = $r->getGraph()->resourcesMatching('http://www.w3.org/2000/01/rdf-schema#subClassOf', $r);
@@ -149,6 +153,13 @@ function checkRestriction(Resource $r): bool {
         $rangeMatch += $i === $propRange;
     }
     
+    // restrictions can't be duplicated or provide different cardinality values for the same restriction type
+    if (isset($values[$id])) {
+        echo $r->getUri() . " - duplicated restriction\n";
+        return false;
+    }
+    $values[$id] = '';
+    
     // simplify qualified restrictions which qualified rules don't differ from restriction's property range
     if (count($onClass) + count($onDataRange) === $rangeMatch && $rangeMatch > 0) {
         echo "simplifying " . $r->getUri() . "\n";
@@ -163,9 +174,16 @@ function checkRestriction(Resource $r): bool {
             $r->delete($srcProp);
         }
     }
+
+    // minQualifiedCardinality equal to 0 provides no information
+    // (evaluated after simplification)
+    if (count($r->allLiterals('http://www.w3.org/2002/07/owl#minQualifiedCardinality', 0)) > 0) {
+        echo $r->getUri() . " - owl:minQualifiedCardinality = 0 which doesn't provide any useful information\n";
+        return false;
+    }
+    
     
     // fix class inheritance
-    $id = generateRestrictionId($r);
     foreach ($children as $i) {
         $i->deleteResource('http://www.w3.org/2000/01/rdf-schema#subClassOf', $r);
         $i->addResource('http://www.w3.org/2000/01/rdf-schema#subClassOf', $id);

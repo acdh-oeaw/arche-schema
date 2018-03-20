@@ -2,7 +2,13 @@
 
 <?php
 
-include '/var/www/html/vendor/autoload.php';
+if (file_exists('/var/www/html/vendor/autoload.php')) {
+    include '/var/www/html/vendor/autoload.php';
+    $cfgFile = '/var/www/html/config.ini';
+} else {
+    include __DIR__ . '/vendor/autoload.php';
+    $cfgFile = __DIR__ . '/config.ini';
+}
 include __DIR__ . '/functions.php';
 
 use acdhOeaw\util\RepoConfig as RC;
@@ -14,7 +20,7 @@ if ($argc < 2 || !file_exists($argv[1])) {
     return;
 }
 
-RC::init('/var/www/html/config.ini');
+RC::init($cfgFile);
 
 # some of the prefixes are not available in the easyrdf namespace...
 RdfNamespace::set('dct', 'http://purl.org/dc/terms/');

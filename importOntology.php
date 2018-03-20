@@ -3,6 +3,7 @@
 <?php
 
 include '/var/www/html/vendor/autoload.php';
+include __DIR__ . '/functions.php';
 
 use acdhOeaw\util\RepoConfig as RC;
 use acdhOeaw\fedora\acl\WebAclRule as WAR;
@@ -27,91 +28,11 @@ RdfNamespace::set('dct', 'http://purl.org/dc/terms/');
 RdfNamespace::set('acdh', RC::vocabsNmsp());
 
 ###################
-# helper functions
-###################
-
-function saveOrUpdate($res, $fedora, $path, $ontology, &$imported) {
-    static $ids = array();
-
-    if ($res->isA('http://www.w3.org/2002/07/owl#Restriction')) {
-        // restrictions in owl are anonymous, we need to create ids for them automatically
-        $idProps = [];
-        foreach ($res->allResources('http://www.w3.org/2002/07/owl#onProperty') as $i) {
-            $idProps[] = $i->getUri();
-        }
-        foreach ($res->allResources('http://www.w3.org/2002/07/owl#onDataRange') as $i) {
-            $idProps[] = $i->getUri();
-        }
-        foreach ($res->allResources('http://www.w3.org/2002/07/owl#onClass') as $i) {
-            $idProps[] = $i->getUri();
-        }
-        $idProps = array_unique($idProps);
-        sort($idProps);
-        $id = RC::vocabsNmsp() . 'restriction-' . md5(implode(',', $idProps));
-    } else {
-        $id = RdfNamespace::expand($res->getUri());
-        if (preg_match('/^_:genid[0-9]+$/', $id)) {
-            echo "Skipping an anonymous resource \n" . $res->dump('text');
-            return;
-        }
-    }
-
-    if (in_array($id, $ids)) {
-        echo "Skipping a duplicated resource \n" . $res->dump('text');
-        return;
-    }
-    $ids[] = $id;
-
-    $graph = new Graph();
-    $meta = $graph->resource('.');
-
-    foreach ($res->properties() as $p) {
-        foreach ($res->allLiterals($p) as $v) {
-            if ($v->getValue() !== '') {
-                $meta->addLiteral($p, $v->getValue(), $v->getLang());
-            }
-        }
-
-        foreach ($res->allResources($p) as $v) {
-            if ($v->isBNode()) {
-                continue;
-            }
-            $meta->addResource($p, $v);
-        }
-    }
-
-    $meta->addResource(RC::idProp(), $id);
-
-    if (!$meta->hasProperty(RC::get('doorkeeperOntologyLabelProp'))) {
-        $meta->addLiteral(RC::get('doorkeeperOntologyLabelProp'), preg_replace('|^.*[/#]|', '', $id));
-    }
-
-    try {
-        $fedoraRes = $fedora->getResourceById($id);
-        echo "updating " . $id . " as ";
-        $fedoraRes->setMetadata($meta);
-        $fedoraRes->updateMetadata();
-    } catch (NotFound $e) {
-        echo "creating " . $id;
-        $fedoraRes = $fedora->createResource($meta, '', $path, 'POST');
-    }
-
-    echo ' as ' . $fedoraRes->getUri(true) . "\n";
-    $imported[] = $fedoraRes->getUri(true);
-}
-
-function checkRestriction(Resource $r): bool {
-    // TODO
-    return true;
-}
-
-###################
 # parse owl
 ###################
 
 $ontology = new Graph();
 $ontology->parseFile($argv[1]);
-$restr = array();
 
 try {
     $fedora->begin();
@@ -139,25 +60,21 @@ try {
     # Create resources
     $imported = [];
     
-    $t = 'http://www.w3.org/2002/07/owl#Class';
-    foreach ($ontology->allOfType($t) as $i) {
-        $tmp = saveOrUpdate($i, $fedora, 'ontology/class/', $ontology, $imported);
+    foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#Class') as $i) {
+        $tmp = saveOrUpdate($i, $fedora, 'ontology/class/', $imported);
     }
 
-    $t = 'http://www.w3.org/2002/07/owl#ObjectProperty';
-    foreach ($ontology->allOfType($t) as $i) {
-        saveOrUpdate($i, $fedora, 'ontology/objectProperty/', $ontology, $imported);
+    foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#ObjectProperty') as $i) {
+        saveOrUpdate($i, $fedora, 'ontology/objectProperty/', $imported);
     }
 
-    $t = 'http://www.w3.org/2002/07/owl#DatatypeProperty';
-    foreach ($ontology->allOfType($t) as $i) {
-        saveOrUpdate($i, $fedora, 'ontology/datatypeProperty/', $ontology, $imported);
+    foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#DatatypeProperty') as $i) {
+        saveOrUpdate($i, $fedora, 'ontology/datatypeProperty/', $imported);
     }
 
-    $t = 'http://www.w3.org/2002/07/owl#Restriction';
-    foreach ($ontology->allOfType($t) as $i) {
+    foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#Restriction') as $i) {
         if (checkRestriction($i)) {
-            $tmp = saveOrUpdate($i, $fedora, 'ontology/restriction/', $ontology, $imported);
+            $tmp = saveOrUpdate($i, $fedora, 'ontology/restriction/', $imported);
         }
     }
 
@@ -243,3 +160,4 @@ try {
     $fedora->rollback();
     throw $e;
 }
+

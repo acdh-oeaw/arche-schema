@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://vocabs.acdh.oeaw.ac.at/acdh#"
-     xml:base="https://vocabs.acdh.oeaw.ac.at/acdh"
+<rdf:RDF xmlns="https://vocabs.acdh.oeaw.ac.at/schema#"
+     xml:base="https://vocabs.acdh.oeaw.ac.at/schema"
      xmlns:dct="http://purl.org/dc/terms/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -226,14 +226,7 @@ When reusing definitions from other vocabularies (esp. DataCite), the reference 
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContinuedBy"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
         <rdfs:comment xml:lang="en">Indicates A is a continuation of the work B.</rdfs:comment>
         <rdfs:label xml:lang="en">continues</rdfs:label>
         <skos:altLabel xml:lang="en">Continues</skos:altLabel>
@@ -741,14 +734,7 @@ This is a generic property. Use one of the more specific sub-properties where po
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isActor">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isCoverage"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
         <rdfs:comment xml:lang="en">Any person or institution (A) which the given resource (B) mentions or is about.</rdfs:comment>
         <rdfs:label xml:lang="en">is actor</rdfs:label>
         <skos:altLabel xml:lang="en">Is actor</skos:altLabel>
@@ -775,14 +761,7 @@ This is a generic property. Use one of the more specific sub-properties where po
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isAuthor">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isCreator"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
         <rdfs:comment xml:lang="en">Author of resource, who will appear in the citation of it. The author is used to indicate the originator of any written work. For any other types of work use &apos;Creator&apos;.</rdfs:comment>
         <rdfs:label xml:lang="en">is author</rdfs:label>
         <skos:altLabel xml:lang="en">Author</skos:altLabel>
@@ -824,14 +803,7 @@ This is a generic property. Use one of the more specific sub-properties where po
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isContact">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributor"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
         <rdfs:comment xml:lang="en">Person or Organisation that can be contacted regarding information about a Resource or a Project.</rdfs:comment>
         <rdfs:comment xml:lang="en">Person with knowledge of how to access, troubleshoot, or otherwise field issues related to the resource. (DataCite: ContactPerson)</rdfs:comment>
         <rdfs:label xml:lang="en">is contact</rdfs:label>
@@ -860,14 +832,7 @@ This is a generic property. Use one of the more specific sub-properties where po
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isContributor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
         <rdfs:comment xml:lang="en"></rdfs:comment>
         <rdfs:comment xml:lang="en">Agent (person, group, organisation) (A) who was actively involved in creating/curating/editing a Resource, a Collection or in a Project (B). Any person or institution making a significant contribution to the development and/or maintenance of the resource, but whose contribution does not “fit” to another already defined role. (cf. DataCite: Other)
 This is a generic property. Use one of the more specific sub-properties where possible.</rdfs:comment>
@@ -896,14 +861,7 @@ This is a generic property. Use one of the more specific sub-properties where po
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isCreator">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributor"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
         <rdfs:comment xml:lang="en">Person involved in the creation of a resource.</rdfs:comment>
         <rdfs:label xml:lang="en">is creator</rdfs:label>
         <skos:altLabel xml:lang="en">Is creator</skos:altLabel>
@@ -987,14 +945,7 @@ This is a generic property. Use one of the more specific sub-properties where po
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isEditor">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributor"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
         <rdfs:comment xml:lang="en">A person who oversees the details related to the publication format of the resource. (DataCite: Editor)</rdfs:comment>
         <rdfs:label xml:lang="en">is editor</rdfs:label>
         <skos:altLabel xml:lang="en">Is editor</skos:altLabel>
@@ -1020,14 +971,7 @@ This is a generic property. Use one of the more specific sub-properties where po
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isFunder">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributor"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
         <rdfs:comment xml:lang="en">Person or Organisation which provided funding for the project.</rdfs:comment>
         <rdfs:comment xml:lang="en">Person or organisation that issued a contract or under the auspices of which a work has been written, printed, published, developed, etc. (DataCite: Sponsor)</rdfs:comment>
         <rdfs:label xml:lang="en">is funder</rdfs:label>
@@ -1112,14 +1056,7 @@ This is a generic property. Use one of the more specific sub-properties where po
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isMetadataCreator">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributor"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
         <rdfs:comment xml:lang="en">Person responsible for creating metadata.</rdfs:comment>
         <rdfs:label xml:lang="en">is metadata creator</rdfs:label>
         <skos:altLabel xml:lang="en">Created metadata</skos:altLabel>
@@ -1219,14 +1156,7 @@ This is a generic property. Use one of the more specific sub-properties where po
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isPrincipalInvestigator">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributor"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
         <rdfs:comment xml:lang="en">Person officially designated as head of project team or subproject team instrumental in the work necessary to development of the resource. (DataCite: ProjectLeader)</rdfs:comment>
         <rdfs:label xml:lang="en">is principal investigator</rdfs:label>
         <skos:altLabel xml:lang="en">Is principal investigator</skos:altLabel>
@@ -1325,14 +1255,7 @@ This is a generic property. Use one of the more specific sub-properties where po
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isSpatialCoverage">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isCoverage"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Place"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
         <rdfs:comment xml:lang="en">A  place, geographic location (A) covered/mentioned in a Project, Collection or Resource (B); e.g. &apos;Pannonia&apos; as a location for data from archaeological excavations or &apos;Austria&apos; as a originating place for a collection of digitised newspapers.</rdfs:comment>
         <rdfs:label xml:lang="en">is spatial coverage</rdfs:label>
         <skos:altLabel xml:lang="de">Geografisch behandelt in</skos:altLabel>
@@ -1346,14 +1269,7 @@ This is a generic property. Use one of the more specific sub-properties where po
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isSubject">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isCoverage"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Concept"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-                    <rdf:Description rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
         <rdfs:comment xml:lang="en">Subject of Project, Collection or Resource. Can be used as keywords for search.</rdfs:comment>
         <rdfs:label xml:lang="en">is subject</rdfs:label>
         <skos:altLabel xml:lang="en">Is subject of</skos:altLabel>
@@ -1559,7 +1475,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has access restriction</rdfs:label>
         <skos:altLabel xml:lang="en">Access restriction</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugriffsbeschränkung</skos:altLabel>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/en/</acdh:vocabs>
+        <vocabs>https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/en/</vocabs>
     </owl:DatatypeProperty>
     
 
@@ -1685,7 +1601,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has category</rdfs:label>
         <skos:altLabel xml:lang="en">Category</skos:altLabel>
         <skos:altLabel xml:lang="de">Kategorie</skos:altLabel>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/archecategory/en/</acdh:vocabs>
+        <vocabs>https://vocabs.acdh.oeaw.ac.at/archecategory/en/</vocabs>
     </owl:DatatypeProperty>
     
 
@@ -2027,7 +1943,7 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <rdfs:label xml:lang="en">has life cycle status</rdfs:label>
         <skos:altLabel xml:lang="de">Lebenszyklusstatus</skos:altLabel>
         <skos:altLabel xml:lang="en">Life cycle status</skos:altLabel>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/archelifecyclestatus/en/</acdh:vocabs>
+        <vocabs>https://vocabs.acdh.oeaw.ac.at/archelifecyclestatus/en/</vocabs>
     </owl:DatatypeProperty>
     
 
@@ -3147,1021 +3063,6 @@ The different roles an Agent can assume with respect to a Project, Collection, R
         <skos:altLabel xml:lang="en">Collection</skos:altLabel>
         <skos:altLabel xml:lang="de">Sammlung</skos:altLabel>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasSource"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasSpatialCoverage"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Place"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasSubject"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isCitedBy"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isCompiledBy"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContinuedBy"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isDerivedFrom"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isDocumentedBy"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isIdenticalTo"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isNewVersionOf"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isOriginalFormOf"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isPartOf"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isPreviousVersionOf"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isReferencedBy"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isReviewedBy"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isSourceOf"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isSupplementTo"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isSupplementedBy"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isVariantFormOf"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#references"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#reviews"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTitleImage"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Image"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTransferMethod"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAlternativeTitle"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAppliedMethodDescription"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCollectedEndDate"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCollectedStartDate"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCoverageEndDate"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCoverageStartDate"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCreatedDate"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCreatedEndDate"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCreatedStartDate"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLanguage"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasNonLinkedIdentifier"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasPid"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>mandatory</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTechnicalInfo"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasUrl"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasUsedHardware"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasUsedSoftware"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>mandatory</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTitle"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>mandatory</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAcceptedDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasArrangement"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCompleteness"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasEditorialPractice"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasEndpoint"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasExtent"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLifeCycleStatus"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasNamingScheme"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasNote"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasSubmissionDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTableOfContents"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTransferDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasUpdatedDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasValidEndDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasValidStartDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasVersion"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#cites"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#compiles"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#continues"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#documents"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasActor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAppliedMethod"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAuthor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContact"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>mandatory</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCoverage"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCreator"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCurator"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDepositor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>mandatory</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDerivedPublication"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Publication"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasEditor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasFunder"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasHosting"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLicense"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLicensor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasMetadata"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasMetadataCreator"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasOwner"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasPart"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasPrincipalInvestigator"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedProject"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasRightsHolder"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
     
 
 
@@ -4187,6 +3088,12 @@ This class is used to link controlled lists stored in SKOS format to object or d
         <skos:altLabel xml:lang="en">Concept</skos:altLabel>
         <skos:altLabel xml:lang="de">Konzept</skos:altLabel>
     </owl:Class>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#Helper -->
+
+    <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Helper"/>
     
 
 
@@ -4979,6 +3886,14 @@ Note that though a Project might (and usually will) use or produce data, it is N
         <rdfs:label xml:lang="en">Project</rdfs:label>
         <skos:altLabel xml:lang="en">Project</skos:altLabel>
         <skos:altLabel xml:lang="de">Projekt</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject -->
+
+    <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject">
+        <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Helper"/>
     </owl:Class>
     
 

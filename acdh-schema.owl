@@ -423,7 +423,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isFormat"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Resource"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Main"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Concept"/>
         <rdfs:comment xml:lang="en">Format of a resource (A). Indicated as MIME type. Choose from list.</rdfs:comment>
         <rdfs:label xml:lang="en">has format</rdfs:label>
         <skos:altLabel xml:lang="de">Format</skos:altLabel>
@@ -3910,8 +3910,7 @@ Note that though a Project might (and usually will) use or produce data, it is N
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasFormat"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Concept"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>

@@ -29,9 +29,10 @@ RdfNamespace::set('acdh', RC::vocabsNmsp());
 $ontology = new Graph();
 $ontology->parseFile($argv[1]);
 foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#Restriction') as $i) {
-    if (checkRestriction($i)) {
+    $res = checkRestriction($i);
+    if ($res === true) {
         echo $i->getUri() . " - OK\n";
-    } else {
+    } else if ($res === false) {
         echo ' ' . $i->dump('text');
     }
 }

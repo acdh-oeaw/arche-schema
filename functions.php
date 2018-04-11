@@ -94,13 +94,15 @@ function doesInherit(Resource $what, Resource $from): bool {
     return $flag;
 }
 
+function simplifyRestrictionDuplicates(Graph $ontology) {
+    $values = [];
+}
+
 /**
  * Checks if a given restriction is consistent with the rest of the ontology
  */
-function checkRestriction(Resource $r): bool {
+function checkRestriction(Resource $r) {
     static $values = [];
-
-    $id = generateRestrictionId($r);
 
     // there must be at least one class connected with the restriction 
     // (which in owl terms means there must be at least one class inheriting from the restriction)
@@ -152,14 +154,7 @@ function checkRestriction(Resource $r): bool {
         }
         $rangeMatch += $i === $propRange;
     }
-    
-    // restrictions can't be duplicated or provide different cardinality values for the same restriction type
-    if (isset($values[$id])) {
-        echo $r->getUri() . " - duplicated restriction\n";
-        return false;
-    }
-    $values[$id] = '';
-    
+        
     // simplify qualified restrictions which qualified rules don't differ from restriction's property range
     if (count($onClass) + count($onDataRange) === $rangeMatch && $rangeMatch > 0) {
         echo "simplifying " . $r->getUri() . "\n";
@@ -181,13 +176,21 @@ function checkRestriction(Resource $r): bool {
         echo $r->getUri() . " - owl:minQualifiedCardinality = 0 which doesn't provide any useful information\n";
         return false;
     }
-    
-    
+        
+    $id = generateRestrictionId($r);
+
     // fix class inheritance
     foreach ($children as $i) {
         $i->deleteResource('http://www.w3.org/2000/01/rdf-schema#subClassOf', $r);
         $i->addResource('http://www.w3.org/2000/01/rdf-schema#subClassOf', $id);
     }
+
+    // if restriction is duplicated there is no need to import it
+    if (isset($values[$id])) {
+        echo $r->getUri() . " - duplicated restriction (but no actions needed)\n";
+        return null;
+    }
+    $values[$id] = '';
 
     return true;
 }
@@ -203,6 +206,19 @@ function generateRestrictionId(Resource $res): string {
     foreach ($res->allResources('http://www.w3.org/2002/07/owl#onClass') as $i) {
         $idProps[] = $i->getUri();
     }
+    foreach (['q', 'minQ', 'maxQ'] as $i) {
+        $p1 = 'http://www.w3.org/2002/07/owl#' . $i . 'ualifiedCardinality';
+        $p2 = str_replace('qualifiedC', 'c', str_replace('Qualified', '', $p1));
+        $tmp = $res->getLiteral($p1);
+        if ($tmp !== null) {
+            $idProps[] = $i . $tmp->getValue();
+        }
+        $tmp = $res->getLiteral($p2);
+        if ($tmp !== null) {
+            $idProps[] = '_' . $i . $tmp->getValue();
+        }
+    }
+
     $idProps = array_unique($idProps);
     sort($idProps);
     return RC::vocabsNmsp() . 'restriction-' . md5(implode(',', $idProps));

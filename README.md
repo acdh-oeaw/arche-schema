@@ -13,6 +13,9 @@ This is the repo for the `ACDH-Ontology`. The ontology is going to be used to de
 * as usual, class names have to start with a capital letter
 * use camelcase writing
 
+* if a union of classes is required use a helper class
+* helper classes are all subclasses of acdh:Helper
+
 ## Properties
 
 * as usual, property names have to start with a lower case letter
@@ -20,3 +23,10 @@ This is the repo for the `ACDH-Ontology`. The ontology is going to be used to de
 * the _direction_ of a property should be stated in the name of the property. 
   * *BAD* `acdh:title`
   * *GOOD* `acdh:hasTitle`
+  * *BAD* `acdh:isMember`
+  * *GOOD* `acdh:isMemberOf`
+  
+## Ranges
+
+* preferably use types coming form xsd
+  * e.g. use `xsd:string` instead of `rdfs:literal`

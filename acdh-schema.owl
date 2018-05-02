@@ -15,6 +15,18 @@
         <rdfs:comment xml:lang="en">Dies ist die Ontologie für ARCHE.
 In den Definitionen der Eigenschaften, meint &quot;Ressource A&quot; das Subject und &quot;Ressource B&quot; das Objekt.
 When Definitionen aus anderen Schemata (z. B. DataCite) wiederverwendet werden, wird die Referenz in Klammern angegeben: (DataCite: ContactPerson). When die ursprüngliche Definition leicht angepasst wurde, ist die Referenz mit &quot;cf.&quot; markiert.</rdfs:comment>
+        <owl:versionInfo xml:lang="en">Version 1.2 released on 2018-0X-XX.
+Removed hasCopyrightedDate, hasValidEndDate, hasValidStartDate, cites, compiles, isAppliedMethod, isCitedBy, isCompiledBy, isDerivedFrom, isFormat, isIdenticalTo, isLicense, isOriginalFormOf, isReferencedBy, isRelatedDiscipline, isReviewedBy, isSchema, isSubject, isSupplementTo, isSupplementedBy, isTransferMethod, isVariantFormOf, references, and reviews.
+
+Introduced hasRestrictionRole and hasTemporalCoverageIdentifier.
+
+Transformed further object properties into datatype properties (hasSchema, hasTransferMethod, hasSubject, hasRelatedDiscipline, hasLicense, hasFormat, hasAppliedMethod).
+
+Renamed several properties is... to is...Of to indicate direction of relation. Also renamed hasEndpoint to hasLandingPage.
+
+Introduced Helper classes to avoid anonymous class unions. Added domains and ranges to all properties accordingly.
+
+Introduced annotation property acdh:ordering to indicate how properties should be ordered when displayed in a form.</owl:versionInfo>
         <owl:versionInfo xml:lang="de">Version 1.1 veröffentlicht am 2018-01-15.
 Name von achd:language auf acdh:hasLanguage geändert.
 achd:hasIssuedDate wurde entfernt.
@@ -30,16 +42,6 @@ Transformed some object properties into datatype properties (hasAccessRestrictio
         <rdfs:comment xml:lang="en">This is the ontology for ARCHE.
 In definitions of properties, &quot;resource A&quot; refers to the subject resource of the property and &quot;resource B&quot; to the object resource.
 When reusing definitions from other vocabularies (esp. DataCite), the reference is given in brackets: (DataCite: ContactPerson). When the source definition was changed slightly the reference is marked with &quot;cf.&quot;</rdfs:comment>
-        <owl:versionInfo xml:lang="en">Version 1.2 released on 2018-0X-XX.
-Removed hasCopyrightedDate, hasValidEndDate, hasValidStartDate, cites, compiles, isAppliedMethod, isCitedBy, isCompiledBy, isDerivedFrom, isFormat, isIdenticalTo, isLicense, isOriginalFormOf, isReferencedBy, isRelatedDiscipline, isReviewedBy, isSchema, isSubject, isSupplementTo, isSupplementedBy, isTransferMethod, isVariantFormOf, references, and reviews.
-
-Introduced hasRestrictionRole and hasTemporalCoverageIdentifier.
-
-Transformed further object properties into datatype properties (hasSchema, hasTransferMethod, hasSubject, hasRelatedDiscipline, hasLicense, hasFormat, hasAppliedMethod).
-
-Renamed several properties is... to is...Of to indicate direction of relation. Also renamed hasEndpoint to hasLandingPage.
-
-Introduced Helper classes to avoid anonymous class unions. Added domains and ranges to all properties accordingly.</owl:versionInfo>
         <rdfs:label>ACDH Schema</rdfs:label>
     </owl:Ontology>
     
@@ -82,12 +84,25 @@ Introduced Helper classes to avoid anonymous class unions. Added domains and ran
     
 
 
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#ordinality -->
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#ordering -->
 
-    <owl:AnnotationProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#ordinality">
-        <rdfs:comment xml:lang="en">Indicates if the property is mandatory, recommended or optional.</rdfs:comment>
-        <rdfs:label>ordinality</rdfs:label>
-        <skos:altLabel xml:lang="en">Ordinality</skos:altLabel>
+    <owl:AnnotationProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#ordering">
+        <rdfs:comment xml:lang="en">Indicates the ordering of properties with numerical values. Insert numbers.</rdfs:comment>
+        <rdfs:label>ordering</rdfs:label>
+        <skos:altLabel xml:lang="de">Anordnung</skos:altLabel>
+        <skos:altLabel xml:lang="en">Ordering</skos:altLabel>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#recommendedClass -->
+
+    <owl:AnnotationProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#recommendedClass">
+        <rdfs:comment xml:lang="en">Used to indicate in which class a property is recommended, but not mandatory.
+Insert full IRI of class</rdfs:comment>
+        <rdfs:label>recommended class</rdfs:label>
+        <skos:altLabel xml:lang="de">Empfohlen in Klasse</skos:altLabel>
+        <skos:altLabel xml:lang="en">Recommended in class</skos:altLabel>
     </owl:AnnotationProperty>
     
 
@@ -1079,6 +1094,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has accepted date</rdfs:label>
         <skos:altLabel xml:lang="de">Annahmedatum</skos:altLabel>
         <skos:altLabel xml:lang="en">Date of acceptance</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">119</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1092,6 +1108,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has access restriction</rdfs:label>
         <skos:altLabel xml:lang="en">Access restriction</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugriffsbeschränkung</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">86</acdh:ordering>
         <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/en/</acdh:vocabs>
     </owl:DatatypeProperty>
     
@@ -1106,6 +1123,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has address</rdfs:label>
         <skos:altLabel xml:lang="en">Address</skos:altLabel>
         <skos:altLabel xml:lang="de">Adresse</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1120,6 +1138,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has address line 1</rdfs:label>
         <skos:altLabel xml:lang="de">Addresszeile 1</skos:altLabel>
         <skos:altLabel xml:lang="en">Adresse Line 1</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1134,6 +1153,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has address line 2</rdfs:label>
         <skos:altLabel xml:lang="de">Addresszeile 2</skos:altLabel>
         <skos:altLabel xml:lang="en">Adresse Line 2</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1147,6 +1167,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has alternative title</rdfs:label>
         <skos:altLabel xml:lang="en">Alternative title</skos:altLabel>
         <skos:altLabel xml:lang="de">Alternativtitel</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1159,6 +1180,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has applied method</rdfs:label>
         <skos:altLabel xml:lang="de">Angewandte Methode</skos:altLabel>
         <skos:altLabel xml:lang="en">Applied method</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1174,6 +1196,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:seeAlso rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAppliedMethod"/>
         <skos:altLabel xml:lang="de">Beschreibung der angewandten Methoden</skos:altLabel>
         <skos:altLabel xml:lang="en">Description of applied method</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1188,6 +1211,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has arrangement</rdfs:label>
         <skos:altLabel xml:lang="en">Description of arrangement</skos:altLabel>
         <skos:altLabel xml:lang="de">Strukturbeschreibung</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1203,6 +1227,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has available date</rdfs:label>
         <skos:altLabel xml:lang="en">Available since</skos:altLabel>
         <skos:altLabel xml:lang="de">Verfügbar seit</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">149</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1217,6 +1242,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has binary size</rdfs:label>
         <skos:altLabel xml:lang="de">Größe</skos:altLabel>
         <skos:altLabel xml:lang="en">Size</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">111</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1230,6 +1256,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has category</rdfs:label>
         <skos:altLabel xml:lang="en">Category</skos:altLabel>
         <skos:altLabel xml:lang="de">Kategorie</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47</acdh:ordering>
         <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/archecategory/en/</acdh:vocabs>
     </owl:DatatypeProperty>
     
@@ -1246,6 +1273,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has character encoding</rdfs:label>
         <skos:altLabel xml:lang="en">Character encoding</skos:altLabel>
         <skos:altLabel xml:lang="de">Zeichenkodierung</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1260,6 +1288,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has city</rdfs:label>
         <skos:altLabel xml:lang="en">City/Town</skos:altLabel>
         <skos:altLabel xml:lang="de">Stadt</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1275,6 +1304,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has collected end date</rdfs:label>
         <skos:altLabel xml:lang="en">Date of data collection (end)</skos:altLabel>
         <skos:altLabel xml:lang="de">Datum der Zusammenstellung (Ende)</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1290,6 +1320,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has collected start date</rdfs:label>
         <skos:altLabel xml:lang="en">Date of data collection (start)</skos:altLabel>
         <skos:altLabel xml:lang="de">Datum der Zusammenstellung (Start)</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">94</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1306,6 +1337,8 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:seeAlso>acdh:hasLifeCycleStatus</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">Completeness statement</skos:altLabel>
         <skos:altLabel xml:lang="de">Vollständigkeitsangaben</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</acdh:ordering>
+        <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Collection</acdh:recommendedClass>
     </owl:DatatypeProperty>
     
 
@@ -1320,6 +1353,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has country</rdfs:label>
         <skos:altLabel xml:lang="en">Country</skos:altLabel>
         <skos:altLabel xml:lang="de">Land</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1334,6 +1368,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has coverage end date</rdfs:label>
         <skos:altLabel xml:lang="en">Coverage end date</skos:altLabel>
         <skos:altLabel xml:lang="de">Ende der abgedeckten Zeitperiode</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">81</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1348,6 +1383,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has coverage start date</rdfs:label>
         <skos:altLabel xml:lang="de">Anfang der abgedeckten Periode</skos:altLabel>
         <skos:altLabel xml:lang="en">Coverage start date</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1363,6 +1399,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has created date</rdfs:label>
         <skos:altLabel xml:lang="en">Date of creation</skos:altLabel>
         <skos:altLabel xml:lang="de">Erstellungsdatum</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">91</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1378,6 +1415,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has created end date</rdfs:label>
         <skos:altLabel xml:lang="en">Date of creation (end)</skos:altLabel>
         <skos:altLabel xml:lang="de">Erstellungsdatum (Ende)</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">93</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1393,6 +1431,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has created start date</rdfs:label>
         <skos:altLabel xml:lang="en">Date of creation (start)</skos:altLabel>
         <skos:altLabel xml:lang="de">Erstellungsdatum (Start)</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">92</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1407,6 +1446,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has date</rdfs:label>
         <skos:altLabel xml:lang="en">Date</skos:altLabel>
         <skos:altLabel xml:lang="de">Datum</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1421,6 +1461,8 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has description</rdfs:label>
         <skos:altLabel xml:lang="de">Beschreibung</skos:altLabel>
         <skos:altLabel xml:lang="en">Description</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</acdh:ordering>
+        <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Collection</acdh:recommendedClass>
     </owl:DatatypeProperty>
     
 
@@ -1435,6 +1477,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has editorial practice</rdfs:label>
         <skos:altLabel xml:lang="de">Angewendete editorische Praxis</skos:altLabel>
         <skos:altLabel xml:lang="en">Editorial practice used</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">57</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1449,6 +1492,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has email</rdfs:label>
         <skos:altLabel xml:lang="de">E-Mail</skos:altLabel>
         <skos:altLabel xml:lang="en">E-mail</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1463,6 +1507,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has end date</rdfs:label>
         <skos:altLabel xml:lang="en">End date</skos:altLabel>
         <skos:altLabel xml:lang="de">Enddatum</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1477,6 +1522,9 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has extent</rdfs:label>
         <skos:altLabel xml:lang="en">Extent</skos:altLabel>
         <skos:altLabel xml:lang="de">Umfang</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">46</acdh:ordering>
+        <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Collection</acdh:recommendedClass>
+        <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Resource</acdh:recommendedClass>
     </owl:DatatypeProperty>
     
 
@@ -1491,6 +1539,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has first name</rdfs:label>
         <skos:altLabel xml:lang="en">First name</skos:altLabel>
         <skos:altLabel xml:lang="de">Vorname</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1504,6 +1553,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:label xml:lang="en">has format</rdfs:label>
         <skos:altLabel xml:lang="de">Format</skos:altLabel>
         <skos:altLabel xml:lang="en">Format</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">112</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1520,6 +1570,10 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <rdfs:label xml:lang="en">has identifier</rdfs:label>
         <skos:altLabel xml:lang="en">Identifier</skos:altLabel>
         <skos:altLabel xml:lang="de">Identifikator</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</acdh:ordering>
+        <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Collection</acdh:recommendedClass>
+        <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Project</acdh:recommendedClass>
+        <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Resource</acdh:recommendedClass>
     </owl:DatatypeProperty>
     
 
@@ -1534,6 +1588,7 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <rdfs:label xml:lang="en">has landing page</rdfs:label>
         <skos:altLabel xml:lang="en">Landing page</skos:altLabel>
         <skos:altLabel xml:lang="de">Landingpage</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">114</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1547,6 +1602,9 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <rdfs:label xml:lang="en">has language</rdfs:label>
         <skos:altLabel xml:lang="en">Language</skos:altLabel>
         <skos:altLabel xml:lang="de">Sprache</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">41</acdh:ordering>
+        <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Collection</acdh:recommendedClass>
+        <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Resource</acdh:recommendedClass>
     </owl:DatatypeProperty>
     
 
@@ -1561,6 +1619,7 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <rdfs:label xml:lang="en">has last name</rdfs:label>
         <skos:altLabel xml:lang="en">Last name</skos:altLabel>
         <skos:altLabel xml:lang="de">Nachname</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1574,6 +1633,7 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <rdfs:label xml:lang="en">has latitude</rdfs:label>
         <skos:altLabel xml:lang="de">Breitengrad</skos:altLabel>
         <skos:altLabel xml:lang="en">Latitude</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">130</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1587,6 +1647,7 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <rdfs:label xml:lang="en">has license</rdfs:label>
         <skos:altLabel xml:lang="en">License</skos:altLabel>
         <skos:altLabel xml:lang="de">Lizenz</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1600,6 +1661,8 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <rdfs:label xml:lang="en">has life cycle status</rdfs:label>
         <skos:altLabel xml:lang="de">Lebenszyklusstatus</skos:altLabel>
         <skos:altLabel xml:lang="en">Life cycle status</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43</acdh:ordering>
+        <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Collection</acdh:recommendedClass>
         <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/archelifecyclestatus/en/</acdh:vocabs>
     </owl:DatatypeProperty>
     
@@ -1615,6 +1678,7 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <rdfs:label xml:lang="en">has location path</rdfs:label>
         <skos:altLabel xml:lang="de">Dateipfad</skos:altLabel>
         <skos:altLabel xml:lang="en">File path</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">113</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1628,6 +1692,7 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <rdfs:label xml:lang="en">has longitude</rdfs:label>
         <skos:altLabel xml:lang="en">Longitude</skos:altLabel>
         <skos:altLabel xml:lang="de">Längengrad</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">131</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1642,6 +1707,7 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <rdfs:label xml:lang="en">has naming scheme</rdfs:label>
         <skos:altLabel xml:lang="de">Beschreibung der verwendeten Namenskonventionen</skos:altLabel>
         <skos:altLabel xml:lang="en">Description of naming scheme used</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1658,6 +1724,7 @@ Handles belong into acdh:hasPID and identifiers with stable URL or URI into achd
         <rdfs:label xml:lang="en">has non linked identifier</rdfs:label>
         <skos:altLabel xml:lang="en">Identifier without link</skos:altLabel>
         <skos:altLabel xml:lang="de">Identifikator ohne Link</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1672,6 +1739,7 @@ Handles belong into acdh:hasPID and identifiers with stable URL or URI into achd
         <rdfs:label xml:lang="en">has note</rdfs:label>
         <skos:altLabel xml:lang="en">Note</skos:altLabel>
         <skos:altLabel xml:lang="de">Notiz</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">149</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1686,6 +1754,7 @@ Handles belong into acdh:hasPID and identifiers with stable URL or URI into achd
         <rdfs:label xml:lang="en">has number of items</rdfs:label>
         <skos:altLabel xml:lang="de">Anzahl der Elemente</skos:altLabel>
         <skos:altLabel xml:lang="en">Number of items</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1700,6 +1769,7 @@ Handles belong into acdh:hasPID and identifiers with stable URL or URI into achd
         <rdfs:label xml:lang="en">has pages</rdfs:label>
         <skos:altLabel xml:lang="en">Pages</skos:altLabel>
         <skos:altLabel xml:lang="de">Seiten</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">66</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1713,6 +1783,7 @@ Handles belong into acdh:hasPID and identifiers with stable URL or URI into achd
         <rdfs:label xml:lang="en">has personal title</rdfs:label>
         <skos:altLabel xml:lang="de">Titel</skos:altLabel>
         <skos:altLabel xml:lang="en">Title</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1728,6 +1799,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has pid</rdfs:label>
         <skos:altLabel xml:lang="en">Persistent Identifier</skos:altLabel>
         <skos:altLabel xml:lang="de">Persistenter Identifikator</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">109</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1742,6 +1814,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has postcode</rdfs:label>
         <skos:altLabel xml:lang="en">Postcode/zip code</skos:altLabel>
         <skos:altLabel xml:lang="de">Postleitzahl</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1755,6 +1828,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has publisher</rdfs:label>
         <skos:altLabel xml:lang="en">Publisher</skos:altLabel>
         <skos:altLabel xml:lang="de">Verlag</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1769,6 +1843,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has region</rdfs:label>
         <skos:altLabel xml:lang="de">Staat/Region/Provinz</skos:altLabel>
         <skos:altLabel xml:lang="en">State/region/province</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1782,6 +1857,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has related discipline</rdfs:label>
         <skos:altLabel xml:lang="en">Related research discipline</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugehörige Fachdisziplin</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">74</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1796,6 +1872,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has restriction role</rdfs:label>
         <skos:altLabel xml:lang="en">Access rights for</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugriffserlaubnis für</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">87</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1809,6 +1886,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has schema</rdfs:label>
         <skos:altLabel xml:lang="en">Has schema</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Schema</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">54</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1823,6 +1901,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has series information</rdfs:label>
         <skos:altLabel xml:lang="de">Informationen zur Reihe</skos:altLabel>
         <skos:altLabel xml:lang="en">Series information</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1837,6 +1916,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has start date</rdfs:label>
         <skos:altLabel xml:lang="en">Start date</skos:altLabel>
         <skos:altLabel xml:lang="de">Startdatum</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">89</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1850,6 +1930,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has subject</rdfs:label>
         <skos:altLabel xml:lang="de">Gegenstand</skos:altLabel>
         <skos:altLabel xml:lang="en">Subject</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1865,6 +1946,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has submission date</rdfs:label>
         <skos:altLabel xml:lang="en">Date of submission</skos:altLabel>
         <skos:altLabel xml:lang="de">Einreichungsdatum</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">118</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1879,6 +1961,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has table of contents</rdfs:label>
         <skos:altLabel xml:lang="de">Inhaltsverzeichnis</skos:altLabel>
         <skos:altLabel xml:lang="en">Table of contents</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1893,6 +1976,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has technical info</rdfs:label>
         <skos:altLabel xml:lang="en">Technical information</skos:altLabel>
         <skos:altLabel xml:lang="de">Technische Informationen</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1906,6 +1990,7 @@ All other identifiers, like local assigned ones, project numbers or inventory nu
         <rdfs:label xml:lang="en">has temporal coverage</rdfs:label>
         <skos:altLabel xml:lang="en">Temporal coverage</skos:altLabel>
         <skos:altLabel xml:lang="de">Zeitliche Abdeckung</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">79</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1923,6 +2008,7 @@ Eingabe ist eine URI.</rdfs:comment>
         <rdfs:label>has temporal coverage identifier</rdfs:label>
         <skos:altLabel xml:lang="en">Temporal ID</skos:altLabel>
         <skos:altLabel xml:lang="de">Zeitliche ID</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">82</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1937,6 +2023,7 @@ Eingabe ist eine URI.</rdfs:comment>
         <rdfs:label xml:lang="en">has title</rdfs:label>
         <skos:altLabel xml:lang="de">Titel</skos:altLabel>
         <skos:altLabel xml:lang="en">Title</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1951,6 +2038,7 @@ Eingabe ist eine URI.</rdfs:comment>
         <rdfs:label xml:lang="en">has transfer date</rdfs:label>
         <skos:altLabel xml:lang="en">Date of transfer</skos:altLabel>
         <skos:altLabel xml:lang="de">Transferdatum</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1964,6 +2052,7 @@ Eingabe ist eine URI.</rdfs:comment>
         <rdfs:label xml:lang="en">has transfer method</rdfs:label>
         <skos:altLabel xml:lang="en">Transfer method</skos:altLabel>
         <skos:altLabel xml:lang="de">Transfermethode</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">121</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1979,6 +2068,7 @@ Eingabe ist eine URI.</rdfs:comment>
         <rdfs:label xml:lang="en">has updated date</rdfs:label>
         <skos:altLabel xml:lang="en">Date of last update</skos:altLabel>
         <skos:altLabel xml:lang="de">Datum der letzten Aktualisierung</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1993,6 +2083,7 @@ Eingabe ist eine URI.</rdfs:comment>
         <rdfs:label xml:lang="en">has url</rdfs:label>
         <skos:altLabel xml:lang="de">URL</skos:altLabel>
         <skos:altLabel xml:lang="en">URL</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2006,6 +2097,7 @@ Eingabe ist eine URI.</rdfs:comment>
         <rdfs:label xml:lang="en">has used hardware</rdfs:label>
         <skos:altLabel xml:lang="de">Hardware</skos:altLabel>
         <skos:altLabel xml:lang="en">Hardware</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2019,6 +2111,7 @@ Eingabe ist eine URI.</rdfs:comment>
         <rdfs:label xml:lang="en">has used software</rdfs:label>
         <skos:altLabel xml:lang="de">Software</skos:altLabel>
         <skos:altLabel xml:lang="en">Software</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2033,6 +2126,7 @@ Eingabe ist eine URI.</rdfs:comment>
         <rdfs:label xml:lang="en">has version</rdfs:label>
         <skos:altLabel xml:lang="de">Version</skos:altLabel>
         <skos:altLabel xml:lang="en">Version</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">44</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2046,6 +2140,7 @@ Eingabe ist eine URI.</rdfs:comment>
         <rdfs:label xml:lang="en">has wkt</rdfs:label>
         <skos:altLabel xml:lang="de">WKT</skos:altLabel>
         <skos:altLabel xml:lang="en">WKT</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">132</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2170,148 +2265,7 @@ The different roles an Agent can assume with respect to a Project, Collection, R
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContact"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDepositor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTitleImage"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Image"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTitle"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAcceptedDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasArrangement"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCompleteness"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasEditorialPractice"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasExtent"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLandingPage"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLifeCycleStatus"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLocationPath"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasNamingScheme"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasNote"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasSubmissionDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTableOfContents"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTransferDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasUpdatedDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasVersion"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2320,257 +2274,6 @@ The different roles an Agent can assume with respect to a Project, Collection, R
         <skos:altLabel xml:lang="en">Collection</skos:altLabel>
         <skos:altLabel xml:lang="de">Sammlung</skos:altLabel>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>mandatory</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTitle"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>mandatory</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAcceptedDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasArrangement"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContact"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>mandatory</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCompleteness"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasEditorialPractice"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasExtent"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLandingPage"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLifeCycleStatus"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasNamingScheme"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasNote"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasSubmissionDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTableOfContents"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDepositor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>mandatory</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTransferDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasUpdatedDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasVersion"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>optional</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTitleImage"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Image"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <acdh:ordinality>recommended</acdh:ordinality>
-    </owl:Axiom>
     
 
 

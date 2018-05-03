@@ -13,4 +13,4 @@ if ($argc < 2 || !file_exists($argv[1])) {
 
 $g = new EasyRdf\Graph();
 $g->parseFile($argv[1]);
-echo $g->serialise('ntriples');
+echo $g->serialise($argc > 2 ? $argv[2] : 'ntriples');

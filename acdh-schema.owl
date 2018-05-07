@@ -206,6 +206,7 @@ Insert full IRI of class</rdfs:comment>
         <rdfs:label xml:lang="en">continues</rdfs:label>
         <skos:altLabel xml:lang="en">Continues</skos:altLabel>
         <skos:altLabel xml:lang="de">Setzt fort</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">99</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -221,6 +222,7 @@ Insert full IRI of class</rdfs:comment>
         <rdfs:label xml:lang="en">documents</rdfs:label>
         <skos:altLabel xml:lang="en">Documents</skos:altLabel>
         <skos:altLabel xml:lang="de">Dokumentiert</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -236,6 +238,7 @@ Insert full IRI of class</rdfs:comment>
         <rdfs:label xml:lang="en">has actor</rdfs:label>
         <skos:altLabel xml:lang="en">Has actor</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Akteur</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">76</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -251,6 +254,7 @@ Insert full IRI of class</rdfs:comment>
         <rdfs:label xml:lang="en">has author</rdfs:label>
         <skos:altLabel xml:lang="en">Author</skos:altLabel>
         <skos:altLabel xml:lang="de">Autor</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">63</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -267,6 +271,7 @@ Insert full IRI of class</rdfs:comment>
         <rdfs:label xml:lang="en">has contact</rdfs:label>
         <skos:altLabel xml:lang="en">Contact</skos:altLabel>
         <skos:altLabel xml:lang="de">Kontakt</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">61</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -283,6 +288,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has contributor</rdfs:label>
         <skos:altLabel xml:lang="en">Contributor</skos:altLabel>
         <skos:altLabel xml:lang="de">Mitarbeiter oder Beitragender</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -299,6 +305,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <owl:inverseOf></owl:inverseOf>
         <skos:altLabel xml:lang="en">Coverage</skos:altLabel>
         <skos:altLabel xml:lang="de">Deckt ab</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -314,6 +321,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has creator</rdfs:label>
         <skos:altLabel xml:lang="en">Creator</skos:altLabel>
         <skos:altLabel xml:lang="de">Urheber</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">62</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -329,6 +337,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has curator</rdfs:label>
         <skos:altLabel xml:lang="en">Data curator</skos:altLabel>
         <skos:altLabel xml:lang="de">Datenkurator</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">116</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -344,6 +353,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has depositor</rdfs:label>
         <skos:altLabel xml:lang="de">Datengeber</skos:altLabel>
         <skos:altLabel xml:lang="en">Depositor</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">115</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -359,6 +369,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has derived publication</rdfs:label>
         <skos:altLabel xml:lang="en">Has derived publication</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat abgeleitete Publikation</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">101</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -374,6 +385,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has editor</rdfs:label>
         <skos:altLabel xml:lang="en">Editor</skos:altLabel>
         <skos:altLabel xml:lang="de">Herausgeber</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">64</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -389,6 +401,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has funder</rdfs:label>
         <skos:altLabel xml:lang="en">Funder</skos:altLabel>
         <skos:altLabel xml:lang="de">Geldgeber</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -404,6 +417,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has hosting</rdfs:label>
         <skos:altLabel xml:lang="en">Hosted by</skos:altLabel>
         <skos:altLabel xml:lang="de">Wird erhalten/bereitgestellt von</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">117</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -419,6 +433,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has licensor</rdfs:label>
         <skos:altLabel xml:lang="en">Licensor</skos:altLabel>
         <skos:altLabel xml:lang="de">Lizenzgeber</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">84</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -433,6 +448,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has member</rdfs:label>
         <skos:altLabel xml:lang="en">Has member</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Mitglied</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -448,6 +464,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has metadata</rdfs:label>
         <skos:altLabel xml:lang="en">Has metadata</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Metadaten</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -463,6 +480,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has metadata creator</rdfs:label>
         <skos:altLabel xml:lang="en">Metadata creator</skos:altLabel>
         <skos:altLabel xml:lang="de">Metadatenersteller</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">71</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -478,6 +496,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has owner</rdfs:label>
         <skos:altLabel xml:lang="de">Besitzer</skos:altLabel>
         <skos:altLabel xml:lang="en">Owner</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">72</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -493,6 +512,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has part</rdfs:label>
         <skos:altLabel xml:lang="en">Has part</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Teil</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">103</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -508,6 +528,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has principal investigator</rdfs:label>
         <skos:altLabel xml:lang="de">Primärforscher</skos:altLabel>
         <skos:altLabel xml:lang="en">Principal investigator</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">73</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -523,6 +544,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has related collection</rdfs:label>
         <skos:altLabel xml:lang="en">Related collection</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugehörige Sammlung</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -537,6 +559,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has related project</rdfs:label>
         <skos:altLabel xml:lang="en">Related project</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugehöriges Projekt</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">97</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -552,6 +575,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has rights holder</rdfs:label>
         <skos:altLabel xml:lang="de">Rechteinhaber</skos:altLabel>
         <skos:altLabel xml:lang="en">Rights holder</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">83</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -567,6 +591,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has source</rdfs:label>
         <skos:altLabel xml:lang="en">Has source</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Quelle</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">105</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -582,6 +607,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has spatial coverage</rdfs:label>
         <skos:altLabel xml:lang="de">Geografische Abdeckung</skos:altLabel>
         <skos:altLabel xml:lang="en">Spatial coverage</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">77</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -597,6 +623,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has title image</rdfs:label>
         <skos:altLabel xml:lang="en">Has title image</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Titelbild</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">108</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -654,6 +681,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">is continued by</rdfs:label>
         <skos:altLabel xml:lang="en">Is continued by</skos:altLabel>
         <skos:altLabel xml:lang="de">Wird fortgesetzt durch</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">99</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -740,6 +768,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label>is derived publication of</rdfs:label>
         <skos:altLabel xml:lang="en">Is derived publication</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist abgeleitete Publikation</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">101</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -754,6 +783,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">is documented by</rdfs:label>
         <skos:altLabel xml:lang="en">Is documented by</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist dokumentiert durch</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -826,6 +856,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label>is member of</rdfs:label>
         <skos:altLabel xml:lang="en">Is member of</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Mitglied von</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -854,6 +885,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">is metadata for</rdfs:label>
         <skos:altLabel xml:lang="de">Enthält Metadaten für</skos:altLabel>
         <skos:altLabel xml:lang="en">Is metadata for</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -869,6 +901,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">is new version of</rdfs:label>
         <skos:altLabel xml:lang="en">Is new version of</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist neue Version von</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">106</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -897,6 +930,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">is part of</rdfs:label>
         <skos:altLabel xml:lang="en">Is part of</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Teil von</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">104</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -911,6 +945,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">is previous version of</rdfs:label>
         <skos:altLabel xml:lang="en">Is previous version of</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist vorhergehende Version von</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">107</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -953,6 +988,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">is source of</rdfs:label>
         <skos:altLabel xml:lang="en">Is source of</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Quelle von</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">105</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -981,6 +1017,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">is title image of</rdfs:label>
         <skos:altLabel xml:lang="en">Is title image of</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Titelbild von</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -995,6 +1032,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">relation</rdfs:label>
         <skos:altLabel xml:lang="de">Relation</skos:altLabel>
         <skos:altLabel xml:lang="en">Relation</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</acdh:ordering>
     </owl:ObjectProperty>
     
 

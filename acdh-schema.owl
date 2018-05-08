@@ -1147,7 +1147,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <skos:altLabel xml:lang="en">Access restriction</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugriffsbeschränkung</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">86</acdh:ordering>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/Schema</acdh:vocabs>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/arche_access_restrictions/</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -1295,7 +1295,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <skos:altLabel xml:lang="en">Category</skos:altLabel>
         <skos:altLabel xml:lang="de">Kategorie</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47</acdh:ordering>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/archecategory/Schema</acdh:vocabs>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/arche_category/</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -1701,7 +1701,7 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <skos:altLabel xml:lang="en">Life cycle status</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43</acdh:ordering>
         <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Collection</acdh:recommendedClass>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/archelifecyclestatus/Schema</acdh:vocabs>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/arche_lifecycle_status/</acdh:vocabs>
     </owl:DatatypeProperty>
     
 

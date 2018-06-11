@@ -15,18 +15,6 @@
         <rdfs:comment xml:lang="en">Dies ist die Ontologie für ARCHE.
 In den Definitionen der Eigenschaften, meint &quot;Ressource A&quot; das Subject und &quot;Ressource B&quot; das Objekt.
 When Definitionen aus anderen Schemata (z. B. DataCite) wiederverwendet werden, wird die Referenz in Klammern angegeben: (DataCite: ContactPerson). When die ursprüngliche Definition leicht angepasst wurde, ist die Referenz mit &quot;cf.&quot; markiert.</rdfs:comment>
-        <owl:versionInfo xml:lang="en">Version 1.2 released on 2018-0X-XX.
-Removed hasCopyrightedDate, hasValidEndDate, hasValidStartDate, cites, compiles, isAppliedMethod, isCitedBy, isCompiledBy, isDerivedFrom, isFormat, isIdenticalTo, isLicense, isOriginalFormOf, isReferencedBy, isRelatedDiscipline, isReviewedBy, isSchema, isSubject, isSupplementTo, isSupplementedBy, isTransferMethod, isVariantFormOf, references, and reviews.
-
-Introduced hasRestrictionRole and hasTemporalCoverageIdentifier.
-
-Transformed further object properties into datatype properties (hasSchema, hasTransferMethod, hasSubject, hasRelatedDiscipline, hasLicense, hasFormat, hasAppliedMethod).
-
-Renamed several properties is... to is...Of to indicate direction of relation. Also renamed hasEndpoint to hasLandingPage.
-
-Introduced Helper classes to avoid anonymous class unions. Added domains and ranges to all properties accordingly.
-
-Introduced annotation property acdh:ordering to indicate how properties should be ordered when displayed in a form.</owl:versionInfo>
         <owl:versionInfo xml:lang="de">Version 1.1 veröffentlicht am 2018-01-15.
 Name von achd:language auf acdh:hasLanguage geändert.
 achd:hasIssuedDate wurde entfernt.
@@ -39,9 +27,37 @@ Introduced link to controlled vocabularies for datatype properties via annotatio
 Transformed some object properties into datatype properties (hasAccessRestriction, hasCategory, hasLifeCycleStatus) to link with controlled vocabulary.</owl:versionInfo>
         <owl:versionInfo xml:lang="en">Version 1.0 released on 2017-11-03.</owl:versionInfo>
         <owl:versionInfo xml:lang="de">Version 1.0. veröffentlicht am 2017-11-03.</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">Version 1.2 released on 2018-06-11.
+Removed hasCopyrightedDate, hasValidEndDate, hasValidStartDate, cites, compiles, isAppliedMethod, isCitedBy, isCompiledBy, isDerivedFrom, isFormat, isIdenticalTo, isLicense, isOriginalFormOf, isReferencedBy, isRelatedDiscipline, isReviewedBy, isSchema, isSubject, isSupplementTo, isSupplementedBy, isTransferMethod, isVariantFormOf, references, and reviews.
+
+Introduced hasRestrictionRole and hasTemporalCoverageIdentifier.
+
+Transformed further object properties into datatype properties (hasSchema, hasTransferMethod, hasSubject, hasRelatedDiscipline, hasLicense, hasFormat, hasAppliedMethod).
+
+Renamed several properties starting with is... to is...Of to indicate direction of relation. Also renamed hasEndpoint to hasLandingPage.
+
+Introduced Helper classes to avoid anonymous class unions. Added domains and ranges to all properties accordingly.
+
+Introduced annotation property acdh:ordering to indicate how properties should be ordered when displayed in a form.
+
+Introduced annotation property acdh:recommendedClass to indicate in which class a property is recommended, but not mandatory.</owl:versionInfo>
         <rdfs:comment xml:lang="en">This is the ontology for ARCHE.
 In definitions of properties, &quot;resource A&quot; refers to the subject resource of the property and &quot;resource B&quot; to the object resource.
 When reusing definitions from other vocabularies (esp. DataCite), the reference is given in brackets: (DataCite: ContactPerson). When the source definition was changed slightly the reference is marked with &quot;cf.&quot;</rdfs:comment>
+        <owl:versionInfo xml:lang="de">Version 1.2 veröffentlicht am 2018-06-11.
+Weitere object properties wurden entfernt: hasCopyrightedDate, hasValidEndDate, hasValidStartDate, cites, compiles, isAppliedMethod, isCitedBy, isCompiledBy, isDerivedFrom, isFormat, isIdenticalTo, isLicense, isOriginalFormOf, isReferencedBy, isRelatedDiscipline, isReviewedBy, isSchema, isSubject, isSupplementTo, isSupplementedBy, isTransferMethod, isVariantFormOf, references und reviews. 
+
+Neu sind: hasRestrictionRole und hasTemporalCoverageIdentifier.
+
+Weitere object properties wurden in datatype properties umgewandelt (hasSchema, hasTransferMethod, hasSubject, hasRelatedDiscipline, hasLicense, hasFormat, hasAppliedMethod).
+
+Umbenennung von properties, die mit is... anfangen in is...Of, um die richtung der Relation deutlicher anzuzeigen. Außerdem wurde hasEndpoint in hasLandingPage umbenannt.
+
+Helper Klassen wurden eingeführt, um anonyme Vereinigungen von Klassen zu vermeiden. Domains und ranges wurden für alle properties gesetzt.
+
+Die annotation property acdh:ordering wurde eingeführt, um anzuzeigen in welcher Reihenfolge properties in einem Formular angezeigt werden sollten.
+
+Die annotation annotation property acdh:recommendedClass wurde eingeführt, um anzuzeigen in welcher Klasse eine property empfohlen, aber nicht verpflichtend ist.</owl:versionInfo>
         <rdfs:label>ACDH Schema</rdfs:label>
     </owl:Ontology>
     

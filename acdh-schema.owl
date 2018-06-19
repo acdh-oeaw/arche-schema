@@ -2396,6 +2396,7 @@ This class is used to link controlled lists stored in SKOS format to object or d
 
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Container">
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrOrganisation"/>
+        <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrOrganisationOrPlaceOrPublicationOrRepoObject"/>
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrReMe"/>
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Helper"/>
@@ -2406,6 +2407,14 @@ This class is used to link controlled lists stored in SKOS format to object or d
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrOrganisation -->
 
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrOrganisation">
+        <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Helper"/>
+    </owl:Class>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrOrganisationOrPlaceOrPublicationOrRepoObject -->
+
+    <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrOrganisationOrPlaceOrPublicationOrRepoObject">
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Helper"/>
     </owl:Class>
     
@@ -2619,6 +2628,7 @@ The default example is a CMDI file that describes other resources.</rdfs:comment
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Organisation">
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrOrganisation"/>
+        <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrOrganisationOrPlaceOrPublicationOrRepoObject"/>
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrReMeOrOrganisationOrPlaceOrPublication"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -2721,6 +2731,7 @@ A Person can be linked to an Organisation by using isMember.</rdfs:comment>
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#PlaceOrPublicationOrRepoObject -->
 
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#PlaceOrPublicationOrRepoObject">
+        <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrOrganisationOrPlaceOrPublicationOrRepoObject"/>
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Helper"/>
     </owl:Class>
     

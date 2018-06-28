@@ -476,10 +476,10 @@ This is a generic property. Use one of the more specific sub-properties where po
         <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isMetadataFor"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Metadata"/>
-        <rdfs:comment xml:lang="en">Resource B describes / is about resource A.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates that additional metadata for a resource A is contained in a resource B.</rdfs:comment>
         <rdfs:label xml:lang="en">has metadata</rdfs:label>
-        <skos:altLabel xml:lang="en">Has Metadata</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Metadaten</skos:altLabel>
+        <skos:altLabel xml:lang="en">Additional Metadata</skos:altLabel>
+        <skos:altLabel xml:lang="de">Zusätzliche Metadaten</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">102</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -897,7 +897,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Metadata"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:comment xml:lang="en">Indicates additional metadata A for a resource B.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates the resource A is additional metadata for a resource B.</rdfs:comment>
         <rdfs:label xml:lang="en">is metadata for</rdfs:label>
         <skos:altLabel xml:lang="de">Enthält Metadaten für</skos:altLabel>
         <skos:altLabel xml:lang="en">Metadata for</skos:altLabel>

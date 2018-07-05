@@ -150,7 +150,7 @@ try {
     array_shift($collections);
     foreach ($collections as $uri => $id) {
         $col = $fedora->getResourceByUri($uri);
-        foreach ($col->getChildren() as $res) {
+        foreach ($col->getFedoraChildren() as $res) {
             if (!in_array($res->getUri(true), $imported)) {
                 echo "    " . $res->getUri(true) . "\n";
                 $res->delete(true);

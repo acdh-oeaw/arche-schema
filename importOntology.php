@@ -20,7 +20,7 @@ use EasyRdf\Resource;
 use EasyRdf\RdfNamespace;
 
 if ($argc < 2 || !file_exists($argv[1])) {
-    echo "\nusage: $argv[0] ONTOLOGY.owl\n\n";
+    echo "\nusage: $argv[0] ONTOLOGY.owl [skipBinary]\n\n";
     return;
 }
 
@@ -83,52 +83,54 @@ try {
     foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#DatatypeProperty') as $i) {
         saveOrUpdate($i, $fedora, 'ontology/datatypeProperty/', $imported);
     }
-
-    # Import ontology as a binary
-    echo "\nUpdating the owl binary...\n";
     
-    // collection storing all ontology binaries
-    $collId = 'https://id.acdh.oeaw.ac.at/acdh-schema';
-    try {
-        $coll = $fedora->getResourceById($collId);
-    } catch (NotFound $e) {
-        $meta = (new Graph())->resource('.');
-        $meta->addResource(RC::idProp(), $collId);
-        $meta->addLiteral(RC::titleProp(), 'ACDH ontology binaries');
-        $coll = $fedora->createResource($meta);
-    }
-    echo "    " . $coll->getUri(true) . "\n";
+    if (!isset($argv[2]) || $argv[2] !== 'skipBinary') {
+        # Import ontology as a binary
+        echo "\nUpdating the owl binary...\n";
     
-    $curId = 'https://vocabs.acdh.oeaw.ac.at/schema';
-    $old = null;
-
-    $newMeta = (new Graph())->resource('.');
-    $newMeta->addResource(RC::idProp(), $curId . '/' . date('Y-m-d_h:m:s'));
-    $newMeta->addLiteral(RC::titleProp(), 'ACDH schema owl file');
-    $newMeta->addResource(RC::relProp(), $coll->getId());
-    
-    // ontology binary itself
-    try {
-        $old = $fedora->getResourceById($curId);
-        $fixity = explode(':', $old->getFixity());
-        if ($fixity[1] !== 'sha1') {
-            throw new Exception('fixity hash not implemented - update the script');
+        // collection storing all ontology binaries
+        $collId = 'https://id.acdh.oeaw.ac.at/acdh-schema';
+        try {
+             $coll = $fedora->getResourceById($collId);
+        } catch (NotFound $e) {
+            $meta = (new Graph())->resource('.');
+            $meta->addResource(RC::idProp(), $collId);
+            $meta->addLiteral(RC::titleProp(), 'ACDH ontology binaries');
+            $coll = $fedora->createResource($meta);
         }
-        if (sha1_file($argv[1]) !== $fixity[2]) {
-            echo "    uploading a new version\n";            
-            $new = $fedora->createResource($newMeta, $argv[1], $coll->getUri());
+        echo "    " . $coll->getUri(true) . "\n";
+    
+        $curId = 'https://vocabs.acdh.oeaw.ac.at/schema';
+        $old = null;
+
+        $newMeta = (new Graph())->resource('.');
+        $newMeta->addResource(RC::idProp(), $curId . '/' . date('Y-m-d_h:m:s'));
+        $newMeta->addLiteral(RC::titleProp(), 'ACDH schema owl file');
+        $newMeta->addResource(RC::relProp(), $coll->getId());
+    
+        // ontology binary itself
+        try {
+            $old = $fedora->getResourceById($curId);
+            $fixity = explode(':', $old->getFixity());
+            if ($fixity[1] !== 'sha1') {
+                throw new Exception('fixity hash not implemented - update the script');
+            }
+            if (sha1_file($argv[1]) !== $fixity[2]) {
+                echo "    uploading a new version\n";            
+                $new = $fedora->createResource($newMeta, $argv[1], $coll->getUri());
             
-            $oldMeta = $old->getMetadata();
-            $oldMeta->delete(RC::idProp(), new Resource($curId));
-            $oldMeta->addResource(RC::get('fedoraPrevProp'), $new->getId());
-            $old->setMetadata($oldMeta);
-            $old->updateMetadata();
-        } else {
-            echo "    owl binary up to date\n";
+                $oldMeta = $old->getMetadata();
+                $oldMeta->delete(RC::idProp(), new Resource($curId));
+                $oldMeta->addResource(RC::get('fedoraPrevProp'), $new->getId());
+                $old->setMetadata($oldMeta);
+                $old->updateMetadata();
+            } else {
+               echo "    owl binary up to date\n";
+            }
+        } catch (NotFound $e) {
+            echo "    no owl binary - creating\n";
+            $new = $fedora->createResource($newMeta, $argv[1], $coll->getUri());
         }
-    } catch (NotFound $e) {
-        echo "    no owl binary - creating\n";
-        $new = $fedora->createResource($newMeta, $argv[1], $coll->getUri());
     }
 
     $fedora->commit();

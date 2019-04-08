@@ -1405,7 +1405,7 @@ Indicate character encoding according to the overview of Character Sets by IANA:
         <rdfs:seeAlso>acdh:hasLifeCycleStatus</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">Completeness statement</skos:altLabel>
         <skos:altLabel xml:lang="de">Vollständigkeitsangaben</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</acdh:ordering>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43</acdh:ordering>
         <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Collection</acdh:recommendedClass>
     </owl:DatatypeProperty>
     
@@ -1744,7 +1744,7 @@ Handles belong into acdh:hasPID and all other identifiers without URL or URI, li
         <rdfs:label xml:lang="en">has life cycle status</rdfs:label>
         <skos:altLabel xml:lang="de">Lebenszyklusstatus</skos:altLabel>
         <skos:altLabel xml:lang="en">Life Cycle Status</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43</acdh:ordering>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
         <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Collection</acdh:recommendedClass>
         <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/arche_lifecycle_status/</acdh:vocabs>

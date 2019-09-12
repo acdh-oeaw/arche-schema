@@ -49,7 +49,8 @@ Link auf kontrolliertes Vokabular hinzugefügt für acdh:hasLanguage
 
 Neues Attribut hinzugefügt: acdh:hasOaiSet
 
-Set von verpflichtenden Attributen erhöht.</owl:versionInfo>
+Set von verpflichtenden Attributen erhöht.
+Englische und Deutsche Beschreibungen für alle Attribute hinzugefügt und korrigiert.</owl:versionInfo>
         <owl:versionInfo xml:lang="en">Version 1.3 released on 2019-09-12.
 Added missing range to acdh:hasAppliedMethod
 
@@ -58,7 +59,8 @@ Added link to controlled vocabulary for acdh:hasLanguage
 
 Introduced new property acdh:hasOaiSet
 
-Increased set of mandatory properties</owl:versionInfo>
+Increased set of mandatory properties
+Added and corrected English and German descriptions for all properties.</owl:versionInfo>
         <rdfs:comment xml:lang="en">This is the ontology for ARCHE.
 In definitions of properties, &quot;resource A&quot; refers to the subject resource of the property and &quot;resource B&quot; to the object resource.
 When reusing definitions from other vocabularies (esp. DataCite), the reference is given in brackets: (DataCite: ContactPerson). When the source definition was changed slightly the reference is marked with &quot;cf.&quot;</rdfs:comment>

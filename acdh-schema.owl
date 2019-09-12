@@ -41,16 +41,6 @@ Introduced Helper classes to avoid anonymous class unions. Added domains and ran
 Introduced annotation property acdh:ordering to indicate how properties should be ordered when displayed in a form.
 
 Introduced annotation property acdh:recommendedClass to indicate in which class a property is recommended, but not mandatory.</owl:versionInfo>
-        <owl:versionInfo xml:lang="de">Version 1.3 veröffentlicht am 2019-09-12.
-Fehlende range-Angabe an acdh:hasAppliedMethod hinzugefügt
-
-Link auf kontrolliertes Vokabular hinzugefügt für acdh:hasRelatedDiscipline
-Link auf kontrolliertes Vokabular hinzugefügt für acdh:hasLanguage
-
-Neues Attribut hinzugefügt: acdh:hasOaiSet
-
-Set von verpflichtenden Attributen erhöht.
-Englische und Deutsche Beschreibungen für alle Attribute hinzugefügt und korrigiert.</owl:versionInfo>
         <owl:versionInfo xml:lang="en">Version 1.3 released on 2019-09-12.
 Added missing range to acdh:hasAppliedMethod
 
@@ -78,6 +68,16 @@ Helper Klassen wurden eingeführt, um anonyme Vereinigungen von Klassen zu verme
 Die annotation property acdh:ordering wurde eingeführt, um anzuzeigen in welcher Reihenfolge properties in einem Formular angezeigt werden sollten.
 
 Die annotation annotation property acdh:recommendedClass wurde eingeführt, um anzuzeigen in welcher Klasse eine property empfohlen, aber nicht verpflichtend ist.</owl:versionInfo>
+        <owl:versionInfo xml:lang="de">Version 1.3 veröffentlicht am 2019-09-12.
+Fehlende range-Angabe an acdh:hasAppliedMethod hinzugefügt
+
+Link auf kontrolliertes Vokabular hinzugefügt für acdh:hasRelatedDiscipline
+Link auf kontrolliertes Vokabular hinzugefügt für acdh:hasLanguage
+
+Neues Attribut hinzugefügt: acdh:hasOaiSet
+
+Set von verpflichtenden Attributen erhöht.
+Englische und Deutsche Beschreibungen für alle Attribute hinzugefügt und korrigiert.</owl:versionInfo>
         <rdfs:label>ACDH Schema</rdfs:label>
     </owl:Ontology>
     
@@ -1977,7 +1977,7 @@ Handles belong into hasPid and identifiers with stable URL or URI into hasIdenti
         <rdfs:label xml:lang="en">has OAI set</rdfs:label>
         <skos:altLabel xml:lang="de">OAI-PMH Set</skos:altLabel>
         <skos:altLabel xml:lang="en">OAI-PMH set</skos:altLabel>
-        <acdh:ordering xml:lang="de">188</acdh:ordering>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">188</acdh:ordering>
     </owl:DatatypeProperty>
     
 

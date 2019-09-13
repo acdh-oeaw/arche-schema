@@ -1135,8 +1135,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:comment xml:lang="en">A generic indication of any relation between two resources. Preferably use any of the more specific subproperties.</rdfs:comment>
         <rdfs:comment xml:lang="de">Ein allgemeiner Hinweis auf eine Beziehung zwischen zwei Ressourcen. Verwenden Sie vorzugsweise eine der spezifischeren untergeordneten Eigenschaften.</rdfs:comment>
         <rdfs:label xml:lang="en">relation</rdfs:label>
-        <skos:altLabel xml:lang="de">See also</skos:altLabel>
-        <skos:altLabel xml:lang="en">Siehe auch</skos:altLabel>
+        <skos:altLabel xml:lang="en">See also</skos:altLabel>
+        <skos:altLabel xml:lang="de">Siehe auch</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">140</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -1284,7 +1284,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:comment xml:lang="en">First line of address associated with a Person or Organisation.</rdfs:comment>
         <rdfs:label xml:lang="en">has address line 1</rdfs:label>
         <skos:altLabel xml:lang="de">Addresszeile 1</skos:altLabel>
-        <skos:altLabel xml:lang="en">Adresse Line 1</skos:altLabel>
+        <skos:altLabel xml:lang="en">Adress Line 1</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -1300,7 +1300,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:comment xml:lang="de">Zweite Zeile der Adresse, die einer Person oder Organisation zugeordnet ist.</rdfs:comment>
         <rdfs:label xml:lang="en">has address line 2</rdfs:label>
         <skos:altLabel xml:lang="de">Addresszeile 2</skos:altLabel>
-        <skos:altLabel xml:lang="en">Adresse Line 2</skos:altLabel>
+        <skos:altLabel xml:lang="en">Adress Line 2</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</acdh:ordering>
     </owl:DatatypeProperty>
     

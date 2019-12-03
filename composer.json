@@ -1,5 +1,6 @@
 {
     "require": {
-        "acdh-oeaw/repo-php-util": "~2"
+        "acdh-oeaw/easyrdf": "*",
+        "acdh-oeaw/acdh-repo-lib": "*"
     }
 }

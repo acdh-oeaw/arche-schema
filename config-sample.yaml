@@ -1,0 +1,32 @@
+rest:
+    urlBase: http://127.0.0.1
+    pathBase: /rest/
+    verifyCert: false
+    headers:
+        metadataReadMode: X-METADATA-READ-MODE
+        metadataParentProperty: X-PARENT-PROPERTY
+        metadataWriteMode: X-METADATA-WRITE-MODE
+        transactionId: X-TRANSACTION-ID
+storage:
+    hashAlgorithm: md5
+schema:
+    id: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+    label: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    parent: https://vocabs.acdh.oeaw.ac.at/schema#isPartOf
+    label: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+    delete: delete://delete
+    searchMatch: search://match
+    hash: https://hash
+    acdh:
+        accessRestriction: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction
+        previous: https://vocabs.acdh.oeaw.ac.at/schema#isPreviousVersionOf
+    namespaces:
+        ontology: 'https://vocabs.acdh.oeaw.ac.at/schema#'
+        id: 'https://id.acdh.oeaw.ac.at/'
+auth:
+    httpHeader:
+        Eppn: admin
+    httpBasic:
+        user: ''
+        passsword: ''
+

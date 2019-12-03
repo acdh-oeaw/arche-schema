@@ -1,11 +1,11 @@
 <?php
 
-use acdhOeaw\fedora\Fedora;
-use acdhOeaw\fedora\exceptions\NotFound;
-use acdhOeaw\util\RepoConfig as RC;
+use acdhOeaw\acdhRepoLib\Repo;
+use acdhOeaw\acdhRepoLib\exception\NotFound;
 use EasyRdf\Graph;
 use EasyRdf\Resource;
 use EasyRdf\RdfNamespace;
+use zozlak\RdfConstants as RDF;
 
 /**
  * helper functions for importOntology.php and checkRestrictions.php
@@ -15,19 +15,19 @@ use EasyRdf\RdfNamespace;
  * Imports or updates (if it already exists) a given owl object 
  * (class/dataProperty/objectProperty/restriction) into the repository
  * @param \EasyRdf\Resource $res an owl object to be imported/updated
- * @param \acdhOeaw\fedora\Fedora $fedora repository connection object
- * @param string $path collection in which a repository repository resource should be created
+ * @param \acdhOeaw\acdhRepoLib\Repo $repo repository connection object
+ * @param string $parentId collection in which a repository repository resource should be created
  * @param array $imported an array of created/updated resources (will be extended with a
  *   resource corresponding to the $res upon a successful creation/update)
  */
-function saveOrUpdate(Resource $res, Fedora $fedora, string $path, array &$imported) {
-    static $ids = array();
-    
-    $ontology = $res->getGraph();
+function saveOrUpdate(Resource $res, Repo $repo, string $parentId,
+                      array &$imported) {
+    static $ids = [];
+    $schema     = $repo->getSchema();
 
-    if ($res->isA('http://www.w3.org/2002/07/owl#Restriction')) {
+    if ($res->isA(RDF::OWL_RESTRICTION)) {
         // restrictions in owl are anonymous, we need to create ids for them automatically
-        $id = generateRestrictionId($res);
+        $id = generateRestrictionId($res, $schema);
     } else {
         $id = RdfNamespace::expand($res->getUri());
         if (preg_match('/^_:genid[0-9]+$/', $id)) {
@@ -42,8 +42,7 @@ function saveOrUpdate(Resource $res, Fedora $fedora, string $path, array &$impor
     }
     $ids[] = $id;
 
-    $graph = new Graph();
-    $meta = $graph->resource('.');
+    $meta = (new Graph())->resource('.');
 
     foreach ($res->properties() as $p) {
         foreach ($res->allLiterals($p) as $v) {
@@ -51,7 +50,6 @@ function saveOrUpdate(Resource $res, Fedora $fedora, string $path, array &$impor
                 $meta->addLiteral($p, $v->getValue(), $v->getLang());
             }
         }
-
         foreach ($res->allResources($p) as $v) {
             if ($v->isBNode()) {
                 continue;
@@ -60,24 +58,28 @@ function saveOrUpdate(Resource $res, Fedora $fedora, string $path, array &$impor
         }
     }
 
-    $meta->addResource(RC::idProp(), $id);
+    $meta->addResource($schema->id, $id);
+    $meta->addResource($schema->parent, $parentId);
 
-    if (!$meta->hasProperty(RC::get('doorkeeperOntologyLabelProp'))) {
-        $meta->addLiteral(RC::get('doorkeeperOntologyLabelProp'), preg_replace('|^.*[/#]|', '', $id));
+    if (null === $meta->getLiteral($schema->label)) {
+        $meta->addLiteral($schema->label, preg_replace('|^.*[/#]|', '', $id));
     }
 
     try {
-        $fedoraRes = $fedora->getResourceById($id);
+        $fedoraRes = $repo->getResourceById($id);
         echo "updating " . $id;
         $fedoraRes->setMetadata($meta);
         $fedoraRes->updateMetadata();
     } catch (NotFound $e) {
         echo "creating " . $id;
-        $fedoraRes = $fedora->createResource($meta, '', $path, 'POST');
+        $fedoraRes = $repo->createResource($meta);
+    } catch (GuzzleHttp\Exception\RequestException $e) {
+        echo "\n" . $meta->getGraph()->serialise('turtle') . "\n";
+        throw $e;
     }
 
-    echo ' as ' . $fedoraRes->getUri(true) . "\n";
-    $imported[] = $fedoraRes->getUri(true);
+    echo ' as ' . $fedoraRes->getUri() . "\n";
+    $imported[] = $fedoraRes->getUri();
 }
 
 /**
@@ -88,46 +90,42 @@ function doesInherit(Resource $what, Resource $from): bool {
         return true;
     }
     $flag = false;
-    foreach ($from->getGraph()->resourcesMatching('http://www.w3.org/2000/01/rdf-schema#subClassOf', $from) as $i) {
+    foreach ($from->getGraph()->resourcesMatching(RDF::RDFS_SUB_CLASS_OF, $from) as $i) {
         $flag |= doesInherit($what, $i);
     }
     return $flag;
 }
 
-function simplifyRestrictionDuplicates(Graph $ontology) {
-    $values = [];
-}
-
 /**
  * Checks if a given restriction is consistent with the rest of the ontology
  */
-function checkRestriction(Resource $r) {
+function checkRestriction(Resource $r, object $schema) {
     static $values = [];
 
     // there must be at least one class connected with the restriction 
     // (which in owl terms means there must be at least one class inheriting from the restriction)
-    $children = $r->getGraph()->resourcesMatching('http://www.w3.org/2000/01/rdf-schema#subClassOf', $r);
+    $children = $r->getGraph()->resourcesMatching(RDF::RDFS_SUB_CLASS_OF, $r);
     if (count($children) === 0) {
         echo $r->getUri() . " - no classes inherit from the restriction\n";
         return false;
     }
-    
+
     // property for which the restriction is defined must exist and have both domain and range defined
-    $prop = $r->getResource('http://www.w3.org/2002/07/owl#onProperty');
+    $prop = $r->getResource(RDF::OWL_ON_PROPERTY);
     if ($prop === null) {
         echo $r->getUri() . " - it lacks owl:onProperty\n";
     }
-    $propDomain = $prop->getResource('http://www.w3.org/2000/01/rdf-schema#domain');
+    $propDomain = $prop->getResource(RDF::RDFS_DOMAIN);
     if ($propDomain === null) {
         echo $r->getUri() . " - property " . $prop->getUri() . " has no rdfs:domain\n";
         return false;
     }
-    $propRange = $prop->getResource('http://www.w3.org/2000/01/rdf-schema#range');
+    $propRange = $prop->getResource(RDF::RDFS_RANGE);
     if ($propRange === null) {
         echo $r->getUri() . " - property " . $prop->getUri() . " has no rdfs:range\n";
         return false;
     }
-    
+
     // classes inheriting from the restriction must match or inherit from restriction's property domain
     foreach ($children as $i) {
         if (!doesInherit($i, $propDomain)) {
@@ -135,10 +133,10 @@ function checkRestriction(Resource $r) {
             return false;
         }
     }
-    
+
     // target classes of qualified restrictions must match or inherit from restriction's property range
     $rangeMatch = 0;
-    $onClass = $r->allResources('http://www.w3.org/2002/07/owl#onClass');
+    $onClass    = $r->allResources(RDF::OWL_ON_CLASS);
     foreach ($onClass as $i) {
         if (!doesInherit($i, $propRange)) {
             echo $r->getUri() . " - owl:onClass (" . $i->getUri() . ") doesn't inherit from owl:onProperty/rdfs:range (" . $propRange->getUri() . ")\n";
@@ -146,7 +144,7 @@ function checkRestriction(Resource $r) {
         }
         $rangeMatch += $i === $propRange;
     }
-    $onDataRange = $r->allResources('http://www.w3.org/2002/07/owl#onDataRange');
+    $onDataRange = $r->allResources(RDF::OWL_ON_DATA_RANGE);
     foreach ($onDataRange as $i) {
         if (!doesInherit($i, $propRange)) {
             echo $r->getUri() . " - owl:onDataRange (" . $i->getUri() . ") doesn't inherit from owl:onProperty/rdfs:range (" . $propRange->getUri() . ")\n";
@@ -154,14 +152,15 @@ function checkRestriction(Resource $r) {
         }
         $rangeMatch += $i === $propRange;
     }
-        
+
     // simplify qualified restrictions which qualified rules don't differ from restriction's property range
     if (count($onClass) + count($onDataRange) === $rangeMatch && $rangeMatch > 0) {
         echo "simplifying " . $r->getUri() . "\n";
-        $r->deleteResource('http://www.w3.org/2002/07/owl#onClass');
-        $r->deleteResource('http://www.w3.org/2002/07/owl#onDataRange');
-        foreach (['q', 'minQ', 'maxQ'] as $i) {
-            $srcProp = 'http://www.w3.org/2002/07/owl#' . $i . 'ualifiedCardinality';
+        $r->deleteResource(RDF::OWL_ON_CLASS);
+        $r->deleteResource(RDF::OWL_ON_DATA_RANGE);
+        $qCard = [RDF::OWL_QUALIFIED_CARDINALITY, RDF::OWL_MIN_QUALIFIED_CARDINALITY,
+            RDF::OWL_MAX_QUALIFIED_CARDINALITY];
+        foreach ($qCard as $srcProp) {
             $targetProp = str_replace('qualifiedC', 'c', str_replace('Qualified', '', $srcProp));
             foreach ($r->allLiterals($srcProp) as $j) {
                 $r->addLiteral($targetProp, $j->getValue());
@@ -172,17 +171,17 @@ function checkRestriction(Resource $r) {
 
     // minQualifiedCardinality equal to 0 provides no information
     // (evaluated after simplification)
-    if (count($r->allLiterals('http://www.w3.org/2002/07/owl#minQualifiedCardinality', 0)) > 0) {
+    if (count($r->allLiterals(RDF::OWL_MIN_QUALIFIED_CARDINALITY, 0)) > 0) {
         echo $r->getUri() . " - owl:minQualifiedCardinality = 0 which doesn't provide any useful information\n";
         return false;
     }
-        
-    $id = generateRestrictionId($r);
+
+    $id = generateRestrictionId($r, $schema);
 
     // fix class inheritance
     foreach ($children as $i) {
-        $i->deleteResource('http://www.w3.org/2000/01/rdf-schema#subClassOf', $r);
-        $i->addResource('http://www.w3.org/2000/01/rdf-schema#subClassOf', $id);
+        $i->deleteResource(RDF::RDFS_SUB_CLASS_OF, $r);
+        $i->addResource(RDF::RDFS_SUB_CLASS_OF, $id);
     }
 
     // if restriction is duplicated there is no need to import it
@@ -195,31 +194,28 @@ function checkRestriction(Resource $r) {
     return true;
 }
 
-function generateRestrictionId(Resource $res): string {
+function generateRestrictionId(Resource $res, object $schema): string {
     $idProps = [];
-    foreach ($res->allResources('http://www.w3.org/2002/07/owl#onProperty') as $i) {
+    foreach ($res->allResources(RDF::OWL_ON_PROPERTY) as $i) {
         $idProps[] = $i->getUri();
     }
-    foreach ($res->allResources('http://www.w3.org/2002/07/owl#onDataRange') as $i) {
+    foreach ($res->allResources(RDF::OWL_ON_DATA_RANGE) as $i) {
         $idProps[] = $i->getUri();
     }
-    foreach ($res->allResources('http://www.w3.org/2002/07/owl#onClass') as $i) {
+    foreach ($res->allResources(RDF::OWL_ON_CLASS) as $i) {
         $idProps[] = $i->getUri();
     }
-    foreach (['q', 'minQ', 'maxQ'] as $i) {
-        $p1 = 'http://www.w3.org/2002/07/owl#' . $i . 'ualifiedCardinality';
-        $p2 = str_replace('qualifiedC', 'c', str_replace('Qualified', '', $p1));
-        $tmp = $res->getLiteral($p1);
+    $cardProps = [RDF::OWL_QUALIFIED_CARDINALITY, RDF::OWL_MIN_QUALIFIED_CARDINALITY,
+        RDF::OWL_MAX_QUALIFIED_CARDINALITY, RDF::OWL_CARDINALITY, RDF::OWL_MIN_CARDINALITY,
+        RDF::OWL_MAX_CARDINALITY];
+    foreach ($cardProps as $p) {
+        $tmp = $res->getLiteral($p);
         if ($tmp !== null) {
-            $idProps[] = $i . $tmp->getValue();
-        }
-        $tmp = $res->getLiteral($p2);
-        if ($tmp !== null) {
-            $idProps[] = '_' . $i . $tmp->getValue();
+            $idProps[] = $p . $tmp->getValue();
         }
     }
 
     $idProps = array_unique($idProps);
     sort($idProps);
-    return RC::vocabsNmsp() . 'restriction-' . md5(implode(',', $idProps));
+    return $schema->namespaces->ontology . 'restriction-' . md5(implode(',', $idProps));
 }

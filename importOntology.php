@@ -1,173 +1,151 @@
 #!/usr/bin/php
 <?php
-
-if (file_exists('/var/www/html/vendor/autoload.php')) {
-    include '/var/www/html/vendor/autoload.php';
-    $cfgFile = '/var/www/html/config.ini';
-} else {
-    include __DIR__ . '/vendor/autoload.php';
-    $cfgFile = __DIR__ . '/config.ini';
-}
-include __DIR__ . '/functions.php';
-
-use acdhOeaw\util\RepoConfig as RC;
-use acdhOeaw\fedora\acl\WebAclRule as WAR;
-use acdhOeaw\fedora\Fedora;
-use acdhOeaw\fedora\exceptions\NotFound;
-use acdhOeaw\schema\file\File;
-use EasyRdf\Graph;
-use EasyRdf\Resource;
-use EasyRdf\RdfNamespace;
-
-if ($argc < 2 || !file_exists($argv[1])) {
-    echo "\nusage: $argv[0] ONTOLOGY.owl [skipBinary]\n\n";
+if ($argc < 2 || !file_exists($argv[1]) || !file_exists($argv[2])) {
+    echo "\nusage: $argv[0] config.yaml ontology.owl [skipBinary]\n\n";
     return;
 }
+$cfg = json_decode(json_encode(yaml_parse_file($argv[1])));
+$t0  = time();
 
-RC::init($cfgFile);
+if (isset($cfg->composerLocation)) {
+    require_once $cfg->composerLocation;
+} else {
+    require_once __DIR__ . '/vendor/autoload.php';
+}
 
-$fedora = new Fedora();
+include __DIR__ . '/functions.php';
 
-# some of the prefixes are not available in the easyrdf namespace...
+use EasyRdf\Graph;
+use EasyRdf\RdfNamespace;
+use acdhOeaw\acdhRepoLib\BinaryPayload;
+use acdhOeaw\acdhRepoLib\Repo;
+use acdhOeaw\acdhRepoLib\RepoResource;
+use acdhOeaw\acdhRepoLib\SearchConfig;
+use acdhOeaw\acdhRepoLib\SearchTerm;
+use acdhOeaw\acdhRepoLib\exception\NotFound;
+use zozlak\RdfConstants as RDF;
+
+$repo = Repo::factory($argv[1]);
+
+// some prefixes are not available in the easyrdf namespace...
 RdfNamespace::set('dct', 'http://purl.org/dc/terms/');
-RdfNamespace::set('acdh', RC::vocabsNmsp());
-
-###################
-# parse owl
-###################
+RdfNamespace::set('acdh', $cfg->schema->namespaces->ontology);
 
 $ontology = new Graph();
-$ontology->parseFile($argv[1]);
+$ontology->parseFile($argv[2]);
+
+// restrictions go first as checkRestriction() can affect the whole graph
+$collections = [
+    $cfg->schema->namespaces->ontology . 'ontology',
+    RDF::OWL_RESTRICTION,
+    RDF::OWL_CLASS,
+    RDF::OWL_OBJECT_PROPERTY,
+    RDF::OWL_DATATYPE_PROPERTY,
+];
 
 try {
-    $fedora->begin();
-    # Create collections for classes and properties
-    $collections = array(
-        'ontology' => RC::vocabsNmsp() . 'ontology',
-        'ontology/class' => 'http://www.w3.org/2002/07/owl#class',
-        'ontology/objectProperty' => 'http://www.w3.org/2002/07/owl#objectProperty',
-        'ontology/datatypeProperty' => 'http://www.w3.org/2002/07/owl#datatypeProperty',
-        'ontology/restriction' => 'http://www.w3.org/2002/07/owl#Restriction',
-    );
+    $repo->begin();
 
+    echo "### Creating top-level collections\n";
     foreach ($collections as $i => $id) {
         try {
-            $res = $fedora->getResourceByUri($i);
-        } catch (NotFound $e) {
-            $graph = new Graph();
-            $meta = $graph->resource('.');
-            $meta->addLiteral(RC::get('doorkeeperOntologyLabelProp'), $i);
-            $meta->addResource(RC::idProp(), $id);
-            $res = $fedora->createResource($meta, '', $i, 'PUT');
-        }
-    }
-
-    # Create resources
-    $imported = [];
-
-    // restrictions go first as checkRestriction() can affect the whole graph
-    foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#Restriction') as $i) {
-        if (checkRestriction($i)) {
-            $tmp = saveOrUpdate($i, $fedora, 'ontology/restriction/', $imported);
-        }
-    }
-
-    foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#Class') as $i) {
-        $tmp = saveOrUpdate($i, $fedora, 'ontology/class/', $imported);
-    }
-
-    foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#ObjectProperty') as $i) {
-        saveOrUpdate($i, $fedora, 'ontology/objectProperty/', $imported);
-    }
-
-    foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#DatatypeProperty') as $i) {
-        saveOrUpdate($i, $fedora, 'ontology/datatypeProperty/', $imported);
-    }
-    
-    if (!isset($argv[2]) || $argv[2] !== 'skipBinary') {
-        # Import ontology as a binary
-        echo "\nUpdating the owl binary...\n";
-    
-        // collection storing all ontology binaries
-        $collId = 'https://id.acdh.oeaw.ac.at/acdh-schema';
-        try {
-             $coll = $fedora->getResourceById($collId);
+            $res = $repo->getResourceById($id);
         } catch (NotFound $e) {
             $meta = (new Graph())->resource('.');
-            $meta->addResource(RC::idProp(), $collId);
-            $meta->addLiteral(RC::titleProp(), 'ACDH ontology binaries');
-            $coll = $fedora->createResource($meta);
+            $meta->addLiteral($cfg->schema->label, preg_replace('|^.*[/#]|', '', $id));
+            $meta->addResource($cfg->schema->id, $id);
+            $res  = $repo->createResource($meta);
         }
-        echo "    " . $coll->getUri(true) . "\n";
+    }
+
+    $imported = [];
+    foreach ($collections as $type) {
+        echo "### Importing $type\n";
+        foreach ($ontology->allOfType($type) as $i) {
+            if ($type !== RDF::OWL_RESTRICTION || checkRestriction($i, $cfg->schema)) {
+                $tmp = saveOrUpdate($i, $repo, $type, $imported);
+            }
+        }
+    }
     
-        $curId = 'https://vocabs.acdh.oeaw.ac.at/schema';
-        $old = null;
+    if (!isset($argv[3]) || $argv[3] !== 'skipBinary') {
+        echo "###  Updating the owl binary\n";
+
+        // collection storing all ontology binaries
+        $collId = $cfg->schema->namespaces->id . 'acdh-schema';
+        try {
+            $coll = $repo->getResourceById($collId);
+        } catch (NotFound $e) {
+            $meta = (new Graph())->resource('.');
+            $meta->addResource($cfg->schema->id, $collId);
+            $meta->addLiteral($cfg->schema->label, 'ACDH ontology binaries');
+            $coll = $repo->createResource($meta);
+        }
+        echo "    " . $coll->getUri() . "\n";
+
+        $curId = preg_replace('/#$/', '', $cfg->schema->namespaces->ontology);
+        $old   = null;
 
         $newMeta = (new Graph())->resource('.');
-        $newMeta->addResource(RC::idProp(), $curId . '/' . date('Y-m-d_h:m:s'));
-        $newMeta->addLiteral(RC::titleProp(), 'ACDH schema owl file');
-        $newMeta->addResource(RC::relProp(), $coll->getId());
-    
-        // ontology binary itself
+        $newMeta->addResource($cfg->schema->id, $curId . '/' . date('Y-m-d_h:m:s'));
+        $newMeta->addLiteral($cfg->schema->label, 'ACDH schema owl file');
+        $newMeta->addResource($cfg->schema->parent, $coll->getUri());
+        $newMeta->addResource($cfg->schema->acdh->accessRestriction, 'https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public');
+
+        $binary = new BinaryPayload(null, $argv[2], 'application/rdf+xml');
         try {
-            $old = $fedora->getResourceById($curId);
-            $fixity = explode(':', $old->getFixity());
-            if ($fixity[1] !== 'sha1') {
-                throw new Exception('fixity hash not implemented - update the script');
+            $old = $repo->getResourceById($curId);
+
+            $algo = $cfg->storage->hashAlgorithm;
+            if (!in_array($algo, ['sha1', 'md5'])) {
+                throw new Exception("fixity hash $algo not implemented - update the script");
             }
-            if (sha1_file($argv[1]) !== $fixity[2]) {
-                echo "    uploading a new version\n";            
-                $new = $fedora->createResource($newMeta, $argv[1], $coll->getUri());
-            
-                $oldMeta = $old->getMetadata();
-                $oldMeta->delete(RC::idProp(), new Resource($curId));
-                $oldMeta->addResource(RC::get('fedoraPrevProp'), $new->getId());
-                $old->setMetadata($oldMeta);
-                $old->updateMetadata();
+            $hash = (string) $old->getGraph()->getLiteral($cfg->schema->hash);
+            $md5  = 'md5:' . md5_file($argv[2]);
+            $sha1 = 'sha1:' . sha1_file($argv[2]);
+            if (!in_array($hash, [$md5, $sha1])) {
+                echo "    uploading a new version\n";
+                $new     = $repo->createResource($newMeta, $binary);
+                echo "      " . $new->getUri() . "\n";
+                $oldMeta = $old->getGraph();
+                $oldMeta->deleteResource($cfg->schema->id, $curId);
+                $oldMeta->addResource($cfg->schema->acdh->previous, $new->getUri());
+                $old->setGraph($oldMeta);
+                $old->updateMetadata(RepoResource::UPDATE_OVERWRITE); // we must loose the old identifier
+
+                $newMeta->addResource($cfg->schema->id, $curId);
+                $new->setMetadata($newMeta);
+                $new->updateMetadata();
             } else {
-               echo "    owl binary up to date\n";
+                echo "    owl binary up to date\n";
             }
         } catch (NotFound $e) {
             echo "    no owl binary - creating\n";
-            $new = $fedora->createResource($newMeta, $argv[1], $coll->getUri());
+            $newMeta->addResource($cfg->schema->id, $curId);
+            $new = $repo->createResource($newMeta, $binary);
+            echo "      " . $new->getUri() . "\n";
         }
     }
 
-    $fedora->commit();
-    if (isset($new)) {
-        // passing same id between resources is possible only by removing it from one, 
-        // commiting transaction and then setting it on other resource in a new transaction
-        $fedora->begin();
-        $new->getAcl()->createAcl()->grant(WAR::USER, WAR::PUBLIC_USER, WAR::READ);
-        $newMeta = $new->getMetadata();
-        $newMeta->addResource(RC::idProp(), $curId);
-        $new->setMetadata($newMeta);
-        $new->updateMetadata();
-        $fedora->commit();
-    }
-
-    // remove obsolete resources
-    echo "removing obsolete resources...\n";
-    $fedora->begin();
+    echo "### Removing obsolete resources...\n";
     array_shift($collections);
-    foreach ($collections as $uri => $id) {
-        $col = $fedora->getResourceByUri($uri);
-        foreach ($col->getFedoraChildren() as $res) {
-            if (!in_array($res->getUri(true), $imported)) {
-                echo "    " . $res->getUri(true) . "\n";
+    foreach ($collections as $id) {
+        $searchTerm              = new SearchTerm($cfg->schema->parent, $id, '=', SearchTerm::TYPE_RELATION);
+        $searchCfg               = new SearchConfig();
+        $searchCfg->metadataMode = RepoResource::META_RESOURCE;
+        $children                = $repo->getResourcesBySearchTerms([$searchTerm], $searchCfg);
+        foreach ($children as $res) {
+            if (!in_array($res->getUri(), $imported)) {
+                echo "    " . $res->getUri() . "\n";
                 $res->delete(true);
             }
         }
     }
-    $fedora->commit();
 
-    // grant read rights for public
-    echo "granting read rights...\n";
-    $fedora->begin();
-    $fedora->getResourceByUri('/ontology')->getAcl()->createAcl()->grant(WAR::USER, WAR::PUBLIC_USER, WAR::READ);
-    $fedora->commit();
-} catch (Exception $e) {
-    $fedora->rollback();
-    throw $e;
+    $repo->commit();
+    echo "\nFinished in " . (time() - $t0) . "s\n";
+} finally {
+    if ($repo->inTransaction()) {
+        $repo->rollback();
+    }
 }
-

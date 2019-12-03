@@ -13,7 +13,7 @@ if (isset($cfg->composerLocation)) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
-include __DIR__ . '/functions.php';
+include __DIR__ . '/functionsRdbms.php';
 
 use EasyRdf\Graph;
 use EasyRdf\RdfNamespace;

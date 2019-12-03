@@ -1,6 +1,22 @@
 {
+    "name": "acdh-oeaw/arche-schema",
+    "description": "Metadata schema for the ARCHE repository",
+    "keywords": [],
+    "homepage": "https://github.com/acdh-oeaw/repo-schema",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martina Trognitz",
+            "email": "martina.trognitz@oeaw.ac.at"
+        },
+        {
+            "name": "Mateusz Żółtak",
+            "email": "mzoltak@oeaw.ac.at"
+        }
+    ],
     "require": {
         "acdh-oeaw/easyrdf": "*",
-        "acdh-oeaw/acdh-repo-lib": "*"
+        "acdh-oeaw/acdh-repo-lib": "*",
+        "acdh-oeaw/repo-php-util": "~2"
     }
 }

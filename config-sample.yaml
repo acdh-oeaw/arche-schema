@@ -7,8 +7,6 @@ rest:
         metadataParentProperty: X-PARENT-PROPERTY
         metadataWriteMode: X-METADATA-WRITE-MODE
         transactionId: X-TRANSACTION-ID
-storage:
-    hashAlgorithm: md5
 schema:
     id: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
     label: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle

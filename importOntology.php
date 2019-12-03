@@ -96,11 +96,10 @@ try {
         try {
             $old = $repo->getResourceById($curId);
 
-            $algo = $cfg->storage->hashAlgorithm;
-            if (!in_array($algo, ['sha1', 'md5'])) {
-                throw new Exception("fixity hash $algo not implemented - update the script");
-            }
             $hash = (string) $old->getGraph()->getLiteral($cfg->schema->hash);
+            if (!preg_match('/^(md5|sha1):/', $hash)) {
+                throw new Exception("fixity hash $hash not implemented - update the script");
+            }
             $md5  = 'md5:' . md5_file($argv[2]);
             $sha1 = 'sha1:' . sha1_file($argv[2]);
             if (!in_array($hash, [$md5, $sha1])) {

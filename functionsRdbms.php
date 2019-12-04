@@ -47,7 +47,7 @@ function saveOrUpdate(Resource $res, Repo $repo, string $parentId,
     foreach ($res->properties() as $p) {
         foreach ($res->allLiterals($p) as $v) {
             if ($v->getValue() !== '') {
-                $meta->addLiteral($p, $v->getValue(), $v->getLang());
+                $meta->addLiteral($p, $v->getValue(), $v->getLang() ?? 'en');
             }
         }
         foreach ($res->allResources($p) as $v) {
@@ -62,7 +62,7 @@ function saveOrUpdate(Resource $res, Repo $repo, string $parentId,
     $meta->addResource($schema->parent, $parentId);
 
     if (null === $meta->getLiteral($schema->label)) {
-        $meta->addLiteral($schema->label, preg_replace('|^.*[/#]|', '', $id));
+        $meta->addLiteral($schema->label, preg_replace('|^.*[/#]|', '', $id), 'en');
     }
 
     try {

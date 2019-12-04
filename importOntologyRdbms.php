@@ -52,7 +52,7 @@ try {
             $res = $repo->getResourceById($id);
         } catch (NotFound $e) {
             $meta = (new Graph())->resource('.');
-            $meta->addLiteral($cfg->schema->label, preg_replace('|^.*[/#]|', '', $id));
+            $meta->addLiteral($cfg->schema->label, preg_replace('|^.*[/#]|', '', $id), 'en');
             $meta->addResource($cfg->schema->id, $id);
             $res  = $repo->createResource($meta);
         }
@@ -78,7 +78,7 @@ try {
         } catch (NotFound $e) {
             $meta = (new Graph())->resource('.');
             $meta->addResource($cfg->schema->id, $collId);
-            $meta->addLiteral($cfg->schema->label, 'ACDH ontology binaries');
+            $meta->addLiteral($cfg->schema->label, 'ACDH ontology binaries', 'en');
             $coll = $repo->createResource($meta);
         }
         echo "    " . $coll->getUri() . "\n";
@@ -88,7 +88,7 @@ try {
 
         $newMeta = (new Graph())->resource('.');
         $newMeta->addResource($cfg->schema->id, $curId . '/' . date('Y-m-d_h:m:s'));
-        $newMeta->addLiteral($cfg->schema->label, 'ACDH schema owl file');
+        $newMeta->addLiteral($cfg->schema->label, 'ACDH schema owl file', 'en');
         $newMeta->addResource($cfg->schema->parent, $coll->getUri());
         $newMeta->addResource($cfg->schema->acdh->accessRestriction, 'https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public');
 

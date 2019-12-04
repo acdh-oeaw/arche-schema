@@ -48,7 +48,7 @@ function saveOrUpdate(Resource $res, Fedora $fedora, string $path, array &$impor
     foreach ($res->properties() as $p) {
         foreach ($res->allLiterals($p) as $v) {
             if ($v->getValue() !== '') {
-                $meta->addLiteral($p, $v->getValue(), $v->getLang());
+                $meta->addLiteral($p, $v->getValue(), $v->getLang() ?? 'en');
             }
         }
 
@@ -63,7 +63,7 @@ function saveOrUpdate(Resource $res, Fedora $fedora, string $path, array &$impor
     $meta->addResource(RC::idProp(), $id);
 
     if (!$meta->hasProperty(RC::get('doorkeeperOntologyLabelProp'))) {
-        $meta->addLiteral(RC::get('doorkeeperOntologyLabelProp'), preg_replace('|^.*[/#]|', '', $id));
+        $meta->addLiteral(RC::get('doorkeeperOntologyLabelProp'), preg_replace('|^.*[/#]|', '', $id), 'en');
     }
 
     try {
@@ -164,7 +164,7 @@ function checkRestriction(Resource $r) {
             $srcProp = 'http://www.w3.org/2002/07/owl#' . $i . 'ualifiedCardinality';
             $targetProp = str_replace('qualifiedC', 'c', str_replace('Qualified', '', $srcProp));
             foreach ($r->allLiterals($srcProp) as $j) {
-                $r->addLiteral($targetProp, $j->getValue());
+                $r->addLiteral($targetProp, $j->getValue(), 'en');
             }
             $r->delete($srcProp);
         }

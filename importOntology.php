@@ -49,7 +49,6 @@ try {
         'ontology/datatypeProperty' => 'http://www.w3.org/2002/07/owl#datatypeProperty',
         'ontology/restriction' => 'http://www.w3.org/2002/07/owl#Restriction',
     );
-
     foreach ($collections as $i => $id) {
         try {
             $res = $fedora->getResourceByUri($i);
@@ -83,7 +82,7 @@ try {
     foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#DatatypeProperty') as $i) {
         saveOrUpdate($i, $fedora, 'ontology/datatypeProperty/', $imported);
     }
-    
+
     if (!isset($argv[2]) || $argv[2] !== 'skipBinary') {
         # Import ontology as a binary
         echo "\nUpdating the owl binary...\n";
@@ -104,7 +103,7 @@ try {
         $old = null;
 
         $newMeta = (new Graph())->resource('.');
-        $newMeta->addResource(RC::idProp(), $curId . '/' . date('Y-m-d_h:m:s'));
+        $newMeta->addResource(RC::idProp(), $curId . '/' . date('Y-m-d_H:m:s'));
         $newMeta->addLiteral(RC::titleProp(), 'ACDH schema owl file', 'en');
         $newMeta->addResource(RC::relProp(), $coll->getId());
     

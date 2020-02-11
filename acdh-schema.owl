@@ -1981,6 +1981,7 @@ Handles belong into hasPid and identifiers with stable URL or URI into hasIdenti
         <skos:altLabel xml:lang="de">OAI-PMH Set</skos:altLabel>
         <skos:altLabel xml:lang="en">OAI-PMH set</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">188</acdh:ordering>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/arche_oaiphmsets/</acdh:vocabs>
     </owl:DatatypeProperty>
     
 

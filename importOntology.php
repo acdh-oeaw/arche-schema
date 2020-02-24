@@ -110,9 +110,13 @@ try {
         // ontology binary itself
         try {
             $old = $fedora->getResourceById($curId);
-            $fixity = explode(':', $old->getFixity());
-            if ($fixity[1] !== 'sha1') {
-                throw new Exception('fixity hash not implemented - update the script');
+            try {
+                $fixity = explode(':', $old->getFixity());
+                if ($fixity[1] !== 'sha1') {
+                    throw new Exception('fixity hash not implemented - update the script');
+                }
+            } catch (NotFound $e) {
+                throw new \Exception($curId . ' should store ontology binary but is not a binary resource'); 
             }
             if (sha1_file($argv[1]) !== $fixity[2]) {
                 echo "    uploading a new version\n";            

@@ -16,6 +16,7 @@ use acdhOeaw\fedora\Fedora;
 use acdhOeaw\fedora\exceptions\NotFound;
 use acdhOeaw\schema\file\File;
 use EasyRdf\Graph;
+use EasyRdf\Literal;
 use EasyRdf\Resource;
 use EasyRdf\RdfNamespace;
 
@@ -56,7 +57,7 @@ try {
         } catch (NotFound $e) {
             $graph = new Graph();
             $meta = $graph->resource('.');
-            $meta->addLiteral(RC::get('doorkeeperOntologyLabelProp'), $i, 'en');
+            $meta->addLiteral(RC::get('doorkeeperOntologyLabelProp'), new Literal($i, 'en'));
             $meta->addResource(RC::idProp(), $id);
             $res = $fedora->createResource($meta, '', $i, 'PUT');
         }
@@ -95,7 +96,7 @@ try {
         } catch (NotFound $e) {
             $meta = (new Graph())->resource('.');
             $meta->addResource(RC::idProp(), $collId);
-            $meta->addLiteral(RC::titleProp(), 'ACDH ontology binaries', 'en');
+            $meta->addLiteral(RC::titleProp(), new Literal('ACDH ontology binaries', 'en'));
             $coll = $fedora->createResource($meta);
         }
         echo "    " . $coll->getUri(true) . "\n";
@@ -105,7 +106,7 @@ try {
 
         $newMeta = (new Graph())->resource('.');
         $newMeta->addResource(RC::idProp(), $curId . '/' . date('Y-m-d_h:m:s'));
-        $newMeta->addLiteral(RC::titleProp(), 'ACDH schema owl file', 'en');
+        $newMeta->addLiteral(RC::titleProp(), new Literal('ACDH schema owl file', 'en'));
         $newMeta->addResource(RC::relProp(), $coll->getId());
     
         // ontology binary itself
@@ -123,7 +124,7 @@ try {
                 $oldMeta->delete(RC::idProp(), new Resource($curId));
                 $oldMeta->addResource(RC::get('fedoraPrevProp'), $new->getId());
                 $oldMeta->delete(RC::titleProp());
-                $oldMeta->addLiteral(RC::titleProp(), 'ACDH ontology binaries', 'en');
+                $oldMeta->addLiteral(RC::titleProp(), new Literal('ACDH ontology binaries', 'en'));
                 $old->setMetadata($oldMeta);
                 $old->updateMetadata();
             } else {

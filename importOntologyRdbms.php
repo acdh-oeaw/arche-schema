@@ -88,7 +88,7 @@ try {
         $old   = null;
 
         $newMeta = (new Graph())->resource('.');
-        $newMeta->addResource($cfg->schema->id, $curId . '/' . date('Y-m-d_h:m:s'));
+        $newMeta->addResource($cfg->schema->id, $curId . '/' . date('Y-m-d_H:m:s'));
         $newMeta->addLiteral($cfg->schema->label, new Literal('ACDH schema owl file', 'en'));
         $newMeta->addResource($cfg->schema->parent, $coll->getUri());
         $newMeta->addResource($cfg->schema->acdh->accessRestriction, 'https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public');

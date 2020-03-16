@@ -1,4 +1,4 @@
-i<?php
+<?php
 
 use acdhOeaw\fedora\Fedora;
 use acdhOeaw\fedora\exceptions\NotFound;

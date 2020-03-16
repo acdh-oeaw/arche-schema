@@ -50,7 +50,6 @@ try {
         'ontology/datatypeProperty' => 'http://www.w3.org/2002/07/owl#datatypeProperty',
         'ontology/restriction' => 'http://www.w3.org/2002/07/owl#Restriction',
     );
-
     foreach ($collections as $i => $id) {
         try {
             $res = $fedora->getResourceByUri($i);
@@ -84,7 +83,7 @@ try {
     foreach ($ontology->allOfType('http://www.w3.org/2002/07/owl#DatatypeProperty') as $i) {
         saveOrUpdate($i, $fedora, 'ontology/datatypeProperty/', $imported);
     }
-    
+
     if (!isset($argv[2]) || $argv[2] !== 'skipBinary') {
         # Import ontology as a binary
         echo "\nUpdating the owl binary...\n";
@@ -105,16 +104,20 @@ try {
         $old = null;
 
         $newMeta = (new Graph())->resource('.');
-        $newMeta->addResource(RC::idProp(), $curId . '/' . date('Y-m-d_h:m:s'));
+        $newMeta->addResource(RC::idProp(), $curId . '/' . date('Y-m-d_H:m:s'));
         $newMeta->addLiteral(RC::titleProp(), new Literal('ACDH schema owl file', 'en'));
         $newMeta->addResource(RC::relProp(), $coll->getId());
     
         // ontology binary itself
         try {
             $old = $fedora->getResourceById($curId);
-            $fixity = explode(':', $old->getFixity());
-            if ($fixity[1] !== 'sha1') {
-                throw new Exception('fixity hash not implemented - update the script');
+            try {
+                $fixity = explode(':', $old->getFixity());
+                if ($fixity[1] !== 'sha1') {
+                    throw new Exception('fixity hash not implemented - update the script');
+                }
+            } catch (NotFound $e) {
+                throw new \Exception($curId . ' should store ontology binary but is not a binary resource'); 
             }
             if (sha1_file($argv[1]) !== $fixity[2]) {
                 echo "    uploading a new version\n";            

@@ -1,6 +1,6 @@
 rest:
     urlBase: http://127.0.0.1
-    pathBase: /rest/
+    pathBase: /
     verifyCert: false
     headers:
         metadataReadMode: X-METADATA-READ-MODE
@@ -14,16 +14,13 @@ schema:
     label: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
     delete: delete://delete
     searchMatch: search://match
-    hash: https://hash
-    acdh:
-        accessRestriction: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction
-        previous: https://vocabs.acdh.oeaw.ac.at/schema#isPreviousVersionOf
+    hash: https://vocabs.acdh.oeaw.ac.at/schema#hasHash
+    accessRestriction: https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction
+    previous: https://vocabs.acdh.oeaw.ac.at/schema#isPreviousVersionOf
     namespaces:
-        ontology: 'https://vocabs.acdh.oeaw.ac.at/schema#'
-        id: 'https://id.acdh.oeaw.ac.at/'
+        ontology: https://vocabs.acdh.oeaw.ac.at/schema#
+        id: https://id.acdh.oeaw.ac.at/
 auth:
-    httpHeader:
-        Eppn: admin
     httpBasic:
         user: ''
         passsword: ''

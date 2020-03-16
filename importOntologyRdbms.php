@@ -91,7 +91,7 @@ try {
         $newMeta->addResource($cfg->schema->id, $curId . '/' . date('Y-m-d_H:m:s'));
         $newMeta->addLiteral($cfg->schema->label, new Literal('ACDH schema owl file', 'en'));
         $newMeta->addResource($cfg->schema->parent, $coll->getUri());
-        $newMeta->addResource($cfg->schema->acdh->accessRestriction, 'https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public');
+        $newMeta->addResource($cfg->schema->accessRestriction, 'https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public');
 
         $binary = new BinaryPayload(null, $argv[2], 'application/rdf+xml');
         try {
@@ -109,7 +109,7 @@ try {
                 echo "      " . $new->getUri() . "\n";
                 $oldMeta = $old->getGraph();
                 $oldMeta->deleteResource($cfg->schema->id, $curId);
-                $oldMeta->addResource($cfg->schema->acdh->previous, $new->getUri());
+                $oldMeta->addResource($cfg->schema->previous, $new->getUri());
                 $old->setGraph($oldMeta);
                 $old->updateMetadata(RepoResource::UPDATE_OVERWRITE); // we must loose the old identifier
 

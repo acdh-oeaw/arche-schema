@@ -109,7 +109,7 @@ try {
                 echo "      " . $new->getUri() . "\n";
                 $oldMeta = $old->getGraph();
                 $oldMeta->deleteResource($cfg->schema->id, $curId);
-                $oldMeta->addResource($cfg->schema->previous, $new->getUri());
+                $oldMeta->addResource($cfg->schema->versioning->isPrevOf, $new->getUri());
                 $old->setGraph($oldMeta);
                 $old->updateMetadata(RepoResource::UPDATE_OVERWRITE); // we must loose the old identifier
 

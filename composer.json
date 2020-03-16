@@ -16,7 +16,7 @@
     ],
     "require": {
         "acdh-oeaw/easyrdf": "*",
-        "acdh-oeaw/acdh-repo-lib": "*",
+        "acdh-oeaw/arche-lib": "^1",
         "acdh-oeaw/repo-php-util": "~2"
     }
 }

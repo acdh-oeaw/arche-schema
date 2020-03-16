@@ -2,7 +2,7 @@
     "name": "acdh-oeaw/arche-schema",
     "description": "Metadata schema for the ARCHE repository",
     "keywords": [],
-    "homepage": "https://github.com/acdh-oeaw/repo-schema",
+    "homepage": "https://github.com/acdh-oeaw/arche-schema",
     "license": "MIT",
     "authors": [
         {

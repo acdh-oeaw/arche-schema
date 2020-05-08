@@ -48,6 +48,8 @@ Introduced annotation property acdh:ordering to indicate how properties should b
 Introduced annotation property acdh:recommendedClass to indicate in which class a property is recommended, but not mandatory.</owl:versionInfo>
         <owl:versionInfo xml:lang="en">Version 1.6 released on 2020-02-29.
 Introduced vocabulary for acdh:hasLicense</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">Version 1.7 released on 2020-05-08.
+acdh:vocabs annotation property values adjusted to point to endpoints providing actual vocabulary data (instead of a WWW GUI). This is necessary for tools to make use of the acdh:vocabs annotation property.</owl:versionInfo>
         <owl:versionInfo xml:lang="en">Version 1.3 released on 2019-09-12.
 Added missing range to acdh:hasAppliedMethod
 
@@ -1288,7 +1290,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <skos:altLabel xml:lang="en">Access Restriction</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugriffsbeschränkung</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">114</acdh:ordering>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/arche_access_restrictions/</acdh:vocabs>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_access_restrictions/data</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -1449,7 +1451,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <skos:altLabel xml:lang="en">Category</skos:altLabel>
         <skos:altLabel xml:lang="de">Kategorie</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47</acdh:ordering>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/arche_category/</acdh:vocabs>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_category/data</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -1838,7 +1840,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Publication"/>
         <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Collection</acdh:recommendedClass>
         <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Resource</acdh:recommendedClass>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/iso639_3/</acdh:vocabs>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/iso639_3/data</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -1889,7 +1891,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <skos:altLabel xml:lang="en">License</skos:altLabel>
         <skos:altLabel xml:lang="de">Lizenz</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">113</acdh:ordering>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/arche_licenses/</acdh:vocabs>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_licenses/data</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -1907,7 +1909,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
         <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Collection</acdh:recommendedClass>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/arche_lifecycle_status/</acdh:vocabs>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_lifecycle_status/data</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -2027,7 +2029,7 @@ Handles belong into hasPid and identifiers with stable URL or URI into hasIdenti
         <skos:altLabel xml:lang="de">OAI-PMH Set</skos:altLabel>
         <skos:altLabel xml:lang="en">OAI-PMH set</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">188</acdh:ordering>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/arche_oaiphmsets/</acdh:vocabs>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_oaiphmsets/data</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -2141,7 +2143,7 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
         <skos:altLabel xml:lang="en">Research Discipline</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/oefos/</acdh:vocabs>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/oefos/data</acdh:vocabs>
     </owl:DatatypeProperty>
     
 

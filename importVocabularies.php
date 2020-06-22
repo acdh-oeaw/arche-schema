@@ -29,9 +29,9 @@ use acdhOeaw\arche\schemaImport\Ontology;
 
 $t0 = time();
 
-if ($argc < 3 || !file_exists($argv[1]) || !file_exists($argv[2])) {
-    echo "Imports an OWL ontology into the ARCHE repository.\n\n";
-    echo "usage: $argv[0] config.yaml ontology.owl [--skipBinary] [--skipVocabularies]\n\n";
+if ($argc < 2 || !file_exists($argv[1])) {
+    echo "Imports external vocabularies defined in the ontology.\n\n";
+    echo "usage: $argv[0] config.yaml [ontology.owl]\n\n";
     return;
 }
 $cfg = json_decode(json_encode(yaml_parse_file($argv[1])));
@@ -45,16 +45,15 @@ if (isset($cfg->composerLocation)) {
 $repo = Repo::factory($argv[1]);
 
 $ontology = new Ontology($cfg->schema);
-$ontology->loadFile($argv[2]);
+if ($argc > 2) {
+    $ontology->loadFile($argv[2]);
+} else {
+    $ontology->loadRepo($repo);
+}
+
 try {
     $repo->begin();
-    $ontology->import($repo, true);
-    if (!in_array('--skipBinary', $argv)) {
-        $ontology->importOwlFile($repo, $argv[2], true);
-    }
-    if (!in_array('--skipVocabularies', $argv)) {
-        $ontology->importVocabularies($repo, true);
-    }
+    $ontology->importVocabularies($repo, true);
     $repo->commit();
 } finally {
     if ($repo->inTransaction()) {

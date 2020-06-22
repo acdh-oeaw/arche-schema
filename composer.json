@@ -1,6 +1,6 @@
 {
-    "name": "acdh-oeaw/arche-schema-ingest",
-    "description": "Tools for ingesting ARCHE schema into the repository",
+    "name": "acdh-oeaw/arche-schema",
+    "description": "ACDH repository ontology",
     "keywords": [],
     "homepage": "https://github.com/acdh-oeaw/arche-schema",
     "license": "MIT",
@@ -8,22 +8,6 @@
         {
             "name": "Martina Trognitz",
             "email": "martina.trognitz@oeaw.ac.at"
-        },
-        {
-            "name": "Mateusz Żółtak",
-            "email": "mzoltak@oeaw.ac.at"
         }
-    ],
-    "autoload": {
-        "psr-4": {
-            "acdhOeaw\\": "src/acdhOeaw"
-        }
-    },
-    "require": {
-        "php": ">= 7.3",
-        "guzzlehttp/guzzle": "^6",
-        "acdh-oeaw/easyrdf": "*",
-        "acdh-oeaw/arche-lib": "^1",
-        "acdh-oeaw/arche-lib-ingest": "^1.4"
-    }
+    ]
 }

@@ -1,0 +1,14 @@
+name: check
+
+on: push
+
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: composer
+      run: composer update
+    - name: check
+      run: vendor/acdh-oeaw/arche-schema-ingest/checkOntology.php config.yaml acdh-schema.owl
+

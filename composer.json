@@ -9,5 +9,8 @@
             "name": "Martina Trognitz",
             "email": "martina.trognitz@oeaw.ac.at"
         }
-    ]
+    ],
+    "require-dev": {
+        "acdh-oeaw/arche-schema-ingest": "^1.0"
+    }
 }

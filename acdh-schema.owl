@@ -951,6 +951,8 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isDigitisingAgentOf">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
+        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrImageOrResource"/>
         <rdfs:comment xml:lang="de">Person oder Organisation (A), die für die Erstellung der digitalen Repräsentation (Ressource B) eines physischen Objektes verantwortlich ist.</rdfs:comment>
         <rdfs:comment xml:lang="en">Person or Organisation (A) responsible for creating the digital representation (Resource B) of a physical object.</rdfs:comment>
         <rdfs:label xml:lang="en">is digitising agent of</rdfs:label>

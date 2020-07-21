@@ -6,6 +6,28 @@ This is the repo for the `ACDH-Ontology`. The ontology is going to be used to de
 * For a more static overview - please see [here](https://teiminator.acdh.oeaw.ac.at/services/owl2html.xql?owl=https%3A%2F%2Fraw.githubusercontent.com%2Facdh-oeaw%2Frepo-schema%2Fmaster%2Facdh-schema.owl)
   * or if you prefere a table-layout - click [here](https://teiminator.acdh.oeaw.ac.at/services/owl2html.xql?owl=https%3A%2F%2Fraw.githubusercontent.com%2Facdh-oeaw%2Frepo-schema%2Fmaster%2Facdh-schema.owl&format=table)
 
+# Release cycle
+
+Releasing new ontology versions requires lots of care. This is because the ontology determines behaviour of crucial ARCHE components (most notably the doorkeeper and the GUI) and because we must be able to assure already existing metadata are in line with the current ontology.
+
+To assure new ontology release won't cause any trouble, the release process should go as follows:
+
+* Create a new git branch (`git checkout -b branchName`, where *branchName* may be e.g. the next ontology version number).
+* Make changes in the new branch, commit it and push to the GitHub (`git push origin branchName`).
+* Create a pull request:
+    * go to https://github.com/acdh-oeaw/arche-schema/compare
+    * choose your branch in the `compare:` drop-down list
+    * provide description of your changes
+    * click the *create pull request* button
+* Wait for approval from Martina, Mateusz and Norbert.  
+  The checklist:
+    * ontology check script reports no errors
+    * arche-lib-schema passes tests against the new ontology
+    * arche-doorkeeper passes tests against the new ontology
+    * dynamic root table displays new ontology corretly
+    * we have scripts for updating old metadata so they are in line with the new ontology
+* Merge pull request and create a new release.
+
 # Naming-Conventions
 
 ## Classes

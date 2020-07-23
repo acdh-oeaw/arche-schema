@@ -1,41 +1,36 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://vocabs.acdh.oeaw.ac.at/acdh#"
      xml:base="https://vocabs.acdh.oeaw.ac.at/acdh"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:dct="http://purl.org/dc/terms/"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:acdh="https://vocabs.acdh.oeaw.ac.at/schema#"
      xmlns:foaf="http://xmlns.com/foaf/spec/#"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="https://vocabs.acdh.oeaw.ac.at/schema">
-        <owl:versionInfo xml:lang="de">Version 1.4 veröffentlicht am 2019-12-05.
-hasLastName ist nicht mehr verpflichtend für die Klasse Person, aber hasTitle ist es.</owl:versionInfo>
         <rdfs:comment xml:lang="en">Dies ist die Ontologie für ARCHE.
 In den Definitionen der Eigenschaften, meint &quot;Ressource A&quot; das Subject und &quot;Ressource B&quot; das Objekt.
 When Definitionen aus anderen Schemata (z. B. DataCite) wiederverwendet werden, wird die Referenz in Klammern angegeben: (DataCite: ContactPerson). When die ursprüngliche Definition leicht angepasst wurde, ist die Referenz mit &quot;cf.&quot; markiert.</rdfs:comment>
-        <owl:versionInfo xml:lang="de">Version 1.1 veröffentlicht am 2018-01-15.
-Name von achd:language auf acdh:hasLanguage geändert.
-achd:hasIssuedDate wurde entfernt.
-Link auf kontrollierte Vokabulare für datatype properties mittels der annotation property acdh:vocabs eingefügt.
-Einige object properties (hasAccessRestriction, hasCategory, hasLifeCycleStatus) wurden in datatype properties umgewandelt, um sie auf kontrollierte Vokabulare zu verlinken.</owl:versionInfo>
+        <rdfs:comment xml:lang="en">This is the ontology for ARCHE.
+In definitions of properties, &quot;resource A&quot; refers to the subject resource of the property and &quot;resource B&quot; to the object resource.
+When reusing definitions from other vocabularies (esp. DataCite), the reference is given in brackets: (DataCite: ContactPerson). When the source definition was changed slightly the reference is marked with &quot;cf.&quot;</rdfs:comment>
+        <rdfs:label>ACDH Schema</rdfs:label>
+        <owl:versionInfo xml:lang="en">Version 1.0 released on 2017-11-03.</owl:versionInfo>
+        <owl:versionInfo xml:lang="de">Version 1.0. veröffentlicht am 2017-11-03.</owl:versionInfo>
         <owl:versionInfo xml:lang="en">Version 1.1 released on 2018-01-15.
 Changed achd:language to acdh:hasLanguage.
 Removed acdh:hasIssuedDate.
 Introduced link to controlled vocabularies for datatype properties via annotation property acdh:vocabs.
 Transformed some object properties into datatype properties (hasAccessRestriction, hasCategory, hasLifeCycleStatus) to link with controlled vocabulary.</owl:versionInfo>
-        <owl:versionInfo xml:lang="en">Version 1.5 released on 2020-02-29.
-New property acdh:hasOaiSet with range xsd:string. Terms should come from vocabulary indicated in acdh:vocabs
-Introduced annotation property acdh:langTag with range xsd:boolean. It is set to true for properties where a language tag is mandatory.</owl:versionInfo>
-        <owl:versionInfo xml:lang="en">Version 1.0 released on 2017-11-03.</owl:versionInfo>
-        <owl:versionInfo xml:lang="de">Version 1.0. veröffentlicht am 2017-11-03.</owl:versionInfo>
-        <rdfs:comment xml:lang="en">Version 1.9 released on 2020-07-16.
-Added annotation properties &apos;automatedFill&apos; and &apos;defaultValue&apos;
-Introduced helper class ImageorResource.
-Introduced hasCreatedDateOriginal.</rdfs:comment>
+        <owl:versionInfo xml:lang="de">Version 1.1 veröffentlicht am 2018-01-15.
+Name von achd:language auf acdh:hasLanguage geändert.
+achd:hasIssuedDate wurde entfernt.
+Link auf kontrollierte Vokabulare für datatype properties mittels der annotation property acdh:vocabs eingefügt.
+Einige object properties (hasAccessRestriction, hasCategory, hasLifeCycleStatus) wurden in datatype properties umgewandelt, um sie auf kontrollierte Vokabulare zu verlinken.</owl:versionInfo>
         <owl:versionInfo xml:lang="en">Version 1.2 released on 2018-06-11.
 Removed hasCopyrightedDate, hasValidEndDate, hasValidStartDate, cites, compiles, isAppliedMethod, isCitedBy, isCompiledBy, isDerivedFrom, isFormat, isIdenticalTo, isLicense, isOriginalFormOf, isReferencedBy, isRelatedDiscipline, isReviewedBy, isSchema, isSubject, isSupplementTo, isSupplementedBy, isTransferMethod, isVariantFormOf, references, and reviews.
 
@@ -50,29 +45,6 @@ Introduced Helper classes to avoid anonymous class unions. Added domains and ran
 Introduced annotation property acdh:ordering to indicate how properties should be ordered when displayed in a form.
 
 Introduced annotation property acdh:recommendedClass to indicate in which class a property is recommended, but not mandatory.</owl:versionInfo>
-        <owl:versionInfo xml:lang="en">Version 1.6 released on 2020-02-29.
-Introduced vocabulary for acdh:hasLicense</owl:versionInfo>
-        <owl:versionInfo xml:lang="en">Version 1.3 released on 2019-09-12.
-Added missing range to acdh:hasAppliedMethod
-
-Added link to controlled vocabulary for acdh:hasRelatedDiscipline
-Added link to controlled vocabulary for acdh:hasLanguage
-
-Introduced new property acdh:hasOaiSet
-
-Increased set of mandatory properties
-Added and corrected English and German descriptions for all properties.</owl:versionInfo>
-        <owl:versionInfo xml:lang="de">Version 1.6 veröffentlicht am 2019-02-29.
-Vokabular für acdh:hasLicense eingefügt.</owl:versionInfo>
-        <owl:versionInfo xml:lang="en">Version 1.8 released on 2020-07-07.
-Change type of hasLanguage to xsd:anyURI.
-Introduced helper class CollectionOrImageorResource.
-Introducted hasDigitisingAgent, hasLinceseSummary, hasAccessRestrictionSummary.</owl:versionInfo>
-        <rdfs:comment xml:lang="en">This is the ontology for ARCHE.
-In definitions of properties, &quot;resource A&quot; refers to the subject resource of the property and &quot;resource B&quot; to the object resource.
-When reusing definitions from other vocabularies (esp. DataCite), the reference is given in brackets: (DataCite: ContactPerson). When the source definition was changed slightly the reference is marked with &quot;cf.&quot;</rdfs:comment>
-        <owl:versionInfo xml:lang="en">Version 1.7 released on 2020-05-08.
-acdh:vocabs annotation property values adjusted to point to endpoints providing actual vocabulary data (instead of a WWW GUI). This is necessary for tools to make use of the acdh:vocabs annotation property.</owl:versionInfo>
         <owl:versionInfo xml:lang="de">Version 1.2 veröffentlicht am 2018-06-11.
 Weitere object properties wurden entfernt: hasCopyrightedDate, hasValidEndDate, hasValidStartDate, cites, compiles, isAppliedMethod, isCitedBy, isCompiledBy, isDerivedFrom, isFormat, isIdenticalTo, isLicense, isOriginalFormOf, isReferencedBy, isRelatedDiscipline, isReviewedBy, isSchema, isSubject, isSupplementTo, isSupplementedBy, isTransferMethod, isVariantFormOf, references und reviews. 
 
@@ -87,9 +59,16 @@ Helper Klassen wurden eingeführt, um anonyme Vereinigungen von Klassen zu verme
 Die annotation property acdh:ordering wurde eingeführt, um anzuzeigen in welcher Reihenfolge properties in einem Formular angezeigt werden sollten.
 
 Die annotation annotation property acdh:recommendedClass wurde eingeführt, um anzuzeigen in welcher Klasse eine property empfohlen, aber nicht verpflichtend ist.</owl:versionInfo>
-        <owl:versionInfo xml:lang="de">Version 1.5 veröffentlicht am 2019-02-29.
-Neues attribut acdh:hasOaiSet mit range xsd:string eingeführt. Begriffe sollen aus dem mit acdh:vocabs angegebenen Vokabular verwendet werden.
-Die annotation property acdh:langTag wurde eingeführt. Sie hat den range xsd:boolean. Sie wurde mit dem Wert &apos;true&apos; für alle attribute gesetzt, in denen Sprachmarker verpflichtend sind.</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">Version 1.3 released on 2019-09-12.
+Added missing range to acdh:hasAppliedMethod
+
+Added link to controlled vocabulary for acdh:hasRelatedDiscipline
+Added link to controlled vocabulary for acdh:hasLanguage
+
+Introduced new property acdh:hasOaiSet
+
+Increased set of mandatory properties
+Added and corrected English and German descriptions for all properties.</owl:versionInfo>
         <owl:versionInfo xml:lang="de">Version 1.3 veröffentlicht am 2019-09-12.
 Fehlende range-Angabe an acdh:hasAppliedMethod hinzugefügt
 
@@ -102,7 +81,96 @@ Set von verpflichtenden Attributen erhöht.
 Englische und Deutsche Beschreibungen für alle Attribute hinzugefügt und korrigiert.</owl:versionInfo>
         <owl:versionInfo xml:lang="en">Version 1.4 released on 2019-12-05.
 hasLastName no longer required for class Person, but hasTitle is.</owl:versionInfo>
-        <rdfs:label>ACDH Schema</rdfs:label>
+        <owl:versionInfo xml:lang="de">Version 1.4 veröffentlicht am 2019-12-05.
+hasLastName ist nicht mehr verpflichtend für die Klasse Person, aber hasTitle ist es.</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">Version 1.5 released on 2020-02-29.
+New property acdh:hasOaiSet with range xsd:string. Terms should come from vocabulary indicated in acdh:vocabs
+Introduced annotation property acdh:langTag with range xsd:boolean. It is set to true for properties where a language tag is mandatory.</owl:versionInfo>
+        <owl:versionInfo xml:lang="de">Version 1.5 veröffentlicht am 2019-02-29.
+Neues attribut acdh:hasOaiSet mit range xsd:string eingeführt. Begriffe sollen aus dem mit acdh:vocabs angegebenen Vokabular verwendet werden.
+Die annotation property acdh:langTag wurde eingeführt. Sie hat den range xsd:boolean. Sie wurde mit dem Wert &apos;true&apos; für alle attribute gesetzt, in denen Sprachmarker verpflichtend sind.</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">Version 1.6 released on 2020-02-29.
+Introduced vocabulary for acdh:hasLicense</owl:versionInfo>
+        <owl:versionInfo xml:lang="de">Version 1.6 veröffentlicht am 2019-02-29.
+Vokabular für acdh:hasLicense eingefügt.</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">Version 1.7 released on 2020-05-08.
+acdh:vocabs annotation property values adjusted to point to endpoints providing actual vocabulary data (instead of a WWW GUI). This is necessary for tools to make use of the acdh:vocabs annotation property.</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">Version 1.8 released on 2020-07-07.
+Change type of hasLanguage to xsd:anyURI.
+Introduced helper class CollectionOrImageorResource.
+Introducted hasDigitisingAgent, hasLinceseSummary, hasAccessRestrictionSummary.</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">Version 1.9 released on 2020-07-16.
+Added annotation properties &apos;automatedFill&apos; and &apos;defaultValue&apos;
+Introduced helper class ImageorResource.
+Introduced hasCreatedDateOriginal.</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">Version 2.0 released on 2020-07-23
+
+Changed Datatype Properties to Object Properties with range skos:Concept
+hasAccessRestriction
+hasCategory
+hasLanguage
+hasLicense
+hasLifeCycleStatus
+hasRelatedDiscipline
+
+Changed cardinality restrictions for automatically filled properties (for the corresponding domain):
+hasAccessRestrictionSummary 0-1
+hasLicenseSummary 0-1
+hasHosting --&gt; removed
+hasAvailableDate 0-1
+hasNumberofItems 0-1
+hasBinarySize 0-1
+hasFormat 0-1
+hasAccessRestriction for Collection to 0-1
+AND changed cardinality for:
+hasLicense for Collection to 0-1
+
+Removed cardinalities from resource for:
+hasCompleteness
+hasNumberOfItems
+
+Extended definitions for
+hasAvailableDate
+hasCreator
+hasLifeCycleStatus
+automated fill, default value, vocabs
+
+Removed inverse properties
+is actor of
+is author of
+is contact of
+is contributor of
+is coverage of
+is creator of
+is curator of
+is depositor of
+is editor of
+is funder of
+is hosting of
+is licensor of
+is digitising agent of
+is metadata creator of
+is owner of
+is principal investigator of
+is rights holder of
+is spatial coverage of
+has member
+has part
+is source of
+has title image
+has metadata
+is documented by
+is continued by
+is derived publication of
+
+Introduced annotation &quot;inverse&quot; indicating the inverse property input option.
+Introduced hasIssuedDate for Publication.
+Extended domain of hasTableOfContents to Resources.
+Extended domain of hasAvailableDate and hasAccessRestriction to owl:Thing. 
+Removed hasLandingPage from the ontology.
+Added automatedfill annotation to hasLocationPath.
+Added German translations to class descriptions.
+Minor fixes.</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -147,11 +215,11 @@ hasLastName no longer required for class Person, but hasTitle is.</owl:versionIn
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#automatedFill -->
 
     <owl:AnnotationProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#automatedFill">
-        <rdfs:comment xml:lang="en">Denotes if the property is filled automatically by the system. Add this annotation and fill with &apos;true&apos;. Properties without this annotation or any other value have to be filled manually.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Gibt an, ob der Wert automatisch durch das System befüllt wird. &apos;true&apos; eingeben, wenn dies der Fall ist. Jeder andere Wert oder das fehlen dieser Annotation geben an, dass die Eigenschaft manuell befüllt werden muss.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Ein Wert von &quot;true&quot; bedeutet, dass die Eigenschaft automatisch durch eine Software verwaltet wird und nicht manuell ausgefüllt werden muss.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Value of &quot;true&quot; indicates a property is automatically managed by a repository software and must not be provided by metadata curators.</rdfs:comment>
         <rdfs:label>automated fill</rdfs:label>
-        <skos:altLabel xml:lang="en">Property filled automatically</skos:altLabel>
-        <skos:altLabel xml:lang="de">Wert wird automatisch gesetzt</skos:altLabel>
+        <skos:altLabel xml:lang="de">Metadatum, das von der Repositoriumssoftware verwaltet wird</skos:altLabel>
+        <skos:altLabel xml:lang="en">Property managed by the repository software</skos:altLabel>
     </owl:AnnotationProperty>
     
 
@@ -159,11 +227,23 @@ hasLastName no longer required for class Person, but hasTitle is.</owl:versionIn
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#defaultValue -->
 
     <owl:AnnotationProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#defaultValue">
-        <rdfs:comment xml:lang="de">Gibt den Standardwert an, der verwendet wird, wenn die Eigenschaft nicht ausgefüllt wurde.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Indicates the default value of this property. Is used if the property is left empty.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Gibt den Standardwert einer Eigenschaft an. Der Standardwert wird verwendet wenn diese Eigenschaft in einer Klasse verwendet wird, aber kein Wert angegeben wurde.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates a default property value. The default value is assigned when a class matches property&apos;s domain but no property value has been provided.</rdfs:comment>
         <rdfs:label>default value</rdfs:label>
+        <skos:altLabel xml:lang="en">Default property value</skos:altLabel>
         <skos:altLabel xml:lang="de">Standardwert</skos:altLabel>
-        <skos:altLabel xml:lang="en">default value</skos:altLabel>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#inverse -->
+
+    <owl:AnnotationProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#inverse">
+        <rdfs:comment xml:lang="de">Enthält die Bezeichnung, die verwendet werden soll, wenn die inverse Relation einer Eigenschaft angezeigt wird, z.B. um die Anzeige der inversen Relation (A) setzt fort (B) als (B) wird fortgesetzt durch (A) zu ermöglichen. Das Vorhandensein dieser Annotation bedeutet dass solche inversen Relationen angezeigt werden sollen und, wenn eine GUI Datenbearbeitung erlaubt, dem Nutzer die Eingabe von Daten für beide Fälle ermöglichen soll. Im Hintergrund wird das Subjekt der inversen Relation wird dabei als Objekt der ursprünglichen Relation gespeichert.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates a property label which should be used when displaying the inverse relation of the property, e.g. to allow to display the inverse of (A) continues (B) as (B) is continued by (A). The presence of this annotation property means that such &quot;inverse relations&quot; should be displayed and if a GUI allows data modification, it should allow the user to input data for both. In the background the resource provided as a subject of the inverse property triple will be stored as an object of the original property triple.</rdfs:comment>
+        <rdfs:label xml:lang="en">inverse</rdfs:label>
+        <skos:altLabel xml:lang="de">Bezeichnung der inversen Eigenschaft</skos:altLabel>
+        <skos:altLabel xml:lang="en">Label of inverse property</skos:altLabel>
     </owl:AnnotationProperty>
     
 
@@ -184,11 +264,11 @@ hasLastName no longer required for class Person, but hasTitle is.</owl:versionIn
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#ordering -->
 
     <owl:AnnotationProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#ordering">
-        <rdfs:comment xml:lang="en">Indicates the ordering of properties with numerical values. Insert numbers.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Zeigt die Reihenfolge der Eigenschaften mit numerischen Werten an. Zahlen einfügen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A number indicating property display order in a GUI. Properties with lower ordering value are displayed first.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine Zahl, die angibt in welcher Reihenfolge die Eigenschaft in einer GUI angezeigt werden soll. Eigenschaften mit niedrigeren Werten werden zuerst angezeigt.</rdfs:comment>
         <rdfs:label>ordering</rdfs:label>
-        <skos:altLabel xml:lang="de">Anordnung</skos:altLabel>
-        <skos:altLabel xml:lang="en">Ordering</skos:altLabel>
+        <skos:altLabel xml:lang="de">Anzeigereihenfolge der Eigenschaft</skos:altLabel>
+        <skos:altLabel xml:lang="en">Property display order</skos:altLabel>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:AnnotationProperty>
     
@@ -212,11 +292,11 @@ Den vollständigen IRI der Klasse eingeben.</rdfs:comment>
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#vocabs -->
 
     <owl:AnnotationProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#vocabs">
-        <rdfs:comment xml:lang="de">Gibt das zu verwendende kontrollierte Vokabular mit zulässigen Werten für das Attribut an. URL zu maschinenlesbarem Endpoint einfügen.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Indicates the location of the controlled vocabulary with allowed values for the property. Insert URL to machine readable endpoint.</rdfs:comment>
+        <rdfs:comment xml:lang="en">An URL of a SKOS vocabulary providing allowed property values list. The URL must point to the vocabulary in a machine-readable format (RDF-XML, RDF-turtle or RDF-ntriples).</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine URL eines SKOS-Vokabulars, das eine Liste erlaubter Werte zur Verfügung stellt. Die URL muss auf ein maschinenlesbares Format des Vokabulars zeigen (RDF-XML, RDF-turtle oder RDF-ntriples).</rdfs:comment>
         <rdfs:label>vocabs</rdfs:label>
-        <skos:altLabel xml:lang="en">List with allowed values</skos:altLabel>
-        <skos:altLabel xml:lang="de">Liste mit erlaubten Werten</skos:altLabel>
+        <skos:altLabel xml:lang="de">URL eines SKOS-Vokabulars mit erlaubten Werten</skos:altLabel>
+        <skos:altLabel xml:lang="en">URL of a SKOS vocabulary providing allowed values list</skos:altLabel>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     </owl:AnnotationProperty>
     
@@ -303,7 +383,6 @@ Den vollständigen IRI der Klasse eingeben.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#continues">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContinuedBy"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
         <rdfs:comment xml:lang="de">Gibt an, dass A eine Fortsetzung des Werks B ist.</rdfs:comment>
@@ -311,6 +390,7 @@ Den vollständigen IRI der Klasse eingeben.</rdfs:comment>
         <rdfs:label xml:lang="en">continues</rdfs:label>
         <skos:altLabel xml:lang="en">Continues</skos:altLabel>
         <skos:altLabel xml:lang="de">Setzt fort</skos:altLabel>
+        <acdh:inverse xml:lang="en">is continued by</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">143</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -320,7 +400,6 @@ Den vollständigen IRI der Klasse eingeben.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#documents">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isDocumentedBy"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrResourceOrPublication"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrResource"/>
         <rdfs:comment xml:lang="de">Gibt an, dass A die Dokumentation zu B ist.</rdfs:comment>
@@ -328,7 +407,26 @@ Den vollständigen IRI der Klasse eingeben.</rdfs:comment>
         <rdfs:label xml:lang="en">documents</rdfs:label>
         <skos:altLabel xml:lang="en">Documents</skos:altLabel>
         <skos:altLabel xml:lang="de">Dokumentiert</skos:altLabel>
+        <acdh:inverse xml:lang="en">is documented by</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">145</acdh:ordering>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction -->
+
+    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">Denotes if restricted access applies to the Resource (A). Choose from list.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Gibt an, ob der Zugriff auf die Ressource (A) eingeschränkt ist. Wählen Sie aus der Liste aus.</rdfs:comment>
+        <rdfs:label xml:lang="en">has access restriction</rdfs:label>
+        <skos:altLabel xml:lang="en">Access Restriction</skos:altLabel>
+        <skos:altLabel xml:lang="de">Zugriffsbeschränkung</skos:altLabel>
+        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:defaultValue>https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public</acdh:defaultValue>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">114</acdh:ordering>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_access_restrictions/data</acdh:vocabs>
     </owl:ObjectProperty>
     
 
@@ -337,7 +435,6 @@ Den vollständigen IRI der Klasse eingeben.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasActor">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCoverage"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isActorOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="en">Any person or institution (B) which the given resource (A) mentions or is about.</rdfs:comment>
@@ -345,6 +442,7 @@ Den vollständigen IRI der Klasse eingeben.</rdfs:comment>
         <rdfs:label xml:lang="en">has actor</rdfs:label>
         <skos:altLabel xml:lang="en">Has Actor</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Akteur</skos:altLabel>
+        <acdh:inverse xml:lang="en">is actor of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">92</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
@@ -356,7 +454,6 @@ Den vollständigen IRI der Klasse eingeben.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasAuthor">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCreator"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isAuthorOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrReMeOrPublication"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="en">Author of the resource, who will appear in the citation of it. Especially meant for written resources. All other kinds of creators should be included with hasCreator.</rdfs:comment>
@@ -364,7 +461,24 @@ Den vollständigen IRI der Klasse eingeben.</rdfs:comment>
         <rdfs:label xml:lang="en">has author</rdfs:label>
         <skos:altLabel xml:lang="en">Author(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Autor(en)</skos:altLabel>
+        <acdh:inverse xml:lang="en">is author of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">73</acdh:ordering>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasCategory -->
+
+    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasCategory">
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="de">Art der Ressource, z.B. Bild. Wählen Sie aus der Liste aus. Kann mithilfe der Eigenschaften hasDescription, hasFormat, hasExtent usw. verfeinert werden.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of resource, e. g. image. Choose from list. Can be refined with hasDescription, hasFormat, hasExtent, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">has category</rdfs:label>
+        <skos:altLabel xml:lang="en">Category</skos:altLabel>
+        <skos:altLabel xml:lang="de">Kategorie</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47</acdh:ordering>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_category/data</acdh:vocabs>
     </owl:ObjectProperty>
     
 
@@ -373,7 +487,6 @@ Den vollständigen IRI der Klasse eingeben.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasContact">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContactOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="de">Person oder Organisation (B), die bezüglich Informationen über eine Ressource, Sammlung oder ein Projekt (A) kontaktiert werden kann. 
@@ -383,6 +496,7 @@ Person with knowledge of how to access, troubleshoot, or otherwise field issues 
         <rdfs:label xml:lang="en">has contact</rdfs:label>
         <skos:altLabel xml:lang="en">Contact(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Kontakt(e)</skos:altLabel>
+        <acdh:inverse xml:lang="en">is contact of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">71</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -392,7 +506,6 @@ Person with knowledge of how to access, troubleshoot, or otherwise field issues 
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Main"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="de">Person oder Organisation (B), die aktiv an der Erstellung, Pflege und Bearbeitung einer Ressource, Sammlung oder Projekts (A) beteiligt war. Jede Person oder Institution, die einen wesentlichen Beitrag zur Entwicklung und/oder Erhaltung der Ressource leistet, deren Beitrag aber nicht einer anderen bereits definierten Rollen entspricht. (vgl. DataCite: Other) 
@@ -402,6 +515,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has contributor</rdfs:label>
         <skos:altLabel xml:lang="en">Contributor(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Mitarbeiter oder Beitragende</skos:altLabel>
+        <acdh:inverse xml:lang="en">is contributor of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -411,7 +525,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasCoverage">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isCoverageOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#AgentOrPlace"/>
         <rdfs:comment xml:lang="de">Allgemeine Angabe, welche Dimensionen (Gegenstand, Ort, Zeit) (B) in der Ressource (ihrem Inhalt) (A) abgedeckt/erwähnt werden. Verwenden Sie nach Möglichkeit die spezifischeren untergeordneten Eigenschaften. Z.B. die Zeitspanne &apos;1874 - 1883&apos; für eine Reihe von Bildern, die den Bau des Parlaments in Wien darstellen, den Akteur &apos;Mozart&apos; für eine Edition über Mozart oder den Ort &apos;Wien&apos; für eine Sammlung von Stadtplänen von Wien.</rdfs:comment>
@@ -420,6 +533,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <owl:inverseOf></owl:inverseOf>
         <skos:altLabel xml:lang="en">Coverage</skos:altLabel>
         <skos:altLabel xml:lang="de">Deckt ab</skos:altLabel>
+        <acdh:inverse xml:lang="en">is coverage of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">91</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -429,14 +543,14 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasCreator">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isCreatorOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:comment xml:lang="en">Person (B) responsible for the creation of resource (A). Will be included in the citation.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Person (B), die für die Erstellung der Ressource (A) verantwortlich ist. Scheint in der Quellenangabe auf.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Person (B) responsible for the (content) creation of resource (A). Will be included in the citation.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Person (B), die für die Erstellung (Inhalt) der Ressource (A) verantwortlich ist. Scheint in der Quellenangabe auf.</rdfs:comment>
         <rdfs:label xml:lang="en">has creator</rdfs:label>
         <skos:altLabel xml:lang="en">Creator(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Urheber</skos:altLabel>
+        <acdh:inverse xml:lang="en">is creator of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">72</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -446,7 +560,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasCurator">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isCuratorOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="en">Person (B) tasked with reviewing, enhancing, cleaning, or standardizing data and the associated metadata submitted for storage, use, and maintenance within a data centre or repository. (cf. DataCite: DataCurator)</rdfs:comment>
@@ -454,6 +567,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has curator</rdfs:label>
         <skos:altLabel xml:lang="en">Data Curator(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Datenkurator(en)</skos:altLabel>
+        <acdh:inverse xml:lang="en">is curator of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">178</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Image"/>
@@ -467,7 +581,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasDepositor">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isDepositorOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="de">Person oder Organisation (B), die für die Übermittlung einer Ressource (A) an das Repositorium verantwortlich ist.</rdfs:comment>
@@ -475,6 +588,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has depositor</rdfs:label>
         <skos:altLabel xml:lang="de">Datengeber</skos:altLabel>
         <skos:altLabel xml:lang="en">Depositor(s)</skos:altLabel>
+        <acdh:inverse xml:lang="en">is depositor of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">170</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -484,7 +598,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasDerivedPublication">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isDerivedPublicationOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Publication"/>
         <rdfs:comment xml:lang="en">A Publication derived from a Project, Collection or a Resource.</rdfs:comment>
@@ -492,6 +605,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has derived publication</rdfs:label>
         <skos:altLabel xml:lang="de">Abgeleitete Publikation(en)</skos:altLabel>
         <skos:altLabel xml:lang="en">Derived Publication(s)</skos:altLabel>
+        <acdh:inverse xml:lang="en">is derived publication of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">147</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -501,7 +615,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasDigitisingAgent">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isDigitisingAgentOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrImageOrResource"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="de">Person oder Organisation (B), die für die Erstellung der digitalen Repräsentation (Ressource A) eines physischen Objektes verantwortlich ist.</rdfs:comment>
@@ -509,6 +622,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has digitising agent</rdfs:label>
         <skos:altLabel xml:lang="de">Digitalisierungsakteur(e)</skos:altLabel>
         <skos:altLabel xml:lang="en">Digitising Agent(s)</skos:altLabel>
+        <acdh:inverse xml:lang="en">is digitising agent of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">79</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -518,7 +632,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasEditor">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isEditorOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrReMeOrPublication"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="en">A person who oversees the details related to the publication format of the resource. (cf. DataCite: Editor)</rdfs:comment>
@@ -526,6 +639,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has editor</rdfs:label>
         <skos:altLabel xml:lang="en">Editor(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Herausgeber</skos:altLabel>
+        <acdh:inverse xml:lang="en">is editor of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">74</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -535,7 +649,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasFunder">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isFunderOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrReMe"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="de">Person oder Organisation (B), die das Projekt (A) finanziert hat. Person oder Organisation, die einen Vertrag abgeschlossen hat oder unter deren Schirmherrschaft ein Werk geschrieben, gedruckt, veröffentlicht, entwickelt usw. wurde. (vgl. DataCite: Sponsor)</rdfs:comment>
@@ -543,6 +656,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has funder</rdfs:label>
         <skos:altLabel xml:lang="en">Funder(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Geldgeber</skos:altLabel>
+        <acdh:inverse xml:lang="en">is funder of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -552,7 +666,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasHosting">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isHostingOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="en">Institution responsible for preservation and hosting of a resource. (cf. DataCite: HostingInstitution) Typically, the organisation allowing the resource to be available on the internet through the provision of its hardware, software, and operating support.</rdfs:comment>
@@ -561,7 +674,45 @@ This is a generic property. Use one of the more specific sub-properties where po
         <skos:altLabel xml:lang="en">Hosted by</skos:altLabel>
         <skos:altLabel xml:lang="de">Wird erhalten/bereitgestellt von</skos:altLabel>
         <acdh:defaultValue>https://id.acdh.oeaw.ac.at/arche</acdh:defaultValue>
+        <acdh:inverse xml:lang="en">is hosting of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">179</acdh:ordering>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasLanguage -->
+
+    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasLanguage">
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrPublicationOrRepoObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">Language of Collection or Resource. Ideally encoded with 3-letter code according to ISO-639-3 (e.g. deu, eng, arz).</rdfs:comment>
+        <rdfs:comment xml:lang="de">Sprache der Sammlung oder Ressource. Idealerweise kodiert als 3-Buchstaben-Code nach dem Standard  ISO-639-3 (z.B. deu, eng, arz).</rdfs:comment>
+        <rdfs:label xml:lang="en">has language</rdfs:label>
+        <skos:altLabel xml:lang="en">Language</skos:altLabel>
+        <skos:altLabel xml:lang="de">Sprache</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">41</acdh:ordering>
+        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
+        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Metadata"/>
+        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
+        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Publication"/>
+        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Resource"/>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/iso639_3/data</acdh:vocabs>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasLicense -->
+
+    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasLicense">
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">Denotes the license attached to an object.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Lizenzangabe für ein Objekt.</rdfs:comment>
+        <rdfs:label xml:lang="en">has license</rdfs:label>
+        <skos:altLabel xml:lang="en">License</skos:altLabel>
+        <skos:altLabel xml:lang="de">Lizenz</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">113</acdh:ordering>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_licenses/data</acdh:vocabs>
     </owl:ObjectProperty>
     
 
@@ -570,7 +721,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasLicensor">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isLicensorOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="de">Person oder Organisation (B), die für die Auswahl einer Lizenz für das Objekt (A) verantwortlich ist.</rdfs:comment>
@@ -578,40 +728,26 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has licensor</rdfs:label>
         <skos:altLabel xml:lang="en">Licensor(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Lizenzgeber</skos:altLabel>
+        <acdh:inverse xml:lang="en">is licensor of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">112</acdh:ordering>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasMember -->
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasLifeCycleStatus -->
 
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasMember">
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isMemberOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Organisation"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:comment xml:lang="en">Used to link a Person to an Organisation or an Organisation (e.g. department) to another Organisation (institution).</rdfs:comment>
-        <rdfs:comment xml:lang="de">Wird verwendet, um eine Person mit einer Organisation oder eine Organisation (z.B. Abteilung) mit einer anderen Organisation (Institution) zu verknüpfen.</rdfs:comment>
-        <rdfs:label xml:lang="en">has member</rdfs:label>
-        <skos:altLabel xml:lang="en">Has Member(s)</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Mitglied</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</acdh:ordering>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasMetadata -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasMetadata">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isMetadataFor"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Metadata"/>
-        <rdfs:comment xml:lang="de">Gibt an, dass zusätzliche Metadaten für eine Ressource (A) in einer Ressource (B) enthalten sind.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Indicates that additional metadata for a Resource (A) is contained in a Resource (B).</rdfs:comment>
-        <rdfs:label xml:lang="en">has metadata</rdfs:label>
-        <skos:altLabel xml:lang="en">Additional Metadata</skos:altLabel>
-        <skos:altLabel xml:lang="de">Zusätzliche Metadaten</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">149</acdh:ordering>
+    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasLifeCycleStatus">
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Container"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="de">Angabe, ob sich das Projekt oder die Sammlung (A) noch im Aufbau befindet oder bereits abgeschlossen ist. Eine ausführliche Statusbeschreibung kann mithilfe hasCompleteness angegeben werden.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indication if the Project or Collection (A) is still in the making or completed? A verbose status description can be added with acdh:hasCompleteness.</rdfs:comment>
+        <rdfs:label xml:lang="en">has life cycle status</rdfs:label>
+        <skos:altLabel xml:lang="de">Lebenszyklusstatus</skos:altLabel>
+        <skos:altLabel xml:lang="en">Life Cycle Status</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</acdh:ordering>
+        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
+        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_lifecycle_status/data</acdh:vocabs>
     </owl:ObjectProperty>
     
 
@@ -620,7 +756,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasMetadataCreator">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isMetadataCreatorOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Main"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="de">Person oder Organisation (B), die für die Erstellung der Metadaten einer Ressource oder Sammlung (A) verantwortlich ist.</rdfs:comment>
@@ -628,6 +763,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has metadata creator</rdfs:label>
         <skos:altLabel xml:lang="en">Metadata Creator(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Metadatenersteller</skos:altLabel>
+        <acdh:inverse xml:lang="en">is metadata creator of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -637,7 +773,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasOwner">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isOwnerOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="de">Person oder Organisation (B), der eine bestimmte Sammlung oder Ressource (A) gehört.</rdfs:comment>
@@ -645,24 +780,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has owner</rdfs:label>
         <skos:altLabel xml:lang="de">Besitzer</skos:altLabel>
         <skos:altLabel xml:lang="en">Owner(s)</skos:altLabel>
+        <acdh:inverse xml:lang="en">is owner of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110</acdh:ordering>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasPart -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasPart">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isPartOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrPlaceOrPublicationOrResource"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrPlaceOrPublicationOrReMe"/>
-        <rdfs:comment xml:lang="de">Gibt an, dass eine Ressource oder Sammlung (B) Teil einer Sammlung (A) ist, z.B. eine Sammlung mit einzelnen Bestandteilen.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Indicates a Resource or Collection (B) is part of a Collection (A), e. g. a Collection with individual items.</rdfs:comment>
-        <rdfs:label xml:lang="en">has part</rdfs:label>
-        <skos:altLabel xml:lang="en">Part(s)</skos:altLabel>
-        <skos:altLabel xml:lang="de">Teil(e)</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">155</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -671,7 +790,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasPrincipalInvestigator">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isPrincipalInvestigatorOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="en">Person officially designated as head of project team or subproject team instrumental in the work necessary to development of the resource. (cf. DataCite: ProjectLeader)</rdfs:comment>
@@ -679,6 +797,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has principal investigator</rdfs:label>
         <skos:altLabel xml:lang="de">Primärforscher</skos:altLabel>
         <skos:altLabel xml:lang="en">Principal Investigator(s)</skos:altLabel>
+        <acdh:inverse xml:lang="en">is principal investigator of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Metadata"/>
@@ -705,6 +824,23 @@ This is a generic property. Use one of the more specific sub-properties where po
     
 
 
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline -->
+
+    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline">
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="de">Forschungsdisziplin des Projekts, der Sammlung oder Ressource. Wählen Sie aus der Liste aus. Kann als Suchbegriff verwendet werden.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Research discipline of Project, Collection or Resource. Choose from list. Can be used for search.</rdfs:comment>
+        <rdfs:label xml:lang="en">has related discipline</rdfs:label>
+        <skos:altLabel xml:lang="de">Fachdisziplin</skos:altLabel>
+        <skos:altLabel xml:lang="en">Research Discipline</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</acdh:ordering>
+        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/oefos/data</acdh:vocabs>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedProject -->
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedProject">
@@ -725,7 +861,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasRightsHolder">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isRightsHolderOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:comment xml:lang="de">Person oder Organisation (B), die die Eigentumsrechte besitzt oder verwaltet, einschließlich der Rechte am geistigem Eigentum der Ressource (A). (vgl. DataCite: RightsHolder)</rdfs:comment>
@@ -733,6 +868,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has rights holder</rdfs:label>
         <skos:altLabel xml:lang="de">Rechteinhaber</skos:altLabel>
         <skos:altLabel xml:lang="en">Rights Holder(s)</skos:altLabel>
+        <acdh:inverse xml:lang="en">is rights holder of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">111</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -742,7 +878,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasSource">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isSourceOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrReMe"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrResourceOrPublication"/>
         <rdfs:comment xml:lang="de">Gibt an, dass eine Entität (A) auf einer Quelle (B) basiert.</rdfs:comment>
@@ -750,6 +885,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has source</rdfs:label>
         <skos:altLabel xml:lang="en">Has source</skos:altLabel>
         <skos:altLabel xml:lang="de">Hat Quelle</skos:altLabel>
+        <acdh:inverse xml:lang="en">is source of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">151</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -759,7 +895,6 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasSpatialCoverage">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCoverage"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isSpatialCoverageOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Place"/>
         <rdfs:comment xml:lang="en">Geographical location, area, region (B) a Project, Collection or Resource (A) is dealing with, is about; e.g. archaeological data from excavations in &apos;Pannonia&apos; or a collection of digitised newspapers from &apos;Austria&apos;.</rdfs:comment>
@@ -767,6 +902,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">has spatial coverage</rdfs:label>
         <skos:altLabel xml:lang="de">Geografische Abdeckung</skos:altLabel>
         <skos:altLabel xml:lang="en">Spatial Coverage</skos:altLabel>
+        <acdh:inverse xml:lang="en">is spatial coverage of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">93</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
@@ -774,297 +910,18 @@ This is a generic property. Use one of the more specific sub-properties where po
     
 
 
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasTitleImage -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasTitleImage">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isTitleImageOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrOrganisation"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Image"/>
-        <rdfs:comment xml:lang="de">Titelbild oder Logo der Organisation, des Projekts, der Sammlung oder Ressource, das für die Darstellung verwendet wird.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Title image or logo of Organisation, Project, Collection or Resource used for presentation.</rdfs:comment>
-        <rdfs:label xml:lang="en">has title image</rdfs:label>
-        <skos:altLabel xml:lang="en">Has title image</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Titelbild</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">157</acdh:ordering>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isActorOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isActorOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isCoverageOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:comment xml:lang="en">Any person or institution (A) which the given resource (B) mentions or is about.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Jede Person oder Organisation (A), die in der vorliegenden Ressource (B) erwähnt wird oder mit der sich die Ressource befasst.</rdfs:comment>
-        <rdfs:label>is actor of</rdfs:label>
-        <skos:altLabel xml:lang="en">Is actor</skos:altLabel>
-        <skos:altLabel xml:lang="de">Ist Akteur</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isAuthorOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isAuthorOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isCreatorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrReMeOrPublication"/>
-        <rdfs:comment xml:lang="en">Author (A) of resource (B), who will appear in the citation of it. Especially meant for written resources, all other kinds of creators should be included with hasCreator.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Autor (A) der Ressource (B), welcher in der Quellenangabe aufscheinen wird. Speziell für schriftliche Ressourcen gedacht. Alle anderen Arten von Urhebern sollten mithilfe von hasCreator angegeben werden.</rdfs:comment>
-        <rdfs:label>is author of</rdfs:label>
-        <skos:altLabel xml:lang="en">Author of</skos:altLabel>
-        <skos:altLabel xml:lang="de">Verfasser von</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isContactOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isContactOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:comment xml:lang="de">Person oder Organisation (A), die bezüglich Informationen über eine Ressource, Sammlung oder ein Projekt (B) kontaktiert werden kann. 
-Person mit Kenntnissen über den Datenzugriff, die Fehlerbehebung oder andere fachspezifische Probleme im Zusammenhang mit der Ressource. (vgl. DataCite: ContactPerson)</rdfs:comment>
-        <rdfs:comment xml:lang="en">Person or Organisation (A) that can be contacted regarding information about a Resource, Collection or Project (B).
-Person with knowledge of how to access, troubleshoot, or otherwise field issues related to the resource. (cf. DataCite: ContactPerson)</rdfs:comment>
-        <rdfs:label>is contact of</rdfs:label>
-        <skos:altLabel xml:lang="en">Contact of</skos:altLabel>
-        <skos:altLabel xml:lang="de">Kontakt von</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isContinuedBy -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isContinuedBy">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:comment xml:lang="de">Gibt an, dass A durch das Werk B fortgesetzt wird.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Indicates A is continued by the work B.</rdfs:comment>
-        <rdfs:label xml:lang="en">is continued by</rdfs:label>
-        <skos:altLabel xml:lang="en">Continued by</skos:altLabel>
-        <skos:altLabel xml:lang="de">Fortgesetzt durch</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">144</acdh:ordering>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Main"/>
-        <rdfs:comment xml:lang="de">Person oder Organisation (A), die aktiv an der Erstellung, Pflege und Bearbeitung einer Ressource, Sammlung oder Projekts (B) beteiligt war. Jede Person oder Institution, die einen wesentlichen Beitrag zur Entwicklung und/oder Erhaltung der Ressource leistet, deren Beitrag aber nicht einer anderen bereits definierten Rollen entspricht. (vgl. DataCite: Other) 
-Dies ist eine generische Eigenschaft. Verwenden Sie nach Möglichkeit eine der spezifischeren untergeordneten Eigenschaften.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Person or Organisation (A) who was actively involved in creating/curating/editing a Resource, a Collection or in a Project (B). Any person or institution making a significant contribution to the development and/or maintenance of the resource, but whose contribution does not “fit” to another already defined role. (cf. DataCite: Other)
-This is a generic property. Use one of the more specific sub-properties where possible.</rdfs:comment>
-        <rdfs:label>is contributor of</rdfs:label>
-        <skos:altLabel xml:lang="en">Contributed to</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat beigetragen zu</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isCoverageOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isCoverageOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#AgentOrPlace"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:comment xml:lang="de">Allgemeine Angabe, welche Dimensionen (Gegenstand, Ort, Zeit) (A) in der Ressource (ihrem Inhalt) (B) abgedeckt/erwähnt werden. Verwenden Sie nach Möglichkeit die spezifischeren untergeordneten Eigenschaften. Z.B. die Zeitspanne &apos;1874 - 1883&apos; für eine Reihe von Bildern, die den Bau des Parlaments in Wien darstellen, den Akteur &apos;Mozart&apos; für eine Edition über Mozart oder den Ort &apos;Wien&apos; für eine Sammlung von Stadtplänen von Wien.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Generic indication of what is covered/mentioned (A) in the resource (its content) (B) along various dimensions (subject, space, time). Use the more specific sub-properties where possible. E.g. the time span &apos;1874-1883&apos; for a set of images depicting the construction of the parliament in Vienna, the actor &apos;Mozart&apos; for an edition about Mozart or the place &apos;Vienna&apos; for a collection of city maps of Vienna.</rdfs:comment>
-        <rdfs:label>is coverage of</rdfs:label>
-        <skos:altLabel xml:lang="en">Is covered in</skos:altLabel>
-        <skos:altLabel xml:lang="de">Ist abgedeckt in</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isCreatorOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isCreatorOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-        <rdfs:comment xml:lang="en">Person (A) responsible for the creation of resource (B). Will be included in the citation.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Person (A), die für die Erstellung der Ressource (B) verantwortlich ist. Scheint in der Quellenangabe auf.</rdfs:comment>
-        <rdfs:label>is creator of</rdfs:label>
-        <skos:altLabel xml:lang="en">Creator of</skos:altLabel>
-        <skos:altLabel xml:lang="de">Ersteller von</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isCuratorOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isCuratorOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-        <rdfs:comment xml:lang="en">Person (A) tasked with reviewing, enhancing, cleaning, or standardizing data and the associated metadata submitted for storage, use, and maintenance within a data centre or repository. (cf. DataCite: DataCurator)</rdfs:comment>
-        <rdfs:comment xml:lang="de">Person (A), die mit der Überprüfung, Verbesserung, Bereinigung oder Standardisierung von Daten und den zugehörigen Metadaten beauftragt ist, die zur Speicherung, Verwendung und Wartung in einem Rechenzentrum oder Repositorium eingereicht wurden. (vgl. DataCite: DataCurator)</rdfs:comment>
-        <rdfs:label>is curator of</rdfs:label>
-        <skos:altLabel xml:lang="en">Is data curator</skos:altLabel>
-        <skos:altLabel xml:lang="de">Ist Datenkurator</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isDepositorOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isDepositorOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-        <rdfs:comment xml:lang="de">Person oder Organisation (A), die für die Übermittlung einer Ressource (B) an das Repositorium verantwortlich ist.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Person or organisation (A) responsible for submitting a resource (B) to the repository.</rdfs:comment>
-        <rdfs:label>is depositor of</rdfs:label>
-        <skos:altLabel xml:lang="en">Is depositor</skos:altLabel>
-        <skos:altLabel xml:lang="de">Ist Datengeber (hat eingereicht)</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isDerivedPublicationOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isDerivedPublicationOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Publication"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:comment xml:lang="en">A Publication (A) related to a Project, Collection or Resource (B).</rdfs:comment>
-        <rdfs:comment xml:lang="de">Eine Publikation (A), die sich auf ein Projekt, eine Sammlung oder Ressource (B) bezieht.</rdfs:comment>
-        <rdfs:label>is derived publication of</rdfs:label>
-        <skos:altLabel xml:lang="de">Abgeleitete Publikation von</skos:altLabel>
-        <skos:altLabel xml:lang="en">Derived Publication of</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">148</acdh:ordering>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isDigitisingAgentOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isDigitisingAgentOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrImageOrResource"/>
-        <rdfs:comment xml:lang="de">Person oder Organisation (A), die für die Erstellung der digitalen Repräsentation (Ressource B) eines physischen Objektes verantwortlich ist.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Person or Organisation (A) responsible for creating the digital representation (Resource B) of a physical object.</rdfs:comment>
-        <rdfs:label xml:lang="en">is digitising agent of</rdfs:label>
-        <skos:altLabel xml:lang="de">Digitalisierte Ressource</skos:altLabel>
-        <skos:altLabel xml:lang="en">Digitised resource</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isDocumentedBy -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isDocumentedBy">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrResource"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrResourceOrPublication"/>
-        <rdfs:comment xml:lang="de">Gibt an, dass B die Dokumentation zu A ist (B erläutert A).</rdfs:comment>
-        <rdfs:comment xml:lang="en">Indicates B is documentation about A (B explains A).</rdfs:comment>
-        <rdfs:label xml:lang="en">is documented by</rdfs:label>
-        <skos:altLabel xml:lang="en">Documented by</skos:altLabel>
-        <skos:altLabel xml:lang="de">Dokumentiert durch</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">146</acdh:ordering>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isEditorOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isEditorOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrReMeOrPublication"/>
-        <rdfs:comment xml:lang="en">A person who oversees the details related to the publication format of the resource. (cf. DataCite: Editor)</rdfs:comment>
-        <rdfs:comment xml:lang="de">Eine Person, die mit den Einzelheiten des Publikationsformats der Ressource vertraut ist. (vgl. DataCite: Editor)</rdfs:comment>
-        <rdfs:label>is editor of</rdfs:label>
-        <skos:altLabel xml:lang="en">Is editor</skos:altLabel>
-        <skos:altLabel xml:lang="de">Ist Herausgeber</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isFunderOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isFunderOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrReMe"/>
-        <rdfs:comment xml:lang="de">Person oder Organisation (A), die das Projekt (B) finanziert hat. Person oder Organisation, die einen Vertrag abgeschlossen hat oder unter deren Schirmherrschaft ein Werk geschrieben, gedruckt, veröffentlicht, entwickelt usw. wurde. (vgl. DataCite: Sponsor)</rdfs:comment>
-        <rdfs:comment xml:lang="en">Person or Organisation (A) which provided funding for the Project (B). Person or organisation that issued a contract or under the auspices of which a work has been written, printed, published, developed, etc. (cf. DataCite: Sponsor)</rdfs:comment>
-        <rdfs:label>is funder of</rdfs:label>
-        <skos:altLabel xml:lang="de">Hat gefördert</skos:altLabel>
-        <skos:altLabel xml:lang="en">Is funder</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isHostingOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isHostingOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-        <rdfs:comment xml:lang="en">Institution responsible for preservation and hosting of a resource. (cf. DataCite: HostingInstitution) Typically, the organisation allowing the resource to be available on the internet through the provision of its hardware, software, and operating support.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Institution, die für die Bewahrung und das Hosting einer Ressource verantwortlich ist. (vgl. DataCite: HostingInstitution) Typischerweise die Organisation, die es ermöglicht, dass die Ressource im Internet durch die Bereitstellung ihrer Hardware-, Software- und Betriebsunterstützung verfügbar ist.</rdfs:comment>
-        <rdfs:label>is hosting of</rdfs:label>
-        <skos:altLabel xml:lang="de">Erhält und stellt bereit</skos:altLabel>
-        <skos:altLabel xml:lang="en">Is hosting</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isLicensorOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isLicensorOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-        <rdfs:comment xml:lang="de">Person oder Organisation (A), die für die Auswahl einer Lizenz für das Objekt (B) verantwortlich ist.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Person or Organisation (A) responsible for choosing a license for the object (B).</rdfs:comment>
-        <rdfs:label>is licensor of</rdfs:label>
-        <skos:altLabel xml:lang="en">Is licensor</skos:altLabel>
-        <skos:altLabel xml:lang="de">Ist Lizenzgeber</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#isMemberOf -->
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isMemberOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Organisation"/>
         <rdfs:comment xml:lang="en">Used to link a Person to an Organisation or an Organisation (e.g. department) to another Organisation (institution).</rdfs:comment>
-        <rdfs:comment>Wird verwendet, um eine Person mit einer Organisation oder eine Organisation (z.B. Abteilung) mit einer anderen Organisation (Institution) zu verknüpfen.</rdfs:comment>
-        <rdfs:label>is member of</rdfs:label>
-        <skos:altLabel xml:lang="en">Is member of</skos:altLabel>
+        <rdfs:comment xml:lang="de">Wird verwendet, um eine Person mit einer Organisation oder eine Organisation (z.B. Abteilung) mit einer anderen Organisation (Institution) zu verknüpfen.</rdfs:comment>
+        <rdfs:label xml:lang="en">is member of</rdfs:label>
+        <skos:altLabel xml:lang="en">Is Member Of</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Mitglied von</skos:altLabel>
+        <acdh:inverse xml:lang="en">has member</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</acdh:ordering>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isMetadataCreatorOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isMetadataCreatorOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Main"/>
-        <rdfs:comment xml:lang="de">Person oder Organisation (A), die für die Erstellung der Metadaten einer Ressource oder Sammlung (B) verantwortlich ist.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Person or Organisation (A) responsible for creating metadata for a Resource or Collection (B).</rdfs:comment>
-        <rdfs:label>is metadata creator of</rdfs:label>
-        <skos:altLabel xml:lang="en">Created metadata</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Metadaten erstellt</skos:altLabel>
     </owl:ObjectProperty>
     
 
@@ -1080,6 +937,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">is metadata for</rdfs:label>
         <skos:altLabel xml:lang="de">Enthält Metadaten für</skos:altLabel>
         <skos:altLabel xml:lang="en">Metadata for</skos:altLabel>
+        <acdh:inverse xml:lang="en">has metadata</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -1102,21 +960,6 @@ This is a generic property. Use one of the more specific sub-properties where po
     
 
 
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isOwnerOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isOwnerOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-        <rdfs:comment xml:lang="en">A Person or Organisation (A) owning a Collection or Resource (B).</rdfs:comment>
-        <rdfs:comment xml:lang="de">Person oder Organisation (A), der eine bestimmte Sammlung oder Ressource gehört (B).</rdfs:comment>
-        <rdfs:label>is owner of</rdfs:label>
-        <skos:altLabel xml:lang="en">Is owner</skos:altLabel>
-        <skos:altLabel xml:lang="de">Ist Besitzer von</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#isPartOf -->
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isPartOf">
@@ -1128,6 +971,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">is part of</rdfs:label>
         <skos:altLabel xml:lang="en">Part of</skos:altLabel>
         <skos:altLabel xml:lang="de">Teil von</skos:altLabel>
+        <acdh:inverse xml:lang="en">has part</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">156</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Metadata"/>
     </owl:ObjectProperty>
@@ -1150,67 +994,6 @@ This is a generic property. Use one of the more specific sub-properties where po
     
 
 
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isPrincipalInvestigatorOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isPrincipalInvestigatorOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:comment xml:lang="en">Person officially designated as head of project team or subproject team instrumental in the work necessary to development of the resource. (cf. DataCite: ProjectLeader)</rdfs:comment>
-        <rdfs:comment xml:lang="de">Person, die das Projekt- oder Teilprojektteam offiziell geleitet hat und maßgeblich an den erforderlichen Arbeiten für die Entwicklung der Ressource beteiligt war. (vgl. DataCite: ProjectLeader)</rdfs:comment>
-        <rdfs:label>is principal investigator of</rdfs:label>
-        <skos:altLabel xml:lang="en">Is principal investigator</skos:altLabel>
-        <skos:altLabel xml:lang="de">Ist Primärforscher</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isRightsHolderOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isRightsHolderOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isContributorOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-        <rdfs:comment xml:lang="de">Person oder Organisation (A), die die Eigentumsrechte besitzt oder verwaltet, einschließlich der Rechte am geistigem Eigentum der Ressource (B). (vgl. DataCite: RightsHolder)</rdfs:comment>
-        <rdfs:comment xml:lang="en">Person or Organisation (A) owning or managing property rights, including intellectual property rights over the resource (B). (cf. DataCite: RightsHolder)</rdfs:comment>
-        <rdfs:label>is rights holder of</rdfs:label>
-        <skos:altLabel xml:lang="en">Is rights holder</skos:altLabel>
-        <skos:altLabel xml:lang="de">Ist Rechteinhaber</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isSourceOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isSourceOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrResourceOrPublication"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrReMe"/>
-        <rdfs:comment xml:lang="de">Gibt an, dass die Quelle (A) eine Quelle ist, auf der eine Entität (B) basiert.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Indicates that the source (A) is a source upon which a entity (B) is based.</rdfs:comment>
-        <rdfs:label xml:lang="en">is source of</rdfs:label>
-        <skos:altLabel xml:lang="de">Quelle von</skos:altLabel>
-        <skos:altLabel xml:lang="en">Source of</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">152</acdh:ordering>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isSpatialCoverageOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isSpatialCoverageOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isCoverageOf"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Place"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:comment xml:lang="en">Geographical location, area, region (A) a Project, Collection or Resource (B) is dealing with, is about; e.g. archaeological data from excavations in &apos;Pannonia&apos; or a collection of digitised newspapers from &apos;Austria&apos;.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Geographische Lage, Gebiet, Region (A), mit der sich ein Projekt, eine Sammlung oder Ressource (B) beschäftigt bzw. die sie abdeckt; z.B. archäologische Daten von Ausgrabungen in &apos;Pannonien&apos; oder eine Sammlung digitalisierter Zeitungen aus &apos;Österreich&apos;.</rdfs:comment>
-        <rdfs:label>is spatial coverage of</rdfs:label>
-        <skos:altLabel xml:lang="de">Geografisch behandelt in</skos:altLabel>
-        <skos:altLabel xml:lang="en">Spatially covered in</skos:altLabel>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#isTitleImageOf -->
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isTitleImageOf">
@@ -1222,6 +1005,7 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:label xml:lang="en">is title image of</rdfs:label>
         <skos:altLabel xml:lang="en">Is title image of</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Titelbild von</skos:altLabel>
+        <acdh:inverse xml:lang="en">has title image</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -1289,17 +1073,13 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <!-- http://purl.org/dc/elements/1.1/language -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/language">
-        <owl:equivalentProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLanguage"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/language"/>
     
 
 
     <!-- http://purl.org/dc/elements/1.1/rights -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/rights">
-        <owl:equivalentProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLicense"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
     
 
 
@@ -1321,9 +1101,7 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <!-- http://purl.org/dc/elements/1.1/type -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/type">
-        <owl:equivalentProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCategory"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/type"/>
     
 
 
@@ -1344,31 +1122,25 @@ This is a generic property. Use one of the more specific sub-properties where po
     
 
 
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction -->
-
-    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction">
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment xml:lang="en">Denotes if restricted access applies to the Resource (A). Choose from list.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Gibt an, ob der Zugriff auf die Ressource (A) eingeschränkt ist. Wählen Sie aus der Liste aus.</rdfs:comment>
-        <rdfs:label xml:lang="en">has access restriction</rdfs:label>
-        <skos:altLabel xml:lang="en">Access Restriction</skos:altLabel>
-        <skos:altLabel xml:lang="de">Zugriffsbeschränkung</skos:altLabel>
-        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
-        <acdh:defaultValue>https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public</acdh:defaultValue>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">114</acdh:ordering>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_access_restrictions/data</acdh:vocabs>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestrictionSummary -->
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestrictionSummary">
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Denotes which access restrictions apply to the resources in the collection. Is filled by the system.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Gibt die Zugriffsbeschränkungen für die Ressourcen in der Sammlung an. Wird vom System generiert.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes which access restrictions apply to the resources in the collection. Is filled by the system. The property gathers the titles of the vocabulary used for child resources (has access restriction) along with the amount of resources per each value. It is computed for all child resources of type acdh:BinaryContent (Image, Resource, Metadata).
+
+Vocabulary for access restrictions https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/Schema:
+public
+academic
+restricted
+Example: public 87, academic 3, restricted 1</rdfs:comment>
+        <rdfs:comment xml:lang="de">Gibt die Zugriffsbeschränkungen für die Ressourcen in der Sammlung an. Wird vom System generiert. Die Eigenschaft sammelt die Titel des in den untergeordneten Ressourcen verwendeten Vokabulars (Zugriffsbeschränkung) und gibt die Anzahl der Ressourcen pro Wert an. Berücksichtigt werden alle untergeordneten Ressourcen vom Typ acdh:BinaryContent (Bild, Ressource, Metadaten).
+
+Vokabular für Zugriffsbeschränkungen https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/Schema:
+öffentlich
+akademisch
+eingeschränkt
+Beispiel: öffentlich 87, akademisch 3, eingeschränkt 1</rdfs:comment>
         <rdfs:label xml:lang="en">has access restriction summary</rdfs:label>
         <skos:altLabel xml:lang="en">Access Restriction Summary</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugriffsbeschränkungsliste</skos:altLabel>
@@ -1494,10 +1266,10 @@ This is a generic property. Use one of the more specific sub-properties where po
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDate"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#PublicationOrRepoObject"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <rdfs:comment xml:lang="de">Datum seit dem die Ressource öffentlich verfügbar ist.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The date the resource is made publicly available.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Datum an dem die Ressource im Repositorium ARCHE erstellt wurde.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The date the repository resource was created in ARCHE.</rdfs:comment>
         <rdfs:label xml:lang="en">has available date</rdfs:label>
         <skos:altLabel xml:lang="en">Available Since</skos:altLabel>
         <skos:altLabel xml:lang="de">Verfügbar seit</skos:altLabel>
@@ -1520,22 +1292,6 @@ This is a generic property. Use one of the more specific sub-properties where po
         <skos:altLabel xml:lang="de">Größe</skos:altLabel>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">174</acdh:ordering>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasCategory -->
-
-    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasCategory">
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment xml:lang="de">Art der Ressource, z.B. Bild. Wählen Sie aus der Liste aus. Kann mithilfe der Eigenschaften hasDescription, hasFormat, hasExtent usw. verfeinert werden.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Type of resource, e. g. image. Choose from list. Can be refined with hasDescription, hasFormat, hasExtent, etc.</rdfs:comment>
-        <rdfs:label xml:lang="en">has category</rdfs:label>
-        <skos:altLabel xml:lang="en">Category</skos:altLabel>
-        <skos:altLabel xml:lang="de">Kategorie</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47</acdh:ordering>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_category/data</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -1702,10 +1458,10 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDate"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ImageOrResource"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment xml:lang="de">Erstellungsdatum der originalen Ressourcen des digitalen Objektes, e.g. Erstellungsdatum einer digitalisierten Zeichnung.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The date the original resource of the digital object was created, e.g. date of a drawing that was digitised.</rdfs:comment>
         <rdfs:label xml:lang="en">has created date original</rdfs:label>
-        <skos:altLabel xml:lang="de">Erstellungsdatum der originalen Ressourcen des digitalen Objektes, e.g. Erstellungsdatum einer digitalisierten Zeichnung.</skos:altLabel>
         <skos:altLabel xml:lang="de">Erstellungsdatum des Originals</skos:altLabel>
-        <skos:altLabel xml:lang="en">The date the original resource of the digital object was created, e.g. date of a drawing that was digitised.</skos:altLabel>
         <skos:altLabel xml:lang="en">creation date of original</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</acdh:ordering>
     </owl:DatatypeProperty>
@@ -1773,9 +1529,9 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <skos:altLabel xml:lang="en">Description</skos:altLabel>
         <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</acdh:ordering>
+        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Metadata"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Resource"/>
-        <acdh:recommendedClass>https://vocabs.acdh.oeaw.ac.at/schema#Collection</acdh:recommendedClass>
     </owl:DatatypeProperty>
     
 
@@ -1910,39 +1666,19 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
     
 
 
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasLandingPage -->
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasIssuedDate -->
 
-    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasLandingPage">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Main"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment xml:lang="de">URL der Zielseite. Sie sollte vom System automatisch angelegt werden.</rdfs:comment>
-        <rdfs:comment xml:lang="en">URL of landing page. It should be created automatically by the system.</rdfs:comment>
-        <rdfs:label xml:lang="en">has landing page</rdfs:label>
-        <skos:altLabel xml:lang="en">Landing Page</skos:altLabel>
-        <skos:altLabel xml:lang="de">Landingpage</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">177</acdh:ordering>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasLanguage -->
-
-    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasLanguage">
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrPublicationOrRepoObject"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment xml:lang="en">Language of Collection or Resource. Ideally encoded with 3-letter code according to ISO-639-3 (e.g. deu, eng, arz).</rdfs:comment>
-        <rdfs:comment xml:lang="de">Sprache der Sammlung oder Ressource. Idealerweise kodiert als 3-Buchstaben-Code nach dem Standard  ISO-639-3 (z.B. deu, eng, arz).</rdfs:comment>
-        <rdfs:label xml:lang="en">has language</rdfs:label>
-        <skos:altLabel xml:lang="en">Language</skos:altLabel>
-        <skos:altLabel xml:lang="de">Sprache</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">41</acdh:ordering>
-        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Metadata"/>
-        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasIssuedDate">
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDate"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Publication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment xml:lang="de">Datum an dem eine Publikation veröffentlicht wurde.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates the date when a Publication was issued, i.e. published.</rdfs:comment>
+        <rdfs:label xml:lang="en">has issued date</rdfs:label>
+        <skos:altLabel xml:lang="en">Date of issue</skos:altLabel>
+        <skos:altLabel xml:lang="de">Veröffentlichungsdatum</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">129</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Publication"/>
-        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Resource"/>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/iso639_3/data</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -1982,51 +1718,21 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
     
 
 
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasLicense -->
-
-    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasLicense">
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#RepoObject"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment xml:lang="en">Denotes the license attached to an object.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Lizenzangabe für ein Objekt.</rdfs:comment>
-        <rdfs:label xml:lang="en">has license</rdfs:label>
-        <skos:altLabel xml:lang="en">License</skos:altLabel>
-        <skos:altLabel xml:lang="de">Lizenz</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">113</acdh:ordering>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_licenses/data</acdh:vocabs>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasLicenseSummary -->
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasLicenseSummary">
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="de">Angabe der in einer Sammlung verwendeten Lizenzen mit der Anzahl der Vorkommnisse. Wird vom System generiert.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Denotes all licenses contained in the collection with the number of occurrences. Is filled  by the system.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Angabe der in einer Sammlung verwendeten Lizenzen mit der Anzahl der Vorkommnisse. Wird vom System generiert. 
+Vokabular für Lizenzen: https://vocabs.acdh.oeaw.ac.at/archelicenses/Schema
+Beispiel: CC-BY 4.0 884, CC0 1.0 44</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes all licenses contained in the collection with the number of occurrences. Is filled  by the system. 
+Vocabulary for licenses: https://vocabs.acdh.oeaw.ac.at/archelicenses/Schema
+Example: CC-BY 4.0 884, CC0 1.0 44</rdfs:comment>
         <rdfs:label xml:lang="en">has license summary</rdfs:label>
         <skos:altLabel xml:lang="en">License Summary</skos:altLabel>
         <skos:altLabel xml:lang="de">Lizenzliste</skos:altLabel>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasLifeCycleStatus -->
-
-    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasLifeCycleStatus">
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Container"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment xml:lang="de">Angabe, ob sich das Projekt, die Sammlung oder Ressource (A) noch im Aufbau befindet oder bereits abgeschlossen ist. Eine ausführliche Statusbeschreibung kann mithilfe hasCompleteness angegeben werden.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Indication if the Project, Collection or Resource (A) is still in the making or completed? A verbose status description can be added with acdh:hasCompleteness.</rdfs:comment>
-        <rdfs:label xml:lang="en">has life cycle status</rdfs:label>
-        <skos:altLabel xml:lang="de">Lebenszyklusstatus</skos:altLabel>
-        <skos:altLabel xml:lang="en">Life Cycle Status</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</acdh:ordering>
-        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_lifecycle_status/data</acdh:vocabs>
     </owl:DatatypeProperty>
     
 
@@ -2042,6 +1748,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">has location path</rdfs:label>
         <skos:altLabel xml:lang="de">Dateipfad</skos:altLabel>
         <skos:altLabel xml:lang="en">File Path</skos:altLabel>
+        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">176</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2250,23 +1957,6 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
     
 
 
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline -->
-
-    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline">
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment xml:lang="de">Forschungsdisziplin des Projekts, der Sammlung oder Ressource. Wählen Sie aus der Liste aus. Kann als Suchbegriff verwendet werden.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Research discipline of Project, Collection or Resource. Choose from list. Can be used for search.</rdfs:comment>
-        <rdfs:label xml:lang="en">has related discipline</rdfs:label>
-        <skos:altLabel xml:lang="de">Fachdisziplin</skos:altLabel>
-        <skos:altLabel xml:lang="en">Research Discipline</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</acdh:ordering>
-        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/oefos/data</acdh:vocabs>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasRestrictionRole -->
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasRestrictionRole">
@@ -2371,7 +2061,7 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasTableOfContents">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrPublication"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrResourceOrPublication"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">A listing of the Table of Contents. (cf. DataCite: descriptionType tableOfContents)</rdfs:comment>
         <rdfs:comment xml:lang="de">Auflistung des Inhaltsverzeichnisses. (vgl. DataCite: descriptionType tableOfContents)</rdfs:comment>
@@ -2645,6 +2335,9 @@ Eingabe ist eine URI.</rdfs:comment>
         <rdfs:comment xml:lang="en">Entity able to act, in the context of this schema especially be involved in the making, processing, distributing, publishing etc. of a Resource, Collection, Concept or Project.
 Note that in contrast to foaf:Agent acdh:Agent can only be a Person or an Organisation (not a software or physical artifact).
 The different roles an Agent can assume with respect to a Project, Collection, Resource or Concept are modeled as separate object properties (sub-properties of acdh:contributedTo).</rdfs:comment>
+        <rdfs:comment xml:lang="de">Handlungsfähige Entität, die im Rahmen dieses Schemas insbesondere an der Erstellung, Verarbeitung, Verteilung, Veröffentlichung usw. einer Ressource, Sammlung, eines Konzepts oder Projekts beteiligt ist.
+Beachten Sie, dass im Gegensatz zu foaf:Agent acdh:Agent nur eine Person oder eine Organisation sein kann (nicht eine Software oder ein physisches Artefakt).
+Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung, eine Ressource oder ein Konzept übernehmen kann, werden als separate Objekteigenschaften (Unter-Eigenschaften von acdh:contributedTo) modelliert.</rdfs:comment>
         <rdfs:label xml:lang="en">Agent</rdfs:label>
         <skos:altLabel xml:lang="en">Agent</skos:altLabel>
         <skos:altLabel xml:lang="de">Akteur</skos:altLabel>
@@ -2702,6 +2395,8 @@ The different roles an Agent can assume with respect to a Project, Collection, R
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Generic entity representing the items in the repository that may contain actual binary payload.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Generische Entität, die die Elemente im Repositorium repräsentiert, die eine tatsächliche binäre Nutzlast  enthalten können.</rdfs:comment>
+        <rdfs:label xml:lang="en">Binary Content</rdfs:label>
     </owl:Class>
     
 
@@ -2718,41 +2413,49 @@ The different roles an Agent can assume with respect to a Project, Collection, R
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContact"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLicense"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestrictionSummary"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLicenseSummary"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTitle"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestrictionSummary"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLicenseSummary"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2761,6 +2464,13 @@ The different roles an Agent can assume with respect to a Project, Collection, R
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="de">Satz von Repo-Objekten (Sammlungen oder Ressourcen), ähnlich wie Ordner in einem Dateisystem. Eine Sammlung kann optional mit einem Projekt (acdh:hasRelatedProject) verknüpft werden, in dem sie erstellt oder kuratiert wurde.</rdfs:comment>
         <rdfs:comment xml:lang="en">Set of Repo Objects (Collections or Resources), much like folders in a file system. A Collection can be optionally related to a Project (acdh:hasRelatedProject), in which it was created or curated.</rdfs:comment>
         <rdfs:label xml:lang="en">Collection</rdfs:label>
         <skos:altLabel xml:lang="en">Collection</skos:altLabel>
@@ -2857,6 +2567,8 @@ The different roles an Agent can assume with respect to a Project, Collection, R
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="de">Diese Klasse ist äquivalent zu skos:Concept: Ein SKOS-Konzept kann als Idee oder Begriff, als Gedankeneinheit betrachtet werden. Der Begriff SKOS-Konzept ist nützlich, wenn es darum geht, die konzeptionelle oder intellektuelle Struktur eines Wissensorganisationssystems zu beschreiben und sich auf bestimmte Ideen oder Bedeutungen innerhalb eines KOS zu beziehen. (Quelle: https://www.w3.org/TR/skos-reference/#concepts)
+Mit dieser Klasse werden im SKOS-Format abgelegte kontrollierte Listen mit Objekt- oder Dateneigenschaften verknüpft. Z.B. eine Liste der möglichen Ressourcentypen für acdh:hasCategory.</rdfs:comment>
         <rdfs:comment xml:lang="en">This class is equivalent to skos:Concept: A SKOS concept can be viewed as an idea or notion; a unit of thought. The notion of a SKOS concept is useful when describing the conceptual or intellectual structure of a knowledge organization system, and when referring to specific ideas or meanings established within a KOS. (source: https://www.w3.org/TR/skos-reference/#concepts)
 This class is used to link controlled lists stored in SKOS format to object or data properties. E. g. a list of possible resource types for acdh:hasCategory.</rdfs:comment>
         <rdfs:label xml:lang="en">Concept</rdfs:label>
@@ -2958,19 +2670,7 @@ This class is used to link controlled lists stored in SKOS format to object or d
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2988,6 +2688,12 @@ This class is used to link controlled lists stored in SKOS format to object or d
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTitle"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
@@ -3000,13 +2706,19 @@ This class is used to link controlled lists stored in SKOS format to object or d
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLandingPage"/>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasFormat"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3040,7 +2752,8 @@ This class is used to link controlled lists stored in SKOS format to object or d
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">An image used for presentation of a related Repo Object. It should only be used for logos and title images. Images in data sets are use the class Resource.</rdfs:comment>
+        <rdfs:comment xml:lang="en">An image used for presentation of a related Repo Object. It should only be used for logos and title images. Images in data sets use the class Resource.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Ein Bild, das für die Präsentation eines zugehörigen Repo-Objekts verwendet wird. Es sollte nur für Logos und Titelbilder verwendet werden. Bilder in Datensätzen verwenden die Klasse Resource.</rdfs:comment>
         <rdfs:label xml:lang="en">Image</rdfs:label>
         <skos:altLabel xml:lang="de">Bild</skos:altLabel>
         <skos:altLabel xml:lang="en">Image</skos:altLabel>
@@ -3070,13 +2783,6 @@ This class is used to link controlled lists stored in SKOS format to object or d
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isMetadataFor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrResourceOrPublication"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier"/>
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3100,13 +2806,37 @@ This class is used to link controlled lists stored in SKOS format to object or d
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTitle"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCharacterEncoding"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasFormat"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3119,6 +2849,9 @@ This class is used to link controlled lists stored in SKOS format to object or d
         <rdfs:comment xml:lang="en">Structured information in form of a separate binary file ABOUT another Repo Object. 
 The Metadata object is linked to the RepoObject it describes with the relation acdh:hasMetadata.
 The default example is a CMDI file that describes other resources.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Strukturierte Informationen in Form einer separaten Binärdatei ÜBER ein anderes Repo-Objekt. 
+Das Metadatenobjekt ist mit dem von ihm beschriebenen RepoObjekt über die Relation acdh:hasMetadata verknüpft.
+Das Standardbeispiel ist eine CMDI-Datei, die andere Ressourcen beschreibt.</rdfs:comment>
         <rdfs:label xml:lang="en">Metadata</rdfs:label>
         <skos:altLabel xml:lang="en">Metadata</skos:altLabel>
         <skos:altLabel xml:lang="de">Metadaten</skos:altLabel>
@@ -3135,12 +2868,6 @@ The default example is a CMDI file that describes other resources.</rdfs:comment
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrReMeOrOrganisationOrPlaceOrPublication"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTitleImage"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier"/>
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
@@ -3151,7 +2878,14 @@ The default example is a CMDI file that describes other resources.</rdfs:comment
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A legal entity (university, company) or its organisational substructure (department, institute), related in some way to a Project, Collection or Resource. The nature of the relation is specified by designated object properties, as described in the super-class acdh:Agent.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine juristische Person (Universität, Unternehmen) oder ihre organisatorische Unterstruktur (Abteilung, Institut), die in irgendeiner Weise mit einem Projekt, einer Sammlung oder einer Ressource verbunden ist. Die Art der Beziehung wird durch bestimmte Objekteigenschaften festgelegt, wie in der Superklasse acdh:Agent beschrieben.</rdfs:comment>
         <rdfs:label xml:lang="en">Organisation</rdfs:label>
         <skos:altLabel xml:lang="de">Organisation oder Institution</skos:altLabel>
         <skos:altLabel xml:lang="en">Organisation or Institution</skos:altLabel>
@@ -3175,9 +2909,18 @@ The default example is a CMDI file that describes other resources.</rdfs:comment
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An individual related in some way to a Project, Collection or Resource. 
 The nature of the relation is specified by designated object properties as described in the super-class acdh:Agent.
-A Person can be linked to an Organisation by using isMember.</rdfs:comment>
+A Person can be linked to an Organisation by using isMemberOf.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine Person, die in irgendeiner Weise mit einem Projekt, einer Sammlung oder einer Ressource verbunden ist. 
+Die Art der Beziehung wird durch bestimmte Objekteigenschaften spezifiziert, wie in der Superklasse acdh:Agent beschrieben.
+Eine Person kann mit Hilfe von isMemberOf mit einer Organisation verbunden werden.</rdfs:comment>
         <rdfs:label xml:lang="en">Person</rdfs:label>
         <skos:altLabel xml:lang="de">Person</skos:altLabel>
         <skos:altLabel xml:lang="en">Person</skos:altLabel>
@@ -3209,6 +2952,12 @@ A Person can be linked to an Organisation by using isMember.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLatitude"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
@@ -3226,6 +2975,7 @@ A Person can be linked to an Organisation by using isMember.</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A Place represents a geographical location. It can be used to indicate the spatial coverage of a Project, Collection or Resource, as well as to describe the publishing place of a work. It should contain information about the name, geocoordinates and identifiers to refer to existing gazetteers.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Ein Ort stellt eine geografische Position dar. Kann verwendet werden, um die räumliche Abdeckung eines Projekts, einer Sammlung oder einer Ressource anzuzeigen, sowie um den Veröffentlichungsort eines Werks zu beschreiben. Sollte Informationen über den Namen, die Geokoordinaten und Identifikatoren enthalten, um auf bestehende Ortsverzeichnisse zu verweisen.</rdfs:comment>
         <rdfs:label xml:lang="en">Place</rdfs:label>
         <skos:altLabel xml:lang="de">Ort</skos:altLabel>
         <skos:altLabel xml:lang="en">Place</skos:altLabel>
@@ -3251,29 +3001,31 @@ A Person can be linked to an Organisation by using isMember.</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContact"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasMetadataCreator"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedCollection"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTitleImage"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Image"/>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLifeCycleStatus"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3285,12 +3037,6 @@ A Person can be linked to an Organisation by using isMember.</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedDiscipline"/>
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3314,6 +3060,12 @@ A Person can be linked to an Organisation by using isMember.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasEditorialPractice"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
@@ -3321,18 +3073,6 @@ A Person can be linked to an Organisation by using isMember.</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasEndDate"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLandingPage"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLifeCycleStatus"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3348,8 +3088,10 @@ A Person can be linked to an Organisation by using isMember.</rdfs:comment>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="de">Aufwand oder Aktivität mit definierten Zielen und (normalerweise) begrenztem Zeitrahmen, meist in kollaborativem Rahmen mit zweckgebundener Finanzierung.
+Beachten Sie, dass ein Projekt zwar Daten verwenden oder produzieren kann (und wird), aber NICHT als Sammlung (von Daten) modelliert ist. Somit ist die Beziehung zwischen den Daten und dem Projekt acdh:hasRelatedProject NOT acdh:isPartOf.</rdfs:comment>
         <rdfs:comment xml:lang="en">Effort or activity with defined goals and (normally) limited time scope, usually in collaborative setup with dedicated funding.
-Note that though a Project might (and usually will) use or produce data, it is NOT modelled as a Collection (of data). Thus the relation between the data and the Project is acdh:hasRelatedProject NOT acdh:partOf.</rdfs:comment>
+Note that though a Project might (and usually will) use or produce data, it is NOT modelled as a Collection (of data). Thus the relation between the data and the Project is acdh:hasRelatedProject NOT acdh:isPartOf.</rdfs:comment>
         <rdfs:label xml:lang="en">Project</rdfs:label>
         <skos:altLabel xml:lang="en">Project</skos:altLabel>
         <skos:altLabel xml:lang="de">Projekt</skos:altLabel>
@@ -3389,12 +3131,6 @@ Note that though a Project might (and usually will) use or produce data, it is N
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#PublicationOrRepoObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier"/>
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
@@ -3403,6 +3139,18 @@ Note that though a Project might (and usually will) use or produce data, it is N
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTitle"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIssuedDate"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3423,6 +3171,7 @@ Note that though a Project might (and usually will) use or produce data, it is N
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="de">Ausführliche Forschungsergebnisse wie z.B. Zeitschriftenartikel, Konferenzbeiträge, Bücher usw. In diesem Schema in erster Linie dafür gedacht, die Erfassung von Publikationen im Zusammenhang mit bestimmten Projekten, Sammlungen oder Ressourcen zu ermöglichen.</rdfs:comment>
         <rdfs:comment xml:lang="en">Verbose research output like a journal article, paper submitted to a conference, a book etc. In this schema primarily intended to allow capturing publications related to certain Projects, Collections or Resources.</rdfs:comment>
         <rdfs:label xml:lang="en">Publication</rdfs:label>
         <skos:altLabel xml:lang="en">Publication</skos:altLabel>
@@ -3460,49 +3209,31 @@ Note that though a Project might (and usually will) use or produce data, it is N
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDepositor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasHosting"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLicensor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasMetadataCreator"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasOwner"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasRightsHolder"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3512,6 +3243,7 @@ Note that though a Project might (and usually will) use or produce data, it is N
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Generic entity representing the items in the repository - Collections and Resources, which are modelled as subclasses of Repo Object.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Generische Entität, die die Elemente im Repositorium repräsentiert - Sammlungen und Ressourcen, die als Unterklassen des Repo-Objekts modelliert sind.</rdfs:comment>
         <rdfs:comment xml:lang="en">Note that other classes, especially Project, are not considered subclasses of Repo Object.</rdfs:comment>
         <rdfs:label>Repo Object</rdfs:label>
     </owl:Class>
@@ -3531,26 +3263,14 @@ Note that though a Project might (and usually will) use or produce data, it is N
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isPartOf"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrPlaceOrPublication"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier"/>
                 <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3567,13 +3287,25 @@ Note that though a Project might (and usually will) use or produce data, it is N
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAcceptedDate"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTitle"/>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAcceptedDate"/>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAvailableDate"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3586,12 +3318,6 @@ Note that though a Project might (and usually will) use or produce data, it is N
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCharacterEncoding"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCompleteness"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3615,7 +3341,7 @@ Note that though a Project might (and usually will) use or produce data, it is N
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasLandingPage"/>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasFormat"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3633,19 +3359,7 @@ Note that though a Project might (and usually will) use or produce data, it is N
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasSubmissionDate"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTableOfContents"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3668,6 +3382,7 @@ Note that though a Project might (and usually will) use or produce data, it is N
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Basic entity in the schema containing actual data / content payload; comparable (and mostly equivalent) to files in a file system.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Basiseinheit im Schema mit Ist-Daten / Inhalts-Nutzlast; vergleichbar (und meist gleichwertig) mit Dateien in einem Dateisystem.</rdfs:comment>
         <rdfs:label xml:lang="en">Resource</rdfs:label>
         <skos:altLabel xml:lang="en">Resource</skos:altLabel>
         <skos:altLabel xml:lang="de">Ressource</skos:altLabel>
@@ -3679,5 +3394,5 @@ Note that though a Project might (and usually will) use or produce data, it is N
 
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 

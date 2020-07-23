@@ -112,6 +112,7 @@ hasLanguage
 hasLicense
 hasLifeCycleStatus
 hasRelatedDiscipline
+hasOAISet
 
 Changed cardinality restrictions for automatically filled properties (for the corresponding domain):
 hasAccessRestrictionSummary 0-1
@@ -765,6 +766,22 @@ This is a generic property. Use one of the more specific sub-properties where po
         <skos:altLabel xml:lang="de">Metadatenersteller</skos:altLabel>
         <acdh:inverse xml:lang="en">is metadata creator of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</acdh:ordering>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet -->
+
+    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet">
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">OAI-PMH set a Project, Collection, Resource, Metadata or Image belongs to. Choose from list.</rdfs:comment>
+        <rdfs:comment xml:lang="de">OAI-PMH set in das ein Projekt, eine Sammlung, Ressource, Metadaten oder eine Bild (Image) gehört. Aus der Liste wählen.</rdfs:comment>
+        <rdfs:label xml:lang="en">has OAI set</rdfs:label>
+        <skos:altLabel xml:lang="de">OAI-PMH Set</skos:altLabel>
+        <skos:altLabel xml:lang="en">OAI-PMH set</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">188</acdh:ordering>
+        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_oaiphmsets/data</acdh:vocabs>
     </owl:ObjectProperty>
     
 
@@ -1839,22 +1856,6 @@ Handles belong into hasPid and identifiers with stable URL or URI into hasIdenti
         <skos:altLabel xml:lang="en">Number of Items</skos:altLabel>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">173</acdh:ordering>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet -->
-
-    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasOaiSet">
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ProjectOrRepoObject"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">OAI-PMH set a Project, Collection, Resource, Metadata or Image belongs to. Choose from list.</rdfs:comment>
-        <rdfs:comment xml:lang="de">OAI-PMH set in das ein Projekt, eine Sammlung, Ressource, Metadaten oder eine Bild (Image) gehört. Aus der Liste wählen.</rdfs:comment>
-        <rdfs:label xml:lang="en">has OAI set</rdfs:label>
-        <skos:altLabel xml:lang="de">OAI-PMH Set</skos:altLabel>
-        <skos:altLabel xml:lang="en">OAI-PMH set</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">188</acdh:ordering>
-        <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_oaiphmsets/data</acdh:vocabs>
     </owl:DatatypeProperty>
     
 

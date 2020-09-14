@@ -2908,12 +2908,6 @@ This class is used to link controlled lists stored in SKOS format to object or d
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasUpdatedDate"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasVersion"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
@@ -3122,12 +3116,6 @@ Eine Person kann mit Hilfe von isMemberOf mit einer Organisation verbunden werde
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasUpdatedDate"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="de">Aufwand oder Aktivität mit definierten Zielen und (normalerweise) begrenztem Zeitrahmen, meist in kollaborativem Rahmen mit zweckgebundener Finanzierung.
 Beachten Sie, dass ein Projekt zwar Daten verwenden oder produzieren kann (und wird), aber NICHT als Sammlung (von Daten) modelliert ist. Somit ist die Beziehung zwischen den Daten und dem Projekt acdh:hasRelatedProject NOT acdh:isPartOf.</rdfs:comment>
         <rdfs:comment xml:lang="en">Effort or activity with defined goals and (normally) limited time scope, usually in collaborative setup with dedicated funding.
@@ -3333,12 +3321,6 @@ Note that though a Project might (and usually will) use or produce data, it is N
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTransferDate"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasUpdatedDate"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>

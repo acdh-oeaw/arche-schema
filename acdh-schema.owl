@@ -2518,9 +2518,7 @@ Eingabe ist eine URI.</rdfs:comment>
 
     <!-- http://www.w3.org/2004/02/skos/core#Concept -->
 
-    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
-        <owl:equivalentClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Concept"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
     
 
 
@@ -2754,21 +2752,6 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
 
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrResourceOrPublication">
         <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Helper"/>
-    </owl:Class>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#Concept -->
-
-    <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Concept">
-        <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Main"/>
-        <rdfs:comment xml:lang="de">Diese Klasse ist äquivalent zu skos:Concept: Ein SKOS-Konzept kann als Idee oder Begriff, als Gedankeneinheit betrachtet werden. Der Begriff SKOS-Konzept ist nützlich, wenn es darum geht, die konzeptionelle oder intellektuelle Struktur eines Wissensorganisationssystems zu beschreiben und sich auf bestimmte Ideen oder Bedeutungen innerhalb eines KOS zu beziehen. (Quelle: https://www.w3.org/TR/skos-reference/#concepts)
-Mit dieser Klasse werden im SKOS-Format abgelegte kontrollierte Listen mit Objekt- oder Dateneigenschaften verknüpft. Z.B. eine Liste der möglichen Ressourcentypen für acdh:hasCategory.</rdfs:comment>
-        <rdfs:comment xml:lang="en">This class is equivalent to skos:Concept: A SKOS concept can be viewed as an idea or notion; a unit of thought. The notion of a SKOS concept is useful when describing the conceptual or intellectual structure of a knowledge organization system, and when referring to specific ideas or meanings established within a KOS. (source: https://www.w3.org/TR/skos-reference/#concepts)
-This class is used to link controlled lists stored in SKOS format to object or data properties. E. g. a list of possible resource types for acdh:hasCategory.</rdfs:comment>
-        <rdfs:label xml:lang="en">Concept</rdfs:label>
-        <skos:altLabel xml:lang="en">Concept</skos:altLabel>
-        <skos:altLabel xml:lang="de">Konzept</skos:altLabel>
     </owl:Class>
     
 

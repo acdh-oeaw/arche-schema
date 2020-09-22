@@ -994,7 +994,6 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isNewVersionOf">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <owl:inverseOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isPreviousVersionOf"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#PublicationOrRepoObject"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#PublicationOrRepoObject"/>
         <rdfs:comment xml:lang="de">Gibt an, dass eine Ressource (A) eine neue Version einer anderen Ressource (B) ist und die neue Version geändert oder aktualisiert wurde.</rdfs:comment>
@@ -1021,22 +1020,6 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <acdh:inverse xml:lang="en">has part</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">156</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Metadata"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#isPreviousVersionOf -->
-
-    <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isPreviousVersionOf">
-        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#PublicationOrRepoObject"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#PublicationOrRepoObject"/>
-        <rdfs:comment xml:lang="de">Gibt an, dass eine Ressource (A) eine vorherige Version einer anderen Ressource (B) ist.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Indicates that a Resource (A) is a previous version of another Resource (B).</rdfs:comment>
-        <rdfs:label xml:lang="en">is previous version of</rdfs:label>
-        <skos:altLabel xml:lang="en">Previous Version of</skos:altLabel>
-        <skos:altLabel xml:lang="de">Vorhergehende Version von</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">154</acdh:ordering>
     </owl:ObjectProperty>
     
 

@@ -3,8 +3,11 @@ BEGIN;
 --------------------------------------------------------------------------------
 -- object/datatype property mismatch
 --------------------------------------------------------------------------------
+-- object being datatype
 select m2.* from metadata m1 join identifiers i using (id) join metadata m2 on i.ids = m2.property where m1.property = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and m1.value = 'http://www.w3.org/2002/07/owl#ObjectProperty';
+-- datatype being object
 select m2.* from metadata m1 join identifiers i using (id) join relations m2 on i.ids = m2.property where m1.property = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and m1.value = 'http://www.w3.org/2002/07/owl#DatatypeProperty';
+select m2.* from metadata m1 join identifiers i using (id) join metadata m2 on i.ids = m2.property where m1.property = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and m1.value = 'http://www.w3.org/2002/07/owl#DatatypeProperty' and m2.type = 'URI';
 
 --------------------------------------------------------------------------------
 -- removed inverse properties

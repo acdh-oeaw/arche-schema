@@ -324,62 +324,6 @@ Den vollständigen IRI der Klasse eingeben.</rdfs:comment>
 
     
 
-
-    <!-- http://purl.org/dc/elements/1.1/contributor -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/contributor">
-        <owl:equivalentProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/coverage -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/coverage">
-        <owl:equivalentProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasSpatialCoverage"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Place"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/creator -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/creator">
-        <owl:equivalentProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCreator"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/publisher -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/publisher">
-        <owl:equivalentProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasHosting"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/relation -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/relation">
-        <owl:equivalentProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasRelatedProject"/>
-        <owl:equivalentProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Main"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/source -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/source">
-        <owl:equivalentProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasSource"/>
-        <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrResourceOrPublication"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#continues -->
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#continues">

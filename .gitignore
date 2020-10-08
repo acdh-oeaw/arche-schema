@@ -1,4 +1,8 @@
 /config.ini
-/composer.lock
-/vendor
+composer.lock
+vendor
 /nbproject
+/data-migration-scripts/config
+/data-migration-scripts/log
+/data-migration-scripts/postgresql
+/data-migration-scripts/dump.sql*

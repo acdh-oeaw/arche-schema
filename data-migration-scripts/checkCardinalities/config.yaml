@@ -1,0 +1,18 @@
+dbConnStr:
+  guest: 'pgsql: host=127.0.0.1 port=5432 user=www-data'
+schema:
+  id: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
+  parent: https://vocabs.acdh.oeaw.ac.at/schema#isPartOf
+  label: https://vocabs.acdh.oeaw.ac.at/schema#hasTitle
+rest:
+  headers:
+    metadataReadMode: X-METADATA-READ-MODE
+    metadataParentProperty: X-PARENT-PROPERTY
+    metadataWriteMode: X-METADATA-WRITE-MODE
+    transactionId: X-TRANSACTION-ID
+  urlBase: http://127.0.0.1
+  pathBase: /api/
+metadataManagment:
+    nonRelationProperties:
+        - http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+

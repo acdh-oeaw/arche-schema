@@ -48,4 +48,3 @@ To create migration scripts you need a database containing both current content 
       ```
 * Your test database is ready. You can connect to it locally (`127.0.0.1`) on port `5432` as a `www-data` user (the database name is also `www-data`). Password is not required.
 
-

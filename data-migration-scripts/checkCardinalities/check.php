@@ -39,6 +39,7 @@ use zozlak\RdfConstants as C;
 $configLocation = 'config.yaml';
 $cfg            = json_decode(json_encode(yaml_parse_file($configLocation)));
 $dbConn         = new PDO($cfg->dbConnStr->guest);
+$dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $repo           = acdhOeaw\acdhRepoLib\RepoDb::factory($configLocation);
 $schemaCfg = (object) [
     'ontologyNamespace' => preg_replace('/#.*$/', '#', $cfg->schema->parent),
@@ -47,20 +48,22 @@ $schemaCfg = (object) [
 ];
 $ontology = new acdhOeaw\arche\Ontology($dbConn, $schemaCfg);
 
-$statsByClass = [];
-$statsByProp  = [];
+$statsByClass    = [];
+$statsByProp     = [];
+$statsUnexpected = [];
 
 $query  = $dbConn->prepare("SELECT value AS class, count(*) AS count FROM metadata WHERE property = ? AND value LIKE ? GROUP BY 1 ORDER BY 1");
 $query->execute([C::RDF_TYPE, $schemaCfg->ontologyNamespace . '%']);
 $counts = [];
-$resCount = 0;
 while ($i = $query->fetchObject()) {
     $counts[$i->class]       = $i->count;
-    $resCount                += $i->count;
     $statsByClass[$i->class] = [];
 }
+$query    = $dbConn->prepare("SELECT count(DISTINCT id) FROM metadata WHERE property = ? AND value LIKE ?");
+$query->execute([C::RDF_TYPE, $schemaCfg->ontologyNamespace . '%']);
+$resCount = $query->fetchColumn();
 
-$query = $dbConn->prepare("SELECT id, value AS class FROM metadata WHERE property = ? AND value LIKE ? ORDER BY value, id");
+$query = $dbConn->prepare("SELECT id, json_agg(value ORDER BY value) AS classes FROM metadata WHERE property = ? AND value LIKE ? GROUP BY id ORDER BY id");
 $query->execute([C::RDF_TYPE, $schemaCfg->ontologyNamespace . '%']);
 $n     = 1;
 while ($i = $query->fetchObject()) {
@@ -69,33 +72,49 @@ while ($i = $query->fetchObject()) {
     $res  = new acdhOeaw\acdhRepoLib\RepoResourceDb($i->id, $repo);
     $meta = $res->getGraph();
 
-    $c       = $ontology->getClass($i->class);
-    $checked = [];
-    foreach ($c->properties as $pUri => $p) {
-        if (in_array(spl_object_hash($p), $checked) || strpos($pUri, $schemaCfg->ontologyNamespace) !== 0) {
-            continue;
-        }
-        $checked[] = spl_object_hash($p);
-
-        $byLang = [];
-        foreach ($meta->all($pUri) as $v) {
-            if ($v instanceof EasyRdf\Resource) {
-                $byLang['URI'] = ($byLang['URI'] ?? 0) + 1;
-            } else {
-                $byLang[(string) $v->getLang()] = ($byLang[(string) $v->getLang()] ?? 0) + 1;
+    $classes   = json_decode($i->classes);
+    $allowedP  = [];
+    foreach ($classes as $class) {
+        $c         = $ontology->getClass($class);
+        $checked   = [];
+        foreach ($c->properties as $pUri => $p) {
+            $allowedP[] = $pUri;
+            if (in_array(spl_object_hash($p), $checked) || strpos($pUri, $schemaCfg->ontologyNamespace) !== 0) {
+                continue;
             }
-        }
-        if ($p->min > 0 && count($byLang) < $p->min) {
-            echo "\tmissing property $pUri\n";
-            $statsByClass[$i->class][$pUri] = ($statsByClass[$i->class][$pUri] ?? 0) + 1;
-            $statsByProp[$pUri] = ($statsByProp[$pUri] ?? 0) + 1;
-        }
-        if ($p->max > 0) {
-            foreach ($byLang as $lang => $count) {
-                if ($count > $p->max) {
-                    echo "\tto many values ($count) for property $pUri and lang $lang\n";
+            $checked[] = spl_object_hash($p);
+
+            $byLang = [];
+            foreach ($meta->all($pUri) as $v) {
+                if ($v instanceof EasyRdf\Resource) {
+                    $byLang['URI'] = ($byLang['URI'] ?? 0) + 1;
+                } else {
+                    $byLang[(string) $v->getLang()] = ($byLang[(string) $v->getLang()] ?? 0) + 1;
                 }
             }
+            if ($p->min > 0 && count($byLang) < $p->min) {
+                echo "\tmissing property $pUri\n";
+                $statsByClass[$class][$pUri] = ($statsByClass[$class][$pUri] ?? 0) + 1;
+                $statsByProp[$pUri] = ($statsByProp[$pUri] ?? 0) + 1;
+            }
+            if ($p->max > 0) {
+                foreach ($byLang as $lang => $count) {
+                    if ($count > $p->max) {
+                        echo "\tto many values ($count) for property $pUri and lang $lang\n";
+                    }
+                }
+            }
+        }
+    }
+
+    foreach ($meta->propertyUris() as $pUri) {
+        if (strpos($pUri, $schemaCfg->ontologyNamespace) === 0 && !in_array($pUri, $allowedP)) {
+            echo "\tproperty $pUri used while ontology doesn't associate it with this resource class\n";
+            if (!isset($statsUnexpected[$pUri])) {
+                $statsUnexpected[$pUri] = [];
+            }
+            $cc = implode(', ', $classes);
+            $statsUnexpected[$pUri][$cc] = ($statsUnexpected[$pUri][$cc] ?? 0) + 1;
         }
     }
 }
@@ -103,10 +122,24 @@ while ($i = $query->fetchObject()) {
 echo "----------------------------------------\n";
 foreach ($statsByClass as $class => $props) {
     if (count($props) > 0) {
-        echo "Missing property statistics for class $class\n";
+        echo "Missing properties statistics for class $class\n";
         foreach ($props as $prop => $count) {
             printf("\t%s %d (%.1f%%)\n", $prop, $count, 100 * $count / $counts[$class]);
         }
+    }
+}
+echo "----------------------------------------\n";
+foreach ($statsUnexpected as $prop => $classes) {
+    $domain = '?';
+    foreach ($ontology->getProperty([], $prop)->domain ?? [] as $d) {
+        if (strpos($d, $schemaCfg->ontologyNamespace) === 0) {
+            $domain = $d;
+            break;
+        }
+    }
+    echo "Property $prop with domain $domain is used in incompatible classes:\n";
+    foreach ($classes as $class => $count) {
+        printf("\t%s %d\n", $class, $count);
     }
 }
 

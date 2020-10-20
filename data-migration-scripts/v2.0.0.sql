@@ -25,6 +25,37 @@ select *
     where not exists (select 1 from identifiers where t.property = ids);
 
 --------------------------------------------------------------------------------
+-- acdh:hasAccessRestriction is now applicable only to acdh:BinaryContent
+--------------------------------------------------------------------------------
+
+begin;
+select count(*) from relations where property = 'https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction';
+select count(*) from metadata where property = 'https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems';
+select count(*) from metadata where property = 'https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize';
+
+create temporary table _binaryContent as select id, 'BinaryContent' as type from metadata where property = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and value in ('https://vocabs.acdh.oeaw.ac.at/schema#Resource', 'https://vocabs.acdh.oeaw.ac.at/schema#Image', 'https://vocabs.acdh.oeaw.ac.at/schema#Metadata', 'https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent');
+delete from relations r where property = 'https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction' and not exists (select 1 from _binaryContent where r.id = id);
+
+--------------------------------------------------------------------------------
+-- acdh:hasNumberOfItems is now applicable only for acdh:Collection
+--------------------------------------------------------------------------------
+
+create temporary table _collections as select id, 'Collection' as type from metadata where property = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and value = 'https://vocabs.acdh.oeaw.ac.at/schema#Collection';
+delete from metadata m where property = 'https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems' and not exists (select 1 from _collections where m.id = id);
+
+--------------------------------------------------------------------------------
+-- acdh:hasBinarySize is now applicable only for acdh:RepoObject
+--------------------------------------------------------------------------------
+
+create temporary table _repoobjects as select id, 'Collection' as type from metadata where property = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' and value in ('https://vocabs.acdh.oeaw.ac.at/schema#Resource', 'https://vocabs.acdh.oeaw.ac.at/schema#Image', 'https://vocabs.acdh.oeaw.ac.at/schema#Metadata', 'https://vocabs.acdh.oeaw.ac.at/schema#Collection', 'https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent');
+delete from metadata m where property = 'https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize' and not exists (select 1 from _repoobjects where m.id = id);
+
+select count(*) from relations where property = 'https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestriction';
+select count(*) from metadata where property = 'https://vocabs.acdh.oeaw.ac.at/schema#hasNumberOfItems';
+select count(*) from metadata where property = 'https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize';
+rollback;
+
+--------------------------------------------------------------------------------
 -- compute hasAccessRestrictionSummary and hasLicenseSummary for collections
 --------------------------------------------------------------------------------
 CREATE TEMPORARY TABLE _collections AS

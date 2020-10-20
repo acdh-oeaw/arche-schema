@@ -31,15 +31,19 @@ To create migration scripts you need a database containing both current content 
     * Move the dump to the location accessible from the container with
       `mv dump.sql log/`
     * Log into the database with
-      `docker exec -ti -u \`id -u\` arche psql`
-    * Run `\\i log/dump.sql` and exit with `\q`
+      ```
+      docker exec -ti -u `id -u` arche psql
+      ```
+    * Run `\i log/dump.sql` and exit with `\q`
     * Connect to the databse (e.g. with `psql -h 127.0.0.1 -p 5432 -U www-data` or using your favourite app like PgAdmin or Dbeaver) and run
       `UPDATE identifiers SET ids = replace(ids, 'https://arche.acdh.oeaw.ac.at/api/', 'http://127.0.0.1/api/') WHERE ids LIKE 'https://arche.acdh.oeaw.ac.at/api/%';`
 * Import the new ontology
     * Move the ontology file into the docker container with
       `cp acdh-schema.owl log/`
     * Go into the docker container
-      `docker exec -ti -u \`id -u\` arche bash`
+      ```
+      docker exec -ti -u `id -u` arche bash
+      ```
     * Run
       ```
       chmod +x config/initScripts/10-updateOntology.php

@@ -562,8 +562,8 @@ This is a generic property. Use one of the more specific sub-properties where po
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrImageOrResource"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:comment xml:lang="de">Person oder Organisation (B), die für die Erstellung der digitalen Repräsentation (Ressource A) eines physischen Objektes verantwortlich ist.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Person or Organisation (B) responsible for creating the digital representation (Resource A) of a physical object.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Person oder Organisation (B), die für die Erstellung der digitalen Repräsentation einer Sammlung oder Ressource (A) von einem analogen Objekt verantwortlich ist. Dazu zählen z.B. Personen, die für das Scannen von analogen 2D-Ressourcen, das 3D-Scannen von Objekten und die Eingabe von Daten aus einer vorhandenen analogen Ressource in eine strukturierte digitale Repräsentation (z.B. Tabelle, Datenbank, XML) verantwortlich sind.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Person or Organisation (B) responsible for creating the digital representation of a Collection or Resource (A) of an analogue object. This for example includes persons responsible for scanning 2D analogue resources, 3D scanning of objects and entering data into a structured digital representation (e.g. spreadsheet, database, XML) from an existing analogue resource.</rdfs:comment>
         <rdfs:label xml:lang="en">has digitising agent</rdfs:label>
         <skos:altLabel xml:lang="de">Digitalisierungsakteur(e)</skos:altLabel>
         <skos:altLabel xml:lang="en">Digitising Agent(s)</skos:altLabel>
@@ -723,8 +723,8 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContributor"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Main"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Agent"/>
-        <rdfs:comment xml:lang="de">Person oder Organisation (B), die für die Erstellung der Metadaten einer Ressource oder Sammlung (A) verantwortlich ist.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Person or Organisation (B) responsible for creating metadata for a Resource or Collection (A).</rdfs:comment>
+        <rdfs:comment xml:lang="de">Person oder Organisation (B), die für die Erstellung von Metadaten verantwortlich ist, die eine Ressource, eine Sammlung oder ein Projekt (A) gemäß dem ARCHE-Schema beschreiben.  Zusätzliche strukturierte und maschinenlesbare Metadaten in einem Format wie TEI, CMDI, LIDO usw. können als eine Entität der Klasse Metadaten mit ihrem Urheber als hasCreator hinzugefügt werden.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Person or Organisation (B) responsible for creating metadata describing a Resource, a Collection or a Project (A) according to the ARCHE schema.  Additional structured and machine readable metadata in a format like a TEI, CMDI, LIDO etc. can be added as an entity of the Class Metadata with its creator as hasCreator.</rdfs:comment>
         <rdfs:label xml:lang="en">has metadata creator</rdfs:label>
         <skos:altLabel xml:lang="en">Metadata Creator(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Metadatenersteller</skos:altLabel>

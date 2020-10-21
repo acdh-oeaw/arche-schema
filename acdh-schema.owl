@@ -955,7 +955,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#isPartOf">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrPlaceOrPublicationOrReMe"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#PlaceOrPublicationOrRepoObject"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrPlaceOrPublication"/>
         <rdfs:comment xml:lang="de">Gibt an, dass eine Ressource oder Sammlung (A) Teil einer Sammlung (B) ist, z.B. Bestandteile einer Sammlung.</rdfs:comment>
         <rdfs:comment xml:lang="en">Indicates a Resource or Collection (A) is a part of an aggregate Collection (B), e. g. items of a Collection.</rdfs:comment>

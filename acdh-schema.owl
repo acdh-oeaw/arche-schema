@@ -3279,6 +3279,7 @@ Note that though a Project might (and usually will) use or produce data, it is N
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#Technical -->
 
     <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Technical">
+        <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Main"/>
         <rdfs:comment xml:lang="en">A class for things used by the ARCHE system components such as arche-core and arche-lib-disserv. Entities are purely technical and do not require curation.</rdfs:comment>
         <rdfs:comment xml:lang="de">Eine Klasse für Dinge, die in den ARCHE Systemkomponenten wie arche-core oder arche-lib-disserv verwendet werden. Die Entitäten sind rein technisch und bedürfen keiner Kuratierung.</rdfs:comment>
         <rdfs:label xml:lang="en">Technical</rdfs:label>

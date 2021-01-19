@@ -98,80 +98,49 @@ acdh:vocabs annotation property values adjusted to point to endpoints providing 
         <owl:versionInfo xml:lang="en">Version 1.8 released on 2020-07-07.
 Change type of hasLanguage to xsd:anyURI.
 Introduced helper class CollectionOrImageorResource.
-Introducted hasDigitisingAgent, hasLinceseSummary, hasAccessRestrictionSummary.</owl:versionInfo>
+Introducted hasDigitisingAgent, hasLicenseSummary, hasAccessRestrictionSummary.</owl:versionInfo>
         <owl:versionInfo xml:lang="en">Version 1.9 released on 2020-07-16.
-Added annotation properties &apos;automatedFill&apos; and &apos;defaultValue&apos;
+Added annotation properties acdh:automatedFill and acdh:defaultValue.
 Introduced helper class ImageorResource.
 Introduced hasCreatedDateOriginal.</owl:versionInfo>
-        <owl:versionInfo xml:lang="en">Version 2.0 released on 2020-07-23
+        <owl:versionInfo xml:lang="en">Version 2.0 released on 2021-01-22.
+An overhauled version of the ontology with many small and some bigger changes, including updates of class and property definitions and translations.
 
-Changed Datatype Properties to Object Properties with range skos:Concept
-hasAccessRestriction
-hasCategory
-hasLanguage
-hasLicense
-hasLifeCycleStatus
-hasRelatedDiscipline
-hasOAISet
+Changed Datatype Properties to Object Properties with range skos:Concept (acdh:hasAccessRestriction, acdh:hasCategory, acdh:hasLanguage, acdh:hasLicense, acdh:hasLifeCycleStatus, acdh:hasRelatedDiscipline, acdh:hasOAISet).
+Introduced class acdh:TopCollection.
+Removed class acdh:Image, acdh:ImageOrResource, and acdh:CollectionOrImageorResource.
+Introduced technical properties.
+Introduced acdh:hasIssuedDate with domain acdh:Publication.
+Introduced acdh:hasCreatedStartDateOriginal and acdh:hasCreatedEndDateOriginal.
+Removed acdh:hasLandingPage, acdh:hasCreatedDate, and acdh:hasCreatedDateOriginal from the ontology.
 
-Changed cardinality restrictions for automatically filled properties (for the corresponding domain):
-hasAccessRestrictionSummary 0-1
-hasLicenseSummary 0-1
-hasHosting --&gt; removed
-hasAvailableDate 0-1
-hasNumberofItems 0-1
-hasBinarySize 0-1
-hasFormat 0-1
-hasAccessRestriction for Collection to 0-1
-AND changed cardinality for:
-hasLicense for Collection to 0-1
+Removed inverse properties (acdh:isActorOf, acdh:isAuthorOf, acdh:isContactOf, acdh:isContributorOf, acdh:isCoverageOf, acdh:isCreatorOf, acdh:isCuratorOf, acdh:isDepositorOf, acdh:isEditorOf, acdh:isFunderOf, acdh:isHostingOf, acdh:isLicensorOf, acdh:isDigitisingAgentOf, acdh:isMetadataCreatorOf, acdh:isOwnerOf, acdh:isPrincipalInvestigatorOf, acdh:isRightsHolderOf, acdh:isSpatialCoverageOf, acdh:hasMember, acdh:hasPart, acdh:hasSource, acdh:hasTitleImage, acdh:hasMetadata, acdh:isDocumentedBy, acdh:isContinuedBy, acdh:hasDerivedPublication).
+Changed cardinality for acdh:hasLicense for acdh:Collection to 0-1.
+Changed domain for acdh:hasCompleteness and acdh:hasNumberOfItems (to exclude acdh:Resource).
+Extended domain of acdh:hasTableOfContents to acdh:Resources.
+Extended domain of acdh:hasAvailableDate and hasAccessRestriction to owl:Thing.
 
-Removed cardinalities from resource for:
-hasCompleteness
-hasNumberOfItems
+Introduced annotation acdh:inverse indicating the label of inverse relation of a property.
+Introduced annotation acdh:automatedfill to acdh:hasLocationPath.</owl:versionInfo>
+        <owl:versionInfo xml:lang="de">Version 2.0 veröffentlicht am 2021-01-22.
+Eine gründlich überarbeitete Version der Ontologie mit vielen kleinen und eineigen größeren Anpassungen, inklusive Aktualisierung der Beschreibungen und Übersetzungen von Klassen und Eigenschaften.
 
-Extended definitions for
-hasAvailableDate
-hasCreator
-hasLifeCycleStatus
-automated fill, default value, vocabs
+Einige Datatype Properties wurden in Object Properties mit range skos:Concept umgewandelt (acdh:hasAccessRestriction, acdh:hasCategory, acdh:hasLanguage, acdh:hasLicense, acdh:hasLifeCycleStatus, acdh:hasRelatedDiscipline, acdh:hasOAISet).
+Klase acdh:TopCollection eingefügt.
+Klassen acdh:Image, acdh:ImageOrResource, und acdh:CollectionOrImageorResource enfernt.
+Technische Eigenschaften eingefügt.
+acdh:hasIssuedDate mit domain acdh:Publication eingefügt.
+acdh:hasCreatedStartDateOriginal und acdh:hasCreatedEndDateOriginal eingefügt.
+acdh:hasLandingPage, acdh:hasCreatedDate, und acdh:hasCreatedDateOriginal entfernt.
 
-Removed inverse properties
-is actor of
-is author of
-is contact of
-is contributor of
-is coverage of
-is creator of
-is curator of
-is depositor of
-is editor of
-is funder of
-is hosting of
-is licensor of
-is digitising agent of
-is metadata creator of
-is owner of
-is principal investigator of
-is rights holder of
-is spatial coverage of
-has member
-has part
-is source of
-has title image
-has metadata
-is documented by
-is continued by
-is derived publication of
+Inverse Eigenschaften wurden entfernt (acdh:isActorOf, acdh:isAuthorOf, acdh:isContactOf, acdh:isContributorOf, acdh:isCoverageOf, acdh:isCreatorOf, acdh:isCuratorOf, acdh:isDepositorOf, acdh:isEditorOf, acdh:isFunderOf, acdh:isHostingOf, acdh:isLicensorOf, acdh:isDigitisingAgentOf, acdh:isMetadataCreatorOf, acdh:isOwnerOf, acdh:isPrincipalInvestigatorOf, acdh:isRightsHolderOf, acdh:isSpatialCoverageOf, acdh:hasMember, acdh:hasPart, acdh:hasSource, acdh:hasTitleImage, acdh:hasMetadata, acdh:isDocumentedBy, acdh:isContinuedBy, acdh:hasDerivedPublication).
+Kardinalität von acdh:hasLicense für acdh:Collection zu 0-1 geändert.
+Changed domain for acdh:hasCompleteness and acdh:hasNumberOfItems (to exclude acdh:Resource).
+Domain von acdh:hasTableOfContents zu acdh:Resources geändert.
+Domain von acdh:hasAvailableDate und hasAccessRestriction auf owl:Thing ausgeweitet.
 
-Introduced annotation &quot;inverse&quot; indicating the inverse property input option.
-Introduced hasIssuedDate for Publication.
-Extended domain of hasTableOfContents to Resources.
-Extended domain of hasAvailableDate and hasAccessRestriction to owl:Thing.
-Removed hasLandingPage from the ontology.
-Added automatedfill annotation to hasLocationPath.
-Added German translations to class descriptions.
-Minor fixes.</owl:versionInfo>
+Annotation acdh:inverse eingefügt, welche die Beschriftung der inversen Relation einer Eigenschaft angibt.
+Annotation acdh:automatedfill für acdh:hasLocationPath eingefügt.</owl:versionInfo>
     </owl:Ontology>
     
 

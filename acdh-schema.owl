@@ -2309,8 +2309,8 @@ If left empty for a Person it is automatically computed by combining first and l
         <skos:altLabel xml:lang="de">URL</skos:altLabel>
         <skos:altLabel xml:lang="en">URL</skos:altLabel>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</acdh:ordering>
-        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
+        <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#TopCollection"/>
     </owl:DatatypeProperty>
     
 
@@ -3389,6 +3389,43 @@ Note that though a Project might (and usually will) use or produce data, it is N
         <rdfs:label xml:lang="en">Technical</rdfs:label>
         <skos:altLabel xml:lang="en">Technical</skos:altLabel>
         <skos:altLabel xml:lang="de">Technisch</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#TopCollection -->
+
+    <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#TopCollection">
+        <rdfs:subClassOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasContact"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCurator"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasSubject"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="de">Der übergeordnete Satz von Repo-Objekten (Sammlungen oder Ressourcen). Wird als der Einstiegspunkt in der GUI angezeigt. Eine übergeordnete Sammlung kann optional mit einem Projekt (acdh:hasRelatedProject) verknüpft werden, in dem sie erstellt oder kuratiert wurde.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The root of a set of Repo Objects (Collections or Resources). Is displayed as the main entry point on the GUI. A Top Collection can be optionally related to a Project (acdh:hasRelatedProject), in which it was created or curated.</rdfs:comment>
+        <rdfs:label xml:lang="en">Top Collection</rdfs:label>
+        <skos:altLabel xml:lang="en">Top Collection</skos:altLabel>
+        <skos:altLabel xml:lang="de">Übergeordnete Sammlung</skos:altLabel>
     </owl:Class>
 </rdf:RDF>
 

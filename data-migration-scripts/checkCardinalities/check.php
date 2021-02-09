@@ -100,7 +100,7 @@ while ($i = $query->fetchObject()) {
             if ($p->max > 0) {
                 foreach ($byLang as $lang => $count) {
                     if ($count > $p->max) {
-                        echo "\tto many values ($count) for property $pUri and lang $lang\n";
+                        echo "\ttoo many values ($count) for property $pUri and lang $lang\n";
                     }
                 }
             }

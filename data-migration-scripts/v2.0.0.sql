@@ -174,6 +174,7 @@ INSERT INTO _aggregates
     FROM _collections c 
     WHERE NOT EXISTS (SELECT 1 FROM _aggregates WHERE c.id = id);
 -- insert
+DELETE FROM metadata WHERE property IN ('https://vocabs.acdh.oeaw.ac.at/schema#hasLicenseSummary', 'https://vocabs.acdh.oeaw.ac.at/schema#hasAccessRestrictionSummary');
 INSERT INTO metadata (mid, id, property, type, lang, value)
     SELECT nextval('mid_seq'), id, property, 'http://www.w3.org/2001/XMLSchema#string', lang, value FROM _aggregates;
 

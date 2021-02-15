@@ -129,11 +129,11 @@ select count(*) from metadata where property = 'https://vocabs.acdh.oeaw.ac.at/s
 select count(*) from metadata where property = 'https://vocabs.acdh.oeaw.ac.at/schema#hasBinarySize';
 
 --------------------------------------------------------------------------------
--- compute hasAccessRestrictionSummary and hasLicenseSummary for collections
+-- compute hasAccessRestrictionSummary and hasLicenseSummary for Collection and TopCollection
 --------------------------------------------------------------------------------
 DROP TABLE IF EXISTS _collections;
 CREATE TEMPORARY TABLE _collections AS
-    SELECT id FROM metadata WHERE property = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' AND substring(value, 1, 1000) = 'https://vocabs.acdh.oeaw.ac.at/schema#Collection';
+    SELECT DISTINCT id FROM metadata WHERE property = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type' AND value IN ('https://vocabs.acdh.oeaw.ac.at/schema#Collection', 'https://vocabs.acdh.oeaw.ac.at/schema#TopCollection');
 DROP TABLE IF EXISTS _children;
 CREATE TEMPORARY TABLE _children AS
     SELECT id AS cid, (get_relatives(id, 'https://vocabs.acdh.oeaw.ac.at/schema#isPartOf', 0)).* FROM _collections;

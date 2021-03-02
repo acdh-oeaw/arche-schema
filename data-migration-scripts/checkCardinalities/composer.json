@@ -1,0 +1,7 @@
+{
+    "require": {
+        "acdh-oeaw/arche-lib-schema": "^4.0",
+        "acdh-oeaw/arche-lib": "^1.2",
+        "zozlak/rdf-constants": "^1.1"
+    }
+}

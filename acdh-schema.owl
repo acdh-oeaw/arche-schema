@@ -2362,8 +2362,8 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:label xml:lang="en">has version info</rdfs:label>
         <skos:altLabel xml:lang="de">Beschreibung der Versionsänderungen</skos:altLabel>
         <skos:altLabel xml:lang="en">Description of version changes</skos:altLabel>
-        <acdh:langTag xml:lang="de">true</acdh:langTag>
-        <acdh:ordering xml:lang="de">150</acdh:ordering>
+        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</acdh:ordering>
     </owl:DatatypeProperty>
     
 

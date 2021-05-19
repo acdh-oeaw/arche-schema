@@ -29,8 +29,8 @@
  * having an ACDH class assigned.
  *
  * Requires a config.yaml file allowing to initialize:
- * - `acdhOeaw\acdhRepoLib\RepoDb` object (from acdh-oeaw/arche-lib library)
- * - `acdhOeaw\arche\Ontology` object (from acdh-oeaw/arche-lib-schema library)
+ * - `acdhOeaw\arche\lib\RepoDb` object (from acdh-oeaw/arche-lib library)
+ * - `acdhOeaw\arche\lib\schema\Ontology` object (from acdh-oeaw/arche-lib-schema library)
  */
 
 require_once 'vendor/autoload.php';
@@ -40,13 +40,13 @@ $configLocation = 'config.yaml';
 $cfg            = json_decode(json_encode(yaml_parse_file($configLocation)));
 $dbConn         = new PDO($cfg->dbConnStr->guest);
 $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$repo           = acdhOeaw\acdhRepoLib\RepoDb::factory($configLocation);
+$repo           = acdhOeaw\arche\lib\RepoDb::factory($configLocation);
 $schemaCfg = (object) [
     'ontologyNamespace' => preg_replace('/#.*$/', '#', $cfg->schema->parent),
     'parent'            => $cfg->schema->parent,
     'label'             => $cfg->schema->label,
 ];
-$ontology = new acdhOeaw\arche\Ontology($dbConn, $schemaCfg);
+$ontology = new acdhOeaw\arche\lib\schema\Ontology($dbConn, $schemaCfg);
 
 $statsByClass    = [];
 $statsByProp     = [];
@@ -69,7 +69,7 @@ $n     = 1;
 while ($i = $query->fetchObject()) {
     printf("Resource %d (%d / %d %.1f%%)\n", $i->id, $n, $resCount, 100 * $n / $resCount);
     $n++;
-    $res  = new acdhOeaw\acdhRepoLib\RepoResourceDb($i->id, $repo);
+    $res  = new acdhOeaw\arche\lib\RepoResourceDb($i->id, $repo);
     $meta = $res->getGraph();
 
     $classes   = json_decode($i->classes);

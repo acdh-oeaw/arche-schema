@@ -1646,7 +1646,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:comment xml:lang="de">Dateiname des Binärinhalts der Ressource im Repositorium.</rdfs:comment>
         <rdfs:comment xml:lang="en">File name of the repository resource&apos;s binary content</rdfs:comment>
         <rdfs:label xml:lang="en">has filename</rdfs:label>
-        <acdh:automatedFill xml:lang="en">true</acdh:automatedFill>
+        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
     </owl:DatatypeProperty>
     
 
@@ -1696,7 +1696,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:comment xml:lang="de">Hash des Binärinhalts der Ressource im Repositorium.</rdfs:comment>
         <rdfs:comment xml:lang="en">Hash of the repository resource&apos;s binary content</rdfs:comment>
         <rdfs:label xml:lang="en">has hash</rdfs:label>
-        <acdh:automatedFill xml:lang="en">true</acdh:automatedFill>
+        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
     </owl:DatatypeProperty>
     
 

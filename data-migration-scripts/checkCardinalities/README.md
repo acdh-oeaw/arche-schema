@@ -12,9 +12,11 @@ The `config.yaml` provided in this repository is set up to work with the test da
 
 * clone this repository and open the `{repoRootDir}/data-migration-scripts/checkCardinalities` directory
 * adjust database connection settings in `config.yaml` (no need to do so if you are using the test database setup as described on https://github.com/acdh-oeaw/arche-schema/tree/master/data-migration-scripts#environment-for-preparing-data-migration-scripts)
+    * make sure `urlBase` and `pathBase` are set correctly so vocabulary values are checked right
 * run `composer update`
 
 ## Usage
 
-`php -f check.php`
+`php -f check.php` or `php -f check.php resourceId`  
+(the latter one checks only the givnen resource and its children)
 

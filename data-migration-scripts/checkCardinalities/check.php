@@ -35,22 +35,26 @@
 
 require_once 'vendor/autoload.php';
 use zozlak\RdfConstants as C;
+use acdhOeaw\arche\lib\schema\Ontology;
+use acdhOeaw\arche\lib\RepoDb;
+use acdhOeaw\arche\lib\RepoResourceDb;
 
 $configLocation = 'config.yaml';
 $cfg            = json_decode(json_encode(yaml_parse_file($configLocation)));
-$dbConn         = new PDO($cfg->dbConnStr->guest);
+$dbConn         = new PDO($cfg->dbConn->guest);
 $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$repo           = acdhOeaw\arche\lib\RepoDb::factory($configLocation);
+$repo           = RepoDb::factory($configLocation);
 $schemaCfg = (object) [
     'ontologyNamespace' => preg_replace('/#.*$/', '#', $cfg->schema->parent),
     'parent'            => $cfg->schema->parent,
     'label'             => $cfg->schema->label,
 ];
-$ontology = new acdhOeaw\arche\lib\schema\Ontology($dbConn, $schemaCfg);
+$ontology = new Ontology($dbConn, $schemaCfg);
 
 $statsByClass    = [];
 $statsByProp     = [];
 $statsUnexpected = [];
+$statsNotAllowed = [];
 
 $query  = $dbConn->prepare("SELECT value AS class, count(*) AS count FROM metadata WHERE property = ? AND value LIKE ? GROUP BY 1 ORDER BY 1");
 $query->execute([C::RDF_TYPE, $schemaCfg->ontologyNamespace . '%']);
@@ -59,17 +63,26 @@ while ($i = $query->fetchObject()) {
     $counts[$i->class]       = $i->count;
     $statsByClass[$i->class] = [];
 }
-$query    = $dbConn->prepare("SELECT count(DISTINCT id) FROM metadata WHERE property = ? AND value LIKE ?");
-$query->execute([C::RDF_TYPE, $schemaCfg->ontologyNamespace . '%']);
+
+$param = [C::RDF_TYPE, $schemaCfg->ontologyNamespace . '%'];
+$filter = '';
+if ($argc > 1) {
+    $filter = "JOIN (SELECT (get_relatives(id, ?, 999999, 0)).* FROM identifiers WHERE id = ? OR ids = ?) t USING (id)";
+    $param = array_merge([$cfg->schema->parent, (int) $argv[1], $argv[1]], $param);
+}
+$queryStr = "FROM metadata $filter WHERE property = ? AND value LIKE ?";
+
+$query    = $dbConn->prepare("SELECT count(DISTINCT id) $queryStr");
+$query->execute($param);
 $resCount = $query->fetchColumn();
 
-$query = $dbConn->prepare("SELECT id, json_agg(value ORDER BY value) AS classes FROM metadata WHERE property = ? AND value LIKE ? GROUP BY id ORDER BY id");
-$query->execute([C::RDF_TYPE, $schemaCfg->ontologyNamespace . '%']);
+$query = $dbConn->prepare("SELECT id, json_agg(value ORDER BY value) AS classes $queryStr GROUP BY id ORDER BY id");
+$query->execute($param);
 $n     = 1;
 while ($i = $query->fetchObject()) {
     printf("Resource %d (%d / %d %.1f%%)\n", $i->id, $n, $resCount, 100 * $n / $resCount);
     $n++;
-    $res  = new acdhOeaw\arche\lib\RepoResourceDb($i->id, $repo);
+    $res  = new RepoResourceDb($i->id, $repo);
     $meta = $res->getGraph();
 
     $classes   = json_decode($i->classes);
@@ -101,6 +114,18 @@ while ($i = $query->fetchObject()) {
                 foreach ($byLang as $lang => $count) {
                     if ($count > $p->max) {
                         echo "\ttoo many values ($count) for property $pUri and lang $lang\n";
+                    }
+                }
+            }
+            if (!empty($p->vocabs)) {
+                foreach ($meta->all($pUri) as $v) {
+                    $v = (string) $v;
+                    if (false === $p->checkVocabularyValue($v, Ontology::VOCABSVALUE_ID)) {
+                        echo "\tvalue $v for property $pUri is not allowed\n";
+                        if (!isset($statsNotAllowed[$pUri])) {
+                            $statsNotAllowed[$pUri] = [];
+                        }
+                        $statsNotAllowed[$pUri][$v] = ($statsNotAllowed[$pUri][$v] ?? 0) + 1;
                     }
                 }
             }
@@ -140,6 +165,13 @@ foreach ($statsUnexpected as $prop => $classes) {
     echo "Property $prop with domain $domain is used in incompatible classes:\n";
     foreach ($classes as $class => $count) {
         printf("\t%s %d\n", $class, $count);
+    }
+}
+echo "----------------------------------------\n";
+foreach ($statsNotAllowed as $prop => $values) {
+    echo "Property $prop has wrong values:\n";
+    foreach ($values as $value => $count) {
+        echo "\t$value $count\n";
     }
 }
 

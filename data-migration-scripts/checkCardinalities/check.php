@@ -121,7 +121,11 @@ while ($i = $query->fetchObject()) {
             if ($p->max > 0) {
                 foreach ($byLang as $lang => $count) {
                     if ($count > $p->max) {
-                        echo "\ttoo many values ($count) for property $pUri and lang $lang\n";
+                        if ($lang === 'URI') {
+                            echo "\ttoo many values ($count) for object property $pUri\n";
+                        } else {
+                            echo "\ttoo many values ($count) for datatype property $pUri and lang $lang\n";
+                        }
                     }
                 }
             }

@@ -1,5 +1,6 @@
-dbConnStr:
-  guest: 'pgsql: host=127.0.0.1 port=5432 user=www-data'
+dbConn:
+  #guest: 'pgsql: host=127.0.0.1 port=5432 user=www-data' # when running from outside of the container
+  guest: 'pgsql: ' # when running inside the container
 schema:
   id: https://vocabs.acdh.oeaw.ac.at/schema#hasIdentifier
   parent: https://vocabs.acdh.oeaw.ac.at/schema#isPartOf
@@ -10,7 +11,8 @@ rest:
     metadataParentProperty: X-PARENT-PROPERTY
     metadataWriteMode: X-METADATA-WRITE-MODE
     transactionId: X-TRANSACTION-ID
-  urlBase: http://127.0.0.1
+  #urlBase: http://127.0.0.1 # when running against a test local instance
+  urlBase: https://arche.acdh.oeaw.ac.at # when running against a real instance
   pathBase: /api/
 metadataManagment:
     nonRelationProperties:

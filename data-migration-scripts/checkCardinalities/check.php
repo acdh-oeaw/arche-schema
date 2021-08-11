@@ -33,13 +33,21 @@
  * - `acdhOeaw\arche\lib\schema\Ontology` object (from acdh-oeaw/arche-lib-schema library)
  */
 
-require_once 'vendor/autoload.php';
+$path = '.';
+while (!file_exists("$path/vendor/autoload.php") && realpath($path) !== '/') {
+    $path .= '/..';
+}
+if (!file_exists("$path/vendor/autoload.php")) {
+    exit("Composer libraries not found. Run `composer update`\n");
+}
+
+require_once "$path/vendor/autoload.php";
 use zozlak\RdfConstants as C;
 use acdhOeaw\arche\lib\schema\Ontology;
 use acdhOeaw\arche\lib\RepoDb;
 use acdhOeaw\arche\lib\RepoResourceDb;
 
-$configLocation = 'config.yaml';
+$configLocation = __DIR__ . '/config.yaml';
 $cfg            = json_decode(json_encode(yaml_parse_file($configLocation)));
 $dbConn         = new PDO($cfg->dbConn->guest);
 $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

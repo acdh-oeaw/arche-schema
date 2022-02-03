@@ -3375,12 +3375,6 @@ Note that though a Project might (and usually will) use or produce data, it is N
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#isTitleImageOf"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCharacterEncoding"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>

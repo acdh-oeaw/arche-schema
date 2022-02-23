@@ -902,8 +902,8 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#relation"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#PublicationOrRepoObject"/>
         <rdfs:range rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#PublicationOrRepoObject"/>
-        <rdfs:comment xml:lang="de">Gibt an, dass eine Ressource (A) eine neue Version einer anderen Ressource (B) ist und die neue Version geändert oder aktualisiert wurde.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Indicates a resource (A) is a new version of another resource (B), where the new version has been modified or updated.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Gibt an, dass eine Ressource (A) eine neue Version einer anderen Ressource (B) ist und die neue Version geändert oder aktualisiert wurde. Wichtig: Nur ein Elternelement pro Ressource ist erlaubt, also kann Ressource (B) nicht sowohl Ressource (A) als auch eine andere Ressource (C) als neuere Version haben. Aber Ressource (A) kann eine neuere Version von Ressource (B) und Ressource (C) sein.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Indicates a resource (A) is a new version of another resource (B), where the new version has been modified or updated. Important: Only one parent per resource is allowed, i.e. resource (B) cannot have resource (A) and another resource (C) as newer versions. But resource (A) can be a newer version of resource (B) and resource (C).</rdfs:comment>
         <rdfs:label xml:lang="en">is new version of</rdfs:label>
         <skos:altLabel xml:lang="de">Ist neue Version von</skos:altLabel>
         <skos:altLabel xml:lang="en">New Version of</skos:altLabel>

@@ -925,7 +925,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <skos:altLabel xml:lang="de">Enthält Objektmetadaten für</skos:altLabel>
         <skos:altLabel xml:lang="en">Object metadata for</skos:altLabel>
         <acdh:inverse xml:lang="en">has object metadata</acdh:inverse>
-        <acdh:ordering xml:lang="en">147</acdh:ordering>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">147</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Metadata"/>
     </owl:ObjectProperty>
     
@@ -1020,6 +1020,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:comment xml:lang="en">ARCHE API user having read rights on the resource. Technical property, thus no curation required.</rdfs:comment>
         <rdfs:label xml:lang="en">acl read</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">911</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1034,6 +1035,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:comment xml:lang="en">ARCHE API user having update rights on the resource. Technical property, thus no curation required.</rdfs:comment>
         <rdfs:label xml:lang="en">acl update</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">912</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1048,6 +1050,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:comment xml:lang="en">ARCHE API user having write rights on the resource. Technical property, thus no curation required.</rdfs:comment>
         <rdfs:label xml:lang="en">acl write</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">913</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1062,6 +1065,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:comment xml:lang="en">The ARCHE API user who created the resource. Technical property, thus no curation required.</rdfs:comment>
         <rdfs:label xml:lang="en">created by</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">914</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1075,6 +1079,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:comment xml:lang="en">A common parent property for properties related to dissemination services.</rdfs:comment>
         <rdfs:comment xml:lang="de">Eine übergeordnete Eigenschaft für alle Eigenschaften, die sich auf Disseminations-Services beziehen.</rdfs:comment>
         <rdfs:label xml:lang="en">dissemination services</rdfs:label>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">920</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1297,6 +1302,7 @@ Beispiel: öffentlich 87, akademisch 3, eingeschränkt 1</rdfs:comment>
         <rdfs:comment xml:lang="en">ARCHE API user who modified the resource&apos;s binary payload for the last time.</rdfs:comment>
         <rdfs:label xml:lang="en">has binary updated role</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">940</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1531,6 +1537,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:label xml:lang="en">has custom xsl</rdfs:label>
         <skos:altLabel xml:lang="en">Custom XSL</skos:altLabel>
         <skos:altLabel xml:lang="de">Eigenes XSL</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">921</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1560,6 +1567,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:comment xml:lang="de">Gibt den Standardwert des Disseminations-Service-Parameters an.</rdfs:comment>
         <rdfs:comment xml:lang="en">Provides default value of the dissemination service parameter.</rdfs:comment>
         <rdfs:label xml:lang="en">has default value</rdfs:label>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">922</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1663,6 +1671,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:comment xml:lang="en">File name of the repository resource&apos;s binary content</rdfs:comment>
         <rdfs:label xml:lang="en">has filename</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">941</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1713,6 +1722,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:comment xml:lang="en">Hash of the repository resource&apos;s binary content</rdfs:comment>
         <rdfs:label xml:lang="en">has hash</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">942</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1799,6 +1809,7 @@ Example: CC-BY 4.0 - 884, CC0 1.0 - 44</rdfs:comment>
         <rdfs:comment xml:lang="en">A data property identifier of type xsd:string or xsd:anyURI to identify an entity or a temporal coverage, as opposed to identifiers as object properties like acdh:hasIdentifier. Please use any of the more specific subproperties.</rdfs:comment>
         <rdfs:comment xml:lang="de">Ein Identifikator der Klasse data property mit dem Typ xsd:string oder xsd:anyURI, um eine Entität oder einen Zeitbegriff zu identifizieren. Steht im Gegensatz zu Identifikatoren der Klase object properties, wie acdh:hasIdentifier. Bitte eine der spezifischeren untergordneten Eigenschaften verwenden.</rdfs:comment>
         <rdfs:label xml:lang="en">has literal identifier</rdfs:label>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">900</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1848,7 +1859,7 @@ Example: CC-BY 4.0 - 884, CC0 1.0 - 44</rdfs:comment>
         <skos:altLabel xml:lang="en">Handle for CMDI record</skos:altLabel>
         <skos:altLabel xml:lang="de">Handle für CMDI Datensatz</skos:altLabel>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
-        <acdh:ordering xml:lang="de">155</acdh:ordering>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">155</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2016,6 +2027,7 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
         <rdfs:comment xml:lang="de">Größe der Binärinhalte einer Ressource. Existiert nur für Ressourcen mit Binärinhalten.</rdfs:comment>
         <rdfs:label xml:lang="en">has raw binary size</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">943</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2061,6 +2073,7 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
         <rdfs:comment xml:lang="en">Identifier of the output type generated by a dissemination service. It can be a MIME type or any other string (which is needed sometimes as MIME types may be not precise enough, e.g. many dissemination services can produce text/html output).</rdfs:comment>
         <rdfs:comment xml:lang="de">Identifikator des Ausgabetyps, der von einem Dissemination-Service ausgegeben wird. Es kann ein MIME-Type oder eine beliebig andere Zeichenkette sein (was manchmal benötigt wird, da MIME-Types nicht präzise genug sind, z.B. können viele Dissemination-Services text/html ausgeben).</rdfs:comment>
         <rdfs:label xml:lang="en">has return type</rdfs:label>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">923</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2314,6 +2327,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:comment xml:lang="en">ARCHE API user who modified the resource for the last time.</rdfs:comment>
         <rdfs:label xml:lang="en">has updated role</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">944</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2423,6 +2437,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:comment xml:lang="de">Gibt an, ob die angegebene Regel erfüllt werden muss, damit eine Ressource als übereinstimmend gewertet wird.</rdfs:comment>
         <rdfs:comment xml:lang="en">Indicates if a given matching rule has to be fulfilled to match a resource.</rdfs:comment>
         <rdfs:label xml:lang="en">is required</rdfs:label>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">924</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2437,6 +2452,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:comment xml:lang="en">Indicates the RDF property of which its value is compared with the acdh:matchesProp to check if a given dissemination service match rule is fulfilled.</rdfs:comment>
         <rdfs:label xml:lang="en">matches prop</rdfs:label>
         <skos:altLabel xml:lang="en">matches property</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">925</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2450,6 +2466,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:comment xml:lang="de">Gibt den Wert an, der von einer Regel eines Dissemination-Services erfüllt werden muss.</rdfs:comment>
         <rdfs:comment xml:lang="en">Indicates the value matched by the dissemination service matching rule.</rdfs:comment>
         <rdfs:label xml:lang="en">matches value</rdfs:label>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">926</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2463,6 +2480,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:comment xml:lang="en">Dissemination service location URL template.</rdfs:comment>
         <rdfs:comment xml:lang="de">URl-Schablone für den Ort eines Dissemination-Services.</rdfs:comment>
         <rdfs:label xml:lang="en">service location</rdfs:label>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">927</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2477,6 +2495,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:comment xml:lang="en">Indicates if a dissemination service uses a reverse proxy.</rdfs:comment>
         <rdfs:label>service rev proxy</rdfs:label>
         <skos:altLabel xml:lang="de">service uses reverse proxy</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">928</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2489,6 +2508,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:comment xml:lang="en">A parent for properties used by the ARCHE system components arche-core and arche-lib-disserv, which are purely technical and do not require curation.</rdfs:comment>
         <rdfs:comment xml:lang="de">Eine übergeordnete Eigenschaft für rein technische Eigenschaften, die von den ARCHE Systemkomponenten arche-core und arche-lib-disserv verwendet werden und keiner Kuratierung bedürfen.</rdfs:comment>
         <rdfs:label xml:lang="en">technical</rdfs:label>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">910</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2502,6 +2522,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:comment xml:lang="de">Gibt die RDF-Eigenschaft einer Ressource an, welche den Parameter für einen Dissemination-Service enthält.</rdfs:comment>
         <rdfs:comment xml:lang="en">Indicates a resource&apos;s RDF property holding the dissemination service parameter value.</rdfs:comment>
         <rdfs:label xml:lang="en">uses rdf property</rdfs:label>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">929</acdh:ordering>
     </owl:DatatypeProperty>
     
 

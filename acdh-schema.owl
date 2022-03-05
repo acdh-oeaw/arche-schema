@@ -1288,6 +1288,7 @@ Beispiel: öffentlich 87, akademisch 3, eingeschränkt 1</rdfs:comment>
         <skos:altLabel xml:lang="en">Last Binary Update Date</skos:altLabel>
         <skos:altLabel xml:lang="de">Letzte Aktualisierung der Binärdatei</skos:altLabel>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">941</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1671,7 +1672,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:comment xml:lang="en">File name of the repository resource&apos;s binary content</rdfs:comment>
         <rdfs:label xml:lang="en">has filename</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">941</acdh:ordering>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">942</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -1722,7 +1723,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:comment xml:lang="en">Hash of the repository resource&apos;s binary content</rdfs:comment>
         <rdfs:label xml:lang="en">has hash</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">942</acdh:ordering>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">943</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2027,7 +2028,7 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
         <rdfs:comment xml:lang="de">Größe der Binärinhalte einer Ressource. Existiert nur für Ressourcen mit Binärinhalten.</rdfs:comment>
         <rdfs:label xml:lang="en">has raw binary size</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">943</acdh:ordering>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">944</acdh:ordering>
     </owl:DatatypeProperty>
     
 
@@ -2327,7 +2328,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:comment xml:lang="en">ARCHE API user who modified the resource for the last time.</rdfs:comment>
         <rdfs:label xml:lang="en">has updated role</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">944</acdh:ordering>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">945</acdh:ordering>
     </owl:DatatypeProperty>
     
 

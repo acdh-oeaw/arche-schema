@@ -1,0 +1,32 @@
+@prefix acdh: <https://vocabs.acdh.oeaw.ac.at/schema#>.
+@prefix acdhi: <https://id.acdh.oeaw.ac.at/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+<https://vocabs.acdh.oeaw.ac.at/schema> a acdh:Resource;
+    acdh:hasTitle "ARCHE Ontology"@en, "ARCHE-Ontologie"@de;
+    acdh:hasCategory <https://vocabs.acdh.oeaw.ac.at/archecategory/model>;
+    acdh:hasMetadataCreator acdhi:mtrognitz, acdhi:mblaskovic;
+    acdh:hasOwner <https://id.acdh.oeaw.ac.at/acdh-oeaw>;
+    acdh:hasRightsHolder acdhi:oeaw;
+    acdh:hasLicensor <https://id.acdh.oeaw.ac.at/acdh-oeaw>;
+    acdh:hasLicense <https://vocabs.acdh.oeaw.ac.at/archelicenses/mit>;
+    acdh:isPartOf <https://id.acdh.oeaw.ac.at/arche-schema>;
+    acdh:hasDepositor <https://id.acdh.oeaw.ac.at/acdh-oeaw>;
+    acdh:hasDescription """This resource is a single release of the metadata schema used to describe resources stored in ARCHE. The schema is represented by means of the Web Ontology Language (OWL) and serialised as RDF/XML."""@en, """Diese Ressource ist eine einzelne Version des Metadatenschemas, das zur Beschreibung der in ARCHE gespeicherten Ressourcen verwendet wird. Das Schema wird mit Hilfe der Web Ontology Language (OWL) beschrieben und ist in RDF/XML serialisiert."""@de; 
+    acdh:hasLanguage <https://vocabs.acdh.oeaw.ac.at/iso6393/eng>, <https://vocabs.acdh.oeaw.ac.at/iso6393/deu>;
+    acdh:hasCurator acdhi:mblaskovic, acdhi:mcarloni;
+    acdh:hasTechnicalInfo "The ontology file is serialised as RDF/XML."@en, "Die Ontologiedatei ist als RDF/XML serialisiert."@de;
+    acdh:hasContact acdhi:mtrognitz;
+    acdh:hasRelatedDiscipline <https://vocabs.acdh.oeaw.ac.at/oefosdisciplines/102030>, <https://vocabs.acdh.oeaw.ac.at/oefosdisciplines/605007>, <https://vocabs.acdh.oeaw.ac.at/oefosdisciplines/605008>;
+    acdh:hasSubject "ontology"@en, "Ontologie"@de; 
+    acdh:hasAccessRestriction <https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public>.
+# VALUES AUTOMATICALLY FETCHED FROM ONTOLOGY FILE
+# acdh:hasUrl from GitHub release Url for example https://github.com/acdh-oeaw/arche-schema/releases/tag/v3.0.0
+# acdh:hasVersion from GitHub release version, in this case 3.0.0
+# acdh:hasCreatedStartDate from GitHub release date, in this case 2022-02-03
+# acdh:isNewVersionOf automatically filled in with the identifier of the previous release
+# acdh:hasVersionInfo automatically filled in from corresponding element <owl:versionInfo> with language tag
+

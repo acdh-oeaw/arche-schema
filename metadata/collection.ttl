@@ -1,0 +1,32 @@
+@prefix acdh: <https://vocabs.acdh.oeaw.ac.at/schema#>.
+@prefix acdhi: <https://id.acdh.oeaw.ac.at/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+<https://id.acdh.oeaw.ac.at/acdh-schema> a acdh:Collection;
+    acdh:hasTitle "ARCHE Ontology Releases"@en, "ARCHE-Ontologie Releases"@de;
+    acdh:hasIdentifier <https://id.acdh.oeaw.ac.at/arche-schema>;
+    acdh:hasSubject "ontology"@en, "Ontologie"@de; 
+    acdh:hasContact acdhi:mtrognitz;
+    acdh:hasCreator acdhi:mcarloni,acdhi:mtrognitz, acdhi:mdurco, acdhi:mkirnbauer, acdhi:uczeitschner, acdhi:sstuhec, acdhi:pandorfer, acdhi:acetin, acdhi:mzoltak, acdhi:nczirjak; 
+    acdh:hasCurator acdhi:mblaskovic, acdhi:mcarloni;
+    acdh:hasDepositor <https://id.acdh.oeaw.ac.at/acdh-oeaw>;
+    acdh:hasCreatedStartDate "2017-11-28";
+    acdh:hasDescription """This collection includes all releases of the metadata schema used to describe resources stored in ARCHE starting with version 1.0. The schema is represented by means of the Web Ontology Language (OWL) and serialised as RDF/XML.
+The ontology files are stored on GitHub (https://github.com/acdh-oeaw/arche-schema). Each release is represented as an individual resource at the top level of this collection. Each newer release is linked to its immediate predecessor by means of the property 'acdh:isNewVersionOf'. The collection is to be considered open-ended since newer releases of the ontology will be included over time."""@en, """Diese Sammlung enthält alle Versionen des Metadatenschemas, das zur Beschreibung der in ARCHE gespeicherten Ressourcen verwendet wird, beginnend mit Version 1.0. Das Schema wird mit Hilfe der Web Ontology Language (OWL) beschrieben und ist in RDF/XML serialisiert.
+Die Ontologiedateien werden auf GitHub (https://github.com/acdh-oeaw/arche-schema) gespeichert. Jede Version wird als einzelne Ressource auf der obersten Ebene dieser Sammlung dargestellt. Jede neuere Version ist mit ihrem unmittelbaren Vorgänger durch die Eigenschaft 'acdh:isNewVersionOf' verknüpft. Die Sammlung ist als offen zu betrachten, da im Laufe der Zeit neuere Versionen der Ontologie hinzukommen werden."""@de;
+    acdh:hasArrangement "Each release is represented as an individual resource at the top level of this collection. Each newer release is linked to its immediate predecessor by means of the property 'acdh:isNewVersionOf'."@en, "Jede Version wird als einzelne Ressource auf der obersten Ebene dieser Sammlung dargestellt. Jede neuere Version ist mit ihrem unmittelbaren Vorgänger durch die Eigenschaft 'acdh:isNewVersionOf' verknüpft."@de;
+    acdh:hasRelatedDiscipline <https://vocabs.acdh.oeaw.ac.at/oefosdisciplines/102030>, <https://vocabs.acdh.oeaw.ac.at/oefosdisciplines/605007>, <https://vocabs.acdh.oeaw.ac.at/oefosdisciplines/605008>;
+    acdh:hasLanguage <https://vocabs.acdh.oeaw.ac.at/iso6393/eng>, <https://vocabs.acdh.oeaw.ac.at/iso6393/deu>;
+    acdh:hasMetadataCreator acdhi:mtrognitz, acdhi:mblaskovic;
+    acdh:hasLicense <https://vocabs.acdh.oeaw.ac.at/archelicenses/mit>;
+    acdh:hasLicensor <https://id.acdh.oeaw.ac.at/acdh-oeaw>;
+    acdh:hasOwner <https://id.acdh.oeaw.ac.at/acdh-oeaw>;
+    acdh:hasLifeCycleStatus <https://vocabs.acdh.oeaw.ac.at/archelifecyclestatus/active>;
+    acdh:hasCompleteness "The collection is to be considered open-ended since newer releases of the ontology will be included over time."@en, "Die Sammlung ist als offen zu betrachten, da im Laufe der Zeit neuere Versionen der Ontologie hinzukommen werden."@de;
+    acdh:hasRightsHolder acdhi:oeaw;
+    acdh:hasUrl "https://github.com/acdh-oeaw/arche-schema";
+    acdh:hasTechnicalInfo "The ontology files are serialised as RDF/XML."@en, "Die Ontologiedateien sind als RDF/XML serialisiert."@de.
+

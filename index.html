@@ -1903,9 +1903,38 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="None. Defined in None">In Domain Of</a>
               </th>
               <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#hasOrder">acdh:hasOrder</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#hasRestrictionRole">acdh:hasRestrictionRole</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="None. Defined in None">Restriction</a>
+              </th>
+              <td>
                 <span>
-                  <a href="#hasRestrictionRole">acdh:hasRestrictionRole</a>
-                  <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                  <span>
+                    <span>
+                      <a href="#hasOrder">acdh:hasOrder</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                    <span>
+                      <span class="cardinality">max</span>
+                      <span>1</span>
+                    </span><br>
+                  </span>
                 </span>
               </td>
             </tr>
@@ -2777,6 +2806,12 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                   <li>
                     <span>
                       <a href="#hasCoverageStartDate">acdh:hasCoverageStartDate</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#hasNonLinkedActor">acdh:hasNonLinkedActor</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
@@ -4695,12 +4730,6 @@ Note that though a Project might (and usually will) use or produce data, it is N
                   </li>
                   <li>
                     <span>
-                      <a href="#hasLocationPath">acdh:hasLocationPath</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
                       <a href="#hasSubmissionDate">acdh:hasSubmissionDate</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
@@ -4861,20 +4890,6 @@ Note that though a Project might (and usually will) use or produce data, it is N
                       <span>
                         <span>
                           <a href="#hasFilename">acdh:hasFilename</a>
-                          <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">max</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="#hasLocationPath">acdh:hasLocationPath</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
                         <span>
@@ -10456,57 +10471,6 @@ Example: CC-BY 4.0 - 884, CC0 1.0 - 44</p></li>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="hasLocationPath">
-          <h3>has location path
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>https://vocabs.acdh.oeaw.ac.at/schema#hasLocationPath</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
-              </th>
-              <td>
-                <ul>
-                  <li><p>A filesystem path indicating the location from which a Collection or Resource was ingested. Used to match repository resources on re-ingest and to determine the folder structure of downloaded collections. This field is filled automatically during ingest.</p></li>
-                  <li><p>Ein Dateisystempfad, der den Speicherort angibt, von dem aus eine Sammlung oder Ressource ins Repositorium aufgenommen wurde. Wird verwendet, um  Repositoriumsressourcen bei einem Re-Import abzugleichen und um die Ordnerstruktur für heruntergeladene Sammlungen zu ermitteln.  Dieses Feld wird während des Ingests automatisch befüllt.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="None. Defined in None">Sub Property Of</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#RepoObject">acdh:RepoObject</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="hasLongitude">
           <h3>has longitude
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
@@ -10644,6 +10608,57 @@ Example: CC-BY 4.0 - 884, CC0 1.0 - 44</p></li>
               <td>
                 <span>
                   <a href="#Collection">acdh:Collection</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="hasNonLinkedActor">
+          <h3>has non linked actor
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://vocabs.acdh.oeaw.ac.at/schema#hasNonLinkedActor</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Any Person or Organisation (B) which the given Project, Collection or Resource (A) mentions or is about that has no identifier any of the authority files supported by the repository.</p></li>
+                  <li><p>Jede Person oder Organisation (B), die in der vorliegenden Ressource, der Sammlung oder dem Projekt (A) erwähnt wird oder mit der sie sich befasst und die keinen Identifikator in einer der vom Repositorium unterstützten  Normdateien hat.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="None. Defined in None">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#ContainerOrResource">acdh:ContainerOrResource</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -10817,6 +10832,49 @@ Handles belong into hasPid and identifiers with stable URL or URI into hasIdenti
               </th>
               <td>
                 <a href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="hasOrder">
+          <h3>has order
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://vocabs.acdh.oeaw.ac.at/schema#hasOrder</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Gibt die Reihenfolge einer Ressource oder Sammlung innerhalb einer Sammlung an.</p></li>
+                  <li><p>Indicates the order of a Resource or Collection within a containing Collection.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#CollectionOrReMe">acdh:CollectionOrReMe</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
               </td>
             </tr>
           </table>
@@ -13472,9 +13530,6 @@ Den vollständigen IRI der Klasse eingeben.</p></li>
               <a href="#hasliteralidentifier">has literal identifier</a>
             </li>
             <li>
-              <a href="#hasLocationPath">has location path</a>
-            </li>
-            <li>
               <a href="#hasLongitude">has longitude</a>
             </li>
             <li>
@@ -13484,6 +13539,9 @@ Den vollständigen IRI der Klasse eingeben.</p></li>
               <a href="#hasNamingScheme">has naming scheme</a>
             </li>
             <li>
+              <a href="#hasNonLinkedActor">has non linked actor</a>
+            </li>
+            <li>
               <a href="#hasNonLinkedIdentifier">has non linked identifier</a>
             </li>
             <li>
@@ -13491,6 +13549,9 @@ Den vollständigen IRI der Klasse eingeben.</p></li>
             </li>
             <li>
               <a href="#hasNumberOfItems">has number of items</a>
+            </li>
+            <li>
+              <a href="#hasOrder">has order</a>
             </li>
             <li>
               <a href="#hasPages">has pages</a>

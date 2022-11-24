@@ -1,0 +1,26 @@
+name: Build and publish
+
+on: push
+
+jobs:
+  build_pages:
+    name: Creates HTML-Documentation of the ARCEH Ontology
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8 
+    - name: Install dependencies
+      run: |
+        pip install pylode
+    - name: Build the Documentation
+      run: |
+        mkdir html
+        python -m pylode acdh-schema.owl -o ./html/index.html
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{secrets.GITHUB_TOKEN}}
+        publish_dir: ./html 

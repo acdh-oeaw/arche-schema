@@ -6,3 +6,4 @@ vendor
 /data-migration-scripts/log
 /data-migration-scripts/postgresql
 /data-migration-scripts/dump.sql*
+html/index.html

@@ -18,7 +18,7 @@ When Definitionen aus anderen Schemata (z. B. DataCite) wiederverwendet werden, 
         <rdfs:comment xml:lang="en">This is the ontology for ARCHE.
 In definitions of properties, &quot;resource A&quot; refers to the subject resource of the property and &quot;resource B&quot; to the object resource.
 When reusing definitions from other vocabularies (esp. DataCite), the reference is given in brackets: (DataCite: ContactPerson). When the source definition was changed slightly the reference is marked with &quot;cf.&quot;</rdfs:comment>
-        <rdfs:label>ACDH Schema</rdfs:label>
+        <rdfs:label>ARCHE Schema</rdfs:label>
         <owl:versionInfo xml:lang="en">Version 1.0 released on 2017-11-03.</owl:versionInfo>
         <owl:versionInfo xml:lang="de">Version 1.0. veröffentlicht am 2017-11-03.</owl:versionInfo>
         <owl:versionInfo xml:lang="en">Version 1.1 released on 2018-01-15.

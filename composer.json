@@ -11,6 +11,6 @@
         }
     ],
     "require-dev": {
-        "acdh-oeaw/arche-schema-ingest": "^3.0"
+        "acdh-oeaw/arche-schema-ingest": "^3.1.3"
     }
 }

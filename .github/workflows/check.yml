@@ -10,5 +10,5 @@ jobs:
     - name: composer
       run: composer update
     - name: check
-      run: vendor/bin/arche-check-ontology.php https://arche.acdh.oeaw.ac.at/api/ acdh-schema.owl
+      run: vendor/bin/arche-check-ontology https://arche.acdh.oeaw.ac.at/api/ acdh-schema.owl
 

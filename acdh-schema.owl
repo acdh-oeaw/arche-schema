@@ -1080,6 +1080,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:comment xml:lang="de">Eine übergeordnete Eigenschaft für alle Eigenschaften, die sich auf Disseminations-Services beziehen.</rdfs:comment>
         <rdfs:label xml:lang="en">dissemination services</rdfs:label>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">920</acdh:ordering>
+        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
     </owl:DatatypeProperty>
     
 
@@ -2510,6 +2511,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:comment xml:lang="de">Eine übergeordnete Eigenschaft für rein technische Eigenschaften, die von den ARCHE Systemkomponenten arche-core und arche-lib-disserv verwendet werden und keiner Kuratierung bedürfen.</rdfs:comment>
         <rdfs:label xml:lang="en">technical</rdfs:label>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">910</acdh:ordering>
+        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
     </owl:DatatypeProperty>
     
 

@@ -161,7 +161,7 @@ Domain für acdh:hasFilename geändert (um acdh:Collection und acdh:TopCollectio
 
 Kardinalität von acdh:isTitleImageOf für acdh:Resource geändert zu 0-n, um die mehrfache Nutzung von Bildern zu erlauben.
 Kardinalität von acdh:hasCategory für acdh:BinaryContent gändert zu 0-n, um mehrere Kategorien zu erlauben.</owl:versionInfo>
-    <owl:versionInfo xml:lang="en">Version 4.0 released on 2023-12-22.
+        <owl:versionInfo xml:lang="en">Version 4.0 released on 2023-12-22.
 Renamed to ARCHE Schema (was ACDH Schema before)
 Introduced annotation property acdh:exampleValue to allow for the inclusion of example values.
 Introduced acdh:hasOrder with domain acdh:CollectionOrReMe.
@@ -169,15 +169,15 @@ Introduced acdh:hasCustomIiifManifest with domain acdh:BinaryContent.
 Introduced acdh:hasRightsInfomation with domain acdh:RepoObject.
 Expanded description for acdh:hasOaiSet to include visibility in OpenAIRE.
 
-Dropped acdh:hasLocationPath as it wasn't technically required anymore.
+Dropped acdh:hasLocationPath as it wasn&apos;t technically required anymore.
 
-Added acdh:automatedFill 'true' to acdh:disseminationServices.
-Added acdh:automatedFill 'true' to acdh:technical.
+Added acdh:automatedFill &apos;true&apos; to acdh:disseminationServices.
+Added acdh:automatedFill &apos;true&apos; to acdh:technical.
 Changed range for acdh:hasLatitude to float.
 Changed range for acdh:hasLongitude to float.
 Changed range for acdh:hasRawBinarySize to positiveInteger.
 </owl:versionInfo>
-    <owl:versionInfo xml:lang="de">Version 4.0 veröffentlicht am 2023-12-22.
+        <owl:versionInfo xml:lang="de">Version 4.0 veröffentlicht am 2023-12-22.
 Umbenannt zu ARCHE Schema (war vorher ACDH Schema)
 Annotation property acdh:exampleValue zur Eingabe von Beispielwerten eingefügt.
 acdh:hasOrder mit domain acdh:CollectionOrReMe eingefügt.
@@ -187,13 +187,15 @@ Beschreibung von acdh:hasOaiSet erweitert, um die Sichtbarkeit in OpenAIRE zu be
 
 acdh:hasLocationPath entfernt, da diese Eigenschaft technisch nicht mehr benötigt wird.
 
-acdh:automatedFill 'true' für acdh:disseminationServices eingefügt.
-acdh:automatedFill 'true' für acdh:technical eingefügt.
+acdh:automatedFill &apos;true&apos; für acdh:disseminationServices eingefügt.
+acdh:automatedFill &apos;true&apos; für acdh:technical eingefügt.
 Range für acdh:hasLatitude zu float geändert.
 Range für acdh:hasLongitude zu float geändert.
 Range für acdh:hasRawBinarySize zu positiveInteger geändert.
 </owl:versionInfo>
     </owl:Ontology>
+    
+
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -1920,22 +1922,6 @@ Example: CC-BY 4.0 - 884, CC0 1.0 - 44</rdfs:comment>
         <skos:altLabel xml:lang="en">Description of naming scheme used</skos:altLabel>
         <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56</acdh:ordering>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasNonLinkedActor -->
-
-    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasNonLinkedActor">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Any Person or Organisation (B) which the given Project, Collection or Resource (A) mentions or is about that has no identifier any of the authority files supported by the repository.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Jede Person oder Organisation (B), die in der vorliegenden Ressource, der Sammlung oder dem Projekt (A) erwähnt wird oder mit der sie sich befasst und die keinen Identifikator in einer der vom Repositorium unterstützten  Normdateien hat.</rdfs:comment>
-        <rdfs:label xml:lang="en">has non linked actor</rdfs:label>
-        <skos:altLabel xml:lang="en">Has non-linked Actor</skos:altLabel>
-        <skos:altLabel xml:lang="de">Hat Akteur ohne Link</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">92</acdh:ordering>
     </owl:DatatypeProperty>
     
 

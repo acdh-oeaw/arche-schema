@@ -2815,6 +2815,12 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                   </li>
                   <li>
                     <span>
+                      <a href="#hasNonLinkedActor">acdh:hasNonLinkedActor</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="#hasPrincipalInvestigator">acdh:hasPrincipalInvestigator</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
@@ -7691,6 +7697,57 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
       </div>
       <div class="section" id="datatypeproperties">
         <h2>Datatype Properties</h2>
+        <div class="property entity" id="hasNonLinkedActor">
+          <h3>has non linked actor
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://vocabs.acdh.oeaw.ac.at/schema#hasNonLinkedActor</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>Any Person or Organisation (B) which the given Project, Collection or Resource (A) mentions or is about that has no identifier any of the authority files supported by the repository.</p></li>
+                  <li><p>Jede Person oder Organisation (B), die in der vorliegenden Ressource, der Sammlung oder dem Projekt (A) erwähnt wird oder mit der sie sich befasst und die keinen Identifikator in einer der vom Repositorium unterstützten  Normdateien hat.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="None. Defined in None">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#ContainerOrResource">acdh:ContainerOrResource</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="aclread">
           <h3>acl read
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
@@ -13507,6 +13564,9 @@ Den vollständigen IRI der Klasse eingeben.</p></li>
             <a href="#datatypeproperties">Datatype Properties</a>
           </h4>
           <ul class="second">
+            <li>
+              <a href="#hasNonLinkedActor">has non linked actor</a>
+            </li>
             <li>
               <a href="#aclread">acl read</a>
             </li>

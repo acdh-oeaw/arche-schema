@@ -1123,6 +1123,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">dissemination services</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">920</acdh:ordering>
+        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
     </owl:DatatypeProperty>
     
 
@@ -2599,6 +2600,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:label xml:lang="en">technical</rdfs:label>
         <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">910</acdh:ordering>
+        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
     </owl:DatatypeProperty>
     
 

@@ -59,10 +59,12 @@ $schemaCfg = (object) [
 ];
 $ontology = new Ontology($dbConn, $schemaCfg);
 
-$statsByClass    = [];
-$statsByProp     = [];
-$statsUnexpected = [];
-$statsNotAllowed = [];
+$statsByClass       = [];
+$statsByProp        = [];
+$statsUnexpected    = [];
+$statsNotAllowed    = [];
+$statsNoLangTag     = [];
+$statsWrongDatatype = [];
 
 $query  = $dbConn->prepare("SELECT value AS class, count(*) AS count FROM metadata WHERE property = ? AND value LIKE ? GROUP BY 1 ORDER BY 1");
 $query->execute([C::RDF_TYPE, $schemaCfg->ontologyNamespace . '%']);
@@ -105,12 +107,23 @@ while ($i = $query->fetchObject()) {
             }
             $checked[] = spl_object_hash($p);
 
-            $byLang = [];
+            $datatype = array_filter($p->range, fn($x) => str_starts_with($x, C::NMSP_XSD));
+            $datatype = reset($datatype);
+            $byLang   = [];
             foreach ($meta->all($pUri) as $v) {
                 if ($v instanceof EasyRdf\Resource) {
                     $byLang['URI'] = ($byLang['URI'] ?? 0) + 1;
                 } else {
                     $byLang[(string) $v->getLang()] = ($byLang[(string) $v->getLang()] ?? 0) + 1;
+                }
+                $vdt = $v instanceof EasyRdf\Literal ? ($v->getDatatypeUri() ?? C::XSD_STRING) : null;
+                if (!empty($datatype) && $vdt !== $datatype) {
+                    echo "\tvalue $v for property $pUri has datatype $vdt\n";
+                    $statsWrongDatatype[$pUri][$vdt] = ($statsWrongDatatype[$pUri][$vdt] ?? 0) + 1;
+                }
+                if ($p->langTag && (!($v instanceof EasyRdf\Literal) || empty($v->getLang()))) {
+                    echo "\tvalue $v for property $pUri misses the lang tag\n";
+                    $statsNoLangTag[$pUri] = ($statsNoLangTag[$pUri] ?? 0) + 1;
                 }
             }
             if ($p->min > 0 && count($byLang) < $p->min) {
@@ -182,6 +195,18 @@ foreach ($statsUnexpected as $prop => $classes) {
 echo "----------------------------------------\n";
 foreach ($statsNotAllowed as $prop => $values) {
     echo "Property $prop has wrong values:\n";
+    foreach ($values as $value => $count) {
+        echo "\t$value $count\n";
+    }
+}
+echo "----------------------------------------\n";
+echo "Properties missing the lang tag:\n";
+foreach ($statsNoLangTag as $prop => $count) {
+    echo "\t$prop $count\n";
+}
+echo "----------------------------------------\n";
+foreach ($statsWrongDatatype as $prop => $values) {
+    echo "Property $prop has a wrong datatype:\n";
     foreach ($values as $value => $count) {
         echo "\t$value $count\n";
     }

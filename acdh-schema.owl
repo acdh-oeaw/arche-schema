@@ -1881,7 +1881,7 @@ Example: CC-BY 4.0 - 884, CC0 1.0 - 44</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:comment xml:lang="en">A common parent for datatype properties storing identifiers. A purely technical property which should not be used directly. Use one of more specific subproperties instead (hasNonLinkedIdentifier, hasPid, hasTemporalCoverageIdentifier).</rdfs:comment>
-        <rdfs:comment xml:lang="de">Ein Identifikator der Klasse data property mit dem Typ xsd:string, um eine Entität oder einen Zeitbegriff zu identifizieren. Steht im Gegensatz zu Identifikatoren der Klase object properties, wie acdh:hasIdentifier. Bitte eine der spezifischeren untergordneten Eigenschaften verwenden.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine gemeinsame übergeordnete Eigenschaft für Datentypeigenschaften, die Bezeichner speichern. Eine rein technische Eigenschaft, die nicht direkt verwendet werden sollte. Verwenden Sie stattdessen eine von mehreren spezifischen untergeordneten Eigenschaften (hasNonLinkedIdentifier, hasPid, hasTemporalCoverageIdentifier).</rdfs:comment>
         <rdfs:label xml:lang="en">has literal identifier</rdfs:label>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">900</acdh:ordering>
     </owl:DatatypeProperty>

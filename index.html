@@ -452,8 +452,6 @@ acdh:automatedFill 'true' für acdh:technical eingefügt.
 Range für acdh:hasLatitude zu float geändert.
 Range für acdh:hasLongitude zu float geändert.
 Range für acdh:hasRawBinarySize zu positiveInteger geändert.</p></li>
-                <li><p>Version 4.0.1 released on 2024-02-27.
-acdh:hasLiteralIdentifier range fixed to xsd:string. URL identifiers should be provided as acdh:hasIdentifier.</p></li>
               </ul>
             </dd>
           </div>
@@ -8072,14 +8070,6 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
                 <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a>
               </td>
             </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-              </td>
-            </tr>
           </table>
         </div>
         <div class="property entity" id="hasAcceptedDate">
@@ -10573,7 +10563,7 @@ Example: CC-BY 4.0 - 884, CC0 1.0 - 44</p></li>
               </th>
               <td>
                 <ul>
-                  <li><p>A data property identifier of type xsd:string to identify an entity or a temporal coverage, as opposed to identifiers as object properties like acdh:hasIdentifier. Please use any of the more specific subproperties.</p></li>
+                  <li><p>A common parent for datatype properties storing identifiers. A purely technical property which should not be used directly. Use one of more specific subproperties instead (hasNonLinkedIdentifier, hasPid, hasTemporalCoverageIdentifier).</p></li>
                   <li><p>Ein Identifikator der Klasse data property mit dem Typ xsd:string, um eine Entität oder einen Zeitbegriff zu identifizieren. Steht im Gegensatz zu Identifikatoren der Klase object properties, wie acdh:hasIdentifier. Bitte eine der spezifischeren untergordneten Eigenschaften verwenden.</p></li>
                 </ul>
               </td>
@@ -10625,14 +10615,6 @@ Example: CC-BY 4.0 - 884, CC0 1.0 - 44</p></li>
               </th>
               <td>
                 <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
               </td>
             </tr>
           </table>
@@ -12833,14 +12815,6 @@ If left empty for a Person it is automatically computed by combining first and l
               </th>
               <td>
                 <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
               </td>
             </tr>
           </table>

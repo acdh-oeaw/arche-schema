@@ -1768,7 +1768,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <skos:altLabel xml:lang="en">Extent</skos:altLabel>
         <skos:altLabel xml:lang="de">Umfang</skos:altLabel>
 		<acdh:exampleValue xml:lang="de">689 Abklatsche</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">689 copies</acdh:exampleValue>
+		<acdh:exampleValue xml:lang="en">689 squeezes</acdh:exampleValue>
 		<acdh:exampleValue xml:lang="de">100 Vasen mit jeweils 10 Abbildungen</acdh:exampleValue>
 		<acdh:exampleValue xml:lang="en">100 vases with 10 illustrations each</acdh:exampleValue>
         <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>

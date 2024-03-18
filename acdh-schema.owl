@@ -274,19 +274,6 @@ Range für acdh:hasRawBinarySize zu positiveInteger geändert.</owl:versionInfo>
     
 
 
-    <!-- https://vocabs.acdh.oeaw.ac.at/schema#langTag -->
-
-    <owl:AnnotationProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#langTag">
-        <rdfs:comment xml:lang="en">Denotes if a language tag for the attribute is required. Insert &apos;true&apos; if required.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Gibt an, ob ein Sprachmarker für das Attribut benötigt wird. Wenn einer benötigt wird, &apos;true&apos; eingeben.</rdfs:comment>
-        <rdfs:label>lang tag</rdfs:label>
-        <skos:altLabel xml:lang="en">Language tag</skos:altLabel>
-        <skos:altLabel xml:lang="de">Sprachmarker</skos:altLabel>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    </owl:AnnotationProperty>
-    
-
-
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#ordering -->
 
     <owl:AnnotationProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#ordering">
@@ -1281,7 +1268,7 @@ Beispiel: öffentlich 87, akademisch 3, eingeschränkt 1</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasAlternativeTitle">
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="en">Alternative title or name of Project, Collection or Resource. Can also be used as alternative name for an organisation.</rdfs:comment>
         <rdfs:comment xml:lang="de">Alternativer Titel oder Name des Projekts, der Sammlung oder Ressource. Kann auch für eine alternative Bezeichnung einer Organisation verwendet werden.</rdfs:comment>
         <rdfs:label xml:lang="en">has alternative title</rdfs:label>
@@ -1289,7 +1276,6 @@ Beispiel: öffentlich 87, akademisch 3, eingeschränkt 1</rdfs:comment>
         <skos:altLabel xml:lang="de">Alternativtitel</skos:altLabel>
 		<acdh:exampleValue xml:lang="de">Ein Tier, das alles kann.</acdh:exampleValue>
 		<acdh:exampleValue xml:lang="en">An animal that can do everything.</acdh:exampleValue>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -1315,14 +1301,13 @@ Beispiel: öffentlich 87, akademisch 3, eingeschränkt 1</rdfs:comment>
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasAppliedMethodDescription">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="de">Ausführliche Beschreibung der Methodik, die bei der Erstellung einer Ressource oder in einem Projekt angewandt wurde. (vgl. DataCite: descriptionType methods)</rdfs:comment>
         <rdfs:comment xml:lang="en">Verbose description of the methodology employed in the creation of a resource or in a project. (cf. DataCite: descriptionType methods)</rdfs:comment>
         <rdfs:label xml:lang="en">has applied method description</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAppliedMethod"/>
         <skos:altLabel xml:lang="de">Beschreibung der angewandten Methoden</skos:altLabel>
         <skos:altLabel xml:lang="en">Description of Applied Method</skos:altLabel>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -1333,13 +1318,12 @@ Beispiel: öffentlich 87, akademisch 3, eingeschränkt 1</rdfs:comment>
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasArrangement">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="de">Gibt eine logische und zusammenhängende Übersicht der gesamten Objektmenge in der Sammlung wieder. Neben der Beschreibung der Ordnerstruktur ist hier die Art der Beziehung zwischen Objekten und Metadaten usw. anzugeben. Bei Bedarf können Diagramme oder Screenshots aus dem Originalsystem eingebunden werden.</rdfs:comment>
         <rdfs:comment xml:lang="en">Indicates a logical and coherent overall view of the whole set of objects in the Collection. Here the description of folder structure, nature of relationship between objects and metadata, etc. are expected. If necessary, diagrams or screenshots from the original system can be included.</rdfs:comment>
         <rdfs:label xml:lang="en">has arrangement</rdfs:label>
         <skos:altLabel xml:lang="en">Description of Arrangement</skos:altLabel>
         <skos:altLabel xml:lang="de">Strukturbeschreibung</skos:altLabel>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -1435,7 +1419,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasCity">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAddress"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#AgentOrPlaceOrPublication"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="en">City or Town of address associated with a Person or Organisation.</rdfs:comment>
         <rdfs:comment xml:lang="de">Ort oder Stadt der Adresse, die einer Person oder Organisation zugeordnet ist.</rdfs:comment>
         <rdfs:label xml:lang="en">has city</rdfs:label>
@@ -1443,7 +1427,6 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <skos:altLabel xml:lang="de">Stadt</skos:altLabel>
 		<acdh:exampleValue xml:lang="de">Wien</acdh:exampleValue>
 		<acdh:exampleValue xml:lang="en">Vienna</acdh:exampleValue>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -1486,7 +1469,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasCompleteness">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="de">Beschreibende Angaben zur Vollständigkeit der Sammlung.</rdfs:comment>
         <rdfs:comment xml:lang="en">Descriptive statement about how complete the Collection is.</rdfs:comment>
         <rdfs:label xml:lang="en">has completeness</rdfs:label>
@@ -1495,7 +1478,6 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <skos:altLabel xml:lang="de">Vollständigkeitsangaben</skos:altLabel>
 		<acdh:exampleValue xml:lang="de">Das Projekt ist beendet und die Dateien sind final.</acdh:exampleValue>
 		<acdh:exampleValue xml:lang="en">The project is finished and the files are final.</acdh:exampleValue>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
     </owl:DatatypeProperty>
@@ -1507,7 +1489,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasCountry">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAddress"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#AgentOrPlaceOrPublication"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="en">Country of address associated with a Person or Organisation.</rdfs:comment>
         <rdfs:comment xml:lang="de">Land der Adresse, die einer Person oder Organisation zugeordnet ist.</rdfs:comment>
         <rdfs:label xml:lang="en">has country</rdfs:label>
@@ -1515,7 +1497,6 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <skos:altLabel xml:lang="de">Land</skos:altLabel>
 		<acdh:exampleValue xml:lang="de">Österreich</acdh:exampleValue>
 		<acdh:exampleValue xml:lang="en">Austria</acdh:exampleValue>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -1689,13 +1670,12 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Main"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="en">A verbose description of certain aspects (content, coverage, completeness, extent, motivation, etc.) of an entity. This is the most generic property, use more specific sub-properties where applicable.</rdfs:comment>
         <rdfs:comment xml:lang="de">Eine ausführliche Beschreibung bestimmter Aspekte (Inhalt, Abdeckung, Vollständigkeit, Umfang, Motivation usw.) einer Entität. Dies ist die allgemeinste Eigenschaft, verwenden Sie nach Möglichkeit spezifischere untergeordnete Eigenschaften.</rdfs:comment>
         <rdfs:label xml:lang="en">has description</rdfs:label>
         <skos:altLabel xml:lang="de">Beschreibung</skos:altLabel>
         <skos:altLabel xml:lang="en">Description</skos:altLabel>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Metadata"/>
@@ -1709,13 +1689,12 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasEditorialPractice">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrReMe"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="en">Details of editorial principles and practices applied during the encoding of a text. Only relevant for digital editions.</rdfs:comment>
         <rdfs:comment xml:lang="de">Einzelheiten zu redaktionellen Grundsätzen und Praktiken, die bei der Kodierung eines Textes angewandt wurden. Nur relevant für digitale Ausgaben.</rdfs:comment>
         <rdfs:label xml:lang="en">has editorial practice</rdfs:label>
         <skos:altLabel xml:lang="de">Angewendete editorische Praxis</skos:altLabel>
         <skos:altLabel xml:lang="en">Editorial practice used</skos:altLabel>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">57</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -1760,7 +1739,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasExtent">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#PublicationOrRepoObject"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="de">Gibt den Umfang (die Größe oder Dimension) einer Ressource in geeigneten Maßeinheiten an. Maßeinheiten sollten angegeben werden, z.B. &quot;Insgesamt: 4 Ordner, 6 Unterordner, 3031 Dateien&quot;.</rdfs:comment>
         <rdfs:comment xml:lang="en">Indicates the extent (size or dimension) of a resource in any suitable measuring units. Units should also be indicated. E.g. &quot;Total: 4 folders, 6 subfolders, 3031 files&quot;.</rdfs:comment>
         <rdfs:label xml:lang="en">has extent</rdfs:label>
@@ -1770,7 +1749,6 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
 		<acdh:exampleValue xml:lang="en">689 squeezes</acdh:exampleValue>
 		<acdh:exampleValue xml:lang="de">100 Vasen mit jeweils 10 Abbildungen</acdh:exampleValue>
 		<acdh:exampleValue xml:lang="en">100 vases with 10 illustrations each</acdh:exampleValue>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">46</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Resource"/>
@@ -1798,14 +1776,13 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasFirstName">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="en">First name of a Person.</rdfs:comment>
         <rdfs:comment xml:lang="de">Vorname einer Person.</rdfs:comment>
         <rdfs:label xml:lang="en">has first name</rdfs:label>
         <skos:altLabel xml:lang="en">First Name</skos:altLabel>
         <skos:altLabel xml:lang="de">Vorname</skos:altLabel>
 		<acdh:exampleValue xml:lang="de">Karlheinz</acdh:exampleValue>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Person"/>
     </owl:DatatypeProperty>
@@ -1883,14 +1860,13 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasLastName">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="en">Last Name of a Person.</rdfs:comment>
         <rdfs:comment xml:lang="de">Nachname einer Person.</rdfs:comment>
         <rdfs:label xml:lang="en">has last name</rdfs:label>
         <skos:altLabel xml:lang="en">Last Name</skos:altLabel>
         <skos:altLabel xml:lang="de">Nachname</skos:altLabel>
 		<acdh:exampleValue xml:lang="de">Mörth</acdh:exampleValue>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Person"/>
     </owl:DatatypeProperty>
@@ -1987,13 +1963,12 @@ Example: CC-BY 4.0 - 884, CC0 1.0 - 44</rdfs:comment>
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasNamingScheme">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="en">Conventions used for naming and structuring of files and folders in a Collection.</rdfs:comment>
         <rdfs:comment xml:lang="de">Konventionen für die Benennung und Strukturierung von Dateien und Ordnern in einer Sammlung.</rdfs:comment>
         <rdfs:label xml:lang="en">has naming scheme</rdfs:label>
         <skos:altLabel xml:lang="de">Benennungsschema</skos:altLabel>
         <skos:altLabel xml:lang="en">Description of naming scheme used</skos:altLabel>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2027,13 +2002,12 @@ Handles belong into hasPid and identifiers with stable URL or URI into hasIdenti
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasNote">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="de">Alle anderen Hinweise über das beschriebene Objekt, die nicht in eine der vorhandenen Kategorien passen. (vgl. DataCite: descriptionType Other)</rdfs:comment>
         <rdfs:comment xml:lang="en">Any other notes for the described object not fitting into an existing category. (cf. DataCite: descriptionType Other)</rdfs:comment>
         <rdfs:label xml:lang="en">has note</rdfs:label>
         <skos:altLabel xml:lang="en">Note</skos:altLabel>
         <skos:altLabel xml:lang="de">Notiz</skos:altLabel>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2160,7 +2134,7 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasRegion">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasAddress"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#AgentOrPlaceOrPublication"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="de">Staat, Region oder Provinz der Adresse, die mit einer Person oder Organisation verbunden ist.</rdfs:comment>
         <rdfs:comment xml:lang="en">State, region or province of address associated with a Person or Organisation.</rdfs:comment>
         <rdfs:label xml:lang="en">has region</rdfs:label>
@@ -2168,7 +2142,6 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
         <skos:altLabel xml:lang="en">Region</skos:altLabel>
 		<acdh:exampleValue xml:lang="de">Wien</acdh:exampleValue>
 		<acdh:exampleValue xml:lang="en">Vienna</acdh:exampleValue>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2239,13 +2212,12 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasSeriesInformation">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Publication"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="en">Information about a repeating series of a Publication, such as volume, issue, number. (cf. DataCite: descriptionType seriesInformation)</rdfs:comment>
         <rdfs:comment xml:lang="de">Informationen über eine sich wiederholende Serie oder Reihe einer Publikation, wie z.B. Band, Ausgabe, Nummer. (vgl. DataCite: descriptionType seriesInformation)</rdfs:comment>
         <rdfs:label xml:lang="en">has series information</rdfs:label>
         <skos:altLabel xml:lang="de">Informationen zur Reihe</skos:altLabel>
         <skos:altLabel xml:lang="en">Series Information</skos:altLabel>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2311,13 +2283,12 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasTableOfContents">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#CollectionOrResourceOrPublication"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="en">A listing of the Table of Contents. (cf. DataCite: descriptionType tableOfContents)</rdfs:comment>
         <rdfs:comment xml:lang="de">Auflistung des Inhaltsverzeichnisses. (vgl. DataCite: descriptionType tableOfContents)</rdfs:comment>
         <rdfs:label xml:lang="en">has table of contents</rdfs:label>
         <skos:altLabel xml:lang="de">Inhaltsverzeichnis</skos:altLabel>
         <skos:altLabel xml:lang="en">Table of Contents</skos:altLabel>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2343,13 +2314,12 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasTechnicalInfo">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="en">Detailed information that may be associated with the design, implementation, operation, use, and/ or maintenance of a process or system. (cf. DataCite: descriptionType technicalInfo)</rdfs:comment>
         <rdfs:comment xml:lang="de">Detaillierte Informationen in Zusammenhang mit dem Design, der Implementierung, dem Betrieb, der Nutzung und/oder Wartung eines Prozesses oder Systems. (vgl. DataCite: descriptionType technicalInfo)</rdfs:comment>
         <rdfs:label xml:lang="en">has technical info</rdfs:label>
         <skos:altLabel xml:lang="en">Technical Information</skos:altLabel>
         <skos:altLabel xml:lang="de">Technische Informationen</skos:altLabel>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2359,7 +2329,7 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasTemporalCoverage">
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#ContainerOrResource"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="en">Temporal coverage of the content of a Resource or Collection with period terms, e.g. &apos;Roman&apos; for some archaeological data or &apos;First Viennese School&apos; for a collection of musical notes from 1770-1830. Precise years and dates can be indicated with hasCoverageStartDate and hasCoverageEndDate.</rdfs:comment>
         <rdfs:comment xml:lang="de">Zeitliche Abdeckung des Inhalts einer Ressource oder Sammlung mit Epochenbegriffen, z.B. &apos;Römisch&apos; für einen archäologischen Datensatz oder &apos;Wiener Klassik&apos; für eine Sammlung musikalischer Noten von 1770 - 1830. Genaue Jahres- und Datumsangaben können mit hasCoverageStartDate und hasCoverageEndDate gemacht werden.</rdfs:comment>
         <rdfs:label xml:lang="en">has temporal coverage</rdfs:label>
@@ -2367,7 +2337,6 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
         <skos:altLabel xml:lang="de">Zeitliche Abdeckung</skos:altLabel>
 		<acdh:exampleValue xml:lang="de">Wiener Klassik</acdh:exampleValue>
 		<acdh:exampleValue xml:lang="en">First Viennese School</acdh:exampleValue>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
@@ -2401,7 +2370,7 @@ Eingabe ist eine URI.</rdfs:comment>
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasTitle">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="de">Titel oder Name einer Entität. Wenn nicht angegeben, wird er automatisch für Personen aus Vor- und Nachnamen erzeugt.</rdfs:comment>
         <rdfs:comment xml:lang="en">Title or name of an entity.
 If left empty for a Person it is automatically computed by combining first and last names.</rdfs:comment>
@@ -2409,7 +2378,6 @@ If left empty for a Person it is automatically computed by combining first and l
         <skos:altLabel xml:lang="de">Titel</skos:altLabel>
         <skos:altLabel xml:lang="en">Title</skos:altLabel>
         <acdh:exampleValue xml:lang="de">Die eierlegende Wollmilchsau</acdh:exampleValue>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2553,13 +2521,12 @@ If left empty for a Person it is automatically computed by combining first and l
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasVersionInfo">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasDescription"/>
         <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#PublicationOrRepoObject"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
         <rdfs:comment xml:lang="en">Provides a description of the nature and significance of the changes made if the resource represents a new version of an entity already ingested in ARCHE.</rdfs:comment>
         <rdfs:comment xml:lang="de">Speichert eine Beschreibung über die Art und Bedeutung der gemachten Änderungen, wenn die Ressource eine neue Version einer bereits in ARCHE aufgenommenen Entität darstellt.</rdfs:comment>
         <rdfs:label xml:lang="en">has version info</rdfs:label>
         <skos:altLabel xml:lang="de">Beschreibung der Versionsänderungen</skos:altLabel>
         <skos:altLabel xml:lang="en">Description of version changes</skos:altLabel>
-        <acdh:langTag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:langTag>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</acdh:ordering>
     </owl:DatatypeProperty>
     

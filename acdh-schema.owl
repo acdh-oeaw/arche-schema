@@ -648,7 +648,6 @@ This is a generic property. Use one of the more specific subproperties where pos
         <skos:altLabel xml:lang="en">Hosted by</skos:altLabel>
         <skos:altLabel xml:lang="de">Wird erhalten/bereitgestellt von</skos:altLabel>
         <acdh:defaultValue>https://id.acdh.oeaw.ac.at/arche</acdh:defaultValue>
-        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
         <acdh:inverse xml:lang="en">is hosting of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">179</acdh:ordering>
     </owl:ObjectProperty>

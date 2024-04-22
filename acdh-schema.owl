@@ -2081,6 +2081,34 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
     
 
 
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasPixelHeight -->
+
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasPixelHeight">
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#technical"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment xml:lang="en">Pixel height of a digital image stored in the ARCHE repository. Can be applied also to other digital objects which dimensions can be measured in pixels. Its primary aim is to allow IIIF Presentation Manifest generation. It is generated automatically by the ARCHE repository backend.</rdfs:comment>
+        <rdfs:label xml:lang="en">has pixel height</rdfs:label>
+        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">901</acdh:ordering>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasPixelWidth -->
+
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasPixelWidth">
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#technical"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment xml:lang="en">Pixel width of a digital image stored in the ARCHE repository. Can be applied also to other digital objects which dimensions can be measured in pixels. Its primary aim is to allow IIIF Presentation Manifest generation. It is generated automatically by the ARCHE repository backend.</rdfs:comment>
+        <rdfs:label xml:lang="en">has pixel width</rdfs:label>
+        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">902</acdh:ordering>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasPostcode -->
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasPostcode">
@@ -2835,6 +2863,18 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIiifManifest"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasPixelHeight"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasPixelWidth"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>

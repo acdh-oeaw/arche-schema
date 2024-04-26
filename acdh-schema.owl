@@ -387,9 +387,9 @@ Den vollständigen IRI der Klasse eingeben.</rdfs:comment>
         <rdfs:label xml:lang="en">has access restriction</rdfs:label>
         <skos:altLabel xml:lang="en">Access Restriction</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugriffsbeschränkung</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">öffentlich</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">public</acdh:exampleValue>
-		<acdh:defaultValue>https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public</acdh:defaultValue>
+        <acdh:defaultValue>https://vocabs.acdh.oeaw.ac.at/archeaccessrestrictions/public</acdh:defaultValue>
+        <acdh:exampleValue xml:lang="en">public</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">öffentlich</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">116</acdh:ordering>
         <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_access_restrictions/data</acdh:vocabs>
     </owl:ObjectProperty>
@@ -442,8 +442,8 @@ Den vollständigen IRI der Klasse eingeben.</rdfs:comment>
         <rdfs:label xml:lang="en">has category</rdfs:label>
         <skos:altLabel xml:lang="en">Category</skos:altLabel>
         <skos:altLabel xml:lang="de">Kategorie</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Bild</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">Image</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Bild</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">Image</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47</acdh:ordering>
         <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_category/data</acdh:vocabs>
     </owl:ObjectProperty>
@@ -463,7 +463,7 @@ Person with knowledge of how to access, troubleshoot or otherwise field issues r
         <rdfs:label xml:lang="en">has contact</rdfs:label>
         <skos:altLabel xml:lang="en">Contact(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Kontakt(e)</skos:altLabel>
-		<acdh:exampleValue>Austrian Centre for Digital Humanities and Cultural Heritage</acdh:exampleValue>
+        <acdh:exampleValue>Austrian Centre for Digital Humanities and Cultural Heritage</acdh:exampleValue>
         <acdh:inverse xml:lang="en">is contact of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">71</acdh:ordering>
     </owl:ObjectProperty>
@@ -483,10 +483,10 @@ This is a generic property. Use one of the more specific subproperties where pos
         <rdfs:label xml:lang="en">has contributor</rdfs:label>
         <skos:altLabel xml:lang="en">Contributor(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Mitarbeiter oder Beitragende</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Erika Musterfrau</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">Jane Doe</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="de">Max Mustermann</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">John Doe</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Erika Musterfrau</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">Jane Doe</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">John Doe</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Max Mustermann</acdh:exampleValue>
         <acdh:inverse xml:lang="en">is contributor of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</acdh:ordering>
     </owl:ObjectProperty>
@@ -505,11 +505,11 @@ This is a generic property. Use one of the more specific subproperties where pos
         <owl:inverseOf></owl:inverseOf>
         <skos:altLabel xml:lang="en">Coverage</skos:altLabel>
         <skos:altLabel xml:lang="de">Deckt ab</skos:altLabel>
-		<acdh:exampleValue>1874-1883</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="de">Mozart</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">Mozart</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="de">Wien</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">Vienna</acdh:exampleValue>
+        <acdh:exampleValue>1874-1883</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Mozart</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">Mozart</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">Vienna</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Wien</acdh:exampleValue>
         <acdh:inverse xml:lang="en">is coverage of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">91</acdh:ordering>
     </owl:ObjectProperty>
@@ -564,8 +564,8 @@ This is a generic property. Use one of the more specific subproperties where pos
         <rdfs:label xml:lang="en">has depositor</rdfs:label>
         <skos:altLabel xml:lang="de">Datengeber</skos:altLabel>
         <skos:altLabel xml:lang="en">Depositor(s)</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Siehe hasContributor für ein Beispiel zu Personen und hasContact für ein Beispiel zu Organisationen.</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">See hasContributor for Person example and hasContact for Organisation.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">See hasContributor for Person example and hasContact for Organisation.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Siehe hasContributor für ein Beispiel zu Personen und hasContact für ein Beispiel zu Organisationen.</acdh:exampleValue>
         <acdh:inverse xml:lang="en">is depositor of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">170</acdh:ordering>
     </owl:ObjectProperty>
@@ -656,7 +656,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">has identifier</rdfs:label>
         <skos:altLabel xml:lang="en">Identifier(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Identifikator(en)</skos:altLabel>
-		<acdh:exampleValue>https://doi.org/10.1109/5.771073</acdh:exampleValue>
+        <acdh:exampleValue>https://doi.org/10.1109/5.771073</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -672,7 +672,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">has language</rdfs:label>
         <skos:altLabel xml:lang="en">Language</skos:altLabel>
         <skos:altLabel xml:lang="de">Sprache</skos:altLabel>
-		<acdh:exampleValue>deu</acdh:exampleValue>
+        <acdh:exampleValue>deu</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">41</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Metadata"/>
@@ -694,7 +694,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">has license</rdfs:label>
         <skos:altLabel xml:lang="en">License</skos:altLabel>
         <skos:altLabel xml:lang="de">Lizenz</skos:altLabel>
-		<acdh:exampleValue>CC-BY 4.0</acdh:exampleValue>
+        <acdh:exampleValue>CC-BY 4.0</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">113</acdh:ordering>
         <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/arche_licenses/data</acdh:vocabs>
     </owl:ObjectProperty>
@@ -712,8 +712,8 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">has licensor</rdfs:label>
         <skos:altLabel xml:lang="en">Licensor(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Lizenzgeber</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Siehe hasContributor für ein Beispiel zu Personen und hasContact für ein Beispiel zu Organisationen.</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">See hasContributor for Person example and hasContact for Organisation.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">See hasContributor for Person example and hasContact for Organisation.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Siehe hasContributor für ein Beispiel zu Personen und hasContact für ein Beispiel zu Organisationen.</acdh:exampleValue>
         <acdh:inverse xml:lang="en">is licensor of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">112</acdh:ordering>
     </owl:ObjectProperty>
@@ -730,8 +730,8 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">has life cycle status</rdfs:label>
         <skos:altLabel xml:lang="de">Lebenszyklusstatus</skos:altLabel>
         <skos:altLabel xml:lang="en">Life Cycle Status</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">abgeschlossen</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">completed</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">abgeschlossen</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">completed</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
@@ -751,8 +751,8 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">has metadata creator</rdfs:label>
         <skos:altLabel xml:lang="en">Metadata Creator(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Metadatenersteller</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Siehe hasContributor für ein Beispiel zu Personen und hasContact für ein Beispiel zu Organisationen.</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">See hasContributor for Person example and hasContact for Organisation.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">See hasContributor for Person example and hasContact for Organisation.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Siehe hasContributor für ein Beispiel zu Personen und hasContact für ein Beispiel zu Organisationen.</acdh:exampleValue>
         <acdh:inverse xml:lang="en">is metadata creator of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</acdh:ordering>
     </owl:ObjectProperty>
@@ -803,8 +803,8 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">has owner</rdfs:label>
         <skos:altLabel xml:lang="de">Besitzer</skos:altLabel>
         <skos:altLabel xml:lang="en">Owner(s)</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Siehe hasContributor für ein Beispiel zu Personen und hasContact für ein Beispiel zu Organisationen.</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">See hasContributor for Person example and hasContact for Organisation.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">See hasContributor for Person example and hasContact for Organisation.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Siehe hasContributor für ein Beispiel zu Personen und hasContact für ein Beispiel zu Organisationen.</acdh:exampleValue>
         <acdh:inverse xml:lang="en">is owner of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110</acdh:ordering>
     </owl:ObjectProperty>
@@ -858,10 +858,10 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">has related discipline</rdfs:label>
         <skos:altLabel xml:lang="de">Fachdisziplin</skos:altLabel>
         <skos:altLabel xml:lang="en">Research Discipline</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Archäologie</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">archaeology</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="de">Sprach- und Literaturwissenschaften</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">linguistics and literature</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Archäologie</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Sprach- und Literaturwissenschaften</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">archaeology</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">linguistics and literature</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:vocabs>https://vocabs.acdh.oeaw.ac.at/rest/v1/oefos/data</acdh:vocabs>
@@ -880,8 +880,8 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">has related project</rdfs:label>
         <skos:altLabel xml:lang="en">Related Project(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Zugehörige(s) Projekt(e)</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Titel des Projektes</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">Title of Project</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Titel des Projektes</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">Title of Project</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">140</acdh:ordering>
     </owl:ObjectProperty>
     
@@ -898,8 +898,8 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">has rights holder</rdfs:label>
         <skos:altLabel xml:lang="de">Rechteinhaber</skos:altLabel>
         <skos:altLabel xml:lang="en">Rights Holder(s)</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Siehe hasContributor für ein Beispiel zu Personen und hasContact für ein Beispiel zu Organisationen.</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">See hasContributor for Person example and hasContact for Organisation.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">See hasContributor for Person example and hasContact for Organisation.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Siehe hasContributor für ein Beispiel zu Personen und hasContact für ein Beispiel zu Organisationen.</acdh:exampleValue>
         <acdh:inverse xml:lang="en">is rights holder of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">111</acdh:ordering>
     </owl:ObjectProperty>
@@ -917,8 +917,8 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">has spatial coverage</rdfs:label>
         <skos:altLabel xml:lang="de">Geografische Abdeckung</skos:altLabel>
         <skos:altLabel xml:lang="en">Spatial Coverage</skos:altLabel>
-		<acdh:exampleValue>Pannonien</acdh:exampleValue>
-		<acdh:exampleValue>Pannonia</acdh:exampleValue>
+        <acdh:exampleValue>Pannonia</acdh:exampleValue>
+        <acdh:exampleValue>Pannonien</acdh:exampleValue>
         <acdh:inverse xml:lang="en">is spatial coverage of</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">93</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
@@ -954,7 +954,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">is member of</rdfs:label>
         <skos:altLabel xml:lang="en">Is Member Of</skos:altLabel>
         <skos:altLabel xml:lang="de">Ist Mitglied von</skos:altLabel>
-		<acdh:exampleValue>ACDH-CH</acdh:exampleValue>
+        <acdh:exampleValue>ACDH-CH</acdh:exampleValue>
         <acdh:inverse xml:lang="en">has member</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Person"/>
@@ -1026,8 +1026,8 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">is part of</rdfs:label>
         <skos:altLabel xml:lang="en">Part of</skos:altLabel>
         <skos:altLabel xml:lang="de">Teil von</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Titel der Sammlung</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">Title of Collection</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Titel der Sammlung</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">Title of Collection</acdh:exampleValue>
         <acdh:inverse xml:lang="en">has part</acdh:inverse>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">151</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Metadata"/>
@@ -1241,7 +1241,7 @@ Beispiel: öffentlich 87, akademisch 3, eingeschränkt 1</rdfs:comment>
         <rdfs:label xml:lang="en">has address line 1</rdfs:label>
         <skos:altLabel xml:lang="de">Addresszeile 1</skos:altLabel>
         <skos:altLabel xml:lang="en">Adress Line 1</skos:altLabel>
-		<acdh:exampleValue>Bäckerstraße 13</acdh:exampleValue>
+        <acdh:exampleValue>Bäckerstraße 13</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -1258,7 +1258,7 @@ Beispiel: öffentlich 87, akademisch 3, eingeschränkt 1</rdfs:comment>
         <rdfs:label xml:lang="en">has address line 2</rdfs:label>
         <skos:altLabel xml:lang="de">Addresszeile 2</skos:altLabel>
         <skos:altLabel xml:lang="en">Adress Line 2</skos:altLabel>
-		<acdh:exampleValue>c/o ACDH-CH</acdh:exampleValue>
+        <acdh:exampleValue>c/o ACDH-CH</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -1274,8 +1274,8 @@ Beispiel: öffentlich 87, akademisch 3, eingeschränkt 1</rdfs:comment>
         <rdfs:label xml:lang="en">has alternative title</rdfs:label>
         <skos:altLabel xml:lang="en">Alternative Title</skos:altLabel>
         <skos:altLabel xml:lang="de">Alternativtitel</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Ein Tier, das alles kann.</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">An animal that can do everything.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">An animal that can do everything.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Ein Tier, das alles kann.</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -1425,8 +1425,8 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:label xml:lang="en">has city</rdfs:label>
         <skos:altLabel xml:lang="en">City/Town</skos:altLabel>
         <skos:altLabel xml:lang="de">Stadt</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Wien</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">Vienna</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">Vienna</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Wien</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -1476,8 +1476,8 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:seeAlso>acdh:hasLifeCycleStatus</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">Completeness statement</skos:altLabel>
         <skos:altLabel xml:lang="de">Vollständigkeitsangaben</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Das Projekt ist beendet und die Dateien sind final.</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">The project is finished and the files are final.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Das Projekt ist beendet und die Dateien sind final.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">The project is finished and the files are final.</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
     </owl:DatatypeProperty>
@@ -1495,8 +1495,8 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:label xml:lang="en">has country</rdfs:label>
         <skos:altLabel xml:lang="en">Country</skos:altLabel>
         <skos:altLabel xml:lang="de">Land</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Österreich</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">Austria</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">Austria</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Österreich</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -1513,7 +1513,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:label xml:lang="en">has coverage end date</rdfs:label>
         <skos:altLabel xml:lang="en">Coverage end date</skos:altLabel>
         <skos:altLabel xml:lang="de">Ende der abgedeckten Zeitperiode</skos:altLabel>
-		<acdh:exampleValue>1830</acdh:exampleValue>
+        <acdh:exampleValue>1830</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
@@ -1532,7 +1532,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:label xml:lang="en">has coverage start date</rdfs:label>
         <skos:altLabel xml:lang="de">Anfang der abgedeckten Periode</skos:altLabel>
         <skos:altLabel xml:lang="en">Coverage start date</skos:altLabel>
-		<acdh:exampleValue>1770</acdh:exampleValue>
+        <acdh:exampleValue>1770</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">97</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
@@ -1711,7 +1711,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:label xml:lang="en">has email</rdfs:label>
         <skos:altLabel xml:lang="de">E-Mail</skos:altLabel>
         <skos:altLabel xml:lang="en">E-mail</skos:altLabel>
-		<acdh:exampleValue>email@oeaw.ac.at</acdh:exampleValue>
+        <acdh:exampleValue>email@oeaw.ac.at</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -1745,10 +1745,10 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:label xml:lang="en">has extent</rdfs:label>
         <skos:altLabel xml:lang="en">Extent</skos:altLabel>
         <skos:altLabel xml:lang="de">Umfang</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">689 Abklatsche</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">689 squeezes</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="de">100 Vasen mit jeweils 10 Abbildungen</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">100 vases with 10 illustrations each</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">100 Vasen mit jeweils 10 Abbildungen</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">100 vases with 10 illustrations each</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">689 Abklatsche</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">689 squeezes</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">46</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Resource"/>
@@ -1782,7 +1782,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:label xml:lang="en">has first name</rdfs:label>
         <skos:altLabel xml:lang="en">First Name</skos:altLabel>
         <skos:altLabel xml:lang="de">Vorname</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Karlheinz</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Karlheinz</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Person"/>
     </owl:DatatypeProperty>
@@ -1826,7 +1826,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasIiifManifest">
         <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#disseminationServices"/>
-        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#BinaryContent"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment xml:lang="de">Gibt das IIIF-Manifest (B) an, das für die Darstellung der Ressource (A) verwendet werden soll. Der Wert ist entweder die URL des zu verwendenden IIIF-Manifests (externe URLs sind möglich, wir empfehlen jedoch Ressourcen aus dem Repositorium) oder, wenn das IIIF-Manifest automatisch auf der Grundlage der Metadaten der Ressource generiert werden soll, die URI des Dissemination-Services: https://id.acdh.oeaw.ac.at/dissemination/iiifmanifest.</rdfs:comment>
         <rdfs:comment xml:lang="en">Indicates the IIIF manifest (B) to be used for the presentation of the Resource (A). The value is either an URL of the IIIF manifest to be used (we recommend it to be another Resource in the repository but it can also be external) or, if the IIIF manifest should be generated automatically based on the Resource&apos;s metadata, the URI of the dissemination service: https://id.acdh.oeaw.ac.at/dissemination/iiifmanifest.</rdfs:comment>
@@ -1866,7 +1866,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:label xml:lang="en">has last name</rdfs:label>
         <skos:altLabel xml:lang="en">Last Name</skos:altLabel>
         <skos:altLabel xml:lang="de">Nachname</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Mörth</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Mörth</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Person"/>
     </owl:DatatypeProperty>
@@ -1884,7 +1884,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:label xml:lang="en">has latitude</rdfs:label>
         <skos:altLabel xml:lang="de">Breitengrad</skos:altLabel>
         <skos:altLabel xml:lang="en">Latitude</skos:altLabel>
-		<acdh:exampleValue>47.23341</acdh:exampleValue>
+        <acdh:exampleValue>47.23341</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">184</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Place"/>
     </owl:DatatypeProperty>
@@ -1934,7 +1934,7 @@ Example: CC-BY 4.0 - 884, CC0 1.0 - 44</rdfs:comment>
         <rdfs:label xml:lang="en">has longitude</rdfs:label>
         <skos:altLabel xml:lang="en">Longitude</skos:altLabel>
         <skos:altLabel xml:lang="de">Längengrad</skos:altLabel>
-		<acdh:exampleValue>16.62309</acdh:exampleValue>
+        <acdh:exampleValue>16.62309</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">185</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Place"/>
     </owl:DatatypeProperty>
@@ -1989,7 +1989,7 @@ Handles belong into hasPid and identifiers with stable URL or URI into hasIdenti
         <rdfs:label xml:lang="en">has non linked identifier</rdfs:label>
         <skos:altLabel xml:lang="en">Identifier(s) without Link</skos:altLabel>
         <skos:altLabel xml:lang="de">Identifikator(en) ohne Link</skos:altLabel>
-		<acdh:exampleValue>Österreichische Nationalbank Jubiläumsfond:16365</acdh:exampleValue>
+        <acdh:exampleValue>Österreichische Nationalbank Jubiläumsfond:16365</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
@@ -2040,7 +2040,7 @@ Handles belong into hasPid and identifiers with stable URL or URI into hasIdenti
         <rdfs:label xml:lang="en">has pages</rdfs:label>
         <skos:altLabel xml:lang="en">Page(s)</skos:altLabel>
         <skos:altLabel xml:lang="de">Seite(n)</skos:altLabel>
-		<acdh:exampleValue>2-51</acdh:exampleValue>
+        <acdh:exampleValue>2-51</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2056,8 +2056,8 @@ Handles belong into hasPid and identifiers with stable URL or URI into hasIdenti
         <rdfs:label xml:lang="en">has personal title</rdfs:label>
         <skos:altLabel xml:lang="de">Titel (Person)</skos:altLabel>
         <skos:altLabel xml:lang="en">Title (Person)</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Dr.</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">PhD</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Dr.</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">PhD</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2081,6 +2081,34 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
     
 
 
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasPixelHeight -->
+
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasPixelHeight">
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#technical"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment xml:lang="en">Pixel height of a digital image stored in the ARCHE repository. Can be applied also to other digital objects which dimensions can be measured in pixels. Its primary aim is to allow IIIF Presentation Manifest generation. It is generated automatically by the ARCHE repository backend.</rdfs:comment>
+        <rdfs:label xml:lang="en">has pixel height</rdfs:label>
+        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">901</acdh:ordering>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasPixelWidth -->
+
+    <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasPixelWidth">
+        <rdfs:subPropertyOf rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#technical"/>
+        <rdfs:domain rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:comment xml:lang="en">Pixel width of a digital image stored in the ARCHE repository. Can be applied also to other digital objects which dimensions can be measured in pixels. Its primary aim is to allow IIIF Presentation Manifest generation. It is generated automatically by the ARCHE repository backend.</rdfs:comment>
+        <rdfs:label xml:lang="en">has pixel width</rdfs:label>
+        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">902</acdh:ordering>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasPostcode -->
 
     <owl:DatatypeProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasPostcode">
@@ -2092,7 +2120,7 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
         <rdfs:label xml:lang="en">has postcode</rdfs:label>
         <skos:altLabel xml:lang="en">Postcode</skos:altLabel>
         <skos:altLabel xml:lang="de">Postleitzahl</skos:altLabel>
-		<acdh:exampleValue>1010</acdh:exampleValue>
+        <acdh:exampleValue>1010</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2140,8 +2168,8 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
         <rdfs:label xml:lang="en">has region</rdfs:label>
         <skos:altLabel xml:lang="de">Region</skos:altLabel>
         <skos:altLabel xml:lang="en">Region</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Wien</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">Vienna</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">Vienna</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Wien</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2249,10 +2277,10 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
         <rdfs:label xml:lang="en">has subject</rdfs:label>
         <skos:altLabel xml:lang="de">Schlagwort</skos:altLabel>
         <skos:altLabel xml:lang="en">Subject</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Nahrungsmittelherstellung</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">food production</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="de">Datenanalytik"</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">data analytics"</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Datenanalytik&quot;</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Nahrungsmittelherstellung</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">data analytics&quot;</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">food production</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">94</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
     </owl:DatatypeProperty>
@@ -2335,8 +2363,8 @@ Alle anderen Identifikatoren, wie lokal zugewiesene Projekt- oder Inventarnummer
         <rdfs:label xml:lang="en">has temporal coverage</rdfs:label>
         <skos:altLabel xml:lang="en">Temporal Coverage</skos:altLabel>
         <skos:altLabel xml:lang="de">Zeitliche Abdeckung</skos:altLabel>
-		<acdh:exampleValue xml:lang="de">Wiener Klassik</acdh:exampleValue>
-		<acdh:exampleValue xml:lang="en">First Viennese School</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="en">First Viennese School</acdh:exampleValue>
+        <acdh:exampleValue xml:lang="de">Wiener Klassik</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
@@ -2357,7 +2385,7 @@ Eingabe ist eine URI.</rdfs:comment>
         <rdfs:label>has temporal coverage identifier</rdfs:label>
         <skos:altLabel xml:lang="en">Temporal ID</skos:altLabel>
         <skos:altLabel xml:lang="de">Zeitliche ID</skos:altLabel>
-		<acdh:exampleValue>http://d-nb.info/gnd/4189851-5</acdh:exampleValue>
+        <acdh:exampleValue>http://d-nb.info/gnd/4189851-5</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Collection"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
@@ -2459,7 +2487,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:label xml:lang="en">has url</rdfs:label>
         <skos:altLabel xml:lang="de">URL</skos:altLabel>
         <skos:altLabel xml:lang="en">URL</skos:altLabel>
-		<acdh:exampleValue>https://arche.acdh.oeaw.ac.at</acdh:exampleValue>
+        <acdh:exampleValue>https://arche.acdh.oeaw.ac.at</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</acdh:ordering>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#Project"/>
         <acdh:recommendedClass rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#TopCollection"/>
@@ -2477,7 +2505,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:label xml:lang="en">has used hardware</rdfs:label>
         <skos:altLabel xml:lang="de">Hardware</skos:altLabel>
         <skos:altLabel xml:lang="en">Hardware</skos:altLabel>
-		<acdh:exampleValue>Nikon D750</acdh:exampleValue>
+        <acdh:exampleValue>Nikon D750</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2493,7 +2521,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:label xml:lang="en">has used software</rdfs:label>
         <skos:altLabel xml:lang="de">Software</skos:altLabel>
         <skos:altLabel xml:lang="en">Software</skos:altLabel>
-		<acdh:exampleValue>Adobe Photoshop CS 5.5</acdh:exampleValue>
+        <acdh:exampleValue>Adobe Photoshop CS 5.5</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2510,7 +2538,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:label xml:lang="en">has version</rdfs:label>
         <skos:altLabel xml:lang="de">Version</skos:altLabel>
         <skos:altLabel xml:lang="en">Version</skos:altLabel>
-		<acdh:exampleValue>1</acdh:exampleValue>
+        <acdh:exampleValue>1</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">44</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2542,7 +2570,7 @@ If left empty for a Person it is automatically computed by combining first and l
         <rdfs:label xml:lang="en">has wkt</rdfs:label>
         <skos:altLabel xml:lang="de">WKT</skos:altLabel>
         <skos:altLabel xml:lang="en">WKT</skos:altLabel>
-		<acdh:exampleValue>POLYGON ((15 45,15 50,20 50,20 45,15 45))</acdh:exampleValue>
+        <acdh:exampleValue>POLYGON ((15 45,15 50,20 50,20 45,15 45))</acdh:exampleValue>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">186</acdh:ordering>
     </owl:DatatypeProperty>
     
@@ -2834,12 +2862,6 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIiifManifest"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasRawBinarySize"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
@@ -2905,6 +2927,12 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasCustomCitation"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasIiifManifest"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -3546,6 +3574,18 @@ Note that though a Project might (and usually will) use or produce data, it is N
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasPixelHeight"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasPixelWidth"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema#hasTableOfContents"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
@@ -3616,5 +3656,5 @@ Note that though a Project might (and usually will) use or produce data, it is N
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
 

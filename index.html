@@ -1282,6 +1282,20 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                     <span>
                       <span>
                         <span>
+                          <a href="#hasNextItem">acdh:hasNextItem</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
                           <a href="#hasBinaryUpdatedDate">acdh:hasBinaryUpdatedDate</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
@@ -1567,6 +1581,20 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                         <span>
                           <span class="cardinality">max</span>
                           <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="#hasNextItem">acdh:hasNextItem</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>2</span>
                         </span><br>
                       </span>
                     </span>
@@ -4895,20 +4923,6 @@ Note that though a Project might (and usually will) use or produce data, it is N
                     <span>
                       <span>
                         <span>
-                          <a href="#hasNextItem">acdh:hasNextItem</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">max</span>
-                          <span>1</span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
                           <a href="#hasAcceptedDate">acdh:hasAcceptedDate</a>
                           <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                         </span>
@@ -5376,6 +5390,20 @@ Note that though a Project might (and usually will) use or produce data, it is N
                         </span>
                         <span>
                           <span class="cardinality">min</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="#hasNextItem">acdh:hasNextItem</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
                           <span>1</span>
                         </span><br>
                       </span>
@@ -6746,7 +6774,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
               <td>
                 <ul>
                   <li><p>Gibt das nächste Element (B) an, das auf das aktuelle Objekt (A) folgt. Mit dieser Eigenschaft kann die Reihenfolge von Ressourcen oder Sammlungen innerhalb einer enthaltenen Sammlung festgelegt werden. Wird kein Wert angegeben, wird die Eigenschaft automatisch anhand der aufsteigenden alphabetischen Sortierung der Dateinamen gefüllt.</p></li>
-                  <li><p>Indicates the next item (B) following the current object (A). With this property, the order of Resources or Collections within a containing Collection can be established. If no value is given, the property is automatically filled based on ascending alphabetical sorting of the file names.</p></li>
+                  <li><p>Indicates the next item (B) following the current object (A). With this property, the order of Resources or Collections within a containing (Top)Collection can be established. The (Top)Collection should also have the hasNextItem property pointing to its first child. Collections may have two hasNextItem properties - one pointing to the next Collection within the same parent and the other pointing to its first child.</p></li>
                 </ul>
               </td>
             </tr>

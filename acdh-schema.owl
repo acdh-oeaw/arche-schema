@@ -770,7 +770,6 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <rdfs:label xml:lang="en">has next item</rdfs:label>
         <skos:altLabel xml:lang="en">Next item</skos:altLabel>
         <skos:altLabel xml:lang="de">Nächstes Element</skos:altLabel>
-        <acdh:automatedFill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</acdh:automatedFill>
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">152</acdh:ordering>
     </owl:ObjectProperty>
     

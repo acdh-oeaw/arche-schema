@@ -505,12 +505,6 @@ When reusing definitions from other vocabularies (esp. DataCite), the reference 
                   </li>
                   <li>
                     <span>
-                      <a href="#hasLanguage">acdh:hasLanguage</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
                       <a href="#hasLicense">acdh:hasLicense</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
@@ -534,6 +528,17 @@ When reusing definitions from other vocabularies (esp. DataCite), the reference 
                     </span>
                   </li>
                 </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#HasLanguageRange">acdh:HasLanguageRange</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -718,6 +723,12 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                   </li>
                   <li>
                     <span>
+                      <a href="#AllButTechnical">acdh:AllButTechnical</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="#Main">acdh:Main</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
@@ -893,17 +904,6 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                 <span>
                   <a href="#Helper">acdh:Helper</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="None. Defined in None">In Domain Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#hasUrl">acdh:hasUrl</a>
-                  <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                 </span>
               </td>
             </tr>
@@ -1138,6 +1138,80 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                   <li>
                     <span>
                       <a href="#Publication">acdh:Publication</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="AllButTechnical">
+          <h3>All But Technical
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://vocabs.acdh.oeaw.ac.at/schema#AllButTechnical</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Helper">acdh:Helper</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="None. Defined in None">In Domain Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#hasUrl">acdh:hasUrl</a>
+                  <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#Agent1">acdh:Agent</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#Place">acdh:Place</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#Project1">acdh:Project</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#Publication">acdh:Publication</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#RepoObject">acdh:RepoObject</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -3091,6 +3165,51 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
             </tr>
           </table>
         </div>
+        <div class="property entity" id="HasLanguageRange">
+          <h3>Has Language Range
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://vocabs.acdh.oeaw.ac.at/schema#HasLanguageRange</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#Helper">acdh:Helper</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="None. Defined in None">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#hasLanguage">acdh:hasLanguage</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="Helper">
           <h3>Helper
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -3140,6 +3259,12 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                   <li>
                     <span>
                       <a href="#AgentOrPublication">acdh:AgentOrPublication</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#AllButTechnical">acdh:AllButTechnical</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -3236,6 +3361,12 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                   <li>
                     <span>
                       <a href="#ContainerOrResource">acdh:ContainerOrResource</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#HasLanguageRange">acdh:HasLanguageRange</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -3642,6 +3773,12 @@ Eine Person kann mit Hilfe von isMemberOf mit einer Organisation verbunden werde
                   </li>
                   <li>
                     <span>
+                      <a href="#AllButTechnical">acdh:AllButTechnical</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="#CollectionOrPlaceOrPublication">acdh:CollectionOrPlaceOrPublication</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
@@ -3866,6 +4003,12 @@ Note that though a Project might (and usually will) use or produce data, it is N
               </th>
               <td>
                 <ul>
+                  <li>
+                    <span>
+                      <a href="#AllButTechnical">acdh:AllButTechnical</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
                   <li>
                     <span>
                       <a href="#Container">acdh:Container</a>
@@ -4278,6 +4421,12 @@ Note that though a Project might (and usually will) use or produce data, it is N
                   </li>
                   <li>
                     <span>
+                      <a href="#AllButTechnical">acdh:AllButTechnical</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="#CollectionOrPlaceOrPublicationOrResource">acdh:CollectionOrPlaceOrPublicationOrResource</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
@@ -4648,6 +4797,12 @@ Note that though a Project might (and usually will) use or produce data, it is N
               </th>
               <td>
                 <ul>
+                  <li>
+                    <span>
+                      <a href="#AllButTechnical">acdh:AllButTechnical</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
                   <li>
                     <span>
                       <a href="#Main">acdh:Main</a>
@@ -6529,7 +6684,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
               </th>
               <td>
                 <span>
-                  <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>
+                  <a href="#HasLanguageRange">acdh:HasLanguageRange</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -12351,7 +12506,7 @@ If left empty for a Person it is automatically computed by combining first and l
               </th>
               <td>
                 <span>
-                  <a href="#AgentOrContainerOrPublicationOrReMe">acdh:AgentOrContainerOrPublicationOrReMe</a>
+                  <a href="#AllButTechnical">acdh:AllButTechnical</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -13386,6 +13541,9 @@ Den vollständigen IRI der Klasse eingeben.</p></li>
               <a href="#AgentOrPublication">Agent Or Publication</a>
             </li>
             <li>
+              <a href="#AllButTechnical">All But Technical</a>
+            </li>
+            <li>
               <a href="#BinaryContent">Binary Content</a>
             </li>
             <li>
@@ -13447,6 +13605,9 @@ Den vollständigen IRI der Klasse eingeben.</p></li>
             </li>
             <li>
               <a href="#DisseminationServiceParameter">Dissemination Service Parameter</a>
+            </li>
+            <li>
+              <a href="#HasLanguageRange">Has Language Range</a>
             </li>
             <li>
               <a href="#Helper">Helper</a>

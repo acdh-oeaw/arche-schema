@@ -2,10 +2,8 @@
 
 This is the repo for the `ACDH-Ontology`. The ontology is going to be used to describe resources in the acdh-repo.
 
-* For an interactive network visualization of the current ontology, please see [here](https://vowl.acdh.oeaw.ac.at/#iri=https%3A%2F%2Fraw.githubusercontent.com%2Facdh-oeaw%2Frepo-schema%2Fmaster%2Facdh-schema.owl) (thanks https://github.com/VisualDataWeb/WebVOWL) 
-* For a more static overview - please see [here](https://teiminator.acdh.oeaw.ac.at/services/owl2html.xql?owl=https%3A%2F%2Fraw.githubusercontent.com%2Facdh-oeaw%2Frepo-schema%2Fmaster%2Facdh-schema.owl)
-* For a tabular view click [here](https://acdh-oeaw.github.io/arche-schema/) or [here](https://teiminator.acdh.oeaw.ac.at/services/owl2html.xql?owl=https%3A%2F%2Fraw.githubusercontent.com%2Facdh-oeaw%2Frepo-schema%2Fmaster%2Facdh-schema.owl&format=table)
-
+* For an interactive network visualization of the current ontology, please see [here](https://service.tib.eu/webvowl/#iri=https%3A%2F%2Fraw.githubusercontent.com%2Facdh-oeaw%2Frepo-schema%2Fmaster%2Facdh-schema.owl) (thanks https://github.com/VisualDataWeb/WebVOWL) 
+* For a tabular view click [here](https://acdh-oeaw.github.io/arche-schema/) or [here](https://arche.acdh.oeaw.ac.at/browser/api/rootTable/en?_format=html)
 # Release cycle
 
 Releasing new ontology versions requires lots of care. This is because the ontology determines behaviour of crucial ARCHE components (most notably the doorkeeper and the GUI) and because we must be able to assure already existing metadata are in line with the current ontology.

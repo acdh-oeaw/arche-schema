@@ -4,14 +4,14 @@ on: push
 
 jobs:
   build_pages:
-    name: Creates HTML-Documentation of the ARCEH Ontology
+    name: Creates HTML-Documentation of the ARCHE Ontology
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v1
+    - name: Set up Python
+      uses: actions/setup-python@v5
       with:
-        python-version: 3.8 
+        python-version: 3.13
     - name: Install dependencies
       run: |
         pip install pylode
@@ -20,7 +20,7 @@ jobs:
         mkdir html
         python -m pylode acdh-schema.owl -o ./html/index.html
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{secrets.GITHUB_TOKEN}}
         publish_dir: ./html 

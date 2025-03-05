@@ -2424,6 +2424,12 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
+                  <li>
+                    <span>
+                      <a href="#hasFunderLogo">has funder logo</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
                 </ul>
               </td>
             </tr>
@@ -10880,6 +10886,49 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</p></li>
             </tr>
           </table>
         </div>
+        <div class="property entity" id="hasFunderLogo">
+          <h3>has funder logo
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://vocabs.acdh.oeaw.ac.at/schema#hasFunderLogo</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>A funder logo encoded as a valid HTML img tag's src property value, e.g. an URL or a data URL (see https://en.wikipedia.org/wiki/Data_URI_scheme).</p></li>
+                  <li><p>Ein Geldgeberlogo, das als gültiger src-Eigenschaftswert eines HTML-img-Tags codiert ist, z.B. eine URL oder eine Daten-URL (siehe https://de.wikipedia.org/wiki/Data-URL).</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Container">acdh:Container</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="hasHash">
           <h3>has hash
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
@@ -14392,6 +14441,9 @@ Den vollständigen IRI der Klasse eingeben.</p></li>
             </li>
             <li>
               <a href="#hasFormat">has format</a>
+            </li>
+            <li>
+              <a href="#hasFunderLogo">has funder logo</a>
             </li>
             <li>
               <a href="#hasHash">has hash</a>

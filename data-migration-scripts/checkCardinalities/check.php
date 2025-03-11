@@ -43,6 +43,9 @@ if (!file_exists("$path/vendor/autoload.php")) {
 
 require_once "$path/vendor/autoload.php";
 use zozlak\RdfConstants as C;
+use rdfInterface\LiteralInterface;
+use quickRdf\DataFactory as DF;
+use termTemplates\PredicateTemplate as PT;
 use acdhOeaw\arche\lib\schema\Ontology;
 use acdhOeaw\arche\lib\RepoDb;
 use acdhOeaw\arche\lib\RepoResourceDb;
@@ -57,7 +60,7 @@ $schemaCfg = (object) [
     'parent'            => $cfg->schema->parent,
     'label'             => $cfg->schema->label,
 ];
-$ontology = new Ontology($dbConn, $schemaCfg);
+$ontology = Ontology::factoryDb($dbConn, $schemaCfg);
 
 $statsByClass       = [];
 $statsByProp        = [];
@@ -77,7 +80,7 @@ while ($i = $query->fetchObject()) {
 $param = [C::RDF_TYPE, $schemaCfg->ontologyNamespace . '%'];
 $filter = '';
 if ($argc > 1) {
-    $filter = "JOIN (SELECT (get_relatives(id, ?, 999999, 0)).* FROM identifiers WHERE id = ? OR ids = ?) t USING (id)";
+    $filter = "JOIN (SELECT (get_relatives(id, ?, 999999, 0)).* FROM (SELECT DISTINCT id FROM identifiers WHERE id = ? OR ids = ?) t) t USING (id)";
     $param = array_merge([$cfg->schema->parent, (int) $argv[1], $argv[1]], $param);
 }
 $queryStr = "FROM metadata $filter WHERE property = ? AND value LIKE ?";
@@ -110,18 +113,19 @@ while ($i = $query->fetchObject()) {
             $datatype = array_filter($p->range, fn($x) => str_starts_with($x, C::NMSP_XSD));
             $datatype = reset($datatype);
             $byLang   = [];
-            foreach ($meta->all($pUri) as $v) {
-                if ($v instanceof EasyRdf\Resource) {
-                    $byLang['URI'] = ($byLang['URI'] ?? 0) + 1;
-                } else {
+            $pTmpl    = new PT(DF::namedNode($pUri));
+            foreach ($meta->listObjects($pTmpl) as $v) {
+                if ($v instanceof LiteralInterface) {
                     $byLang[(string) $v->getLang()] = ($byLang[(string) $v->getLang()] ?? 0) + 1;
+                } else {
+                    $byLang['URI'] = ($byLang['URI'] ?? 0) + 1;
                 }
-                $vdt = $v instanceof EasyRdf\Literal ? ($v->getDatatypeUri() ?? C::XSD_STRING) : null;
+                $vdt = $v instanceof LiteralInterface ? $v->getDatatype() : null;
                 if (!empty($datatype) && $vdt !== $datatype) {
                     echo "\tvalue $v for property $pUri has datatype $vdt\n";
                     $statsWrongDatatype[$pUri][$vdt] = ($statsWrongDatatype[$pUri][$vdt] ?? 0) + 1;
                 }
-                if ($p->langTag && (!($v instanceof EasyRdf\Literal) || empty($v->getLang()))) {
+                if ($p->langTag && (!($v instanceof LiteralInterface) || empty($v->getLang()))) {
                     echo "\tvalue $v for property $pUri misses the lang tag\n";
                     $statsNoLangTag[$pUri] = ($statsNoLangTag[$pUri] ?? 0) + 1;
                 }
@@ -143,7 +147,7 @@ while ($i = $query->fetchObject()) {
                 }
             }
             if (!empty($p->vocabs)) {
-                foreach ($meta->all($pUri) as $v) {
+                foreach ($meta->listObjects($pTmpl) as $v) {
                     $v = (string) $v;
                     if (false === $p->checkVocabularyValue($v, Ontology::VOCABSVALUE_ID)) {
                         echo "\tvalue $v for property $pUri is not allowed\n";
@@ -157,7 +161,7 @@ while ($i = $query->fetchObject()) {
         }
     }
 
-    foreach ($meta->propertyUris() as $pUri) {
+    foreach ($meta->listPredicates()->getValues() as $pUri) {
         if (strpos($pUri, $schemaCfg->ontologyNamespace) === 0 && !in_array($pUri, $allowedP)) {
             echo "\tproperty $pUri used while ontology doesn't associate it with this resource class\n";
             if (!isset($statsUnexpected[$pUri])) {

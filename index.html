@@ -834,6 +834,12 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                   </li>
                   <li>
                     <span>
+                      <a href="#hasEnabler">has enabler</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="#hasFunder">has funder</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
@@ -2175,6 +2181,12 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
+                  <li>
+                    <span>
+                      <a href="#hasEnabler">has enabler</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
                 </ul>
               </td>
             </tr>
@@ -2449,12 +2461,6 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                   <li>
                     <span>
                       <a href="#hasCollectedStartDate">has collected start date</a>
-                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#hasFunderLogo">has funder logo</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
@@ -2755,6 +2761,12 @@ Die verschiedenen Rollen, die ein Agent in Bezug auf ein Projekt, eine Sammlung,
                   <li>
                     <span>
                       <a href="#hasEditorialPractice">has editorial practice</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#hasFunderLogo">has funder logo</a>
                       <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
@@ -6367,6 +6379,12 @@ This is a generic property. Use one of the more specific subproperties where pos
                   </li>
                   <li>
                     <span>
+                      <a href="#hasEnabler">has enabler</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="#hasFunder">has funder</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
@@ -6768,8 +6786,65 @@ This is a generic property. Use one of the more specific subproperties where pos
               </th>
               <td>
                 <ul>
-                  <li><p>A person who oversees the details related to the publication format of the resource. (cf. DataCite: Editor)</p></li>
-                  <li><p>Eine Person, die sich mit den Details des Publikationsformats der Ressource befasst. (vgl. DataCite: Editor)</p></li>
+                  <li><p>A Person or Organisation (B) responsible for selecting, arranging, and ensuring that the resources (A) comply with the submission requirements of ARCHE. The Editor is the Person to whom the entire data collection is attributed, analogous to the editor of an edited volume and may also be used in this sense for a Publication.</p></li>
+                  <li><p>Eine Person oder Organisation (B), die für die Auswahl, Zusammenstellung und Sicherstellung der Konformität der Ressourcen (A) mit den Einreichungsanforderungen von ARCHE verantwortlich ist. Der Herausgeber ist die Person, der die gesamte Datensammlung zugeschrieben wird, analog zum Herausgeber eines Sammelbandes, und kann in diesem Sinne auch für eine Publikation  verwendet werden.</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#hasContributor">has contributor</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#CollectionOrReMeOrPublication">acdh:CollectionOrReMeOrPublication</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Agent1">Agent</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="hasEnabler">
+          <h3>has enabler
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://vocabs.acdh.oeaw.ac.at/schema#hasEnabler</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul>
+                  <li><p>A Person or Organisation (B) that enabled the xxto happen.</p></li>
+                  <li><p>Eine Person oder Organisation (B), xxx.</p></li>
                 </ul>
               </td>
             </tr>
@@ -10928,7 +11003,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</p></li>
               </th>
               <td>
                 <span>
-                  <a href="#Container">acdh:Container</a>
+                  <a href="#ContainerOrReMe">acdh:ContainerOrReMe</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -14241,6 +14316,9 @@ Den vollständigen IRI der Klasse eingeben.</p></li>
             </li>
             <li>
               <a href="#hasEditor">has editor</a>
+            </li>
+            <li>
+              <a href="#hasEnabler">has enabler</a>
             </li>
             <li>
               <a href="#hasFunder">has funder</a>

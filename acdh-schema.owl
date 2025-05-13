@@ -604,6 +604,8 @@ This is a generic property. Use one of the more specific subproperties where pos
         <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">74</acdh:ordering>
     </owl:ObjectProperty>
     
+
+
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasEnabler -->
 
     <owl:ObjectProperty rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#hasEnabler">
@@ -616,8 +618,9 @@ This is a generic property. Use one of the more specific subproperties where pos
         <skos:altLabel xml:lang="en">Enabled by</skos:altLabel>
         <skos:altLabel xml:lang="de">Ermöglicht durch</skos:altLabel>
         <acdh:inverse xml:lang="en">is enabler of</acdh:inverse>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">74</acdh:ordering>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">81</acdh:ordering>
     </owl:ObjectProperty>
+    
 
 
     <!-- https://vocabs.acdh.oeaw.ac.at/schema#hasFunder -->
@@ -768,7 +771,7 @@ Handles belong into hasPid and all other identifiers without URL or URI, like lo
         <acdh:exampleValue xml:lang="en">See hasContributor for Person example and hasContact for Organisation.</acdh:exampleValue>
         <acdh:exampleValue xml:lang="de">Siehe hasContributor für ein Beispiel zu Personen und hasContact für ein Beispiel zu Organisationen.</acdh:exampleValue>
         <acdh:inverse xml:lang="en">is metadata creator of</acdh:inverse>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">81</acdh:ordering>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">82</acdh:ordering>
     </owl:ObjectProperty>
     
 
@@ -1647,7 +1650,7 @@ https://www.iana.org/assignments/character-sets/character-sets.xhtml</rdfs:comme
         <rdfs:label xml:lang="en">has custom citation</rdfs:label>
         <skos:altLabel xml:lang="de">Benutzerdefinierte Zitation</skos:altLabel>
         <skos:altLabel xml:lang="en">Custom citation</skos:altLabel>
-        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">82</acdh:ordering>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">89</acdh:ordering>
     </owl:DatatypeProperty>
     
 

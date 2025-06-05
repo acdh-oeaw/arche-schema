@@ -7,7 +7,7 @@ jobs:
     name: Creates HTML-Documentation of the ARCHE Ontology
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
